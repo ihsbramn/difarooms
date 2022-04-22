@@ -17,6 +17,7 @@
                             </div>
                         @endif
                         <p>Welcome {{ Auth::user()->name }}</p>
+                        <a href="{{ 'hotel' }}">Menu Hotel</a>
                     </div>
                 </div>
             </div>

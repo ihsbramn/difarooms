@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HotelController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,5 +19,11 @@ Route::get('/', function () {return view('index');})->name('index');
 
 Auth::routes();
 
-// admin routing
-Route::get('/admin',[App\Http\Controllers\HomeController::class, 'admin'])->name('admin')->middleware('is_admin');
+// admin menu routing
+Route::get('/admin',[HomeController::class, 'admin'])->name('admin')->middleware('is_admin');
+
+// Hotel Routes
+// user
+Route::get('/hotel',[HotelController::class, 'index']);
+// admin
+Route::get('/hotel/admin',[HotelController::class, 'admin'])->middleware('is_admin');

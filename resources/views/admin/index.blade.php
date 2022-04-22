@@ -14,8 +14,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('Welcome Admin') }}
+                    <p>Welcome {{ Auth::user()->name }}</p>
+                    <a class="btn btn-light" href="{{ 'hotel/admin' }}">Kelola Hotel</a>
                 </div>
             </div>
         </div>
