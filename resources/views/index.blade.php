@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="container">
+<div class="container"> 
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <h2 style="text-align: center">Welcome to Difa Rooms</h2>
@@ -17,12 +16,15 @@
                             </div>
                         @endif
                         <p>Welcome {{ Auth::user()->name }}</p>
-                        <a href="{{ 'hotel' }}">Menu Hotel</a>
+                        @if (Auth::user()->is_admin == 1)
+                        <a class="btn btn-light" href="{{ 'admin' }}">Menu Admin</a>
+                        @endif
+                        <a class="btn btn-light" href="{{ 'hotel' }}">Menu Hotel</a>
+                        <a class="btn btn-light" href="">Menu Forum</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div>   
     @else
     @endif
 </div>

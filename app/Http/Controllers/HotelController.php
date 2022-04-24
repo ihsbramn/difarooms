@@ -15,12 +15,19 @@ class HotelController extends Controller
      */
     public function index()
     {
-        return view('hotel/index');
+        $hotel = Hotel::all();
+        return view('hotel/index',compact('hotel'));
+    }
+
+    public function map()
+    {
+        return view('hotel/map');
     }
 
     public function admin()
     {
-        return view('hotel/admin');
+        $hotel = Hotel::all();
+        return view('hotel/admin', compact('hotel'));
     }
 
     /**
@@ -30,7 +37,7 @@ class HotelController extends Controller
      */
     public function create()
     {
-        //
+        return view('hotel/create');
     }
 
     /**
@@ -41,7 +48,29 @@ class HotelController extends Controller
      */
     public function store(StoreHotelRequest $request)
     {
-        //
+        $request->validate(([
+            'ht_filename' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5048',
+        ]));
+
+        $image = $request->file('ht_filename');
+        $destinationPath = public_path('/images');
+        $imgName = time() . '.' . $image->getClientOriginalExtension();
+        $image->move($destinationPath, $imgName);
+
+        Hotel::create([
+            'ht_name' => $request->ht_name,
+            'ht_address' => $request->ht_address,
+            'ht_description' => $request->ht_description,
+            'ht_fascility' => $request->ht_fascility,
+            'ht_accesible' => $request->ht_accesible,
+            'ht_accesible_detail' => $request->ht_accesible_detail,
+            'ht_embedmaps' => $request->ht_embedmaps,
+            'ht_latitude' => $request->ht_latitude,
+            'ht_longitude' => $request->ht_longitude,
+            'ht_filename' => $imgName,
+        ]);
+
+        return redirect('/hotel/admin')->with('success', 'Your images has been successfully');
     }
 
     /**

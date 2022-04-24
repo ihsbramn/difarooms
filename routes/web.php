@@ -25,5 +25,8 @@ Route::get('/admin',[HomeController::class, 'admin'])->name('admin')->middleware
 // Hotel Routes
 // user
 Route::get('/hotel',[HotelController::class, 'index']);
+Route::get('/hotel/map',[HotelController::class, 'map']);
 // admin
 Route::get('/hotel/admin',[HotelController::class, 'admin'])->middleware('is_admin');
+Route::get('/hotel/create',[HotelController::class, 'create'])->middleware('is_admin');
+Route::post('/hotel/admin',[HotelController::class,'store'])->name('/hotel/store')->middleware('is_admin');

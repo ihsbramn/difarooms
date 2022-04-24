@@ -28,6 +28,10 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
+    // google api key
+    'googleapi_key' => env('GOOGLEAPI_KEY'),
+    // gooogle api key
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
