@@ -5,6 +5,7 @@ Difa Rooms Application for People with Special Needs Wheelchair
 
 ```terminal
 
+- Run composer update
 - Run composer install 
 - Run php artisan key:generate
 - Run php artisan migrate
