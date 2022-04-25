@@ -3,7 +3,7 @@
 @section('content')
 <div class="container"> 
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col">
                 <h2 style="text-align: center">Welcome to Difa Rooms</h2>
                 @if (Auth::check())
                 <div class="card">

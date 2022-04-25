@@ -17,12 +17,12 @@ class CreateHotelsTable extends Migration
             $table->id()->startingValue(100);
             $table->string('ht_name')->nullable();
             $table->string('ht_address')->nullable();
-            $table->string('ht_description')->nullable();
+            $table->longText('ht_description')->nullable();
             $table->string('ht_filename')->nullable();
-            $table->string('ht_fascility')->nullable();
+            $table->longText('ht_fascility')->nullable();
             $table->string('ht_accesible')->nullable();
-            $table->string('ht_accesible_detail')->nullable();
-            $table->string('ht_embedmaps')->nullable();
+            $table->mediumText('ht_accesible_detail')->nullable();
+            $table->longText('ht_embedmaps')->nullable();
             $table->string('ht_latitude')->nullable();
             $table->string('ht_longitude')->nullable();
             $table->timestamps();

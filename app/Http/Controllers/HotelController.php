@@ -27,6 +27,7 @@ class HotelController extends Controller
     public function admin()
     {
         $hotel = Hotel::all();
+        // dd($hotel);
         return view('hotel/admin', compact('hotel'));
     }
 
@@ -69,8 +70,8 @@ class HotelController extends Controller
             'ht_longitude' => $request->ht_longitude,
             'ht_filename' => $imgName,
         ]);
-
-        return redirect('/hotel/admin')->with('success', 'Your images has been successfully');
+        
+        return redirect('/hotel/admin')->with('success', 'Sucsess !');
     }
 
     /**
@@ -79,9 +80,11 @@ class HotelController extends Controller
      * @param  \App\Models\Hotel  $hotel
      * @return \Illuminate\Http\Response
      */
-    public function show(Hotel $hotel)
+    public function show($id)
     {
-        //
+        $hotel = Hotel::find($id);
+        dd($hotel);
+        return view('/hotel/show', compact('hotel'));
     }
 
     /**
@@ -113,8 +116,10 @@ class HotelController extends Controller
      * @param  \App\Models\Hotel  $hotel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hotel $hotel)
+    public function destroy($id)
     {
-        //
+        Hotel::find($id)->delete();
+        
+        return redirect('/hotel/admin')->with('success', 'Sucsess !, Data Telah Dihapus!');
     }
 }
