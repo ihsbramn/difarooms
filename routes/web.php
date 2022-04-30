@@ -32,3 +32,4 @@ Route::get('/hotel/create',[HotelController::class, 'create'])->middleware('is_a
 Route::post('/hotel/admin',[HotelController::class,'store'])->name('/hotel/store')->middleware('is_admin');
 Route::get('/hotel/show/{id}',[HotelController::class, 'show'])->name('/hotel/show')->middleware('is_admin');
 Route::delete('/hotel/destroy/{id}',[HotelController::class, 'destroy'])->name('hotel/destroy')->middleware('is_admin');
+Route::get('/hotel/edit/{id}',[HotelController::class, 'edit'])->name('hotel/edit')->middleware('is_admin');

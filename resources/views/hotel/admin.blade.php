@@ -42,7 +42,7 @@
                                 <td>{{ $data->ht_name }}</td>
                                 <td>
                                     <a class="btn btn-primary" href="{{ route('/hotel/show',$data->id) }}">Show</a>
-                                    <a class="btn btn-primary" href="">Edit</a>
+                                    <a class="btn btn-primary" href="{{ route('hotel/edit',$data->id) }}">Edit</a>
                                     <form action="{{ route('hotel/destroy',$data->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')

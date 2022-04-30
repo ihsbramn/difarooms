@@ -95,7 +95,7 @@ class HotelController extends Controller
      */
     public function edit(Hotel $hotel)
     {
-        //
+        return view('/hotel/edit', compact('hotel'));
     }
 
     /**
@@ -107,7 +107,9 @@ class HotelController extends Controller
      */
     public function update(UpdateHotelRequest $request, Hotel $hotel)
     {
-        //
+        $hotel->update($request->all());
+
+        return redirect()->route('/home/admin')->with('success','Update Successfull');
     }
 
     /**
@@ -120,6 +122,6 @@ class HotelController extends Controller
     {
         Hotel::find($id)->delete();
         
-        return redirect('/hotel/admin')->with('success', 'Sucsess !, Data Telah Dihapus!');
+        return redirect('/hotel/admin')->with('success', 'Success !, Data Telah Dihapus!');
     }
 }
