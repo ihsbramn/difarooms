@@ -1,5 +1,102 @@
 @extends('layouts.app')
 
 @section('content')
-<h2 class="text-center"> Edit Page</h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col">
+            <div class="card">
+                <h4 class="text-center card-header">Hotel Menu Admin</h2>
+                <div class="card-body">
+                    <p class="text-center" >Edit Hotel</p>
+                    <form action="{{ route('hotel/update', $hotel->id) }}" method="POST">
+                        @csrf
+                        @method('PUT')
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="ht_name">Nama</label>
+                            <input type="text" class="form-control" id="id" name="id" value="{{ $hotel->id }}" hidden>
+                            <input type="text" class="form-control" id="ht_name" name="ht_name" value="{{ $hotel->ht_name }}">
+                        </div>
+        
+                        <br>
+        
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <label for="ht_filename">Photo</label>
+                                <br>
+                                <input type="file" class="form-control" id="ht_filename" name="ht_filename" value="{{ $hotel->ht_filename }}">
+                            </div>
+                        </div>
+        
+                        <br>
+                        
+                        <div class="form-group">
+                            <label for="ht_address">Alamat</label>
+                            <input type="text" class="form-control " id="ht_address" name="ht_address" value="{{ $hotel->ht_address }}">
+                        </div>
+        
+                        <br>
+
+                        <div class="form-group">
+                            <label for="ht_description">Deskripsi</label>
+                            <textarea type="text" class="form-control " id="ht_description" name="ht_description" rows="4">{{ $hotel->ht_description }}</textarea>
+                        </div>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label for="ht_fascility">Fasilitas Hotel</label>
+                            <textarea type="text" class="form-control " id="ht_fascility" name="ht_fascility" rows="4">{{ $hotel->ht_fascility }}</textarea>
+                        </div>
+
+                        <br>
+
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="ht_accesible">Aksesibel ?</label>
+                            <select class="form-select" id="ht_accesible" name="ht_accesible">
+                              <option selected>{{ $hotel->ht_accesible }}</option>
+                              <option value="Ya">Ya</option>
+                              <option value="Tidak">Tidak</option>
+                            </select>
+                          </div>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label for="ht_accesible_detail">Fasilitas Aksesibilitas</label>
+                            <textarea type="text" class="form-control " id="ht_accesible_detail" name="ht_accesible_detail" rows="4">{{ $hotel->ht_accesible_detail }}</textarea>
+                        </div>
+
+                        <br>
+                        
+                        <div class="form-group">
+                            <label for="ht_embedmaps">Link Embed Gmaps</label>
+                            <input type="text" class="form-control " id="ht_embedmaps" name="ht_embedmaps" value="{{ $hotel->ht_embedmaps }}">
+                        </div>
+        
+                        <br>
+        
+                        <div class="form-group">
+                            <label for="ht_latitude">Latitude</label>
+                            <input type="text" class="form-control " id="ht_latitude" name="ht_latitude" value="{{ $hotel->ht_latitude }}">
+                        </div>
+        
+                        <br>
+                        <div class="form-group">
+                            <label for="ht_longitude">Longitude</label>
+                            <input type="text" class="form-control " id="ht_longitude" name="ht_longitude" value="{{ $hotel->ht_longitude }}">
+                        </div>
+        
+                        <br>
+        
+                        
+                    </div>
+                    <button href="submit" class="btn btn-dark">Update</button>
+                    <a href="{{ url('hotel/admin') }}" class="btn btn-danger">Back</a>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
 @endsection

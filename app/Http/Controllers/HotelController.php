@@ -93,8 +93,11 @@ class HotelController extends Controller
      * @param  \App\Models\Hotel  $hotel
      * @return \Illuminate\Http\Response
      */
-    public function edit(Hotel $hotel)
+    public function edit($id)
     {
+        
+        $hotel = Hotel::find($id);
+        // dd($hotel);
         return view('/hotel/edit', compact('hotel'));
     }
 
@@ -105,11 +108,14 @@ class HotelController extends Controller
      * @param  \App\Models\Hotel  $hotel
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateHotelRequest $request, Hotel $hotel)
+    public function update(UpdateHotelRequest $request, $id)
     {
-        $hotel->update($request->all());
+        $input = $request->all();
 
-        return redirect()->route('/home/admin')->with('success','Update Successfull');
+        $hotel = Hotel::find($id);
+        $hotel->update($input);
+        
+        return redirect('/hotel/admin')->with('success','Update Successfull');
     }
 
     /**
