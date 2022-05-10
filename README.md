@@ -10,6 +10,7 @@ Difa Rooms Application for People with Special Needs Wheelchair
 - Run php artisan key:generate
 - Run php artisan migrate
 - Run php artisan db:seed --class=CreateUserSeeder
+- Run php artisan db:seed --class=HotelSeeder
 - Run php artisan serve
 
 ```
