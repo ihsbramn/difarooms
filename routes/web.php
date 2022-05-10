@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\HomeController;
-use App\Models\Hotel;
+use App\Http\Controllers\ForumController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,11 +23,21 @@ Auth::routes();
 // admin menu routing
 Route::get('/admin',[HomeController::class, 'admin'])->name('admin')->middleware('is_admin');
 
-// Hotel Routes
 // user
+
+//hotel 
 Route::get('/hotel',[HotelController::class, 'index']);
 Route::get('/hotel/map',[HotelController::class, 'map']);
+//hotel
+//forum
+Route::get('/forum',[ForumController::class, 'index']);
+Route::get('/forum/create',[ForumController::class, 'create']);
+Route::post('/forum',[ForumController::class,'store'])->name('/forum/store');
+//forum
+
 // admin
+
+//hotel
 Route::get('/hotel/admin',[HotelController::class, 'admin'])->middleware('is_admin');
 Route::get('/hotel/create',[HotelController::class, 'create'])->middleware('is_admin');
 Route::post('/hotel/admin',[HotelController::class,'store'])->name('/hotel/store')->middleware('is_admin');
@@ -35,3 +45,4 @@ Route::get('/hotel/show/{id}',[HotelController::class, 'show'])->name('/hotel/sh
 Route::delete('/hotel/destroy/{id}',[HotelController::class, 'destroy'])->name('hotel/destroy')->middleware('is_admin');
 Route::get('/hotel/edit/{id}',[HotelController::class, 'edit'])->name('hotel/edit')->middleware('is_admin');
 Route::match(['put','patch'],'/hotel/update/{id}',[HotelController::class,'update'])->name('hotel/update')->middleware('is_admin');
+//hotel

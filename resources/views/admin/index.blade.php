@@ -16,6 +16,7 @@
                     @endif
                     <p>Welcome {{ Auth::user()->name }}</p>
                     <a class="btn btn-light" href="{{ 'hotel/admin' }}">Kelola Hotel</a>
+                    <a class="btn btn-light" href="">Kelola Forum</a>
                 </div>
             </div>
         </div>

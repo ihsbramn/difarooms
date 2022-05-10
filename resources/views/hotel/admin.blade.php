@@ -24,7 +24,7 @@
             <div class="card">
                 <h4 class="text-center card-header">Hotel Menu Admin</h2>
                 <div class="card-body">
-                    <a class="btn btn-light" href="{{ 'create' }}">Tambah Hotel</a>
+                    <a class="btn btn-light" href="{{ '/hotel/create' }}">Tambah Hotel</a>
                     <a class="btn btn-light" href="{{ url('admin') }}">back</a>
                     @foreach ($hotel as $data )
                         

@@ -20,7 +20,7 @@
                         <a class="btn btn-light" href="{{ 'admin' }}">Menu Admin</a>
                         @endif
                         <a class="btn btn-light" href="{{ 'hotel' }}">Menu Hotel</a>
-                        <a class="btn btn-light" href="">Menu Forum</a>
+                        <a class="btn btn-light" href="{{ 'forum' }}">Menu Forum</a>
                     </div>
                 </div>
             </div>
