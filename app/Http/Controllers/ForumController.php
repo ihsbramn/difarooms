@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Forum;
+use App\Models\User;
 use App\Http\Requests\StoreForumRequest;
 use App\Http\Requests\UpdateForumRequest;
 
@@ -16,8 +17,10 @@ class ForumController extends Controller
     public function index()
     {
         $forum = Forum::all();
+        $id = Forum::find('fr_user_id');
+        $count = 1;
         // dd($forum);
-        return view('forum/index', compact('forum'));
+        return view('forum/index', compact('forum','count'));
     }
 
     /**
@@ -49,6 +52,7 @@ class ForumController extends Controller
 
         Forum::create([
             'fr_user_id' => $request->fr_user_id,
+            'fr_author' => $request->fr_author,
             'fr_title' => $request->fr_title,
             'fr_body' => $request->fr_body,
             'fr_filename' => $imgName,
@@ -64,9 +68,11 @@ class ForumController extends Controller
      * @param  \App\Models\Forum  $forum
      * @return \Illuminate\Http\Response
      */
-    public function show(Forum $forum)
+    public function show($id)
     {
-        //
+        $forum = Forum::find($id);
+        dd($forum);
+        return view('/forum/show', compact('forum'));
     }
 
     /**

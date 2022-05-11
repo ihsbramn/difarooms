@@ -12,6 +12,7 @@
                         <div class="form-group">
                             <label for="fr_title">Judul</label>
                             <input type="text" class="form-control" id="fr_user_id" name="fr_user_id" value="{{ Auth::user()->id }}" hidden>
+                            <input type="text" class="form-control" id="fr_author" name="fr_author" value="{{ Auth::user()->name }}" hidden>
                             <input type="text" class="form-control" id="fr_title" name="fr_title">
                         </div>
                         <div class="form-group">

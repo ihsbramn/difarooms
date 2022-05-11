@@ -3,6 +3,7 @@
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ForumController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,9 +34,11 @@ Route::get('/hotel/map',[HotelController::class, 'map']);
 Route::get('/forum',[ForumController::class, 'index']);
 Route::get('/forum/create',[ForumController::class, 'create']);
 Route::post('/forum',[ForumController::class,'store'])->name('/forum/store');
+Route::get('/forum/show/{id}',[ForumController::class, 'show'])->name('/forum/show');
+Route::get('/user/myforum',[UserController::class, 'myforum']);
 //forum
 
-// admin
+// admin middleware
 
 //hotel
 Route::get('/hotel/admin',[HotelController::class, 'admin'])->middleware('is_admin');

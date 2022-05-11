@@ -17,6 +17,7 @@ class CreateForumsTable extends Migration
             $table->id();
             $table->foreignId('fr_user_id')->unsigned();
             $table->foreign('fr_user_id')->references('id')->on('users');
+            $table->string('fr_author');
             $table->string('fr_title');
             $table->string('fr_filename')->nullable();
             $table->longText('fr_body');

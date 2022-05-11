@@ -26,6 +26,31 @@
                 <div class="card-body">
                     <a class="btn btn-light" href="{{ '/forum/create' }}">Tambah Forum</a>
                     <a class="btn btn-light" href="{{ '/' }}">back</a>
+                    <a class="btn btn-light" href="{{ '/user/myforum' }}">My Forum</a>
+
+                    @foreach ($forum as $fr)
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Judul</th>
+                                <th>Author</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{ $count++ }}</th>
+                                <td>{{ $fr->fr_title }}</td>
+                                <td>{{ $fr->fr_author }}</td>
+                                <td>
+                                    <a class="btn btn-primary" href="{{ route('/forum/show',$fr->id) }}">Show</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    @endforeach
+                    
                 </div>
             </div>
         </div>

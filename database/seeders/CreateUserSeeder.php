@@ -22,8 +22,14 @@ class CreateUserSeeder extends Seeder
                 'password' => bcrypt('admin432'),
             ],
             [
-                'name' => 'dummy_user',
-                'email' => 'dummy@difarooms.com',
+                'name' => 'dummy_user1',
+                'email' => 'dummy1@difarooms.com',
+                'is_admin' => '0',
+                'password' => bcrypt('dummy432'),
+            ],
+            [
+                'name' => 'dummy_user2',
+                'email' => 'dummy2@difarooms.com',
                 'is_admin' => '0',
                 'password' => bcrypt('dummy432'),
             ],
