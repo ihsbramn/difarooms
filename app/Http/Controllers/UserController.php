@@ -25,8 +25,8 @@ class UserController extends Controller
         $forum_user = Forum::where('fr_user_id', '=', $user_id)
                                 ->get();
 
-        dd($user_id, $user_name, $forum_user);
+        // dd($user_id, $user_name, $forum_user);
 
-        return view('user/myforum' ,compact('count'));
+        return view('user/myforum' ,compact('forum_user','count'));
     }
 }

@@ -36,6 +36,9 @@ Route::get('/forum/create',[ForumController::class, 'create']);
 Route::post('/forum',[ForumController::class,'store'])->name('/forum/store');
 Route::get('/forum/show/{id}',[ForumController::class, 'show'])->name('/forum/show');
 Route::get('/user/myforum',[UserController::class, 'myforum']);
+Route::delete('/forum/destroy/{id}',[ForumController::class, 'destroy'])->name('forum/destroy');
+Route::get('/forum/edit/{id}',[ForumController::class, 'edit'])->name('forum/edit');
+Route::match(['put','patch'],'/forum/update/{id}',[ForumController::class,'update'])->name('forum/update');
 //forum
 
 // admin middleware

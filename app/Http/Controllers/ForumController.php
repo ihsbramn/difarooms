@@ -81,9 +81,11 @@ class ForumController extends Controller
      * @param  \App\Models\Forum  $forum
      * @return \Illuminate\Http\Response
      */
-    public function edit(Forum $forum)
+    public function edit($id)
     {
-        //
+        $forum = Forum::find($id);
+        // dd($forum);
+        return view('/forum/edit', compact('forum'));
     }
 
     /**
@@ -93,9 +95,14 @@ class ForumController extends Controller
      * @param  \App\Models\Forum  $forum
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateForumRequest $request, Forum $forum)
+    public function update(UpdateForumRequest $request, $id)
     {
-        //
+        $input = $request->all();
+
+        $forum = Forum::find($id);
+        $forum->update($input);
+        
+        return redirect('/user/myforum')->with('success','Update Successfull');
     }
 
     /**
@@ -104,8 +111,9 @@ class ForumController extends Controller
      * @param  \App\Models\Forum  $forum
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Forum $forum)
+    public function destroy($id)
     {
-        //
+        Forum::find($id)->delete();
+        return redirect('/user/myforum')->with('success', 'Success !, Data Telah Dihapus!');
     }
 }
