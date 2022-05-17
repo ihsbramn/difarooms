@@ -41,9 +41,9 @@ class ForumController extends Controller
      */
     public function store(StoreForumRequest $request)
     {
-        $request->validate(([
-            'fr_filename' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5048',
-        ]));
+        $request->validate([
+            'fr_filename' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5048'
+        ]);
 
         $image = $request->file('fr_filename');
         $destinationPath = public_path('/images');
@@ -97,11 +97,31 @@ class ForumController extends Controller
      */
     public function update(UpdateForumRequest $request, $id)
     {
+
+        $request->validate([
+            'fr_user_id' => 'required',
+            'fr_author' => 'required',
+            'fr_title' => 'required',
+            'fr_body' => 'required'
+        ]);
+
         $input = $request->all();
+
+        // if ($image = $request->file('fr_filename')){
+        //     $destinationPath = public_path('/images');
+        //     $imgName = time() . '.' . $image->getClientOriginalExtension();
+        //     $image->move($destinationPath, $imgName);
+        //     $input['fr_filename'] = "$imgName";
+        // } else {
+        //     unset($input['fr_filename']);
+        // }
+
 
         $forum = Forum::find($id);
         $forum->update($input);
         
+        // dd($request);
+
         return redirect('/user/myforum')->with('success','Update Successfull');
     }
 

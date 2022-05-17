@@ -8,7 +8,7 @@
                 <h4 class="text-center card-header">Hotel Menu Admin</h2>
                 <div class="card-body">
                     <p class="text-center" >Edit Hotel</p>
-                    <form action="{{ route('hotel/update', $hotel->id) }}" method="POST">
+                    <form action="{{ route('hotel/update', $hotel->id) }}" method="POST" enctype='multipart/form-data'>
                         @csrf
                         @method('PUT')
                     <div class="form">
