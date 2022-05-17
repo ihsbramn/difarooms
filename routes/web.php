@@ -24,7 +24,7 @@ Auth::routes();
 // admin menu routing
 Route::get('/admin',[HomeController::class, 'admin'])->name('admin')->middleware('is_admin');
 
-// user
+// USER
 
 //hotel 
 Route::get('/hotel',[HotelController::class, 'index']);
@@ -41,7 +41,7 @@ Route::get('/forum/edit/{id}',[ForumController::class, 'edit'])->name('forum/edi
 Route::match(['put','patch'],'/forum/update/{id}',[ForumController::class,'update'])->name('forum/update');
 //forum
 
-// admin middleware
+// ADMIN
 
 //hotel
 Route::get('/hotel/admin',[HotelController::class, 'admin'])->middleware('is_admin');
@@ -52,3 +52,7 @@ Route::delete('/hotel/destroy/{id}',[HotelController::class, 'destroy'])->name('
 Route::get('/hotel/edit/{id}',[HotelController::class, 'edit'])->name('hotel/edit')->middleware('is_admin');
 Route::match(['put','patch'],'/hotel/update/{id}',[HotelController::class,'update'])->name('hotel/update')->middleware('is_admin');
 //hotel
+
+//forum
+Route::get('/forum/admin',[ForumController::class, 'admin'])->middleware('is_admin');
+Route::delete('/forum/destroy/{id}',[ForumController::class, 'destroy_admin'])->name('forum/destroy')->middleware('is_admin');

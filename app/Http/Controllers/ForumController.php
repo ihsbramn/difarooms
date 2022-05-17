@@ -23,6 +23,15 @@ class ForumController extends Controller
         return view('forum/index', compact('forum','count'));
     }
 
+    public function admin()
+    {
+        $forum = Forum::all();
+        $id = Forum::find('fr_user_id');
+        $count = 1;
+        // dd($forum);
+        return view('forum/admin', compact('forum','count'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -135,5 +144,11 @@ class ForumController extends Controller
     {
         Forum::find($id)->delete();
         return redirect('/user/myforum')->with('success', 'Success !, Data Telah Dihapus!');
+    }
+
+    public function destroy_admin($id)
+    {
+        Forum::find($id)->delete();
+        return redirect('forum/admin')->with('success', 'Success !, Data Telah Dihapus!');
     }
 }

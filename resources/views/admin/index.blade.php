@@ -16,7 +16,14 @@
                     @endif
                     <p>Welcome {{ Auth::user()->name }}</p>
                     <a class="btn btn-light" href="{{ 'hotel/admin' }}">Kelola Hotel</a>
-                    <a class="btn btn-light" href="">Kelola Forum</a>
+                    <a class="btn btn-light" href="{{ 'forum/admin' }}">Kelola Forum</a>
+                    <form action="{{ route('forum/destroy',$data->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger"> 
+                            Hapus
+                        </button>
+                        </form>
                 </div>
             </div>
         </div>
