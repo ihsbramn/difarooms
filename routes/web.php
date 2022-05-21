@@ -4,6 +4,7 @@ use App\Http\Controllers\HotelController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,10 @@ Route::delete('/forum/destroy/{id}',[ForumController::class, 'destroy'])->name('
 Route::get('/forum/edit/{id}',[ForumController::class, 'edit'])->name('forum/edit');
 Route::match(['put','patch'],'/forum/update/{id}',[ForumController::class,'update'])->name('forum/update');
 //forum
+// comment
+Route::post('/comment',[CommentController::class,'store'])->name('/comment/store');
+// comment
+
 
 // ADMIN ----------------------------------------------------------------------------------------------------------------------------------------------------
 

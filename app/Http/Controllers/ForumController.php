@@ -79,8 +79,8 @@ class ForumController extends Controller
      */
     public function show($id)
     {
-        $forum = Forum::find($id);
-        dd($forum);
+        $forumid = Forum::find($id);
+        // dd($forum);
         return view('/forum/show', compact('forum'));
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Forum;
 use App\Http\Requests\StoreCommentRequest;
 use App\Http\Requests\UpdateCommentRequest;
 
@@ -36,7 +37,24 @@ class CommentController extends Controller
      */
     public function store(StoreCommentRequest $request)
     {
-        //
+
+        $request->validate([
+            'cm_user_id' => 'required',
+            'cm_forum_id' => 'required',
+            'cm_author' => 'required',
+            'cm_body' => 'required'
+        ]);
+
+        Comment::create([
+            'cm_user_id' => $request->cm_user_id,
+            'cm_forum_id' => $request->cm_forum_id,
+            'cm_author' => $request->cm_author,
+            'cm_body' => $request->cm_body
+        ]);
+
+        // dd($request);
+
+        return back()->with('success', 'Comment Telah Terposting!');
     }
 
     /**
