@@ -6,6 +6,7 @@ use App\Models\Forum;
 use App\Models\User;
 use App\Http\Requests\StoreForumRequest;
 use App\Http\Requests\UpdateForumRequest;
+use App\Models\Comment;
 
 class ForumController extends Controller
 {
@@ -79,9 +80,12 @@ class ForumController extends Controller
      */
     public function show($id)
     {
-        $forumid = Forum::find($id);
-        // dd($forum);
-        return view('/forum/show', compact('forum'));
+        $forum = Forum::find($id);
+        $id = $forum->id;
+
+        $comment = Comment::where('cm_forum_id', '=' , $id)->get();
+        // dd($forum, $comment);
+        return view('/forum/show', compact('forum','comment'));
     }
 
     /**
