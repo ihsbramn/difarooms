@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\FavouritesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,7 @@ Route::get('/admin',[HomeController::class, 'admin'])->name('admin')->middleware
 //hotel 
 Route::get('/hotel',[HotelController::class, 'index']);
 Route::get('/hotel/map',[HotelController::class, 'map']);
+Route::get('/hotel/show/{id}',[HotelController::class, 'show'])->name('/hotel/show');
 //hotel
 //forum
 Route::get('/forum',[ForumController::class, 'index']);
@@ -37,6 +39,7 @@ Route::get('/forum/create',[ForumController::class, 'create']);
 Route::post('/forum',[ForumController::class,'store'])->name('/forum/store');
 Route::get('/forum/show/{id}',[ForumController::class, 'show'])->name('/forum/show');
 Route::get('/user/myforum',[UserController::class, 'myforum']);
+Route::get('/user/myfavourites',[UserController::class, 'myfavourites']);
 Route::delete('/forum/destroy/{id}',[ForumController::class, 'destroy'])->name('forum/destroy');
 Route::get('/forum/edit/{id}',[ForumController::class, 'edit'])->name('forum/edit');
 Route::match(['put','patch'],'/forum/update/{id}',[ForumController::class,'update'])->name('forum/update');
@@ -44,6 +47,9 @@ Route::match(['put','patch'],'/forum/update/{id}',[ForumController::class,'updat
 // comment
 Route::post('/comment',[CommentController::class,'store'])->name('/comment/store');
 // comment
+// Favourites
+Route::post('/favourites',[FavouritesController::class,'store'])->name('/favourites/store');
+// Favourites
 
 
 // ADMIN ----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -52,7 +58,6 @@ Route::post('/comment',[CommentController::class,'store'])->name('/comment/store
 Route::get('/hotel/admin',[HotelController::class, 'admin'])->middleware('is_admin');
 Route::get('/hotel/create',[HotelController::class, 'create'])->middleware('is_admin');
 Route::post('/hotel/admin',[HotelController::class,'store'])->name('/hotel/store')->middleware('is_admin');
-Route::get('/hotel/show/{id}',[HotelController::class, 'show'])->name('/hotel/show')->middleware('is_admin');
 Route::delete('/hotel/destroy/{id}',[HotelController::class, 'destroy'])->name('hotel/destroy')->middleware('is_admin');
 Route::get('/hotel/edit/{id}',[HotelController::class, 'edit'])->name('hotel/edit')->middleware('is_admin');
 Route::match(['put','patch'],'/hotel/update/{id}',[HotelController::class,'update'])->name('hotel/update')->middleware('is_admin');

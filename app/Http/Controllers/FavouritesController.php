@@ -36,7 +36,23 @@ class FavouritesController extends Controller
      */
     public function store(StoreFavouritesRequest $request)
     {
-        //
+        $request->validate([
+            'fv_user_id' => 'required',
+            'fv_hotel_id' => 'required',
+            'fv_hotel_name' => 'required',
+            'fv_count' => 'required'
+        ]);
+
+        Favourites::create([
+            'fv_user_id' => $request->fv_user_id,
+            'fv_hotel_id' => $request->fv_hotel_id,
+            'fv_hotel_name' => $request->fv_hotel_name,
+            'fv_count' => $request->fv_count
+        ]);
+
+        // dd($request);
+
+        return back()->with('success', 'Hotel Berhasil di Favoritkan!');
     }
 
     /**
