@@ -68,6 +68,27 @@
                         </div>
 
                         <br>
+
+                        <div class="form-group">
+                            <label for="ht_price_estimate">Estimasi Harga</label>
+                            <input type="text" class="form-control " id="ht_price_estimate" name="ht_price_estimate" value="{{ $hotel->ht_price_estimate }}">
+                        </div>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label for="ht_contact">Kontak</label>
+                            <input type="text" class="form-control " id="ht_contact" name="ht_contact" value="{{ $hotel->ht_contact }}">
+                        </div>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label for="ht_roomtype">Tipe Kamar</label>
+                            <input type="text" class="form-control " id="ht_roomtype" name="ht_roomtype" value="{{ $hotel->ht_roomtype }}">
+                        </div>
+
+                        <br>
                         
                         <div class="form-group">
                             <label for="ht_embedmaps">Link Embed Gmaps</label>

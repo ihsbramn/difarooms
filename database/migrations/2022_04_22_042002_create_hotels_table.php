@@ -22,6 +22,9 @@ class CreateHotelsTable extends Migration
             $table->longText('ht_fascility')->nullable();
             $table->string('ht_accesible')->nullable();
             $table->mediumText('ht_accesible_detail')->nullable();
+            $table->string('ht_price_estimate')->nullable();
+            $table->string('ht_contact')->nullable();
+            $table->string('ht_roomtype')->nullable();
             $table->longText('ht_embedmaps')->nullable();
             $table->string('ht_latitude')->nullable();
             $table->string('ht_longitude')->nullable();
