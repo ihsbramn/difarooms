@@ -37,21 +37,12 @@
             <div class="card">
                 <h4 class="text-center card-header">Hotel Menu </h2>
                 <div class="card-body">
-                    {{-- <iframe
-                    width="600"
-                    height="450"
-                    style="border:0"
-                    loading="lazy"
-                    allowfullscreen
-                    referrerpolicy="no-referrer-when-downgrade"
-                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBcIXilHxXeXdSA6Be4D94z2GFQBccggyI&q=Bandung">
-                    </iframe> --}}
 
                     <div id="map" style="height: 300px;">INI MAP</div>
 
                     <script src="{{ asset('js/maps.js') }}"></script>
                     <script src="{{ asset('js/markercluster.js') }}"></script>
-                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcIXilHxXeXdSA6Be4D94z2GFQBccggyI&callback=initMap">
+                    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&callback=initMap">
                     </script>
                     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 

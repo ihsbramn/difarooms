@@ -29,7 +29,7 @@ return [
     'env' => env('APP_ENV', 'production'),
 
     // google api key
-    'googleapi_key' => env('GOOGLEAPI_KEY'),
+    'google_api_key' => env('GOOGLE_API_KEY'),
     // gooogle api key
 
     /*
