@@ -62,6 +62,7 @@ class HotelController extends Controller
             'ht_name' => $request->ht_name,
             'ht_address' => $request->ht_address,
             'ht_description' => $request->ht_description,
+            'ht_urlvideo' => $request->ht_urlvideo,
             'ht_fascility' => $request->ht_fascility,
             'ht_accesible' => $request->ht_accesible,
             'ht_accesible_detail' => $request->ht_accesible_detail,

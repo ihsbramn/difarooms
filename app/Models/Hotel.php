@@ -16,6 +16,7 @@ class Hotel extends Model
         'ht_address',
         'ht_description',
         'ht_filename',
+        'ht_urlvideo',
         'ht_fascility',
         'ht_accesible',
         'ht_accesible_detail',

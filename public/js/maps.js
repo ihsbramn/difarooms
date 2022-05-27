@@ -9,21 +9,21 @@ var centerCords = {
 
 
 
-var markersOnMap = [
-    //     {
-    //     placeName: ' <b>Ho-Chi-Minh City</b>  <br>' +
-    //         'Ho Chi Minh City (commonly known as Saigon) is a city in southern Vietnam. <br>' +
-    //         'Famous for the pivotal role it played in' +
-    //         'the Vietnam War. Its also known for its French colonial landmarks,' +
-    //         'including Notre-Dame Cathedral, made entirely of materials imported from France,' +
-    //         'and the 19th-century Central Post Office. Food stalls line the city’s streets,' +
-    //         'especially around bustling Bến Thành Market.',
-    //     LatLng: [{
-    //         lat: 10.775844,
-    //         lng: 106.701756
-    //     }]
-    // }
-];
+// var markersOnMap = [
+//     //     {
+//     //     placeName: ' <b>Ho-Chi-Minh City</b>  <br>' +
+//     //         'Ho Chi Minh City (commonly known as Saigon) is a city in southern Vietnam. <br>' +
+//     //         'Famous for the pivotal role it played in' +
+//     //         'the Vietnam War. Its also known for its French colonial landmarks,' +
+//     //         'including Notre-Dame Cathedral, made entirely of materials imported from France,' +
+//     //         'and the 19th-century Central Post Office. Food stalls line the city’s streets,' +
+//     //         'especially around bustling Bến Thành Market.',
+//     //     LatLng: [{
+//     //         lat: 10.775844,
+//     //         lng: 106.701756
+//     //     }]
+//     // }
+// ];
 
 window.onload = function() {
     initMap();

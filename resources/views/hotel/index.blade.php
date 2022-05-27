@@ -9,7 +9,18 @@
 @endsection
 
 @section('lower_body')
+<script>
+var markersOnMap = [
+        {
+        placeName: ' <b>The Trans Luxury Hotel</b>',
+        LatLng: [{
+            lat: -6.9270467,
+            lng: 107.6340791
+        }]
+    }
+];
 
+</script>
 @endsection
 
 @section('content')
@@ -38,7 +49,7 @@
                 <h4 class="text-center card-header">Hotel Menu </h2>
                 <div class="card-body">
 
-                    <div id="map" style="height: 300px;">INI MAP</div>
+                    <div id="map" style="height: 500px;">INI MAP</div>
 
                     <script src="{{ asset('js/maps.js') }}"></script>
                     <script src="{{ asset('js/markercluster.js') }}"></script>

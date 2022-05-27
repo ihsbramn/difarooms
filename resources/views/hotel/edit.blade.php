@@ -43,6 +43,13 @@
                         </div>
 
                         <br>
+                        
+                        <div class="form-group">
+                            <label for="ht_urlvideo">URL Video (Youtube) </label>
+                            <input type="text" class="form-control " id="ht_urlvideo" name="ht_urlvideo">
+                        </div>
+
+                        <br>
 
                         <div class="form-group">
                             <label for="ht_fascility">Fasilitas Hotel</label>
@@ -54,11 +61,11 @@
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="ht_accesible">Aksesibel ?</label>
                             <select class="form-select" id="ht_accesible" name="ht_accesible">
-                              <option selected>{{ $hotel->ht_accesible }}</option>
-                              <option value="Ya">Ya</option>
-                              <option value="Tidak">Tidak</option>
+                                <option selected>{{ $hotel->ht_accesible }}</option>
+                                <option value="Ya">Ya</option>
+                                <option value="Tidak">Tidak</option>
                             </select>
-                          </div>
+                        </div>
 
                         <br>
 
