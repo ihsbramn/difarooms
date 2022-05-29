@@ -14,12 +14,14 @@ var markersOnMap = [
         {
         placeName: '<b>The Trans Luxury Hotel</b>',
         LatLng: [{
-            lat: -6.9270467,
-            lng: 107.6340791
+            lat: -6.926943,
+            lng: 107.636214
         }],
         url: 'https://g.page/The-Trans-Luxury-Hotel?share'
     }
 ];
+
+// $("#hide-poi").prop("checked", true);
 
 </script>
 @endsection
@@ -49,6 +51,25 @@ var markersOnMap = [
             <div class="card">
                 <h4 class="text-center card-header">Hotel Menu </h2>
                 <div class="card-body">
+
+                    <label>Point Of Interest</label>
+                    <div id="style-selector-control" class="map-control">
+                        <input
+                            class="form-check-input" 
+                            type="radio"
+                            name="hide-poi"
+                            id="hide-poi"
+                            checked
+                        />
+                        <label for="hide-poi">Hide</label>
+                        <input 
+                            class="form-check-input" 
+                            type="radio"
+                            name="show-poi"
+                            id="show-poi"
+                        />
+                        <label for="show-poi">Show</label>
+                    </div>
 
                     <div id="map" style="height: 500px;">INI MAP</div>
 
