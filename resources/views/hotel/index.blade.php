@@ -12,11 +12,12 @@
 <script>
 var markersOnMap = [
         {
-        placeName: ' <b>The Trans Luxury Hotel</b>',
+        placeName: '<b>The Trans Luxury Hotel</b>',
         LatLng: [{
             lat: -6.9270467,
             lng: 107.6340791
-        }]
+        }],
+        url: 'https://g.page/The-Trans-Luxury-Hotel?share'
     }
 ];
 

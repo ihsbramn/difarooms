@@ -41,8 +41,6 @@
 
                         <br>
 
-                        <br>
-
                         <div class="form-group">
                             <label for="ht_urlvideo">URL Video (Youtube) </label>
                             <input type="text" class="form-control " id="ht_urlvideo" name="ht_urlvideo">
