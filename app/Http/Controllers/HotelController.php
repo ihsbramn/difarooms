@@ -92,8 +92,12 @@ class HotelController extends Controller
     public function show($id)
     {
         $hotel = Hotel::find($id);
-        dd($hotel);
-        return view('/hotel/show', compact('hotel'));
+
+        $hotel_img = Hotel_Img::where('ht_id', '=' , $id)->get();
+
+        dd($hotel, $hotel_img);
+        
+        return view('/hotel/show', compact('hotel','hotel_img'));
     }
 
     /**
