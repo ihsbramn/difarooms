@@ -6,6 +6,7 @@ use App\Http\Controllers\ForumController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FavouritesController;
+use App\Http\Controllers\HotelImageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,6 +63,10 @@ Route::delete('/hotel/destroy/{id}',[HotelController::class, 'destroy'])->name('
 Route::get('/hotel/edit/{id}',[HotelController::class, 'edit'])->name('hotel/edit')->middleware('is_admin');
 Route::match(['put','patch'],'/hotel/update/{id}',[HotelController::class,'update'])->name('hotel/update')->middleware('is_admin');
 //hotel
+
+// hotel img
+Route::post('/hotel/admin', [ HotelImageController::class, 'store' ])->name('hotel_img/store')->middleware('is_admin');
+// hotel img
 
 //forum
 Route::get('/forum/admin',[ForumController::class, 'admin'])->middleware('is_admin');

@@ -17,7 +17,7 @@
         
                         <br>
         
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <div class="custom-file">
                                 <label for="ht_filename">Photo</label>
                                 <br>
@@ -25,7 +25,7 @@
                             </div>
                         </div>
         
-                        <br>
+                        <br> --}}
                         
                         <div class="form-group">
                             <label for="ht_address">Alamat</label>

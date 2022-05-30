@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hotel;
+use App\Models\Hotel_Img;
 use App\Http\Requests\StoreHotelRequest;
 use App\Http\Requests\UpdateHotelRequest;
 
@@ -49,14 +50,14 @@ class HotelController extends Controller
      */
     public function store(StoreHotelRequest $request)
     {
-        $request->validate(([
-            'ht_filename' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5048',
-        ]));
+        // $request->validate(([
+        //     'ht_filename' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5048',
+        // ]));
 
-        $image = $request->file('ht_filename');
-        $destinationPath = public_path('/images');
-        $imgName = time() . '.' . $image->getClientOriginalExtension();
-        $image->move($destinationPath, $imgName);
+        // $image = $request->file('ht_filename');
+        // $destinationPath = public_path('/images');
+        // $imgName = time() . '.' . $image->getClientOriginalExtension();
+        // $image->move($destinationPath, $imgName);
 
         Hotel::create([
             'ht_name' => $request->ht_name,
@@ -72,7 +73,11 @@ class HotelController extends Controller
             'ht_embedmaps' => $request->ht_embedmaps,
             'ht_latitude' => $request->ht_latitude,
             'ht_longitude' => $request->ht_longitude,
-            'ht_filename' => $imgName,
+            // 'ht_filename' => $imgName,
+        ]);
+
+        Hotel_Img::create([
+
         ]);
         
         return redirect('/hotel/admin')->with('success', 'Sucsess !');

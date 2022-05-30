@@ -43,6 +43,7 @@
                                 <td>
                                     <a class="btn btn-primary" href="{{ route('/hotel/show',$data->id) }}">Show</a>
                                     <a class="btn btn-primary" href="{{ route('hotel/edit',$data->id) }}">Edit</a>
+                                    {{-- <a class="btn btn-success" href="">Add Photo</a> --}}
                                     <form action="{{ route('hotel/destroy',$data->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')

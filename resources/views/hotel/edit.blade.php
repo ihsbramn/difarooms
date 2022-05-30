@@ -2,6 +2,13 @@
 
 @section('content')
 <div class="container">
+
+    @if(session()->has('success'))
+        <div class="alert alert-success">
+            {{ session()->get('success') }}
+        </div>
+    @endif
+
     <div class="row justify-content-center">
         <div class="col">
             <div class="card">
@@ -20,7 +27,7 @@
         
                         <br>
         
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <div class="custom-file">
                                 <label for="ht_filename">Photo</label>
                                 <br>
@@ -28,7 +35,7 @@
                             </div>
                         </div>
         
-                        <br>
+                        <br> --}}
                         
                         <div class="form-group">
                             <label for="ht_address">Alamat</label>
@@ -122,6 +129,35 @@
                     <button href="submit" class="btn btn-dark">Update</button>
                     <a href="{{ url('hotel/admin') }}" class="btn btn-danger">Back</a>
                 </form>
+                </div>
+            </div>
+
+            <br>
+            {{-- add photo  --}}
+
+            <div class="card">
+                <div class="card-body">
+                    <p class="text-center" >Add Photo</p>
+                    <form method="post" action="{{ route('hotel_img/store') }}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                            <input type="file" name="images[]" multiple class="form-control" accept="image/*">
+                            @if ($errors->has('files'))
+                                @foreach ($errors->get('files') as $error)
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $error }}</strong>
+                                </span>
+                                @endforeach
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="ht_id" id="ht_id" value="{{ $hotel->id }}" hidden>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Save</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

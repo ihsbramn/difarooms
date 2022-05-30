@@ -13,7 +13,7 @@ class Forum extends Model
         'fr_user_id',
         'fr_author',
         'fr_title',
-        'fr_filename',
+        // 'fr_filename',
         'fr_body',
     ];
 

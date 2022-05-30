@@ -15,10 +15,10 @@
                             <input type="text" class="form-control" id="fr_author" name="fr_author" value="{{ Auth::user()->name }}" hidden>
                             <input type="text" class="form-control" id="fr_title" name="fr_title">
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="fr_filename">Isi</label>
                             <input type="file" name="fr_filename" id="fr_filename" class="form-control">
-                        </div>
+                        </div> --}}
                         <div class="form-group">
                             <label for="fr_body">Isi</label>
                             <textarea name="fr_body" id="fr_body" class="form-control"></textarea>
