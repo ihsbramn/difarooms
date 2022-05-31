@@ -50,6 +50,7 @@ Route::match(['put','patch'],'/forum/update/{id}',[ForumController::class,'updat
 
 // forum img
 Route::post('/user/myforum', [ForumImageController::class, 'store' ])->name('forum_img/store');
+Route::delete('/forum/edit/{id}',[ForumImageController::class, 'destroy'])->name('forum_img/destroy');
 // forum img
 
 // comment
@@ -74,6 +75,7 @@ Route::match(['put','patch'],'/hotel/update/{id}',[HotelController::class,'updat
 
 // hotel img
 Route::post('/hotel/admin', [ HotelImageController::class, 'store' ])->name('hotel_img/store')->middleware('is_admin');
+Route::delete('/hotel/edit/{id}',[HotelImageController::class, 'destroy'])->name('hotel_img/destroy')->middleware('is_admin');
 // hotel img
 
 

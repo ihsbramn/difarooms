@@ -133,6 +133,24 @@
             </div>
 
             <br>
+            <div class="card">
+                <div class="card-body">
+                    <p class="text-center">Delete Photo</p>
+                    @foreach ($hotel_img as $img )
+                    <br>
+                        <img src="/storage/uploads/{{ $img->name }}" alt="gambar" height="200px" >
+                        <form action="{{ route('hotel_img/destroy',$img->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <br>
+                            <button type="submit" class="btn btn-danger"> 
+                                Hapus
+                            </button>
+                        </form>
+                    @endforeach
+                </div>
+            </div>
+            <br>
             {{-- add photo  --}}
 
             <div class="card">

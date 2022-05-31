@@ -110,8 +110,9 @@ class HotelController extends Controller
     {
         
         $hotel = Hotel::find($id);
-        // dd($hotel);
-        return view('/hotel/edit', compact('hotel'));
+        $hotel_img = Hotel_Img::where('ht_id', '=' , $id)->get();
+        // dd($hotel,$hotel_img);
+        return view('/hotel/edit', compact('hotel','hotel_img'));
     }
 
     /**

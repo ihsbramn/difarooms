@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Forum;
 use Illuminate\Http\Request;
 use App\Models\Forum_Img;
 
@@ -29,5 +30,12 @@ class ForumImageController extends Controller
         }
 
         return back()->with('success', 'Images uploaded successfully');
+    }
+
+    public function destroy($id)
+    {
+        Forum_Img::find($id)->delete();
+
+        return back()->with('success', 'Images deleted successfully');
     }
 }

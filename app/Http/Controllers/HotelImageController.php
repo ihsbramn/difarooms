@@ -30,4 +30,11 @@ class HotelImageController extends Controller
 
         return back()->with('success', 'Images uploaded successfully');
     }
+
+    public function destroy($id)
+    {
+        Hotel_Img::find($id)->delete();
+
+        return back()->with('success', 'Images deleted successfully');
+    }
 }

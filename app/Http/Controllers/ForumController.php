@@ -99,8 +99,9 @@ class ForumController extends Controller
     public function edit($id)
     {
         $forum = Forum::find($id);
-        // dd($forum);
-        return view('/forum/edit', compact('forum'));
+        $forum_img = Forum_Img::where('fr_id', '=' , $id)->get();
+        // dd($forum,$forum_img);
+        return view('/forum/edit', compact('forum','forum_img'));
     }
 
     /**
@@ -136,6 +137,7 @@ class ForumController extends Controller
         $forum->update($input);
         
         // dd($request);
+        
 
         return redirect('/user/myforum')->with('success','Update Successfull');
     }
