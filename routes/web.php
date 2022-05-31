@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FavouritesController;
 use App\Http\Controllers\HotelImageController;
+use App\Http\Controllers\ForumImageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,7 @@ Route::get('/hotel',[HotelController::class, 'index']);
 Route::get('/hotel/map',[HotelController::class, 'map']);
 Route::get('/hotel/show/{id}',[HotelController::class, 'show'])->name('/hotel/show');
 //hotel
+
 //forum
 Route::get('/forum',[ForumController::class, 'index']);
 Route::get('/forum/create',[ForumController::class, 'create']);
@@ -45,9 +47,15 @@ Route::delete('/forum/destroy/{id}',[ForumController::class, 'destroy'])->name('
 Route::get('/forum/edit/{id}',[ForumController::class, 'edit'])->name('forum/edit');
 Route::match(['put','patch'],'/forum/update/{id}',[ForumController::class,'update'])->name('forum/update');
 //forum
+
+// forum img
+Route::post('/user/myforum', [ForumImageController::class, 'store' ])->name('forum_img/store');
+// forum img
+
 // comment
 Route::post('/comment',[CommentController::class,'store'])->name('/comment/store');
 // comment
+
 // Favourites
 Route::post('/favourites',[FavouritesController::class,'store'])->name('/favourites/store');
 // Favourites
@@ -67,6 +75,7 @@ Route::match(['put','patch'],'/hotel/update/{id}',[HotelController::class,'updat
 // hotel img
 Route::post('/hotel/admin', [ HotelImageController::class, 'store' ])->name('hotel_img/store')->middleware('is_admin');
 // hotel img
+
 
 //forum
 Route::get('/forum/admin',[ForumController::class, 'admin'])->middleware('is_admin');

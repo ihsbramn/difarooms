@@ -19,7 +19,7 @@ class CreateForumsTable extends Migration
             $table->foreign('fr_user_id')->references('id')->on('users');
             $table->string('fr_author');
             $table->string('fr_title');
-            $table->string('fr_filename')->nullable();
+            // $table->string('fr_filename')->nullable();
             $table->longText('fr_body');
             $table->timestamps();
         });

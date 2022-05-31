@@ -1,6 +1,13 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+
+    @if(session()->has('success'))
+        <div class="alert alert-success">
+            {{ session()->get('success') }}
+        </div>
+    @endif
+
     <div class="row justify-content-center">
         <div class="col">
             <div class="card">
@@ -27,6 +34,32 @@
                         <br>
                         <button href="submit" class="btn btn-dark">Update !</button>
                         <a href="{{ url('/user/myforum') }}" class="btn btn-danger">Back</a>
+                    </form>
+                </div>
+            </div>
+<br>
+            <div class="card">
+                <div class="card-body">
+                    <p class="text-center">Tambah Photo</p>
+                    <form method="post" action="{{ route('forum_img/store') }}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                            <input type="file" name="images[]" multiple class="form-control" accept="image/*">
+                            @if ($errors->has('files'))
+                                @foreach ($errors->get('files') as $error)
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $error }}</strong>
+                                </span>
+                                @endforeach
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="fr_id" id="fr_id" value="{{ $forum->id }}" hidden>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Save</button>
+                        </div>
                     </form>
                 </div>
             </div>

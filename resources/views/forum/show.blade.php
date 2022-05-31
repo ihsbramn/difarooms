@@ -31,6 +31,10 @@
                     <p>Posted by : {{ $forum->fr_author }}</p>
                     <p>Date : {{ $forum->created_at }}</p>
                     <br>
+                    @foreach ($forum_img as $img )
+                    <img src="/storage/uploads/{{ $img->name }}" alt="gambar" height="200px" >
+                    @endforeach
+                    <br>
                     <p>{{ $forum->fr_body }}</p>
                 </div>
             </div>

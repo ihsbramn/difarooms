@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Forum;
-use App\Models\User;
+use App\Models\Forum_Img;
 use App\Http\Requests\StoreForumRequest;
 use App\Http\Requests\UpdateForumRequest;
 use App\Models\Comment;
@@ -51,21 +51,21 @@ class ForumController extends Controller
      */
     public function store(StoreForumRequest $request)
     {
-        $request->validate([
-            'fr_filename' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5048'
-        ]);
+        // $request->validate([
+        //     'fr_filename' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5048'
+        // ]);
 
-        $image = $request->file('fr_filename');
-        $destinationPath = public_path('/images');
-        $imgName = time() . '.' . $image->getClientOriginalExtension();
-        $image->move($destinationPath, $imgName);
+        // $image = $request->file('fr_filename');
+        // $destinationPath = public_path('/images');
+        // $imgName = time() . '.' . $image->getClientOriginalExtension();
+        // $image->move($destinationPath, $imgName);
 
         Forum::create([
             'fr_user_id' => $request->fr_user_id,
             'fr_author' => $request->fr_author,
             'fr_title' => $request->fr_title,
             'fr_body' => $request->fr_body,
-            'fr_filename' => $imgName,
+            // 'fr_filename' => $imgName,
         ]);
 
         return redirect('/forum')->with('success', 'Forum Telah Terposting!');
@@ -84,8 +84,10 @@ class ForumController extends Controller
         $id = $forum->id;
 
         $comment = Comment::where('cm_forum_id', '=' , $id)->get();
-        // dd($forum, $comment);
-        return view('/forum/show', compact('forum','comment'));
+        $forum_img = Forum_Img::where('fr_id', '=' , $id)->get();
+
+        // dd($forum, $comment, $forum_img);
+        return view('/forum/show', compact('forum','comment','forum_img'));
     }
 
     /**
