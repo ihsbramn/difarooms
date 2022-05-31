@@ -74,7 +74,7 @@ Route::match(['put','patch'],'/hotel/update/{id}',[HotelController::class,'updat
 //hotel
 
 // hotel img
-Route::post('/hotel/admin', [ HotelImageController::class, 'store' ])->name('hotel_img/store')->middleware('is_admin');
+Route::post( '/hotel/edit',[ HotelImageController::class, 'store' ])->name('hotel_img/store')->middleware('is_admin');
 Route::delete('/hotel/edit/{id}',[HotelImageController::class, 'destroy'])->name('hotel_img/destroy')->middleware('is_admin');
 // hotel img
 

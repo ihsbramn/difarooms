@@ -75,10 +75,6 @@ class HotelController extends Controller
             'ht_longitude' => $request->ht_longitude,
             // 'ht_filename' => $imgName,
         ]);
-
-        Hotel_Img::create([
-
-        ]);
         
         return redirect('/hotel/admin')->with('success', 'Sucsess !');
     }
