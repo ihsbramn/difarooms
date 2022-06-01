@@ -43,7 +43,7 @@
 
     <div class="container">
         {{-- map --}}
-        <div class="mt-5 mb-5" id="map" style="height: 318px;border-radius:12px">INI MAP</div>
+        <div class="mt-5 mb-5 shadow" id="map" style="height: 318px;border-radius:12px">INI MAP</div>
 
         <script src="{{ asset('js/maps.js') }}"></script>
         <script src="{{ asset('js/markercluster.js') }}"></script>
@@ -260,6 +260,7 @@
                 </div>
                 {{-- list hotel --}}
                 @foreach ($hotel as $htl)
+
                 <div class="card mb-3 border-0 shadow-sm" style="border-radius: 12px">
                     <div class="row g-0">
                         <div class="col-md-4">
