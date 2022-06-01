@@ -46,7 +46,7 @@
                         </li>
 
                         <li class="nav-item px-5">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Hotel') }}</a>
+                            <a class="nav-link" href="{{ '/hotel' }}">{{ __('Hotel') }}</a>
                         </li>
 
                         <li class="nav-item px-5">
