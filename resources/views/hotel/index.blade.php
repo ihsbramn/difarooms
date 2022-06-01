@@ -260,54 +260,55 @@
                 </div>
                 {{-- list hotel --}}
                 @foreach ($hotel as $htl)
-                <div class="card mb-3 border-0 shadow" style="border-radius: 12px">
-                   <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <div class="row">
-                              <div class="col-sm-8">
-                                  <p class="my-0 py-0" style="font-weight: 600; font-size:20px">{{ $htl->ht_name }}</p>
-                              </div>
-                              <div class="col-sm-4 text-end">
-                                  <p>bintang</p>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-sm-8">
-                                  <p class="mt-0">{{ $htl->ht_address }}</p>
-                                  <a href="" style="font-weight:500; font-size: 12px">Tunjukan di peta</a>
-                              </div>
-                              <div class="col-sm-4 text-end">
-                                  test
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-sm-6">
-                                  test
-                              </div>
-                              <div class="col-sm-6">
-                                  test
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-sm-12">
-                                  harga
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-sm-6">
-                                  disukai
-                              </div>
-                              <div class="col-sm-6 text-end">
-                                <a class="btn btn-primary border-0" href="{{ route('/hotel/show', $htl->id) }}" type="button"
-                                style="border-radius: 12px; background-color:#244D64">Lihat detail</a>
-                              </div>
-                          </div>
+
+                <div class="card mb-3 border-0 shadow-sm" style="border-radius: 12px">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="/storage/uploads/{{ $htl->ht_thumbnail }}" class="img-fluid rounded-start" alt="...">
                         </div>
-                      </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <p class="my-0">{{ $htl->ht_name }}</p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>bintang</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <p class="my-0">{{ $htl->ht_address }}</p>
+                                    <a href="" style="font-weight:500; font-size: 12px">Tunjukan di peta</a>
+                                </div>
+                                <div class="col-sm-4">
+                                    test
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    test
+                                </div>
+                                <div class="col-sm-6">
+                                    test
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    harga
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    disukai
+                                </div>
+                                <div class="col-sm-6 text-end">
+                                    <button class="btn btn-primary border-0" type="button"
+                                    style="border-radius: 12px; background-color:#244D64">Lihat detail</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 @endforeach
