@@ -17,6 +17,8 @@ class HotelController extends Controller
     public function index()
     {
         $hotel = Hotel::all();
+
+        // dd($hotel, $hotel_img);
         return view('hotel/index',compact('hotel'));
     }
 
@@ -50,32 +52,34 @@ class HotelController extends Controller
      */
     public function store(StoreHotelRequest $request)
     {
-        // $request->validate(([
-        //     'ht_filename' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5048',
-        // ]));
+        
+        $request->validate(([
+            'ht_thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5048',
+        ]));
 
-        // $image = $request->file('ht_filename');
-        // $destinationPath = public_path('/images');
-        // $imgName = time() . '.' . $image->getClientOriginalExtension();
-        // $image->move($destinationPath, $imgName);
+        $image = $request->file('ht_thumbnail');
+        $imgName = $image->getClientOriginalName();
+        $ht_path = $image->storeAs('uploads', $imgName, 'public');
 
         Hotel::create([
             'ht_name' => $request->ht_name,
             'ht_address' => $request->ht_address,
             'ht_description' => $request->ht_description,
             'ht_urlvideo' => $request->ht_urlvideo,
-            'ht_fascility' => $request->ht_fascility,
+            // 'ht_fascility' => $request->ht_fascility,
             'ht_accesible' => $request->ht_accesible,
-            'ht_accesible_detail' => $request->ht_accesible_detail,
+            // 'ht_accesible_detail' => $request->ht_accesible_detail,
             'ht_price_estimate' => $request->ht_price_estimate,
             'ht_contact' => $request->ht_contact,
-            'ht_roomtype' => $request->ht_roomtype,
+            // 'ht_roomtype' => $request->ht_roomtype,
             'ht_embedmaps' => $request->ht_embedmaps,
             'ht_latitude' => $request->ht_latitude,
             'ht_longitude' => $request->ht_longitude,
-            // 'ht_filename' => $imgName,
+            'ht_thumbnail' => $imgName,
+            'ht_path' => '/storage/'.$ht_path
         ]);
         
+        // dd($request);
         return redirect('/hotel/admin')->with('success', 'Sucsess !');
     }
 

@@ -17,15 +17,15 @@
         
                         <br>
         
-                        {{-- <div class="form-group">
+                        <div class="form-group">
                             <div class="custom-file">
-                                <label for="ht_filename">Photo</label>
+                                <label for="ht_thumbnail">Photo Thumbnail</label>
                                 <br>
-                                <input type="file" class="form-control" id="ht_filename" name="ht_filename">
+                                <input type="file" class="form-control" id="ht_thumbnail" name="ht_thumbnail">
                             </div>
                         </div>
         
-                        <br> --}}
+                        <br>
                         
                         <div class="form-group">
                             <label for="ht_address">Alamat</label>
@@ -46,12 +46,12 @@
                             <input type="text" class="form-control " id="ht_urlvideo" name="ht_urlvideo">
                         </div>
 
-                        <br>
+                        {{-- <br>
 
                         <div class="form-group">
                             <label for="ht_fascility">Fasilitas Hotel</label>
                             <textarea type="text" class="form-control " id="ht_fascility" name="ht_fascility" rows="4"></textarea>
-                        </div>
+                        </div> --}}
 
                         <br>
 
@@ -66,12 +66,12 @@
 
                         <br>
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="ht_accesible_detail">Fasilitas Aksesibilitas</label>
                             <textarea type="text" class="form-control " id="ht_accesible_detail" name="ht_accesible_detail" rows="4"></textarea>
                         </div>
 
-                        <br>
+                        <br> --}}
 
                         <div class="form-group">
                             <label for="ht_price_estimate">Estimasi Harga</label>
@@ -85,12 +85,12 @@
                             <input type="text" class="form-control " id="ht_contact" name="ht_contact">
                         </div>
 
-                        <br>
+                        {{-- <br>
 
                         <div class="form-group">
                             <label for="ht_roomtype">Tipe Kamar</label>
                             <input type="text" class="form-control " id="ht_roomtype" name="ht_roomtype">
-                        </div>
+                        </div> --}}
 
                         <br>
                         
