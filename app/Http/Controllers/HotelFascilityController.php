@@ -36,7 +36,11 @@ class HotelFascilityController extends Controller
      */
     public function store(StoreHotelFascilityRequest $request)
     {
-        //
+        $input = $request->all();
+        HotelFascility::create($input);
+
+        dd($request);
+        return back()->with('success', 'Fascility successfully added');
     }
 
     /**

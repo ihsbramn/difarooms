@@ -178,6 +178,117 @@
                     </form>
                 </div>
             </div>
+            <br>
+            <div class="card">
+                <div class="card-body">
+                    <p class="text-center" >Add Fascilites</p>
+                    <form method="post" action="{{ route('hotel_fascility/store') }}" enctype="multipart/form-data">
+                        @csrf
+                            <input type="text" name="ht_id" id="ht_id" value="{{ $hotel->id }}" hidden>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="ramp" name="ramp">
+                                <Label class="form-check-label" for="ramp">Ramp</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="antarjemput" name="antarjemput">
+                                <Label class="form-check-label" for="antarjemput">Antar Jemput</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="akses_kursiroda" name="akses_kursiroda">
+                                <Label class="form-check-label" for="akses_kursiroda">Akses Kursi Roda</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="toilet_pegangan" name="toilet_pegangan">
+                                <Label class="form-check-label" for="toilet_pegangan">Toilet Pegangan</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="parkir_difabel" name="parkir_difabel">
+                                <Label class="form-check-label" for="parkir_difabel">Parkir Difabel</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="bantuan_staff" name="bantuan_staff">
+                                <Label class="form-check-label" for="bantuan_staff">Bantuan Staff</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="pusat_kesehatan" name="pusat_kesehatan">
+                                <Label class="form-check-label" for="pusat_kesehatan">Pusat Kesehatan</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="wifi" name="wifi">
+                                <Label class="form-check-label" for="wifi">Wifi</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="kamarmandi_luas" name="kamarmandi_luas">
+                                <Label class="form-check-label" for="kamarmandi_luas">Kamarmandi Luas</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="jalan_pemandu" name="jalan_pemandu">
+                                <Label class="form-check-label" for="jalan_pemandu">Jalan Pemandu</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="lift_aksesibel" name="lift_aksesibel">
+                                <Label class="form-check-label" for="lift_aksesibel">Lift Aksesibel</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="ac" name="ac">
+                                <Label class="form-check-label" for="ac">AC</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="restoran" name="restoran">
+                                <Label class="form-check-label" for="restoran">Restoran</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="laundry" name="laundry">
+                                <Label class="form-check-label" for="laundry">Laundry</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="ruang_tunggu_tamu" name="ruang_tunggu_tamu">
+                                <Label class="form-check-label" for="ruang_tunggu_tamu">Ruang Tunggu Tamu</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="cctv" name="cctv">
+                                <Label class="form-check-label" for="cctv">CCTV</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="resepsionis_24jam" name="resepsionis_24jam">
+                                <Label class="form-check-label" for="resepsionis_24jam">Resepsionis 24 Jam</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="kolam_renang" name="kolam_renang">
+                                <Label class="form-check-label" for="kolam_renang">Kolam Renang</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="pemadam_api" name="pemadam_api">
+                                <Label class="form-check-label" for="pemadam_api">Pemadam Api</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="pusat_kebugaran" name="pusat_kebugaran">
+                                <Label class="form-check-label" for="pusat_kebugaran">Pusat Kebugaran</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="mini_bar" name="mini_bar">
+                                <Label class="form-check-label" for="mini_bar">Mini Bar</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="masjid" name="masjid">
+                                <Label class="form-check-label" for="masjid">Masjid</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="wastafel_rendah" name="wastafel_rendah">
+                                <Label class="form-check-label" for="wastafel_rendah">Wastafel Rendah</Label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="kloset_rendah" name="kloset_rendah">
+                                <Label class="form-check-label" for="kloset_rendah">Kloset Rendah</Label>
+                            </div>
+                            
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>  
 </div>

@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FavouritesController;
 use App\Http\Controllers\HotelImageController;
+use App\Http\Controllers\HotelFascilityController;
 use App\Http\Controllers\ForumImageController;
 use Illuminate\Support\Facades\Route;
 
@@ -77,6 +78,10 @@ Route::match(['put','patch'],'/hotel/update/{id}',[HotelController::class,'updat
 Route::post( '/hotel/edit',[ HotelImageController::class, 'store' ])->name('hotel_img/store')->middleware('is_admin');
 Route::delete('/hotel/edit/{id}',[HotelImageController::class, 'destroy'])->name('hotel_img/destroy')->middleware('is_admin');
 // hotel img
+// hotel fascilities
+Route::post( 'foo',[ HotelFascilityController::class, 'store' ])->name('hotel_fascility/store')->middleware('is_admin');
+Route::delete('foo',[HotelFascilityController::class, 'destroy'])->name('hotel_fascility/destroy')->middleware('is_admin');
+// hotel fascilities
 
 
 //forum
