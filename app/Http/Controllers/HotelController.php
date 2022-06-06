@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Hotel;
 use App\Models\Hotel_Img;
+use App\Models\HotelFascility;
+use App\Models\HotelRoomtype;
 use App\Http\Requests\StoreHotelRequest;
 use App\Http\Requests\UpdateHotelRequest;
 
@@ -63,20 +65,22 @@ class HotelController extends Controller
 
         Hotel::create([
             'ht_name' => $request->ht_name,
+            'ht_key' => $request->ht_key,
             'ht_address' => $request->ht_address,
             'ht_description' => $request->ht_description,
             'ht_urlvideo' => $request->ht_urlvideo,
             // 'ht_fascility' => $request->ht_fascility,
             'ht_accesible' => $request->ht_accesible,
             // 'ht_accesible_detail' => $request->ht_accesible_detail,
-            'ht_price_estimate' => $request->ht_price_estimate,
+            // 'ht_price_estimate' => $request->ht_price_estimate,
             'ht_contact' => $request->ht_contact,
             // 'ht_roomtype' => $request->ht_roomtype,
             'ht_embedmaps' => $request->ht_embedmaps,
             'ht_latitude' => $request->ht_latitude,
             'ht_longitude' => $request->ht_longitude,
             'ht_thumbnail' => $imgName,
-            'ht_path' => '/storage/'.$ht_path
+            'ht_path' => '/storage/'.$ht_path,
+            'ht_auhthor' => $request->ht_auhthor
         ]);
         
         // dd($request);
@@ -94,10 +98,12 @@ class HotelController extends Controller
         $hotel = Hotel::find($id);
 
         $hotel_img = Hotel_Img::where('ht_id', '=' , $id)->get();
-
-        // dd($hotel, $hotel_img);
+        $hotel_fascility = HotelFascility::where('ht_id', '=' , $id)->get();
+        $hotel_roomtype = HotelRoomtype::where('ht_id', '=' , $id)->get();
         
-        return view('/hotel/show', compact('hotel','hotel_img'));
+        dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype);
+        
+        return view('/hotel/show', compact('hotel','hotel_img','hotel_fascility','hotel_roomtype'));
     }
 
     /**

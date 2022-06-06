@@ -16,6 +16,13 @@
                         </div>
         
                         <br>
+
+                        <div class="form-group">
+                            <label for="ht_key">Hotel key (Tripadvisor)</label>
+                            <input type="text" class="form-control" id="ht_key" name="ht_key">
+                        </div>
+        
+                        <br>
         
                         <div class="form-group">
                             <div class="custom-file">
@@ -73,12 +80,12 @@
 
                         <br> --}}
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="ht_price_estimate">Estimasi Harga</label>
                             <input type="text" class="form-control " id="ht_price_estimate" name="ht_price_estimate">
                         </div>
 
-                        <br>
+                        <br> --}}
 
                         <div class="form-group">
                             <label for="ht_contact">Kontak</label>

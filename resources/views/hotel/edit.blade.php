@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<br>
 <div class="container">
 
     @if(session()->has('success'))
@@ -24,19 +25,32 @@
                             <input type="text" class="form-control" id="id" name="id" value="{{ $hotel->id }}" hidden>
                             <input type="text" class="form-control" id="ht_name" name="ht_name" value="{{ $hotel->ht_name }}">
                         </div>
+                        <br>
+
+                        <div class="form-group">
+                            <label for="ht_key">Hotel key (Tripadvisor)</label>
+                            <input type="text" class="form-control" id="ht_key" name="ht_key" value="{{ $hotel->ht_key }}">
+                        </div>
         
                         <br>
-        
-                        {{-- <div class="form-group">
+                        
+                        <div class="form-group">
                             <div class="custom-file">
-                                <label for="ht_filename">Photo</label>
+                                <label for="ht_thumbnail">Photo Thumbnail</label>
                                 <br>
-                                <input type="file" class="form-control" id="ht_filename" name="ht_filename" value="{{ $hotel->ht_filename }}">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <img src="/storage/uploads/{{ $hotel->ht_thumbnail }}" alt="thumbnail" height="130px">
+                                        <p>Current Thumbnail</p>
+                                    </div>
+                                    <div class="col">
+                                        <input type="file" class="form-control" id="ht_thumbnail" name="ht_thumbnail">
+                                    </div>
+                                </div>
                             </div>
                         </div>
         
-                        <br> --}}
-                        
+                        <br>
                         <div class="form-group">
                             <label for="ht_address">Alamat</label>
                             <input type="text" class="form-control " id="ht_address" name="ht_address" value="{{ $hotel->ht_address }}">
@@ -58,12 +72,6 @@
 
                         <br>
 
-                        <div class="form-group">
-                            <label for="ht_fascility">Fasilitas Hotel</label>
-                            <textarea type="text" class="form-control " id="ht_fascility" name="ht_fascility" rows="4">{{ $hotel->ht_fascility }}</textarea>
-                        </div>
-
-                        <br>
 
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="ht_accesible">Aksesibel ?</label>
@@ -75,31 +83,17 @@
                         </div>
 
                         <br>
-
-                        <div class="form-group">
-                            <label for="ht_accesible_detail">Fasilitas Aksesibilitas</label>
-                            <textarea type="text" class="form-control " id="ht_accesible_detail" name="ht_accesible_detail" rows="4">{{ $hotel->ht_accesible_detail }}</textarea>
-                        </div>
-
-                        <br>
-
+{{-- 
                         <div class="form-group">
                             <label for="ht_price_estimate">Estimasi Harga</label>
                             <input type="text" class="form-control " id="ht_price_estimate" name="ht_price_estimate" value="{{ $hotel->ht_price_estimate }}">
                         </div>
 
-                        <br>
+                        <br> --}}
 
                         <div class="form-group">
                             <label for="ht_contact">Kontak</label>
                             <input type="text" class="form-control " id="ht_contact" name="ht_contact" value="{{ $hotel->ht_contact }}">
-                        </div>
-
-                        <br>
-
-                        <div class="form-group">
-                            <label for="ht_roomtype">Tipe Kamar</label>
-                            <input type="text" class="form-control " id="ht_roomtype" name="ht_roomtype" value="{{ $hotel->ht_roomtype }}">
                         </div>
 
                         <br>
@@ -135,7 +129,7 @@
             <br>
             <div class="card">
                 <div class="card-body">
-                    <p class="text-center">Delete Photo</p>
+                    <p class="text-center">Data Photo</p>
                     @foreach ($hotel_img as $img )
                     <br>
                         <img src="/storage/uploads/{{ $img->name }}" alt="gambar" height="200px" >
@@ -152,7 +146,6 @@
             </div>
             <br>
             {{-- add photo  --}}
-
             <div class="card">
                 <div class="card-body">
                     <p class="text-center" >Add Photo</p>
@@ -281,8 +274,34 @@
                                 <input class="form-check-input" type="checkbox" value="1" id="kloset_rendah" name="kloset_rendah">
                                 <Label class="form-check-label" for="kloset_rendah">Kloset Rendah</Label>
                             </div>
-                            
-                        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-body">
+                    <p class="text-center" >Add Roomtype</p>
+                    <form method="post" action="{{ route('hotel_roomtype/store') }}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="ht_id" id="ht_id" value="{{ $hotel->id }}" hidden>
+                        </div>
+                        <div class="form-group">
+                            <label for="name_roomtype">Nama Tipe kamar</label>
+                            <input type="text" class="form-control" name="name_roomtype" id="name_roomtype">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Deskripsi</label>
+                            <textarea name="description" class="form-control" id="description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Foto Tipe Kamar</label>
+                            <input type="file" class="form-control" id="name" name="name">
+                        </div>
+                        <br>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success">Save</button>
                         </div>
@@ -291,5 +310,6 @@
             </div>
         </div>
     </div>  
+    <br>
 </div>
 @endsection

@@ -39,7 +39,7 @@ class HotelFascilityController extends Controller
         $input = $request->all();
         HotelFascility::create($input);
 
-        dd($request);
+        // dd($request);
         return back()->with('success', 'Fascility successfully added');
     }
 
