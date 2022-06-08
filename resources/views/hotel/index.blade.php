@@ -303,8 +303,8 @@
                                     disukai
                                 </div>
                                 <div class="col-sm-6 text-end">
-                                    <button class="btn btn-primary border-0" type="button"
-                                    style="border-radius: 12px; background-color:#244D64">Lihat detail</button>
+                                    <a href="{{ route('/hotel/show', $htl->id) }}" class="btn btn-primary border-0" type="button"
+                                        style="border-radius: 12px; background-color:#244D64" >Lihat detail</a>
                                 </div>
                             </div>
                             </div>

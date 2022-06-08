@@ -36,7 +36,7 @@ Route::get('/admin',[HomeController::class, 'admin'])->name('admin')->middleware
 //hotel 
 Route::get('/hotel',[HotelController::class, 'index']);
 Route::get('/hotel/map',[HotelController::class, 'map']);
-Route::get('/hotel/show/{id}',[HotelController::class, 'show'])->name('/hotel/show');
+Route::get('/hotel/show/{id}',[HotelController::class, 'show'])->name('/hotel/show')->middleware('cors');
 //hotel
 
 //forum

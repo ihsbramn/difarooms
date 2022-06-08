@@ -8,6 +8,9 @@ use App\Models\HotelFascility;
 use App\Models\HotelRoomtype;
 use App\Http\Requests\StoreHotelRequest;
 use App\Http\Requests\UpdateHotelRequest;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Http;
+use AshAllenDesign\LaravelExchangeRates\ExchangeRate;
 
 class HotelController extends Controller
 {
@@ -95,15 +98,60 @@ class HotelController extends Controller
      */
     public function show($id)
     {
+        //getting spesific id
         $hotel = Hotel::find($id);
 
         $hotel_img = Hotel_Img::where('ht_id', '=' , $id)->get();
         $hotel_fascility = HotelFascility::where('ht_id', '=' , $id)->get();
         $hotel_roomtype = HotelRoomtype::where('ht_id', '=' , $id)->get();
+
+        //getting date
+        $format = 'yyyy-mm-dd';
+        // today
+        $today = Carbon::now()->format('Y-m-d');
+        // tomorrow
+        $tomorrow = Carbon::tomorrow()->format('Y-m-d');
+
+        //hotel rates api GET
+        $response = Http::get('https://data.xotelo.com/api/rates?', [
+            'hotel_key' => $hotel->ht_key,
+            'chk_in' => $today,
+            'chk_out' => $tomorrow,
+        ]);
+
+        $hotel_price = json_decode($response);
+        $rates = $hotel_price->result->rates;
+        // hotel rates api GET
+
         
-        dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype);
+
+        // convert rates api GET
+        $response_rate_api = Http::get('https://free.currconv.com/api/v7/convert?q=USD_IDR&compact=ultra&apiKey=8ab2e354b0ff068530bf');
+        $convert_currency = json_decode($response_rate_api);
+        $usd_idr = $convert_currency->USD_IDR;
+        // convert rates api GET
+
+        // conversion rate from usd ot idr
+        $idr_rate = [];
+        foreach ($rates as $rt){
+            $price = (int)$rt->rate * $usd_idr;
+            array_push($idr_rate, [
+                'name' => $rt->name,
+                'rate' => $price
+            ]);
+        };
+
+        // testing
+        dd($idr_rate);
+        // dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype);
         
-        return view('/hotel/show', compact('hotel','hotel_img','hotel_fascility','hotel_roomtype'));
+        return view('/hotel/show', compact(
+            'hotel',
+            'hotel_img',
+            'hotel_fascility',
+            'hotel_roomtype',
+            'idr_rate'
+        ));
     }
 
     /**

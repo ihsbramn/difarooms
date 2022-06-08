@@ -32,6 +32,10 @@ return [
     'google_api_key' => env('GOOGLE_API_KEY'),
     // gooogle api key
 
+    //timezone
+    'timezone' => env('APP_TIMEZONE', 'UTC'),
+    //timezone 
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode

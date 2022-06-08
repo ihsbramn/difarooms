@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('head')
+@endsection
 @section('content')
     {{-- header --}}
     <div class="container-fluid px-0">
@@ -6,7 +8,7 @@
             <img src="{{ URL::asset('/img/bg-hotel.png') }}" class="card-img" alt="background" height="396px">
             <div class="card-img-overlay d-flex">
                 <div class="container-fluid px-4 my-auto">
-                    <h1 style="font-weight: 700; font-size: 64px">Crowne Plaza <br> Bandung</h1>
+                    <h1 style="font-weight: 700; font-size: 64px">{{ $hotel->ht_name }}</h1>
                 </div>
             </div>
         </div>
@@ -18,7 +20,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col">
-                            Column
+                            
                         </div>
                         <div class="col">
                             Column
@@ -30,17 +32,19 @@
                 </div>
             </div>
             <div class="col-sm-5">
+                <p id="ht_key" hidden>{{ $hotel->ht_key }}</p>
                 <div class="row">
                     {{-- map --}}
-                    <div class="mt-5 mb-5 shadow" id="map" style="height: 292px; border-radius:12px">INI MAP</div>
+                    {{-- <div class="mt-5 mb-5 shadow" id="map" style="height: 292px; border-radius:12px">INI MAP</div>
 
                     <script src="{{ asset('js/maps.js') }}"></script>
                     <script src="{{ asset('js/markercluster.js') }}"></script>
                     <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&callback=initMap">
                     </script>
                     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-                    </script>
+                    </script> --}}
                     {{-- map --}}
+                    <iframe src="{{ $hotel->ht_embedmaps }}" class="mt-5 mb-5 shadow" style="height: 292px; border-radius:12px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="row">
                     <div class="card shadow">
@@ -53,6 +57,22 @@
                 </div>
             </div>
         </div>
+        <br>
+        {{-- @foreach ($rates as $rt )
+        <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <p>{{ $rt->name }}</p>
+                        <p id="usd_price" hidden>{{ $rt->rate }}</p>
+                        <p id="idr_price">Rate harga : </p>
+                </div> 
+            </div>
+        </div>            
+        @endforeach --}}
     </div>
     {{-- header --}}
+@endsection
+@section('lower_body')
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="{{ asset('js/hotelprice.js') }}"></script>
 @endsection
