@@ -15,6 +15,12 @@ Difa Rooms Application for People with Special Needs Wheelchair
 
 ```
 
-## API Key
-this project using google api
+## API
+
+```
+Google Maps Platform
+xotelo.com
+free.currencyconverterapi.com
+
+```
 
