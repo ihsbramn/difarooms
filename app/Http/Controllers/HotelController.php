@@ -115,42 +115,59 @@ class HotelController extends Controller
         //hotel rates api GET
         $response = Http::get('https://data.xotelo.com/api/rates?', [
             'hotel_key' => $hotel->ht_key,
+            // 'hotel_key' => 'g297704-d301781', //testing 
             'chk_in' => $today,
             'chk_out' => $tomorrow,
         ]);
 
         $hotel_price = json_decode($response);
-        $rates = $hotel_price->result->rates;
-        // hotel rates api GET
 
-        
-
-        // convert rates api GET
-        $response_rate_api = Http::get('https://free.currconv.com/api/v7/convert?q=USD_IDR&compact=ultra&apiKey=8ab2e354b0ff068530bf');
-        $convert_currency = json_decode($response_rate_api);
-        $usd_idr = $convert_currency->USD_IDR;
-        // convert rates api GET
-
-        // conversion rate from usd ot idr
+        // array for hotel rates
         $idr_rate = [];
-        foreach ($rates as $rt){
-            $price = (int)$rt->rate * $usd_idr;
+        
+        // error handler
+        if ($hotel_price->result == null) {
+
+            // push null value if api not avail
             array_push($idr_rate, [
-                'name' => $rt->name,
-                'rate' => $price
+                'name' => null,
+                'rate' => null
             ]);
+            $url_tripadvisor = 'null';
+
+        }else{
+            // getting rates data
+            $rates = $hotel_price->result->rates;
+
+            // convert currency api GET
+            $response_rate_api = Http::get('https://free.currconv.com/api/v7/convert?q=USD_IDR&compact=ultra&apiKey=8ab2e354b0ff068530bf');
+            $convert_currency = json_decode($response_rate_api);
+            $usd_idr = $convert_currency->USD_IDR;
+            // convert currency api GET
+
+            // conversion rate from usd ot idr and push to array
+            foreach ($rates as $rt){
+                $price = (int)$rt->rate * $usd_idr;
+                array_push($idr_rate, [
+                    'name' => $rt->name,
+                    'rate' => $price
+                ]);
+            };
+
+            //getting hotel url by TripAdvisor
+            $url_tripadvisor = $hotel_price->result->hotel_url[0];
         };
 
         // testing
-        dd($idr_rate);
-        // dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype);
+        dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$idr_rate,$url_tripadvisor);
         
         return view('/hotel/show', compact(
             'hotel',
             'hotel_img',
             'hotel_fascility',
             'hotel_roomtype',
-            'idr_rate'
+            'idr_rate',
+            'url_tripadvisor'
         ));
     }
 
@@ -165,8 +182,12 @@ class HotelController extends Controller
         
         $hotel = Hotel::find($id);
         $hotel_img = Hotel_Img::where('ht_id', '=' , $id)->get();
+
         // dd($hotel,$hotel_img);
-        return view('/hotel/edit', compact('hotel','hotel_img'));
+        return view('/hotel/edit', compact(
+            'hotel',
+            'hotel_img
+        '));
     }
 
     /**
@@ -195,7 +216,6 @@ class HotelController extends Controller
     public function destroy($id)
     {
         Hotel::find($id)->delete();
-        
         return redirect('/hotel/admin')->with('success', 'Success !, Data Telah Dihapus!');
     }
 }
