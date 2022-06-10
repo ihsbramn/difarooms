@@ -114,8 +114,8 @@ class HotelController extends Controller
 
         //hotel rates api GET
         $response = Http::get('https://data.xotelo.com/api/rates?', [
-            'hotel_key' => $hotel->ht_key,
-            // 'hotel_key' => 'g297704-d301781', //testing 
+            // 'hotel_key' => $hotel->ht_key,
+            'hotel_key' => 'g297704-d301781', //testing 
             'chk_in' => $today,
             'chk_out' => $tomorrow,
         ]);
@@ -140,26 +140,37 @@ class HotelController extends Controller
             $rates = $hotel_price->result->rates;
 
             // convert currency api GET
-            $response_rate_api = Http::get('https://free.currconv.com/api/v7/convert?q=USD_IDR&compact=ultra&apiKey=8ab2e354b0ff068530bf');
+            $response_rate_api = Http::get('https://api.fastforex.io/fetch-one?',[
+                'from' =>'USD',
+                'to' =>'IDR',
+                'api_key' => env('FASTFOREX_API_KEY')
+            ]);
+            
             $convert_currency = json_decode($response_rate_api);
-            $usd_idr = $convert_currency->USD_IDR;
-            // convert currency api GET
 
-            // conversion rate from usd ot idr and push to array
-            foreach ($rates as $rt){
-                $price = (int)$rt->rate * $usd_idr;
-                array_push($idr_rate, [
-                    'name' => $rt->name,
-                    'rate' => $price
-                ]);
-            };
+            // dd($convert_currency);
 
-            //getting hotel url by TripAdvisor
-            $url_tripadvisor = $hotel_price->result->hotel_url[0];
+            if ($convert_currency == null) {
+                
+            }else{
+                $usd_idr = $convert_currency->result->IDR;
+                // convert currency api GET
+    
+                // conversion rate from usd ot idr and push to array
+                foreach ($rates as $rt){
+                    $price = (int)$rt->rate * $usd_idr;
+                    array_push($idr_rate, [
+                        'name' => $rt->name,
+                        'rate' => $price
+                    ]);
+                };
+                //getting hotel url by TripAdvisor
+                $url_tripadvisor = $hotel_price->result->hotel_url[0];
+            }
         };
 
         // testing
-        dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$idr_rate,$url_tripadvisor);
+        // dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$idr_rate,$url_tripadvisor);
         
         return view('/hotel/show', compact(
             'hotel',
