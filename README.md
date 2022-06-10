@@ -18,9 +18,9 @@ Difa Rooms Application for People with Special Needs Wheelchair
 ## API
 
 ```
-Google Maps Platform
-xotelo.com
-free.currencyconverterapi.com
+Google Maps Platform (Maps / GIS)
+xotelo.com (Hotel Rates)
+fastforex.io (Currency)
 
 ```
 
