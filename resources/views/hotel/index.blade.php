@@ -1,24 +1,30 @@
 @extends('layouts.app')
 
-
 @section('head')
+
 @endsection
+
 @section('up_body')
+
 @endsection
 
 @section('lower_body')
+
+@foreach ( $hotel as $data )
     <script>
         var markersOnMap = [{
-            placeName: '<b>The Trans Luxury Hotel</b>',
+            placeName: '{{ $data->ht_name }}',
             LatLng: [{
-                lat: -6.926943,
-                lng: 107.636214
+                lat: {{ $data->ht_latitude }},
+                lng:  {{ $data->ht_longitude }}
             }],
-            url: 'https://g.page/The-Trans-Luxury-Hotel?share'
+            url: '{{ route('/hotel/show', $data->id) }}'
         }];
 
         // $("#hide-poi").prop("checked", true);
     </script>
+    <a class="btn btn-primary" href="{{ route('/hotel/show', $data->id) }}" id="open_hotel" hidden></a>
+    @endforeach
 @endsection
 
 @section('content')
