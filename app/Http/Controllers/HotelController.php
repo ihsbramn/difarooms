@@ -23,8 +23,21 @@ class HotelController extends Controller
     {
         $hotel = Hotel::all();
 
-        // dd($hotel, $hotel_img);
-        return view('hotel/index',compact('hotel'));
+        $marker = [];
+
+        foreach ($hotel as $ht) {
+            $marker[] = array(
+                "placeName" => $ht->ht_name,
+                "LatLng" => array(
+                    "lat" =>$ht->ht_latitude,
+                    "lng" =>$ht->ht_longitude
+                ),
+                "url" =>  route('/hotel/show', $ht->id)
+            );
+        }
+
+        // dd($hotel, $marker);
+        return view('hotel/index',compact('hotel','marker'));
     }
 
     public function map()
@@ -63,7 +76,7 @@ class HotelController extends Controller
         ]));
 
         $image = $request->file('ht_thumbnail');
-        $imgName = $image->getClientOriginalName();
+        $imgName = rand() . $image->getClientOriginalName();
         $ht_path = $image->storeAs('uploads', $imgName, 'public');
 
         Hotel::create([
@@ -83,7 +96,7 @@ class HotelController extends Controller
             'ht_longitude' => $request->ht_longitude,
             'ht_thumbnail' => $imgName,
             'ht_path' => '/storage/'.$ht_path,
-            'ht_auhthor' => $request->ht_auhthor
+            'ht_author' => $request->ht_author
         ]);
         
         // dd($request);
@@ -114,8 +127,8 @@ class HotelController extends Controller
 
         //hotel rates api GET
         $response = Http::get('https://data.xotelo.com/api/rates?', [
-            // 'hotel_key' => $hotel->ht_key,
-            'hotel_key' => 'g297704-d301781', //testing 
+            'hotel_key' => $hotel->ht_key,
+            // 'hotel_key' => 'g297704-d301781', //testing 
             'chk_in' => $today,
             'chk_out' => $tomorrow,
         ]);
@@ -170,7 +183,7 @@ class HotelController extends Controller
         };
 
         // testing
-        // dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$idr_rate,$url_tripadvisor);
+        dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$idr_rate,$url_tripadvisor);
         
         return view('/hotel/show', compact(
             'hotel',
@@ -197,8 +210,8 @@ class HotelController extends Controller
         // dd($hotel,$hotel_img);
         return view('/hotel/edit', compact(
             'hotel',
-            'hotel_img
-        '));
+            'hotel_img'
+        ));
     }
 
     /**

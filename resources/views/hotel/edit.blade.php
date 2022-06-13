@@ -115,10 +115,7 @@
                             <label for="ht_longitude">Longitude</label>
                             <input type="text" class="form-control " id="ht_longitude" name="ht_longitude" value="{{ $hotel->ht_longitude }}">
                         </div>
-        
                         <br>
-        
-                        
                     </div>
                     <button href="submit" class="btn btn-dark">Update</button>
                     <a href="{{ url('hotel/admin') }}" class="btn btn-danger">Back</a>

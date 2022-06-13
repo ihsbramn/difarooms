@@ -8,9 +8,9 @@
 
 @endsection
 
+{{-- marker maps  --}}
 @section('lower_body')
-
-@foreach ( $hotel as $data )
+    @foreach ( $hotel as $data )
     <script>
         var markersOnMap = [{
             placeName: '{{ $data->ht_name }}',
@@ -21,11 +21,11 @@
             url: '{{ route('/hotel/show', $data->id) }}'
         }];
 
-        // $("#hide-poi").prop("checked", true);
+        // var markersOnMap = @json($marker);
     </script>
-    <a class="btn btn-primary" href="{{ route('/hotel/show', $data->id) }}" id="open_hotel" hidden></a>
     @endforeach
 @endsection
+{{-- marker maps  --}}
 
 @section('content')
     {{-- header hotel --}}

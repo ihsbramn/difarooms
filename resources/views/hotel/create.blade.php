@@ -117,11 +117,10 @@
                         <div class="form-group">
                             <label for="ht_longitude">Longitude</label>
                             <input type="text" class="form-control " id="ht_longitude" name="ht_longitude">
+                            <input type="text" class="form-control " id="ht_author" name="ht_author" value="{{ Auth::user()->name }}" hidden>
                         </div>
         
                         <br>
-        
-                        
                     </div>
                     <button href="submit" class="btn btn-dark">Post !</button>
                     <a href="{{ url('hotel/admin') }}" class="btn btn-danger">Back</a>

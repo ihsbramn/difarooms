@@ -41,7 +41,7 @@ class HotelRoomtypeController extends Controller
         ]));
 
         $image = $request->file('name');
-        $name = $image->getClientOriginalName();
+        $name = rand() . $image->getClientOriginalName();
         $path = $image->storeAs('uploads', $name, 'public');
 
         HotelRoomtype::create([
