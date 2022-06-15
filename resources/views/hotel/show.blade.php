@@ -72,7 +72,3 @@
     </div>
     {{-- header --}}
 @endsection
-@section('lower_body')
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="{{ asset('js/hotelprice.js') }}"></script>
-@endsection

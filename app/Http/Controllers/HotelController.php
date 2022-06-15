@@ -120,10 +120,10 @@ class HotelController extends Controller
 
         //getting date
         $format = 'yyyy-mm-dd';
-        // today
-        $today = Carbon::now()->format('Y-m-d');
         // tomorrow
-        $tomorrow = Carbon::tomorrow()->format('Y-m-d');
+        $today = Carbon::today()->addDays(1)->format('Y-m-d');
+        // day after tomorrow
+        $tomorrow = Carbon::today()->addDays(2)->format('Y-m-d');
 
         //hotel rates api GET
         $response = Http::get('https://data.xotelo.com/api/rates?', [
@@ -153,22 +153,20 @@ class HotelController extends Controller
             $rates = $hotel_price->result->rates;
 
             // convert currency api GET
-            $response_rate_api = Http::get('https://api.fastforex.io/fetch-one?',[
-                'from' =>'USD',
+            $response_rate_api = Http::get('https://api.apilayer.com/exchangerates_data/convert?',[
                 'to' =>'IDR',
-                'api_key' => env('FASTFOREX_API_KEY')
+                'from' =>'USD',
+                'amount' => 1,
+                'apikey' => env('IDR_RATE_API_KEY')
             ]);
             
             $convert_currency = json_decode($response_rate_api);
 
-            // dd($convert_currency);
-
             if ($convert_currency == null) {
                 
             }else{
-                $usd_idr = $convert_currency->result->IDR;
+                $usd_idr = $convert_currency->info->rate;
                 // convert currency api GET
-    
                 // conversion rate from usd ot idr and push to array
                 foreach ($rates as $rt){
                     $price = (int)$rt->rate * $usd_idr;

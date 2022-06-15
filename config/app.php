@@ -33,7 +33,7 @@ return [
     // gooogle api key
 
     // fast forex key
-    'fastforex_api_key' => env('FASTFOREX_API_KEY'),
+    'idr_rate_api_key' => env('IDR_RATE_API_KEY'),
     // fast forex api key
     
 
