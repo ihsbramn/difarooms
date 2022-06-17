@@ -5,27 +5,25 @@
         <div class="card bg-dark text-white rounded-0 border-0">
             <img src="{{ URL::asset('/img/bg-hotel.png') }}" class="card-img" alt="background" height="396px">
             <div class="card-img-overlay d-flex">
-                <div class="container-fluid px-4 my-auto">
+                <div class="container my-auto" style="max-width: 95%">
                     <h1 style="font-weight: 700; font-size: 64px">Crowne Plaza <br> Bandung</h1>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid px-4">
+    <div class="container" style="max-width: 95%">
         <div class="row">
             <div class="col-sm-7">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col">
-                            Column
-                        </div>
-                        <div class="col">
-                            Column
-                        </div>
-                        <div class="col">
-                            Column
-                        </div>
+                <div class="row">
+                    <div class="col">
+                        Column
+                    </div>
+                    <div class="col">
+                        Column
+                    </div>
+                    <div class="col">
+                        Column
                     </div>
                 </div>
             </div>
