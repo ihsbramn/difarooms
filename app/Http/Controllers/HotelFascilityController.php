@@ -36,7 +36,11 @@ class HotelFascilityController extends Controller
      */
     public function store(StoreHotelFascilityRequest $request)
     {
-        //
+        $input = $request->all();
+        HotelFascility::create($input);
+
+        // dd($request);
+        return back()->with('success', 'Fascility successfully added');
     }
 
     /**
@@ -79,8 +83,10 @@ class HotelFascilityController extends Controller
      * @param  \App\Models\HotelFascility  $hotelFascility
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HotelFascility $hotelFascility)
+    public function destroy($id)
     {
-        //
+        HotelFascility::find($id)->delete();
+
+        return back()->with('success', 'Fascility has been reset');
     }
 }

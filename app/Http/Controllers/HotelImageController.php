@@ -17,7 +17,7 @@ class HotelImageController extends Controller
             $images = $request->file('images');
 
             foreach($images as $image) {
-                $name = $image->getClientOriginalName();
+                $name = rand() . $image->getClientOriginalName();
                 $path = $image->storeAs('uploads', $name, 'public');
 
                 Hotel_Img::create([

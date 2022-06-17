@@ -16,6 +16,7 @@ class CreateHotelsTable extends Migration
         Schema::create('hotels', function (Blueprint $table) {
             $table->id()->startingValue(100);
             $table->string('ht_name')->nullable();
+            $table->string('ht_key')->nullable();
             $table->string('ht_address')->nullable();
             $table->longText('ht_description')->nullable();
             $table->string('ht_thumbnail')->nullable();
@@ -24,12 +25,13 @@ class CreateHotelsTable extends Migration
             // $table->boolean('ht_fascility')->nullable();
             $table->string('ht_accesible')->nullable();
             // $table->mediumText('ht_accesible_detail')->nullable();
-            $table->string('ht_price_estimate')->nullable();
+            // $table->string('ht_price_estimate')->nullable();
             $table->string('ht_contact')->nullable();
             // $table->string('ht_roomtype')->nullable();
             $table->longText('ht_embedmaps')->nullable();
             $table->string('ht_latitude')->nullable();
             $table->string('ht_longitude')->nullable();
+            $table->string('ht_author')->nullable();
             $table->timestamps();
         });
     }

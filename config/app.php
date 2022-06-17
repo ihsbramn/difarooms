@@ -32,6 +32,15 @@ return [
     'google_api_key' => env('GOOGLE_API_KEY'),
     // gooogle api key
 
+    // fast forex key
+    'idr_rate_api_key' => env('IDR_RATE_API_KEY'),
+    // fast forex api key
+    
+
+    //timezone
+    'timezone' => env('APP_TIMEZONE', 'UTC'),
+    //timezone 
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode

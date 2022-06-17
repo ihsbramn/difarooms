@@ -1,25 +1,31 @@
 @extends('layouts.app')
 
-
 @section('head')
-@endsection
-@section('up_body')
+
 @endsection
 
+@section('up_body')
+
+@endsection
+
+{{-- marker maps  --}}
 @section('lower_body')
+    @foreach ( $hotel as $data )
     <script>
         var markersOnMap = [{
-            placeName: '<b>The Trans Luxury Hotel</b>',
+            placeName: '{{ $data->ht_name }}',
             LatLng: [{
-                lat: -6.926943,
-                lng: 107.636214
+                lat: {{ $data->ht_latitude }},
+                lng:  {{ $data->ht_longitude }}
             }],
-            url: 'https://g.page/The-Trans-Luxury-Hotel?share'
+            url: '{{ route('/hotel/show', $data->id) }}'
         }];
 
-        // $("#hide-poi").prop("checked", true);
+        // var markersOnMap = @json($marker);
     </script>
+    @endforeach
 @endsection
+{{-- marker maps  --}}
 
 @section('content')
     {{-- header hotel --}}
@@ -303,8 +309,8 @@
                                     disukai
                                 </div>
                                 <div class="col-sm-6 text-end">
-                                    <button class="btn btn-primary border-0" type="button"
-                                    style="border-radius: 12px; background-color:#244D64">Lihat detail</button>
+                                    <a href="{{ route('/hotel/show', $htl->id) }}" class="btn btn-primary border-0" type="button"
+                                        style="border-radius: 12px; background-color:#244D64" >Lihat detail</a>
                                 </div>
                             </div>
                             </div>

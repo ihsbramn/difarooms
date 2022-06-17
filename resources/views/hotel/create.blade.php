@@ -16,6 +16,13 @@
                         </div>
         
                         <br>
+
+                        <div class="form-group">
+                            <label for="ht_key">Hotel key (Tripadvisor)</label>
+                            <input type="text" class="form-control" id="ht_key" name="ht_key">
+                        </div>
+        
+                        <br>
         
                         <div class="form-group">
                             <div class="custom-file">
@@ -73,12 +80,12 @@
 
                         <br> --}}
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="ht_price_estimate">Estimasi Harga</label>
                             <input type="text" class="form-control " id="ht_price_estimate" name="ht_price_estimate">
                         </div>
 
-                        <br>
+                        <br> --}}
 
                         <div class="form-group">
                             <label for="ht_contact">Kontak</label>
@@ -110,11 +117,10 @@
                         <div class="form-group">
                             <label for="ht_longitude">Longitude</label>
                             <input type="text" class="form-control " id="ht_longitude" name="ht_longitude">
+                            <input type="text" class="form-control " id="ht_author" name="ht_author" value="{{ Auth::user()->name }}" hidden>
                         </div>
         
                         <br>
-        
-                        
                     </div>
                     <button href="submit" class="btn btn-dark">Post !</button>
                     <a href="{{ url('hotel/admin') }}" class="btn btn-danger">Back</a>
