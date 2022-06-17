@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <div class="container-fluid px-4">
+    <div class="container" style="max-width: 95%">
         <div class="row">
             <div class="col-sm-7">
                 <div class="container-fluid">
