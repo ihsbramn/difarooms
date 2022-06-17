@@ -97,8 +97,10 @@ class HotelRoomtypeController extends Controller
      * @param  \App\Models\HotelRoomtype  $hotelRoomtype
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HotelRoomtype $hotelRoomtype)
+    public function destroy($id)
     {
-        //
+        HotelRoomtype::find($id)->delete();
+
+        return back()->with('success', 'Images deleted successfully');
     }
 }

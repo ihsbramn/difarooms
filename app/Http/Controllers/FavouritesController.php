@@ -95,8 +95,10 @@ class FavouritesController extends Controller
      * @param  \App\Models\Favourites  $favourites
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Favourites $favourites)
+    public function destroy($id)
     {
-        //
+        Favourites::find($id)->delete();
+
+        return back()->with('success', 'Images deleted successfully');
     }
 }
