@@ -42,7 +42,7 @@ Route::get('/hotel/show/{id}',[HotelController::class, 'show'])->name('/hotel/sh
 //forum
 Route::get('/forum',[ForumController::class, 'index']);
 Route::get('/forum/create',[ForumController::class, 'create']);
-Route::post('/forum',[ForumController::class,'store'])->name('/forum/store');
+Route::post('/forum/store',[ForumController::class,'store'])->name('/forum/store');
 Route::get('/forum/show/{id}',[ForumController::class, 'show'])->name('/forum/show');
 Route::get('/user/myforum',[UserController::class, 'myforum']);
 Route::get('/user/myfavourites',[UserController::class, 'myfavourites']);
@@ -52,16 +52,16 @@ Route::match(['put','patch'],'/forum/update/{id}',[ForumController::class,'updat
 //forum
 
 // forum img
-Route::post('/user/myforum', [ForumImageController::class, 'store' ])->name('forum_img/store');
-Route::delete('/forum/edit/{id}',[ForumImageController::class, 'destroy'])->name('forum_img/destroy');
+Route::post('forum_img/store', [ForumImageController::class, 'store' ])->name('forum_img/store');
+Route::delete('forum_img/destroy/{id}',[ForumImageController::class, 'destroy'])->name('forum_img/destroy');
 // forum img
 
 // comment
-Route::post('/comment',[CommentController::class,'store'])->name('/comment/store');
+Route::post('/comment/store',[CommentController::class,'store'])->name('/comment/store');
 // comment
 
 // Favourites
-Route::post('/favourites',[FavouritesController::class,'store'])->name('/favourites/store');
+Route::post('/favourites/store',[FavouritesController::class,'store'])->name('/favourites/store');
 // Favourites
 
 
@@ -77,19 +77,19 @@ Route::match(['put','patch'],'/hotel/update/{id}',[HotelController::class,'updat
 //hotel
 
 // hotel img
-Route::post( '/hotel/edit',[ HotelImageController::class, 'store' ])->name('hotel_img/store')->middleware('is_admin');
-Route::delete('/hotel/edit/{id}',[HotelImageController::class, 'destroy'])->name('hotel_img/destroy')->middleware('is_admin');
+Route::post( 'hotel_img/store',[ HotelImageController::class, 'store' ])->name('hotel_img/store')->middleware('is_admin');
+Route::delete('hotel_img/destroy/{id}',[HotelImageController::class, 'destroy'])->name('hotel_img/destroy')->middleware('is_admin');
 // hotel img
 // hotel fascilities
-Route::post( 'boo',[HotelFascilityController::class, 'store' ])->name('hotel_fascility/store')->middleware('is_admin');
-Route::delete('boo',[HotelFascilityController::class, 'destroy'])->name('hotel_fascility/destroy')->middleware('is_admin');
+Route::post( 'hotel_fascility/store',[HotelFascilityController::class, 'store' ])->name('hotel_fascility/store')->middleware('is_admin');
+Route::delete('hotel_fascility/destroy/{id}',[HotelFascilityController::class, 'destroy'])->name('hotel_fascility/destroy')->middleware('is_admin');
 // hotel fascilities
 // hotel Roomtype
-Route::post( 'foo',[HotelRoomtypeController::class, 'store' ])->name('hotel_roomtype/store')->middleware('is_admin');
-Route::delete('foo',[HotelRoomtypeController::class, 'destroy'])->name('hotel_roomtype/destroy')->middleware('is_admin');
+Route::post( 'hotel_roomtype/store',[HotelRoomtypeController::class, 'store' ])->name('hotel_roomtype/store')->middleware('is_admin');
+Route::delete('hotel_roomtype/destroy/{id}',[HotelRoomtypeController::class, 'destroy'])->name('hotel_roomtype/destroy')->middleware('is_admin');
 // hotel Roomtype
 
 
 //forum
 Route::get('/forum/admin',[ForumController::class, 'admin'])->middleware('is_admin');
-Route::delete('/forum/destroy/{id}',[ForumController::class, 'destroy_admin'])->name('forum/destroy')->middleware('is_admin');
+Route::delete('/forum/destroy/{id}',[ForumController::class, 'destroy_admin'])->name('forum/destroy');

@@ -16,7 +16,7 @@ class CreateForumImgsTable extends Migration
         Schema::create('forum__imgs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('fr_id')->unsigned();
-            $table->foreign('fr_id')->references('id')->on('forums');
+            $table->foreign('fr_id')->references('id')->on('forums')->onDelete('cascade');
             $table->string('name')->nullable();
             $table->string('path')->nullable();
             $table->timestamps();
