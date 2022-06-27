@@ -6,6 +6,7 @@ use App\Http\Controllers\ForumController;
 use App\Http\Controllers\ForumImageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\destinasicontroller;
 use App\Http\Controllers\FavouritesController;
 use App\Http\Controllers\HotelImageController;
 use App\Http\Controllers\HotelFascilityController;
@@ -38,6 +39,11 @@ Route::get('/hotel',[HotelController::class, 'index']);
 Route::get('/hotel/map',[HotelController::class, 'map']);
 Route::get('/hotel/show/{id}',[HotelController::class, 'show'])->name('/hotel/show')->middleware('cors');
 //hotel
+
+//destinasi
+Route::get('/destinasi',[destinasicontroller::class, 'destinasi']);
+Route::get('/destinasi/bandung',[destinasicontroller::class, 'bandung']);
+//destinasi
 
 //forum
 Route::get('/forum',[ForumController::class, 'index']);

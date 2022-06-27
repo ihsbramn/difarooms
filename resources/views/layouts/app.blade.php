@@ -18,15 +18,16 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/theme.css') }}" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
     @yield('head')
 </head>
 
-<body>
+<body style="background-color: #FFFFFF;">
     @yield('up_body')
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark shadow-sm" style="background-color: #244D64; font-size: 20px">
+        <nav class="navbar navbar-expand-md navbar-dark shadow-sm" style="background-color: #47A2D6; font-size: 20px">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- {{ config('app.name', 'Difa Rooms') }} --}}
@@ -47,7 +48,11 @@
                     <!-- Center Of Navbar -->
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item pe-5">
-                            <a class="nav-link" href="{{ url('/') }}">{{ __('Beranda') }}</a>
+                            <a class="nav-link {{ Route::currentRouteNamed('index') ? 'active' : '' }}" href="{{ url('/') }}">{{ __('Beranda') }}</a>
+                        </li>
+                        
+                        <li class="nav-item px-5">
+                            <a class="nav-link" href="{{ url('/') }}">{{ __('Destinasi') }}</a>
                         </li>
 
                         <li class="nav-item px-5">
@@ -70,7 +75,7 @@
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link btn btn-outline-light rounded-pill px-4 me-2" type="button"
-                                        href="{{ route('login') }}" style="font-size: 20px">{{ __('Login') }}</a>
+                                        href="{{ route('login') }}" style="font-size: 17px">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
@@ -78,7 +83,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link btn btn-light rounded-pill px-3 ms-2" type="button"
                                         href="{{ route('register') }}"
-                                        style="color: #244D64; font-size: 20px">{{ __('Register') }}</a>
+                                        style="color: #47A2D6; font-size: 17px">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else

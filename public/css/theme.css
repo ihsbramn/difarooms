@@ -1,0 +1,28 @@
+h2 {
+    font-weight: 700; 
+    font-size: 36px; 
+    color: #00A3FF;
+  }
+
+p{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.mx-10 {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.dest-card {
+    border-radius: 12px;
+}
+
+.grad {
+    height: auto;
+    background-image: linear-gradient(to top, rgb(43, 43, 43), rgba(255, 255, 255, 0));
+}
+
+.car-blue{
+    background-color: #DDF3FF;
+}
