@@ -44,7 +44,7 @@
                     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
                     </script> --}}
                     {{-- map --}}
-                    <iframe src="{{ $hotel->ht_embedmaps }}" class="mt-5 mb-5 shadow" style="height: 292px; border-radius:12px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="{{ $hotel->ht_embedmaps }}" id="embed_maps" class="embed_maps mt-5 mb-5 shadow" style="height: 292px; border-radius:12px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="row">
                     <div class="card shadow">

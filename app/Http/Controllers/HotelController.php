@@ -121,9 +121,11 @@ class HotelController extends Controller
         //getting date
         $format = 'yyyy-mm-dd';
         // tomorrow
-        $today = Carbon::today()->addDays(1)->format('Y-m-d');
+        $today = Carbon::today()->format('Y-m-d');
+        // $today = Carbon::today()->addDays(1)->format('Y-m-d');
         // day after tomorrow
-        $tomorrow = Carbon::today()->addDays(2)->format('Y-m-d');
+        $tomorrow = Carbon::tomorrow()->format('Y-m-d');
+        // $tomorrow = Carbon::tomorrow()->addDays(1)->format('Y-m-d');
 
         //hotel rates api GET
         $response = Http::get('https://data.xotelo.com/api/rates?', [
@@ -161,7 +163,7 @@ class HotelController extends Controller
             ]);
             
             $convert_currency = json_decode($response_rate_api);
-
+            // dd($convert_currency);
             if ($convert_currency == null) {
                 
             }else{
@@ -181,7 +183,7 @@ class HotelController extends Controller
         };
 
         // testing
-        dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$idr_rate,$url_tripadvisor);
+        // dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$idr_rate,$url_tripadvisor);
         
         return view('/hotel/show', compact(
             'hotel',

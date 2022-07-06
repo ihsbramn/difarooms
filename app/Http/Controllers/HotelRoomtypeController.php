@@ -101,6 +101,6 @@ class HotelRoomtypeController extends Controller
     {
         HotelRoomtype::find($id)->delete();
 
-        return back()->with('success', 'Images deleted successfully');
+        return back()->with('success', 'Roomtype deleted successfully');
     }
 }

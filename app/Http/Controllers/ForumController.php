@@ -151,12 +151,12 @@ class ForumController extends Controller
     public function destroy($id)
     {
         Forum::find($id)->delete();
-        return redirect('/user/myforum')->with('success', 'Success !, Data Telah Dihapus!');
+        return back()->with('success', 'Success !, Data Telah Dihapus!');
     }
 
     public function destroy_admin($id)
     {
         Forum::find($id)->delete();
-        return redirect('forum/admin')->with('success', 'Success !, Data Telah Dihapus!');
+        return back()->with('success', 'Success !, Data Telah Dihapus!');
     }
 }
