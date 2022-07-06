@@ -14,13 +14,48 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif
+        }
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
+    </script>
+    <script>
+        (function($) {
+            "use strict";
+            $('.next').click(function() {
+                $('.carousel').carousel('next');
+                return false;
+            });
+            $('.prev').click(function() {
+                $('.carousel').carousel('prev');
+                return false;
+            });
+        })
+        (jQuery);
+    </script>
+    <script>
+        $('.nav-link').on('click', function() {
+            $('.active-link').removeClass('active-link');
+            $(this).addClass('active-link');
+        });
+    </script>
     @yield('head')
 </head>
 
@@ -48,23 +83,31 @@
                     <!-- Center Of Navbar -->
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item pe-5">
-                            <a class="nav-link {{ Route::currentRouteNamed('index') ? 'active' : '' }}" href="{{ url('/') }}">{{ __('Beranda') }}</a>
-                        </li>
-                        
-                        <li class="nav-item px-5">
-                            <a class="nav-link" href="{{ url('/') }}">{{ __('Destinasi') }}</a>
+                            <a class="nav-link {{ Route::currentRouteNamed('index') ? 'active' : '' }}"
+                                href="{{ url('/') }}">{{ __('Beranda') }}</a>
+                            <div class="underline"></div>
                         </li>
 
                         <li class="nav-item px-5">
-                            <a class="nav-link" href="{{ '/hotel' }}">{{ __('Hotel') }}</a>
+                            <a class="nav-link {{ Route::currentRouteNamed('/destinasi') ? 'active' : '' }}"
+                                href="{{ url('/destinasi') }}">{{ __('Destinasi') }}</a>
+                            <div class="underline"></div>
+                        </li>
+
+                        <li class="nav-item px-5">
+                            <a class="nav-link {{ Route::currentRouteNamed('/hotel') ? 'active' : '' }}"
+                                href="{{ '/hotel' }}">{{ __('Hotel') }}</a>
+                            <div class="underline"></div>
                         </li>
 
                         <li class="nav-item px-5">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Forum') }}</a>
+                            <div class="underline"></div>
                         </li>
 
                         <li class="nav-item ps-5">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Tentang Kami') }}</a>
+                            <div class="underline"></div>
                         </li>
                     </ul>
 
@@ -98,13 +141,13 @@
                                     <a class="dropdown-item" href="{{ '/user/myfavourites' }}">
                                         {{ __('My Favourites Hotel') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
                                                             document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                        class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
