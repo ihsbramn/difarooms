@@ -35,14 +35,15 @@ Route::get('/admin',[HomeController::class, 'admin'])->name('admin')->middleware
 // USER ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 //hotel 
-Route::get('/hotel',[HotelController::class, 'index']);
+Route::get('/hotel',[HotelController::class, 'index'])->name('/hotel');
 Route::get('/hotel/map',[HotelController::class, 'map']);
 Route::get('/hotel/show/{id}',[HotelController::class, 'show'])->name('/hotel/show')->middleware('cors');
 //hotel
 
 //destinasi
-Route::get('/destinasi',[destinasicontroller::class, 'destinasi']);
+Route::get('/destinasi',[destinasicontroller::class, 'destinasi'])->name('/destinasi');
 Route::get('/destinasi/bandung',[destinasicontroller::class, 'bandung']);
+Route::get('/destinasi/bandung/asia-afrika',[destinasicontroller::class, 'asaf']);
 //destinasi
 
 //forum
@@ -74,7 +75,7 @@ Route::post('/favourites/store',[FavouritesController::class,'store'])->name('/f
 // ADMIN ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 //hotel
-Route::get('/hotel/admin',[HotelController::class, 'admin'])->middleware('is_admin');
+Route::get('/hotel/admin',[HotelController::class, 'admin'])->name('hotel/admin')->middleware('is_admin');
 Route::get('/hotel/create',[HotelController::class, 'create'])->middleware('is_admin');
 Route::post('/hotel/admin',[HotelController::class,'store'])->name('/hotel/store')->middleware('is_admin');
 Route::delete('/hotel/destroy/{id}',[HotelController::class, 'destroy'])->name('hotel/destroy')->middleware('is_admin');
@@ -97,5 +98,6 @@ Route::delete('hotel_roomtype/destroy/{id}',[HotelRoomtypeController::class, 'de
 
 
 //forum
-Route::get('/forum/admin',[ForumController::class, 'admin'])->middleware('is_admin');
+Route::get('/forum/admin',[ForumController::class, 'admin'])->name('forum/admin')->middleware('is_admin');
 Route::delete('/forum/destroy/{id}',[ForumController::class, 'destroy_admin'])->name('forum/destroy');
+

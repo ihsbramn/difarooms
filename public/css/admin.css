@@ -1,0 +1,13 @@
+/* Style the buttons */
+.side-item {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    cursor: pointer;
+  }
+  
+  /* Style the active class (and buttons on mouse-over) */
+  .active, .side-item:hover {
+    background-color: rgba(78, 160, 206, 0.38);
+    color: black;
+  }

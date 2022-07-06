@@ -15,4 +15,9 @@ class destinasicontroller extends Controller
     {
         return view('destinasi/bandung');
     }
+    
+    public function asaf()
+    {
+        return view('destinasi/asaf');
+    }
 }

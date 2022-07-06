@@ -1,7 +1,7 @@
 h2 {
     font-weight: 700; 
     font-size: 36px; 
-    color: #00A3FF;
+    color: #47A2D6;
   }
 
 p{
@@ -9,9 +9,16 @@ p{
     font-weight: 300;
 }
 
+.subtitle{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #47A2D6;
+}
+
 .mx-10 {
-    margin-left: 200px;
-    margin-right: 200px;
+    max-width: 1440px;
+    margin:auto;
 }
 
 .dest-card {
@@ -23,6 +30,34 @@ p{
     background-image: linear-gradient(to top, rgb(43, 43, 43), rgba(255, 255, 255, 0));
 }
 
-.car-blue{
+.car-blue {
     background-color: #DDF3FF;
+}
+
+.navbar ul li .underline {
+	height: 3px;
+    margin-top: 0px;
+	background-color: transparent;
+	width: 0%;
+	transition: width 0.2s, background-color 0.5s;
+}
+
+.navbar ul li.active-link .underline {
+	width: 100%;
+	background-color: white;
+}
+
+.navbar ul li:hover .underline {
+	background-color: white;
+	width: 100%;
+}
+
+.navbar ul li:active a {
+	transition: none;
+	color: rgba(255,255,255,0.76);
+}
+
+.navbar ul li:active .underline {
+	transition: none;
+	background-color: rgba(255,255,255,0.76);
 }
