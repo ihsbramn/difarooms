@@ -364,7 +364,7 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                    @endforeach
                 {{-- list hotel --}}
             </div>
         </div>

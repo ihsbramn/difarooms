@@ -36,8 +36,10 @@ class HotelController extends Controller
             );
         }
 
-        // dd($hotel, $marker);
-        return view('hotel/index',compact('hotel','marker'));
+        $hotel_fascility = HotelFascility::all();
+        dd($hotel, $marker, $hotel_fascility);
+
+        return view('hotel/index',compact('hotel','marker','hotel_fascility'));
     }
 
     public function map()
@@ -177,13 +179,14 @@ class HotelController extends Controller
                         'rate' => $price
                     ]);
                 };
+                $rates = (object)$idr_rate;
                 //getting hotel url by TripAdvisor
                 $url_tripadvisor = $hotel_price->result->hotel_url[0];
             }
         };
 
         // testing
-        // dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$idr_rate,$url_tripadvisor);
+        // dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$rates,$url_tripadvisor);
         
         // dd($idr_rate);
         
@@ -192,7 +195,7 @@ class HotelController extends Controller
             'hotel_img',
             'hotel_fascility',
             'hotel_roomtype',
-            'idr_rate',
+            'rates',
             'url_tripadvisor'
         ));
     }

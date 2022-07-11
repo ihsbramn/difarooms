@@ -1,15 +1,11 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 use Illuminate\Http\Testing\File;
 
 class EditHotelTest extends TestCase
 {
     /**
-     * A basic unit test example.
-     *
      * @return void
      */
     public function test_edit_hotel()
@@ -57,7 +53,6 @@ class EditHotelTest extends TestCase
     }
 
     public function test_add_photo(){
-
         $response = $this->post('/login', [
             'email' => 'testing2@gmail.com',
             'password' => 'testing432',
@@ -82,7 +77,6 @@ class EditHotelTest extends TestCase
     }
 
     public function test_add_fascilities(){
-
         $response = $this->post('/login', [
             'email' => 'testing2@gmail.com',
             'password' => 'testing432',
@@ -144,13 +138,9 @@ class EditHotelTest extends TestCase
             'name' => $img
         ]);
 
-        // dd($response->getSession());
-
         // expected result success + redirect to current pages
         $response
         ->assertSessionHas('success')      
         ->assertRedirect('/hotel/edit/100');
     }
-
-
 }

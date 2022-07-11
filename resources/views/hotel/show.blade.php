@@ -76,6 +76,10 @@
 
                     </div>
                 </div>
+                @foreach ($rates as $rt)
+                    <p>{{ $rt['name'] }}</p>
+                    <p>{{ $rt['rate'] }}</p>
+                @endforeach
             </div>
         </div>
 
