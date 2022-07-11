@@ -122,12 +122,16 @@
                         </div>
                         <hr>
                         <h2 style="font-weight: 500; font-size:24px">Harga</h2>
+                        @if ($rates != null)
                         @foreach ($rates as $rt)
                             <div class="row">
                                 <p>{{ $rt['name'] }}</p>
                                 <p>{{ $rt['rate'] }}</p>
                             </div>
                         @endforeach
+                        @else
+                            <p>Maaf, harga belum tersedia untuk saat ini</p>
+                        @endif
                         <hr>
                         <h2 style="font-weight: 500; font-size:24px">Kontak Hotel</h2>
                         <div class="row">
