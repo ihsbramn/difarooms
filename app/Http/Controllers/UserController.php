@@ -48,4 +48,9 @@ class UserController extends Controller
 
         return view('user/myfavourites', compact('fav'));
     }
+
+    public function aboutus(){
+        
+        return view('aboutus');
+    }
 }

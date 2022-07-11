@@ -26,7 +26,8 @@ p{
 }
 
 .grad {
-    height: auto;
+    margin-top: auto;
+    height: 50%;
     background-image: linear-gradient(to top, rgb(43, 43, 43), rgba(255, 255, 255, 0));
 }
 
@@ -60,4 +61,18 @@ p{
 .navbar ul li:active .underline {
 	transition: none;
 	background-color: rgba(255,255,255,0.76);
+}
+
+#image-scroll {
+    width: 300px;
+    height: 60px;
+    overflow: hidden;
+}
+#modules {
+    height: 90px; /* 40px - more place for scrollbar, is hidden under parent box */
+    padding: 5px;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
 }

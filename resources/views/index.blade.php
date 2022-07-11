@@ -36,17 +36,19 @@
                 <div class="container-xxl">
                     <div class="row mt-5 mb-5">
                         <div class="col-sm-12 text-center mt-3" style="color:#00A3FF">
-                            <h2 style="font-weight: 700; font-size: 32px; color: #00A3FF;">Mau kemana hari ini?</h2>
-                            <p style="font-weight: 400; font-size: 24px;">Jangan khawatir dengan kekuranganmu, banyak tempat
+                            <h2 class="mt-3" style="font-weight: 700; font-size: 32px; color: #00A3FF;">Mau kemana hari
+                                ini?</h2>
+                            <p class="mt-3" style="font-weight: 400; font-size: 24px;">Jangan khawatir dengan
+                                kekuranganmu, banyak tempat
                                 untukmu</p>
                         </div>
-                        <div class="col-sm-12">
+                        <div class="col-sm-12 mt-3">
                             <div class="row row-cols-1 row-cols-md-3 g-5">
                                 <div class="col">
                                     <a class="card bg-transparent text-white border-0" href="{{ '/destinasi/bandung' }}">
                                         <img src="{{ URL::asset('/img/bandung-icon.png') }}" class="card-img-top"
                                             alt="icon kota bandung" style="border-radius: 12px">
-                                        <div class="card-img-overlay">
+                                        <div class="card-img-overlay grad" style="border-radius: 12px">
                                             <h5 class="card-title position-absolute bottom-0 start-20"
                                                 style="font-weight: 700; font-size: 24px;">Bandung</h5>
                                         </div>
@@ -56,7 +58,7 @@
                                     <div class="card bg-transparent text-white border-0 rounded">
                                         <img src="{{ URL::asset('/img/yogya-icon.png') }}" class="card-img-top"
                                             alt="icon kota yogyakarta" style="border-radius: 12px">
-                                        <div class="card-img-overlay">
+                                        <div class="card-img-overlay grad" style="border-radius: 12px">
                                             <h5 class="card-title position-absolute bottom-0 start-20"
                                                 style="font-weight: 700; font-size: 24px;">Yogyakarta</h5>
                                         </div>
@@ -66,7 +68,7 @@
                                     <div class="card bg-transparent text-white border-0 rounded">
                                         <img src="{{ URL::asset('/img/malang-icon.png') }}" class="card-img-top"
                                             alt="icon kota malang" style="border-radius: 12px">
-                                        <div class="card-img-overlay">
+                                        <div class="card-img-overlay grad" style="border-radius: 12px">
                                             <h5 class="card-title position-absolute bottom-0 start-20"
                                                 style="font-weight: 700; font-size: 24px;">Malang</h5>
                                         </div>
@@ -76,7 +78,7 @@
                                     <div class="card bg-transparent text-white border-0 rounded">
                                         <img src="{{ URL::asset('/img/jakarta-icon.png') }}" class="card-img-top"
                                             alt="icon kota jakarta" style="border-radius: 12px">
-                                        <div class="card-img-overlay">
+                                        <div class="card-img-overlay grad" style="border-radius: 12px">
                                             <h5 class="card-title position-absolute bottom-0 start-20"
                                                 style="font-weight: 700; font-size: 24px;">Jakarta</h5>
                                         </div>
@@ -86,7 +88,7 @@
                                     <div class="card bg-transparent text-white border-0 rounded">
                                         <img src="{{ URL::asset('/img/bali-icon.png') }}" class="card-img-top"
                                             alt="icon kota bali" style="border-radius: 12px">
-                                        <div class="card-img-overlay">
+                                        <div class="card-img-overlay grad" style="border-radius: 12px">
                                             <h5 class="card-title position-absolute bottom-0 start-20"
                                                 style="font-weight: 700; font-size: 24px;">Bali</h5>
                                         </div>
@@ -96,7 +98,7 @@
                                     <div class="card bg-transparent text-white border-0 rounded">
                                         <img src="{{ URL::asset('/img/lombok-icon.png') }}" class="card-img-top"
                                             alt="icon kota lombok" style="border-radius: 12px">
-                                        <div class="card-img-overlay">
+                                        <div class="card-img-overlay grad" style="border-radius: 12px">
                                             <h5 class="card-title position-absolute bottom-0 start-20"
                                                 style="font-weight: 700; font-size: 24px;">Lombok</h5>
                                         </div>
@@ -109,170 +111,303 @@
                 {{-- destinasi kota (card) --}}
 
                 {{-- tentang kami --}}
-                <div class="container">
+                <div class="container" style="margin-bottom: 370px">
                     <div class="row mt-5 mb-5">
-                        <div class="col">
+                        <div class="col" style="z-index: 0;">
                             <h2 style="font-weight: 700; font-size: 32px; color: #00A3FF;">Tentang kami</h2>
-                            <p style="font-weight: 500; font-size: 24px; color: #00A3FF;">DifaRooms menyajikan pilihan
+                            <p class="mt-4" style="font-weight: 500; font-size: 24px; color: #00A3FF;">DifaRooms
+                                menyajikan pilihan
                                 wisata yang menarik di Indonesia</p>
-                            <p style="font-weight: 400; font-size: 16px; color: #00A3FF;">Kami telah memilih destinasi
+                            <p class="mt-4" style="font-weight: 400; font-size: 16px; color: #00A3FF;">Kami telah
+                                memilih
+                                destinasi
                                 wisata yang menarik untuk Anda kunjungi bersama keluarga, kerabat, dan rekan kerja Anda.
                                 Liburan akan terasa lebih mudah dan aksesibel. Wisata inklusif bagi siapapun dan kondisi
                                 apapun yang dapat memuaskan Anda.</p>
-                            <a type="button" class="" href="">Baca Lagi</a>
+                            <a type="button" class="btn btn-primary px-5 py-1 mt-4" href=""
+                                style="border-radius: 16px; font-weight: 600; font-size: 20px;background: rgba(0, 73, 115, 1); border-color: rgba(0, 73, 115, 1);">Baca
+                                Lagi</a>
                         </div>
-                        <div class="col">
-
+                        <div class="col-6 position-relative" style="z-index: 1;">
+                            <div class="position-absolute top-0 end-0">
+                                <img src="{{ URL::asset('/img/home-dot.png') }}" alt="assets dot" style="z-index: 0">
+                            </div>
+                            <div class="" style="top: 310px; left: -60px; position: absolute;">
+                                <img src="{{ URL::asset('/img/home-tk2.png') }}" alt="assets dot" style="z-index: 1">
+                            </div>
+                            <div class="" style="top: 40px; left: 130px;position: absolute;">
+                                <img src="{{ URL::asset('/img/home-tk1.png') }}" alt="assets dot" style="z-index: 2">
+                            </div>
                         </div>
                     </div>
                 </div>
                 {{-- tentang kami --}}
 
                 {{-- destinasi populer --}}
-                <div class="container-fluid" style="background-color: #DDF3FF">
-                    <div class="col-8">
-
-                    </div>
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="container-fluid pb-4" style="background-color: #DDF3FF">
+                    <div id="destinasipopuler" class="carousel slide" data-bs-ride="carousel">
                         <div class="row">
                             <div class="col-6 text-start">
-                                <h2>Destinasi Populer</h2>
-                                <p>Tingkatkan kebersamaan bersama keluargamu</p>
+                                <h2 class="mt-3" style="font-weight: 700; font-size: 32px; color: #2F6C8F;">Destinasi
+                                    Populer</h2>
+                                <p class="mt-3" style="font-weight: 500; font-size: 20px; color: #2F6C8F;">Tingkatkan
+                                    kebersamaan bersama keluargamu</p>
                             </div>
-                            <div class="col-6 text-end">
-                                <button class="btn btn-secondary" type="button"
-                                    data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon"></span>
-                                    <span>Previous</span>
+                            <div class="col-6 text-end mt-3">
+                                <button class="btn btn-lg rounded-circle me-2" type="button"
+                                    data-bs-target="#destinasipopuler" data-bs-slide="prev"
+                                    style="border-color: rgba(71, 162, 214, 1);">
+                                    <span class="bi bi-chevron-left" style="color: rgba(71, 162, 214, 1);"></span>
                                 </button>
-                                <button class="btn btn-secondary" type="button"
-                                    data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon"></span>
-                                    <span>Next</span>
+                                <button class="btn btn-lg rounded-circle" type="button"
+                                    data-bs-target="#destinasipopuler" data-bs-slide="next"
+                                    style="border-color: rgba(71, 162, 214, 1); background: rgba(71, 162, 214, 1);">
+                                    <span class="bi bi-chevron-right" style="color: rgba(255, 255, 255, 1);"></span>
                                 </button>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <div class="carousel-inner">
+                                <div class="carousel-inner" style="border-radius: 12px">
                                     <div class="carousel-item active">
-                                        <div class="row row-cols-1 row-cols-md-4 g-4">
+                                        <div class="row row-cols-1 row-cols-md-5 g-5">
                                             <div class="col">
-                                                <div class="card">
-                                                    <img src="..." class="card-img-top" alt="...">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Card title</h5>
-                                                        <p class="card-text">This is a longer card with supporting text
-                                                            below
-                                                            as a
-                                                            natural lead-in to additional content. This content is a little
-                                                            bit
-                                                            longer.</p>
+                                                <div class="card text-white"
+                                                    style="border-radius: 12px; max-width: 20rem; overlay: hidden;">
+                                                    <img src="{{ URL::asset('/img/dest-pop1.png') }}" class="card-img"
+                                                        alt="..." style="border-radius: 12px">
+                                                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                                                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                                                            <h5 class="card-title"
+                                                                style="font-weight: 700; font-size: 24px;">Asia Afirka</h5>
+                                                            <p class="card-text"
+                                                                style="font-weight: 400; font-size: 20px;">Bandung</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col">
-                                                <div class="card">
-                                                    <img src="..." class="card-img-top" alt="...">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Card title</h5>
-                                                        <p class="card-text">This is a longer card with supporting text
-                                                            below
-                                                            as a
-                                                            natural lead-in to additional content. This content is a little
-                                                            bit
-                                                            longer.</p>
+                                                <div class="card text-white"
+                                                    style="border-radius: 12px; max-width: 20rem; overlay: hidden;">
+                                                    <img src="{{ URL::asset('/img/dest-pop2.png') }}" class="card-img"
+                                                        alt="..." style="border-radius: 12px">
+                                                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                                                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                                                            <h5 class="card-title"
+                                                                style="font-weight: 700; font-size: 24px;">Ranca Upas</h5>
+                                                            <p class="card-text"
+                                                                style="font-weight: 400; font-size: 20px;">Bandung</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col">
-                                                <div class="card">
-                                                    <img src="..." class="card-img-top" alt="...">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Card title</h5>
-                                                        <p class="card-text">This is a longer card with supporting text
-                                                            below
-                                                            as a
-                                                            natural lead-in to additional content.</p>
+                                                <div class="card text-white"
+                                                    style="border-radius: 12px; max-width: 20rem; overlay: hidden;">
+                                                    <img src="{{ URL::asset('/img/dest-pop3.png') }}" class="card-img"
+                                                        alt="..." style="border-radius: 12px">
+                                                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                                                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                                                            <h5 class="card-title"
+                                                                style="font-weight: 700; font-size: 24px;">Bedugul</h5>
+                                                            <p class="card-text"
+                                                                style="font-weight: 400; font-size: 20px;">Bali</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col">
-                                                <div class="card">
-                                                    <img src="..." class="card-img-top" alt="...">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Card title</h5>
-                                                        <p class="card-text">This is a longer card with supporting text
-                                                            below
-                                                            as a
-                                                            natural lead-in to additional content. This content is a little
-                                                            bit
-                                                            longer.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <div class="row row-cols-1 row-cols-md-4 g-4">
-                                            <div class="col">
-                                                <div class="card">
-                                                    <img src="..." class="card-img-top" alt="...">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Card title</h5>
-                                                        <p class="card-text">This is a longer card with supporting text
-                                                            below
-                                                            as a
-                                                            natural lead-in to additional content. This content is a little
-                                                            bit
-                                                            longer.</p>
+                                                <div class="card text-white"
+                                                    style="border-radius: 12px; max-width: 20rem; overlay: hidden;">
+                                                    <img src="{{ URL::asset('/img/dest-pop4.png') }}" class="card-img"
+                                                        alt="..." style="border-radius: 12px">
+                                                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                                                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                                                            <h5 class="card-title"
+                                                                style="font-weight: 700; font-size: 24px;">Borobudur</h5>
+                                                            <p class="card-text"
+                                                                style="font-weight: 400; font-size: 20px;">Magelang</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col">
-                                                <div class="card">
-                                                    <img src="..." class="card-img-top" alt="...">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Card title</h5>
-                                                        <p class="card-text">This is a longer card with supporting text
-                                                            below
-                                                            as a
-                                                            natural lead-in to additional content. This content is a little
-                                                            bit
-                                                            longer.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="card">
-                                                    <img src="..." class="card-img-top" alt="...">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Card title</h5>
-                                                        <p class="card-text">This is a longer card with supporting text
-                                                            below
-                                                            as a
-                                                            natural lead-in to additional content.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="card">
-                                                    <img src="..." class="card-img-top" alt="...">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Card title</h5>
-                                                        <p class="card-text">This is a longer card with supporting text
-                                                            below
-                                                            as a
-                                                            natural lead-in to additional content. This content is a little
-                                                            bit
-                                                            longer.</p>
+                                                <div class="card text-white"
+                                                    style="border-radius: 12px; max-width: 20rem; max-height: 478.83px; overflow: hidden">
+                                                    <img src="{{ URL::asset('/img/dest-pop5.png') }}" class="card-img"
+                                                        alt="...">
+                                                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                                                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                                                            <h5 class="card-title"
+                                                                style="font-weight: 700; font-size: 24px;">Floating Market
+                                                            </h5>
+                                                            <p class="card-text"
+                                                                style="font-weight: 400; font-size: 20px;">Bandung</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="..." class="d-block w-100" alt="...">
+                                        <div class="row row-cols-1 row-cols-md-5 g-5">
+                                            <div class="col">
+                                                <div class="card text-white"
+                                                    style="border-radius: 12px; max-width: 20rem; overlay: hidden;">
+                                                    <img src="{{ URL::asset('/img/dest-pop1.png') }}" class="card-img"
+                                                        alt="..." style="border-radius: 12px">
+                                                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                                                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                                                            <h5 class="card-title"
+                                                                style="font-weight: 700; font-size: 24px;">Asia Afirka</h5>
+                                                            <p class="card-text"
+                                                                style="font-weight: 400; font-size: 20px;">Bandung</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card text-white"
+                                                    style="border-radius: 12px; max-width: 20rem; overlay: hidden;">
+                                                    <img src="{{ URL::asset('/img/dest-pop2.png') }}" class="card-img"
+                                                        alt="..." style="border-radius: 12px">
+                                                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                                                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                                                            <h5 class="card-title"
+                                                                style="font-weight: 700; font-size: 24px;">Ranca Upas</h5>
+                                                            <p class="card-text"
+                                                                style="font-weight: 400; font-size: 20px;">Bandung</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card text-white"
+                                                    style="border-radius: 12px; max-width: 20rem; overlay: hidden;">
+                                                    <img src="{{ URL::asset('/img/dest-pop3.png') }}" class="card-img"
+                                                        alt="..." style="border-radius: 12px">
+                                                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                                                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                                                            <h5 class="card-title"
+                                                                style="font-weight: 700; font-size: 24px;">Bedugul</h5>
+                                                            <p class="card-text"
+                                                                style="font-weight: 400; font-size: 20px;">Bali</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card text-white"
+                                                    style="border-radius: 12px; max-width: 20rem; overlay: hidden;">
+                                                    <img src="{{ URL::asset('/img/dest-pop4.png') }}" class="card-img"
+                                                        alt="..." style="border-radius: 12px">
+                                                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                                                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                                                            <h5 class="card-title"
+                                                                style="font-weight: 700; font-size: 24px;">Borobudur</h5>
+                                                            <p class="card-text"
+                                                                style="font-weight: 400; font-size: 20px;">Magelang</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card text-white"
+                                                    style="border-radius: 12px; max-width: 20rem; max-height: 478.83px; overflow: hidden">
+                                                    <img src="{{ URL::asset('/img/dest-pop5.png') }}" class="card-img"
+                                                        alt="...">
+                                                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                                                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                                                            <h5 class="card-title"
+                                                                style="font-weight: 700; font-size: 24px;">Floating Market
+                                                            </h5>
+                                                            <p class="card-text"
+                                                                style="font-weight: 400; font-size: 20px;">Bandung</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="row row-cols-1 row-cols-md-5 g-5">
+                                            <div class="col">
+                                                <div class="card text-white"
+                                                    style="border-radius: 12px; max-width: 20rem; overlay: hidden;">
+                                                    <img src="{{ URL::asset('/img/dest-pop1.png') }}" class="card-img"
+                                                        alt="..." style="border-radius: 12px">
+                                                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                                                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                                                            <h5 class="card-title"
+                                                                style="font-weight: 700; font-size: 24px;">Asia Afirka</h5>
+                                                            <p class="card-text"
+                                                                style="font-weight: 400; font-size: 20px;">Bandung</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card text-white"
+                                                    style="border-radius: 12px; max-width: 20rem; overlay: hidden;">
+                                                    <img src="{{ URL::asset('/img/dest-pop2.png') }}" class="card-img"
+                                                        alt="..." style="border-radius: 12px">
+                                                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                                                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                                                            <h5 class="card-title"
+                                                                style="font-weight: 700; font-size: 24px;">Ranca Upas</h5>
+                                                            <p class="card-text"
+                                                                style="font-weight: 400; font-size: 20px;">Bandung</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card text-white"
+                                                    style="border-radius: 12px; max-width: 20rem; overlay: hidden;">
+                                                    <img src="{{ URL::asset('/img/dest-pop3.png') }}" class="card-img"
+                                                        alt="..." style="border-radius: 12px">
+                                                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                                                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                                                            <h5 class="card-title"
+                                                                style="font-weight: 700; font-size: 24px;">Bedugul</h5>
+                                                            <p class="card-text"
+                                                                style="font-weight: 400; font-size: 20px;">Bali</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card text-white"
+                                                    style="border-radius: 12px; max-width: 20rem; overlay: hidden;">
+                                                    <img src="{{ URL::asset('/img/dest-pop4.png') }}" class="card-img"
+                                                        alt="..." style="border-radius: 12px">
+                                                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                                                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                                                            <h5 class="card-title"
+                                                                style="font-weight: 700; font-size: 24px;">Borobudur</h5>
+                                                            <p class="card-text"
+                                                                style="font-weight: 400; font-size: 20px;">Magelang</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card text-white"
+                                                    style="border-radius: 12px; max-width: 20rem; max-height: 478.83px; overflow: hidden">
+                                                    <img src="{{ URL::asset('/img/dest-pop5.png') }}" class="card-img"
+                                                        alt="...">
+                                                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                                                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                                                            <h5 class="card-title"
+                                                                style="font-weight: 700; font-size: 24px;">Floating Market
+                                                            </h5>
+                                                            <p class="card-text"
+                                                                style="font-weight: 400; font-size: 20px;">Bandung</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -283,16 +418,35 @@
 
                 {{-- map --}}
                 <div class="container">
-                    <div class="row mt-5 mb-5">
-                        <div class="col-9">
+                    <div class="row mt-5" style="margin-bottom: 90px">
+                        <div class="col-8">
+                            {{-- map --}}
+                            <div id="map"
+                                style="height: 568px; border-radius:12px; filter: drop-shadow(0px 0px 4px #00A3FF);">INI
+                                MAP
+                            </div>
+
+                            <script src="{{ asset('js/maps.js') }}"></script>
+                            <script src="{{ asset('js/markercluster.js') }}"></script>
+                            <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&callback=initMap">
+                            </script>
+                            <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+                            </script>
+                            {{-- map --}}
 
                         </div>
-                        <div class="col-3">
+                        <div class="col-4">
                             <h2 style="font-weight: 700; font-size: 32px; color: #00A3FF;">Temukan destinasi disekitarmu
                             </h2>
-                            <p style="font-weight: 500; font-size: 24px; color: #00A3FF;">Tempat menarik untuk Anda
+                            <p class="mt-4"
+                                style="font-weight: 500; font-size: 24px; color: #00A3FF; text-align: justify;">Tempat
+                                menarik untuk Anda
                                 kunjungi akan terlihat disini</p>
-                            <a href="">Lihat Peta</a>
+                            <div class="d-grid">
+                                <a href="" class="btn py-2" type="button"
+                                    style="background: #004973; border-radius: 20px; font-size: 20px; color: white;">Lihat
+                                    Peta</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -303,34 +457,15 @@
                     <img src="{{ URL::asset('/img/bg-diskusi.png') }}" class="card-img" alt="background">
                     <div class="card-img-overlay d-flex">
                         <div class="container my-auto">
-                            <h2 style="font-weight: 700; font-size: 36px;">Kamu tidak sendirian,<br>ruang untukmu</h2>
-                            <a class="btn btn-primary" href="" type="button">Lanjut</a>
+                            <h2 style="font-weight: 700; font-size: 36px; color:white;">Kamu tidak sendirian,<br>banyak
+                                ruang untukmu</h2>
+                            <a class="btn btn-primary px-5 btn-lg bg-white border-white mt-4" href=""
+                                type="button" style="border-radius: 12px; color: rgba(71, 162, 214, 1);">Mari diskusi</a>
                         </div>
                     </div>
                 </div>
                 {{-- diskusi --}}
-
-                @if (Auth::check())
-                    <div class="card">
-                        <div class="card-header">{{ __('Greetings 😁') }}</div>
-
-                        <div class="card-body">
-                            @if (session('status'))
-                                <div class="alert alert-success" role="alert">
-                                    {{ session('status') }}
-                                </div>
-                            @endif
-                            <p>Welcome {{ Auth::user()->name }}</p>
-                            @if (Auth::user()->is_admin == 1)
-                                <a class="btn btn-light" href="{{ 'admin' }}">Menu Admin</a>
-                            @endif
-                            <a class="btn btn-light" href="{{ 'hotel' }}">Menu Hotel</a>
-                            <a class="btn btn-light" href="{{ 'forum' }}">Menu Forum</a>
-                        </div>
-                    </div>
             </div>
         </div>
-    @else
-        @endif
     </div>
 @endsection

@@ -13,164 +13,164 @@
                 </div>
                 <div class="row row-cols-1 row-cols-md-3 g-5 mt-3 mb-5">
                     <div class="col">
-                        <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-asaf.png') }}" class="dest-card" alt="...">
+                        <a class="card border-0" href="{{ '/destinasi/bandung' }}">
+                            <img src="{{ URL::asset('/img/dest-bd.png') }}" class="dest-card" alt="bandung">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Asia Afrika</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Bandung</h5>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <div class="card border-0">
+                            <img src="{{ URL::asset('/img/dest-yg.png') }}" class="dest-card" alt="yogyakarta">
+                            <div class="card-img-overlay grad dest-card">
+                                <h5 class="card-title position-absolute bottom-0 start-20"
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Yogyakarta</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-rcupas.png') }}" class="dest-card" alt="...">
+                            <img src="{{ URL::asset('/img/dest-ml.png') }}" class="dest-card" alt="malang">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Ranca Upas</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Malang</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-flmarket.png') }}" class="dest-card" alt="...">
+                            <img src="{{ URL::asset('/img/dest-jkt.png') }}" class="dest-card" alt="jakarta">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Floating Market</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Jakarta</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-gdsate.png') }}" class="dest-card" alt="...">
+                            <img src="{{ URL::asset('/img/dest-bl.png') }}" class="dest-card" alt="bali">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Gedung Sate</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Bali</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-tkperahu.png') }}" class="dest-card" alt="...">
+                            <img src="{{ URL::asset('/img/dest-lb.png') }}" class="dest-card" alt="lombok">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Tangkuban Perahu</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Lombok</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-fhlembang.png') }}" class="dest-card" alt="...">
+                            <img src="{{ URL::asset('/img/dest-md.png') }}" class="dest-card" alt="manado">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Farmhouse Lembang</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Manado</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-tkperahu.png') }}" class="dest-card" alt="...">
+                            <img src="{{ URL::asset('/img/dest-sl.png') }}" class="dest-card" alt="solo">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Tangkuban Perahu</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Solo</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-fhlembang.png') }}" class="dest-card" alt="...">
+                            <img src="{{ URL::asset('/img/dest-bgr.png') }}" class="dest-card" alt="bogor">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Farmhouse Lembang</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Bogor</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-tkperahu.png') }}" class="dest-card" alt="...">
+                            <img src="{{ URL::asset('/img/dest-btm.png') }}" class="dest-card" alt="batam">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Tangkuban Perahu</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Batam</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-fhlembang.png') }}" class="dest-card" alt="...">
+                            <img src="{{ URL::asset('/img/dest-pdg.png') }}" class="dest-card" alt="Padang">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Farmhouse Lembang</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Padang</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-tkperahu.png') }}" class="dest-card" alt="...">
+                            <img src="{{ URL::asset('/img/dest-mks.png') }}" class="dest-card" alt="Makassar">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Tangkuban Perahu</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Makassar</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-fhlembang.png') }}" class="dest-card" alt="...">
+                            <img src="{{ URL::asset('/img/dest-ra.png') }}" class="dest-card" alt="Raja Ampat">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Farmhouse Lembang</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Raja Ampat</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-tkperahu.png') }}" class="dest-card" alt="...">
+                            <img src="{{ URL::asset('/img/dest-sby.png') }}" class="dest-card" alt="Surabaya">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Tangkuban Perahu</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Surabaya</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-fhlembang.png') }}" class="dest-card" alt="...">
+                            <img src="{{ URL::asset('/img/dest-smg.png') }}" class="dest-card" alt="Semarang">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Farmhouse Lembang</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Semarang</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-tkperahu.png') }}" class="dest-card" alt="...">
+                            <img src="{{ URL::asset('/img/dest-ach.png') }}" class="dest-card" alt="Aceh">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Tangkuban Perahu</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Aceh</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-fhlembang.png') }}" class="dest-card" alt="...">
+                            <img src="{{ URL::asset('/img/dest-plg.png') }}" class="dest-card" alt="Palembang">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Farmhouse Lembang</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Palembang</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-tkperahu.png') }}" class="dest-card" alt="...">
+                            <img src="{{ URL::asset('/img/dest-kds.png') }}" class="dest-card" alt="Kudus">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Tangkuban Perahu</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-fhlembang.png') }}" class="dest-card" alt="...">
-                            <div class="card-img-overlay grad dest-card">
-                                <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Farmhouse Lembang</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Kudus</h5>
                             </div>
                         </div>
                     </div>
