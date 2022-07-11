@@ -366,7 +366,6 @@
                                                     @else
                                                     <p class="disabled"><span class="iconify" data-icon="map:wheelchair"></span></span>Akses kursi roda</p>
                                                     @endif
-
                                                     @if ( $fas->toilet_pegangan =='1' )
                                                     <p><span class="iconify" data-icon="ph:toilet-fill"></span></span>Pegangan toilet</p>
                                                     @else
@@ -374,7 +373,6 @@
                                                     @endif
 
                                                 </div>
-                                                   
                                                 @endif
                                                 @endforeach
                                             </div>
@@ -384,9 +382,11 @@
                                                 </div>
                                                 <div class="col-6">
                                                     @foreach ($fav as $fv)
-                                                    @if ($fv->fv_hotel_id == $htl->id)
-                                                        <p>{{ $fv->fv_hotel_name }}</p>
-                                                    @endif
+                                                        @if ($fv->fv_hotel_id == $htl->id)
+                                                            @if ($loop->first)
+                                                                <p>{{ $loop->count }}</p>
+                                                            @endif
+                                                        @endif
                                                     @endforeach
                                                 </div>
                                             </div>

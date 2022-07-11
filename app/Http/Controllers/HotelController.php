@@ -24,7 +24,7 @@ class HotelController extends Controller
     {
         $hotel = Hotel::all();
         $fav = Favourites::all();
-
+        $count = 0;
         $marker = [];
 
         foreach ($hotel as $ht) {
@@ -41,7 +41,7 @@ class HotelController extends Controller
         $hotel_fascility = HotelFascility::all();
         // dd($hotel, $marker, $hotel_fascility);
 
-        return view('hotel/index',compact('hotel','marker','hotel_fascility','fav'));
+        return view('hotel/index',compact('hotel','marker','hotel_fascility','fav','count'));
     }
 
     public function map()
