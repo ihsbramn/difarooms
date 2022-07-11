@@ -37,6 +37,7 @@ class HotelController extends Controller
         }
 
         $hotel_fascility = HotelFascility::all();
+
         // dd($hotel, $marker, $hotel_fascility);
 
         return view('hotel/index',compact('hotel','marker','hotel_fascility'));
