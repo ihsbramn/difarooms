@@ -320,50 +320,60 @@
                 </div>
                 {{-- list hotel --}}
                 @foreach ($hotel as $htl)
-                    <div class="card mb-3 border-0 shadow-lg" style="border-radius: 12px">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="/storage/uploads/{{ $htl->ht_thumbnail }}" class="img-fluid rounded-start"
-                                    alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <p style="font-weight: 600; font-size: 20px;">{{ $htl->ht_name }}</p>
-                                            <p style="font-weight: 400; font-size: 14px;">{{ $htl->ht_address }}</p>
-                                            <a href="">Tunjukan di peta</a>
-                                        </div>
-                                        <div class="col-4">
-                                            <p>bintang</p>
-                                            
-                                        </div>
+                    
+                        
+                        
+                            <div class="card mb-3 border-0 shadow-lg" style="border-radius: 12px">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="/storage/uploads/{{ $htl->ht_thumbnail }}" class="img-fluid rounded-start"
+                                            alt="...">
                                     </div>
-                                    <div class="row">
-                                        fasilitas
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-6">
-                                            
-                                        </div>
-                                        <div class="col-6">
-
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-6">
-                                            
-                                        </div>
-                                        <div class="col-6 text-end">
-                                            <a href="{{ route('/hotel/show', $htl->id) }}"
-                                                class="btn btn-primary border-0" type="button"
-                                                style="border-radius: 12px; background-color:#244D64">Lihat detail</a>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <p style="font-weight: 600; font-size: 20px;">{{ $htl->ht_name }}</p>
+                                                    <p style="font-weight: 400; font-size: 14px;">{{ $htl->ht_address }}</p>
+                                                    <a href="">Tunjukan di peta</a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p>bintang</p>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                @foreach ($hotel_fascility as $fas)
+                                                @if ($fas->ht_id == $htl->id)
+                                                    {{ $fas->ramp }}
+                                                    {{ $fas->antarjemput }}
+                                                    {{ $fas->akses_kursiroda }}
+                                                    {{ $fas->toilet_pegangan }}
+                                                @endif
+                                                @endforeach
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                </div>
+                                                <div class="col-6">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    <a href="{{ route('/hotel/show', $htl->id) }}"
+                                                        class="btn btn-primary border-0" type="button"
+                                                        style="border-radius: 12px; background-color:#244D64">Lihat detail</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                            
+                        
                     @endforeach
                 {{-- list hotel --}}
             </div>
