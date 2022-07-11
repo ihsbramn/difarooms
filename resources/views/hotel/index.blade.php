@@ -380,8 +380,14 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-6">
+
                                                 </div>
                                                 <div class="col-6">
+                                                    @foreach ($fav as $fv)
+                                                    @if ($fv->fv_hotel_id == $htl->id)
+                                                        <p>{{ $fv->fv_hotel_name }}</p>
+                                                    @endif
+                                                    @endforeach
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -469,7 +475,7 @@
                                             <td>
                                                 <a class="btn btn-primary"
                                                     href="{{ route('/hotel/show', $data->id) }}">Show</a>
-                                                {{-- <form action="{{ route('/favourites/store') }}" method="POST">
+                                                <form action="{{ route('/favourites/store') }}" method="POST">
                                         @csrf
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="fv_user_id" name="fv_user_id" value="{{ Auth::user()->id }}" hidden>
@@ -479,7 +485,7 @@
                                         </div>
                                         <br>
                                         <button href="submit" class="btn btn-dark">Tambah ke Favorit</button>
-                                        </form> --}}
+                                        </form>
                                             </td>
                                         </tr>
                                     </tbody>

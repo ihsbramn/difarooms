@@ -8,6 +8,7 @@ use App\Models\HotelFascility;
 use App\Models\HotelRoomtype;
 use App\Http\Requests\StoreHotelRequest;
 use App\Http\Requests\UpdateHotelRequest;
+use App\Models\Favourites;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 use AshAllenDesign\LaravelExchangeRates\ExchangeRate;
@@ -22,6 +23,7 @@ class HotelController extends Controller
     public function index()
     {
         $hotel = Hotel::all();
+        $fav = Favourites::all();
 
         $marker = [];
 
@@ -39,7 +41,7 @@ class HotelController extends Controller
         $hotel_fascility = HotelFascility::all();
         // dd($hotel, $marker, $hotel_fascility);
 
-        return view('hotel/index',compact('hotel','marker','hotel_fascility'));
+        return view('hotel/index',compact('hotel','marker','hotel_fascility','fav'));
     }
 
     public function map()

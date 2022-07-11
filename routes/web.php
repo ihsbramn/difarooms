@@ -47,7 +47,7 @@ Route::get('/destinasi/bandung/asia-afrika',[destinasicontroller::class, 'asaf']
 //destinasi
 
 //forum
-Route::get('/forum',[ForumController::class, 'index'])->name('/forum');
+Route::get('/forum',[ForumController::class, 'index'])->name('/forum')->middleware('auth');
 Route::get('/forum/create',[ForumController::class, 'create'])->name('/forum/create');
 Route::post('/forum/store',[ForumController::class,'store'])->name('/forum/store');
 Route::get('/forum/show/{id}',[ForumController::class, 'show'])->name('/forum/show');
