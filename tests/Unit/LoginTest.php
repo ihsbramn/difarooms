@@ -1,16 +1,13 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 
 class LoginTest extends TestCase
 {
     /**
-     * A basic unit test example.
-     *
      * @return void
      */
+
     public function test_login_admin()
     {
         // post user data
@@ -19,9 +16,10 @@ class LoginTest extends TestCase
             'password' => 'testing432',
         ]);
 
-        //expected result directed to root as admin '/admin'
-        $response->assertRedirect('/admin');
-
+        //expected result status directed/302 to root as user '/admin'
+        $response
+        ->assertStatus(302)
+        ->assertRedirect('/admin');
     }
 
     public function test_login_user()
@@ -32,8 +30,10 @@ class LoginTest extends TestCase
             'password' => 'testing432',
         ]);
 
-        //expected result directed to root as user '/'
-        $response->assertRedirect('/');
+        //expected result status directed/302 to root as user '/'
 
+        $response
+        ->assertStatus(302)
+        ->assertRedirect('/');
     }
 }

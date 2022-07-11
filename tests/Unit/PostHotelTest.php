@@ -1,15 +1,11 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 use Illuminate\Http\Testing\File;
 
 class PostHotelTest extends TestCase
 {
     /**
-     * A basic unit test example.
-     *
      * @return void
      */
     public function test_post_hotel()
@@ -43,10 +39,10 @@ class PostHotelTest extends TestCase
             'ht_author' => 'Hotel_test',
         ]);
 
-        // dd($response);
-
-        // expected result is redirecting to '/hotel/admin'
-        $response->assertRedirect('/hotel/admin');
+        // expected result status 302/redirecting to '/hotel/admin'
+        $response
+        ->assertStatus(302)
+        ->assertRedirect('/hotel/admin');
     }
 
     // testing data exist in db

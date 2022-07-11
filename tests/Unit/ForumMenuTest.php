@@ -1,14 +1,10 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 
 class ForumMenuTest extends TestCase
 {
     /**
-     * A basic unit test example.
-     *
      * @return void
      */
     public function test_forum_menu()
@@ -19,8 +15,6 @@ class ForumMenuTest extends TestCase
         ]);
 
         $response = $this->get('/forum');
-
-
 
         // expected result status OK/200
         $response->assertStatus(200);

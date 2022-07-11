@@ -1,14 +1,10 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 
 class ShowFavTest extends TestCase
 {
     /**
-     * A basic unit test example.
-     *
      * @return void
      */
     public function test_show_fav()
@@ -19,8 +15,6 @@ class ShowFavTest extends TestCase
         ]);
 
         $response = $this->get('user/myfavourites');
-
-        // dd($response->getContent(),$response->getStatusCode());
 
         // expected result status OK/200
         $response->assertStatus(200);

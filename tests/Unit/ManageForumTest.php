@@ -1,14 +1,10 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 
 class ManageForumTest extends TestCase
 {
     /**
-     * A basic unit test example.
-     *
      * @return void
      */
     public function test_manage_forum()

@@ -1,16 +1,10 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
-use PHPUnit\Framework\DOMTestCase;
-
 
 class MapHotelTest extends TestCase 
 {
     /**
-     * A basic unit test example.
-     *
      * @return void
      */
     public function test_map_hotel()

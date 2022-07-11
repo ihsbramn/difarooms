@@ -1,14 +1,10 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 
 class PostFavTest extends TestCase
 {
     /**
-     * A basic unit test example.
-     *
      * @return void
      */
     public function test_post_favourites()
@@ -25,10 +21,10 @@ class PostFavTest extends TestCase
             'fv_count' => '1',
         ]);
 
-        // dd($response);
-
-        // expected result status redirecting back / 302
-        $response->assertStatus(302);
+        // expected result session has success && redirecting back / 302
+        $response
+        ->assertSessionHas('success')
+        ->assertStatus(302);
     }
 
     // check fav data is exist in db 

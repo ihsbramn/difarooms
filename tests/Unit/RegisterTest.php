@@ -1,17 +1,11 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 
 class RegisterTest extends TestCase
 {
     // use RefreshDatabase;
     /**
-     * A basic unit test example.
-     *
      * @return void
      */
     public function test_register()
@@ -24,10 +18,13 @@ class RegisterTest extends TestCase
             'password_confirmation' => 'testing432'
         ]);
 
-        //expected result got directed to root '/'
-        $response->assertRedirect('/');
+        //expected result status directed/302 to root '/'
+        $response
+        ->assertStatus(302)
+        ->assertRedirect('/');
     }
 
+    // check db has user data 
     public function test_check_user_exist_in_db()
     {
         $this->assertDatabaseHas('users', [

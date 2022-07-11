@@ -1,14 +1,10 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 
 class PostForumTest extends TestCase
 {
     /**
-     * A basic unit test example.
-     *
      * @return void
      */
     public function test_post_forum()
@@ -20,7 +16,6 @@ class PostForumTest extends TestCase
 
         $response = $this->get('/forum');
 
-
         $response = $this->post('/forum/store',[
             'fr_user_id' => '1',
             'fr_author' => 'testing1',
@@ -28,10 +23,9 @@ class PostForumTest extends TestCase
             'fr_body' => 'body'
         ]);
 
-        // dd($response);
-
-        // expected result status redirect/302 to '/forum'
+        // expected result session has succsess status redirect/302 to '/forum'
         $response
+        ->assertSessionHas('success')
         ->assertStatus(302)
         ->assertRedirect('/forum');
     }

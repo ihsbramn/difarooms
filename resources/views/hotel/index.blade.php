@@ -20,8 +20,6 @@
             }],
             url: '{{ route('/hotel/show', $data->id) }}'
         }];
-
-        // var markersOnMap = @json($marker);
     </script>
     @endforeach
 @endsection

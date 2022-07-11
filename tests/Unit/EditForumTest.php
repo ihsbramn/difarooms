@@ -1,15 +1,11 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 use Illuminate\Http\Testing\File;
 
 class EditForumTest extends TestCase
 {
     /**
-     * A basic unit test example.
-     *
      * @return void
      */
     public function test_edit_forum()
@@ -19,16 +15,14 @@ class EditForumTest extends TestCase
             'password' => 'testing432',
         ]);
 
-        $response = $this->get('forum/edit/13');
+        $response = $this->get('forum/edit/14');
 
-        $response = $this->put('forum/update/13',[
+        $response = $this->put('forum/update/14',[
             'fr_user_id' => '1',
             'fr_author' => 'testing1',
             'fr_title' => 'title edited',
             'fr_body' => 'body edited'
         ]);
-
-        // dd($response);
 
         // expected result status redirect/302 to 'user/myforum'
         $response
@@ -55,7 +49,7 @@ class EditForumTest extends TestCase
         $image = file($img);
         
         // // go to edit hotel page
-        $response = $this->get('forum/edit/13');
+        $response = $this->get('forum/edit/14');
 
         $response = $this->post('forum_img/store',[
             'ht_id' => 2,
@@ -66,6 +60,6 @@ class EditForumTest extends TestCase
         // expected result success + redirect 'forum/edit/2'
         $response
         ->assertSessionHas('success')      
-        ->assertRedirect('forum/edit/13');
+        ->assertRedirect('forum/edit/14');
     }
 }

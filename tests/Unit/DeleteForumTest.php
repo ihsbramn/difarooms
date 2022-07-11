@@ -1,14 +1,10 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 
 class DeleteForumTest extends TestCase
 {
     /**
-     * A basic unit test example.
-     *
      * @return void
      */
     public function test_delete_forum()
@@ -20,13 +16,11 @@ class DeleteForumTest extends TestCase
 
         $response = $this->get('forum/admin');
 
-        $response = $this->delete('forum/destroy/19');
+        $response = $this->delete('forum/destroy/15');
 
-        // dd($response);
-
-
-        // expected result status redirect/302 to 'forum/admin'
-        $response->assertStatus(302);
+        // expected result session has success && redirect/302 to 'forum/admin'
+        $response
+        ->assertSessionHas('success')
+        ->assertStatus(302);
     }
-
 }

@@ -1,14 +1,10 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 
 class ShowForumTest extends TestCase
 {
     /**
-     * A basic unit test example.
-     *
      * @return void
      */
     public function test_show_forum()
@@ -19,10 +15,8 @@ class ShowForumTest extends TestCase
         ]);
 
         $response = $this->get('forum/show/13');
-        
 
         $response->assertStatus(200);
-        
 
     }
 }

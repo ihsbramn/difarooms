@@ -1,14 +1,10 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 
 class PostCommentTest extends TestCase
 {
     /**
-     * A basic unit test example.
-     *
      * @return void
      */
     public function test_post_comment()
@@ -27,10 +23,9 @@ class PostCommentTest extends TestCase
             'cm_body' => 'body comment testing 1'
         ]);
 
-        // dd($response, $response->getStatusCode());
-
         // expected result status redirect/302 to 'forum/show/2'
         $response
+        ->assertSessionHas('success')
         ->assertStatus(302)
         ->assertRedirect('forum/show/13');
     }
