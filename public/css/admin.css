@@ -2,8 +2,9 @@
 .side-item {
     border: none;
     outline: none;
-    padding: 10px 16px;
     cursor: pointer;
+    background-color: transparent;
+    max-width: 235px;
   }
   
   /* Style the active class (and buttons on mouse-over) */

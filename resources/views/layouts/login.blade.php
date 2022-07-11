@@ -19,12 +19,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100&display=swap" rel="stylesheet">
     <style>
-        body {
+        body main {
             font-family: 'Montserrat', sans-serif
         }
     </style>
-    
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet">
@@ -39,16 +40,12 @@
     @yield('head')
 </head>
 
-<body style="background-color: #FFFFFF; min-height: 100vh">
+<body class="min-vh-100" style="background-color: #FFFFFF;">
     @yield('up_body')
-    <main style="min-height: 100vh">
+    <main class="min-vh-100">
         @yield('content')
     </main>
     @yield('lower_body')
-    <!-- Footer -->
-    <footer>
-        
-    </footer>
 </body>
 
 </html>

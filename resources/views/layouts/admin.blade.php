@@ -19,12 +19,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     <style>
-        body {
+        body main {
             font-family: 'Montserrat', sans-serif
         }
     </style>
@@ -75,15 +77,21 @@
                                 <img src="{{ URL::asset('/img/dr-logo.png') }}" alt="">
                             </div>
                             <div class="row mt-5" id="side-btn">
-                                <a type="button" class="btn btn-light side-item" href="{{ route('hotel/admin') }}">Kelola
+                                <a type="button" class="btn btn-light side-item mx-auto mb-4" href="{{ route('hotel/admin') }}"
+                                    style="font-weight: 400; font-size: 18px; border-radius:12px;"><span
+                                        class="bi bi-building me-2"></span>Kelola
                                     Hotel</a>
-                                <a type="button" class="btn btn-light side-item" href="{{ route('forum/admin') }}">Kelola
+                                <a type="button" class="btn btn-light side-item mx-auto" href="{{ route('forum/admin') }}"
+                                    style="font-weight: 400; font-size: 18px; border-radius:12px;"><span
+                                        class="bi bi-chat-right-text-fill me-2"></span>Kelola
                                     Forum</a>
                             </div>
                             <div class="row" style="margin-top: 440px">
-                                <button type="button" class="btn btn-danger" href="{{ route('logout') }}"
+                                <button type="button" class="btn btn-danger mx-auto" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">Log
+                                                    document.getElementById('logout-form').submit();"
+                                    style="font-weight: 400; font-size: 18px; max-width: 235px; border-radius:12px;"><span
+                                        class="bi bi-box-arrow-right me-2"></span>Log
                                     Out</button>
                             </div>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

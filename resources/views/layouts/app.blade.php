@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,17 +19,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100&display=swap"
+        rel="stylesheet">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif
+        body main {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        footer {
+            font-family: 'Montserrat', sans-serif;
         }
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script> --}}
+    <script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
         integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
     </script>
@@ -50,19 +60,13 @@
         })
         (jQuery);
     </script>
-    <script>
-        $('.nav-link').on('click', function() {
-            $('.active-link').removeClass('active-link');
-            $(this).addClass('active-link');
-        });
-    </script>
     @yield('head')
 </head>
 
-<body style="background-color: #FFFFFF;">
+<body class="min-vh-100" style="background-color: #FFFFFF;">
     @yield('up_body')
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark shadow-sm" style="background-color: #47A2D6; font-size: 20px">
+        <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #47A2D6; font-size: 20px">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- {{ config('app.name', 'Difa Rooms') }} --}}
@@ -89,7 +93,7 @@
                         </li>
 
                         <li class="nav-item px-5">
-                            <a class="nav-link {{ Route::currentRouteNamed('/destinasi') ? 'active' : '' }}"
+                            <a class="nav-link {{ Route::currentRouteNamed('/destinasi', '/destinasi/*') ? 'active' : '' }}"
                                 href="{{ url('/destinasi') }}">{{ __('Destinasi') }}</a>
                             <div class="underline"></div>
                         </li>
@@ -101,12 +105,14 @@
                         </li>
 
                         <li class="nav-item px-5">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Forum') }}</a>
+                            <a class="nav-link {{ Route::currentRouteNamed('/forum', '/forum/*') ? 'active' : '' }}"
+                                href="{{ '/forum' }}">{{ __('Forum') }}</a>
                             <div class="underline"></div>
                         </li>
 
                         <li class="nav-item ps-5">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Tentang Kami') }}</a>
+                            <a class="nav-link {{ Route::currentRouteNamed('/aboutus') ? 'active' : '' }}"
+                                href="{{ '/aboutus' }}">{{ __('Tentang Kami') }}</a>
                             <div class="underline"></div>
                         </li>
                     </ul>
@@ -124,30 +130,37 @@
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link btn btn-light rounded-pill px-3 ms-2" type="button"
-                                        href="{{ route('register') }}"
+                                    <a class="nav-link btn btn-light rounded-pill px-3 ms-2" type="button" href=""
+                                        data-bs-toggle="modal" data-bs-target="#register"
                                         style="color: #47A2D6; font-size: 17px">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#navbarDropdown"
+                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ '/user/myfavourites' }}">
+                                <div class="dropdown-menu dropdown-menu-end mt-3 border-0 shadow"
+                                    aria-labelledby="navbarDropdown" style="border-radius: 12px">
+                                    <a class="dropdown-item px-4 py-3"
+                                        href="{{ '/user/myfavourites' }}"style="font-weight: 400; font-size: 16px;"><i
+                                            class="bi bi-heart-fill me-2"></i>
                                         {{ __('My Favourites Hotel') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item px-4 py-3" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                            document.getElementById('logout-form').submit();">
+                                                            document.getElementById('logout-form').submit();"
+                                        style="color: #BB5353;font-weight: 400; font-size: 16px;"><i
+                                            class="bi bi-box-arrow-right me-2"></i>
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
                                         @csrf
                                     </form>
                                 </div>
@@ -158,32 +171,111 @@
             </div>
         </nav>
 
-        <main>
+        <main class="min-vh-100" style="display:flex; flex-direction:column;">
             @yield('content')
-        </main>
-    </div>
-    @yield('lower_body')
-    <!-- Footer -->
-    <footer>
-        <div class="container-fluid" style="background-color: #244D64">
-            <div class="row">
-                <div class="col-4 m-5">
-                    <img src="{{ URL::asset('/img/difarooms-logo.png') }}" alt="">
-                    <p class="mt-2" style="font-weight: 300; font-size: 14px; color: #FFFFFF">Platform berbagi
-                        informasi <br>
-                        mengenai aksesibilitas bagi <br>
-                        penyandang disabilitas</p>
+            <!-- Footer -->
+            <footer class="container-fluid mt-auto" style="background: #47A2D6; margin-top:auto; ">
+                <div class="row text-center d-flex my-5">
+                    <div class="col-sm-3">
+                        <a href="{{ url('/') }}">
+                            <img src="{{ URL::asset('/img/difarooms-logo.png') }}" alt="Difarooms Logo">
+                        </a>
+                    </div>
+                    <div class="col-sm-6 my-auto">
+                        <div class="hstack gap-3 d-flex text-white">
+                            <div class="mx-auto my-auto" style="font-weight: 400; font-size: 18px;">Tujuan
+                            </div>
+                            <div class="mx-auto my-auto" style="font-weight: 400; font-size: 18px;">Pusat
+                                Bantuan</div>
+                            <div class="mx-auto my-auto" style="font-weight: 400; font-size: 18px;">Kontak
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
                 </div>
-                <div class="col-4 d-flex mx-auto">
-                    <div class="row my-auto" style="font-size: 16px; font-weight:300; color: #FFFFFF">
-                        <p>Tujuan</p>
-                        <p>Pusat Bantuan</p>
-                        <p>Kontak</p>
+            </footer>
+            <!-- Modal for Register-->
+            <div class="modal fade" id="register" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg rounded" style="border-radius: 12px">
+                    <div class="modal-content border-0 mx-auto" style="border-radius: 12px; max-width: 548px;">
+                        <div class="modal-header" style="border-bottom: 0 none;">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body mx-3 mb-3">
+                            <h5 class="modal-title" style="font-weight: 700; font-size: 24px;">Daftar Akun</h5>
+                            <p style="font-weight: 400; font-size: 20px;">Buat akunmu untuk dapat berjejaring</p>
+                            <form method="POST" action="{{ route('register') }}">
+                                @csrf
+
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <input id="name" type="text"
+                                            class="form-control @error('name') is-invalid @enderror" name="name"
+                                            value="{{ old('name') }}" required autocomplete="name" autofocus
+                                            placeholder="Nama">
+
+                                        @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <input id="email" type="email"
+                                            class="form-control @error('email') is-invalid @enderror" name="email"
+                                            value="{{ old('email') }}" required autocomplete="email"
+                                            placeholder="Email">
+
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <input id="password" type="password"
+                                            class="form-control @error('password') is-invalid @enderror"
+                                            name="password" required autocomplete="new-password"
+                                            placeholder="Kata sandi">
+
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="row mb-5">
+                                    <div class="col">
+                                        <input id="password-confirm" type="password" class="form-control"
+                                            name="password_confirmation" required autocomplete="new-password"
+                                            placeholder="Konfirmasi kata sandi">
+                                    </div>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary"
+                                        style="background: rgba(36, 77, 100, 1); border-radius: 12px;">
+                                        {{ __('Register') }}
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </main>
+    </div>
+    @yield('lower_body')
+
 </body>
 
 </html>

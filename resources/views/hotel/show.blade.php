@@ -14,37 +14,58 @@
         </div>
     </div>
 
-    <div class="container" style="max-width: 95%">
+    <div class="container-fluid" style="padding-inline: 7rem;">
+
+        {{-- breadcrumb nav --}}
+        <div class="row mt-3">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ '/hotel' }}"
+                            style="font-weight: 500; font-size: 16px; text-decoration: none; color: rgba(0, 0, 0, 1);">Hotel</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page"
+                        style="font-weight: 500; font-size: 16px; text-decoration: none; color: rgba(71, 162, 214, 1);">
+                        {{ $hotel->ht_name }}</li>
+                </ol>
+            </nav>
+        </div>
+
+        {{-- content --}}
         <div class="row">
-            <div class="col-sm-7">
-                <div class="container-fluid">
-                    <div class="row">
+            {{-- main --}}
+            <div class="col-7">
+                <div class="row">
+                    ini gambar
+                </div>
+                <div class="row">
+                    {{-- <p style="text-align: justify">{{ $hotel->ht_description }}</p> --}}
+                </div>
+                <hr>
+                <div class="row">
+                    <h2>Tipe Kamar</h2>
+                </div>
+                <div class="row">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
                         <div class="col">
-                            
-                        </div>
-                        <div class="col">
-                            Column
-                        </div>
-                        <div class="col">
-                            Column
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a longer card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-5">
-                <p id="ht_key" hidden>{{ $hotel->ht_key }}</p>
-                <div class="row">
-                    {{-- map --}}
-                    {{-- <div class="mt-5 mb-5 shadow" id="map" style="height: 292px; border-radius:12px">INI MAP</div>
 
-                    <script src="{{ asset('js/maps.js') }}"></script>
-                    <script src="{{ asset('js/markercluster.js') }}"></script>
-                    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&callback=initMap">
-                    </script>
-                    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-                    </script> --}}
-                    {{-- map --}}
-                    <iframe src="{{ $hotel->ht_embedmaps }}" id="embed_maps" class="embed_maps mt-5 mb-5 shadow" style="height: 292px; border-radius:12px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            {{-- side --}}
+            <div class="col-5">
+                <div class="row">
+                    <iframe src="{{ $hotel->ht_embedmaps }}" id="embed_maps" class="embed_maps mt-5 mb-5 shadow"
+                        style="height: 292px; border-radius:12px" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="row">
                     <div class="card shadow">
@@ -57,18 +78,5 @@
                 </div>
             </div>
         </div>
-        <br>
-        {{-- @foreach ($rates as $rt )
-        <div class="row">
-                <div class="card">
-                    <div class="card-body">
-                        <p>{{ $rt->name }}</p>
-                        <p id="usd_price" hidden>{{ $rt->rate }}</p>
-                        <p id="idr_price">Rate harga : </p>
-                </div> 
-            </div>
-        </div>            
-        @endforeach --}}
-    </div>
-    {{-- header --}}
+
 @endsection
