@@ -90,19 +90,44 @@
                         @endif
                         <hr>
                         <h2 style="font-weight: 500; font-size:24px">Fasilitas Hotel</h2>
-                        {{-- @foreach ($hotel_fascility->$fasc)
                         <div class="row">
-                            
+                            <div class="col-6">
+                                <p><img src="{{ URL::asset('/img/ramp.png') }}" alt=""> Ramp</p>
+                                <p><span class="iconify" data-icon="bxs:taxi"></span>Antar jemput</p>
+                                <p><span class="iconify" data-icon="el:wheelchair"></span>Akses kursi roda</p>
+                                <p><span class="iconify" data-icon="ph:toilet-fill"></span>Pegangan toilet</p>
+                                <p><span class="iconify" data-icon="fa6-solid:square-parking"></span>Parkir difabel</p>
+                                <p><span class="iconify" data-icon="bi:people-fill"></span>Bantuan staff</p>
+                                <p><span class="iconify" data-icon="fa-solid:clinic-medical"></span>Pusat kesehatan</p>
+                                <p><span class="iconify" data-icon="fa6-solid:wifi"></span>Wifi</p>
+                                <p><span class="iconify" data-icon="cil:bathroom"></span>Kamar mandi luas</p>
+                                <p><span class="iconify" data-icon="akar-icons:dot-grid-fill"></span>Jalan pemandu</p>
+                                <p><span class="iconify" data-icon="fa6-solid:elevator"></span>Lift aksesibel</p>
+                                <p><span class="iconify" data-icon="iconoir:air-conditioner"></span>AC</p>
+                            </div>
+                            <div class="col-6">
+                                <p><span class="iconify" data-icon="dashicons:food"></span>Restoran</p>
+                                <p><span class="iconify" data-icon="material-symbols:laundry"></span>Laundry</p>
+                                <p><span class="iconify" data-icon="medical-icon:waiting-area"></span>Ruang tunggu tamu</p>
+                                <p><span class="iconify" data-icon="bxs:cctv"></span>CCTV</p>
+                                <p><span class="iconify" data-icon="fluent:access-time-24-filled"></span>Resepsionis 24 Jam</p>
+                                <p><span class="iconify" data-icon="ic:round-pool"></span>Kolam renang</p>
+                                <p><span class="iconify" data-icon="fa-solid:fire-extinguisher"></span>Pemadam api</p>
+                                <p><span class="iconify" data-icon="maki:fitness-centre"></span>Pusat kebugaran</p>
+                                <p><span class="iconify" data-icon="carbon:bar"></span>Mini bar</p>
+                                <p><span class="iconify" data-icon="fa-solid:mosque"></span>Masjid</p>
+                                <p><span class="iconify" data-icon="fa6-solid:sink"></span>Westafel rendah</p>
+                                <p><span class="iconify" data-icon="ph:toilet-fill"></span>Kloset rendah</p>
+                            </div>
                         </div>
-                        @endforeach --}}
                         <hr>
                         <h2 style="font-weight: 500; font-size:24px">Harga</h2>
-                        {{-- @foreach ($idr_rate as $rates)
+                        @foreach ($rates as $rt)
                             <div class="row">
-                                <p>{{ $rates->name }}</p>
-                                <p>{{ $rates->rate }}</p>
+                                <p>{{ $rt['name'] }}</p>
+                                <p>{{ $rt['rate'] }}</p>
                             </div>
-                        @endforeach --}}
+                        @endforeach
                         <hr>
                         <h2 style="font-weight: 500; font-size:24px">Kontak Hotel</h2>
                         <div class="row">
@@ -113,10 +138,6 @@
                         </div>
                     </div>
                 </div>
-                @foreach ($rates as $rt)
-                    <p>{{ $rt['name'] }}</p>
-                    <p>{{ $rt['rate'] }}</p>
-                @endforeach
             </div>
         </div>
     </div>
