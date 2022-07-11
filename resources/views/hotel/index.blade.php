@@ -342,10 +342,39 @@
                                             <div class="row">
                                                 @foreach ($hotel_fascility as $fas)
                                                 @if ($fas->ht_id == $htl->id)
-                                                    {{ $fas->ramp }}
-                                                    {{ $fas->antarjemput }}
-                                                    {{ $fas->akses_kursiroda }}
-                                                    {{ $fas->toilet_pegangan }}
+                                                
+                                                <div class="col-6">
+                                                    
+                                                    @if (  $fas->ramp == '1' )
+                                                    <p><img src="{{ URL::asset('/img/ramp.png') }}" alt="ramp-icon">ramp</p>
+                                                    @else
+                                                    <p class="disabled"><img src="{{ URL::asset('/img/ramp.png') }}" alt="ramp-icon">ramp</p>
+                                                    @endif
+                                                    
+                                                    @if ( $fas->antarjemput == '1' )
+                                                    <p><span class="iconify" data-icon="fa6-solid:car"></span>Antar jemput bandara</p>
+                                                    @else
+                                                    <p class="disabled"><span class="iconify" data-icon="fa6-solid:car"></span>Antar jemput bandara</p>
+                                                    @endif
+
+                                                </div>
+
+                                                <div class="col-6">
+                                                    
+                                                    @if ( $fas->akses_kursiroda =='1' )
+                                                    <p><span class="iconify" data-icon="map:wheelchair"></span></span>Akses kursi roda</p>
+                                                    @else
+                                                    <p class="disabled"><span class="iconify" data-icon="map:wheelchair"></span></span>Akses kursi roda</p>
+                                                    @endif
+
+                                                    @if ( $fas->toilet_pegangan =='1' )
+                                                    <p><span class="iconify" data-icon="ph:toilet-fill"></span></span>Pegangan toilet</p>
+                                                    @else
+                                                    <p><span class="iconify" data-icon="ph:toilet-fill"></span></span>Pegangan toilet</p>
+                                                    @endif
+
+                                                </div>
+                                                   
                                                 @endif
                                                 @endforeach
                                             </div>

@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="col-6">
                             <p class="card-text" style="font-weight: 600; font-size: 18px;">
-                                {{ $htl->ht_name }}</p>
+                                {{ $data->fv_hotel_name }}</p>
                         </div>
                         <div class="col-6 text-end"
                             style="font-weight: 500; font-size: 12px; color:rgba(59, 135, 178, 1);">
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="row px-5">
-                        <a href="{{ route('/hotel/show', $htl->id) }}"
+                        <a href="{{ route('/hotel/show', $data->fv_hotel_id) }}"
                             class="btn btn-primary border-0" type="button"
                             style="border-radius: 12px; background-color:#244D64">Lihat
                             detail</a>
