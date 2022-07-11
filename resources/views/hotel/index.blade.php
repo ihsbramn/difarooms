@@ -336,7 +336,6 @@
                                         </div>
                                         <div class="col-4">
                                             <p>bintang</p>
-                                            
                                         </div>
                                     </div>
                                     <div class="row">
