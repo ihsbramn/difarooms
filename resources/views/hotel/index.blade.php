@@ -320,9 +320,6 @@
                 </div>
                 {{-- list hotel --}}
                 @foreach ($hotel as $htl)
-                    
-                        
-                        
                             <div class="card mb-3 border-0 shadow-lg" style="border-radius: 12px">
                                 <div class="row g-0">
                                     <div class="col-md-4">
@@ -372,8 +369,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                        
+
                     @endforeach
                 {{-- list hotel --}}
             </div>
