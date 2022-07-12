@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-5">
                 <form action="{{ route('hotel/update', $hotel->id) }}" method="post" enctype="multipart/form-data">
-                    <div class="row bg-white ms-3 me-2 shadow" style="border-radius: 12px">
+                    <div class="row bg-white ms-3 me-2 shadow" style="border-radius: 12px; min-height: 81vh;">
                         @csrf
                         @method('PUT')
                         <div class="form px-3 py-3">
@@ -53,7 +53,7 @@
                             <div class="mb-3 row">
                                 <label class="col-sm-2 col-form-label" for="ht_description">Deskripsi</label>
                                 <div class="col-sm-10">
-                                    <textarea type="text" class="form-control " id="ht_description" name="ht_description" rows="4">
+                                    <textarea type="text" class="form-control " id="ht_description" name="ht_description" rows="20">
                                     {{ $hotel->ht_description }}
                                 </textarea>
                                 </div>
@@ -125,7 +125,7 @@
             </div>
             <div class="col-4">
                 <div class="row">
-                    <div class="card border-0 shadow" style="border-radius: 12px">
+                    <div class="card border-0 shadow" style="max-height:40vh; overflow:scroll; border-radius: 12px;">
                         <div class="card-body">
                             <p class="text-center">Data Photo</p>
                             @foreach ($hotel_img as $img)
@@ -144,7 +144,7 @@
                     </div>
                 </div>
                 <div class="row mt-5">
-                    <div class="card border-0 shadow" style="border-radius: 12px"">
+                    <div class="card border-0 shadow" style="border-radius: 12px;"">
                         <div class="card-body">
                             <p class="text-center">Add Photo</p>
                             <form method="post" action="{{ route('hotel_img/store') }}"
@@ -206,7 +206,7 @@
                 </div>
             </div>
             <div class="col-3">
-                <div class="card border-0 shadow" style="border-radius: 12px">
+                <div class="card border-0 shadow" style="border-radius: 12px;  min-height: 81vh;">
                     <div class="card-body">
                         <p class="text-center">Add Fascilites</p>
                         <form method="post" action="{{ route('hotel_fascility/store') }}"
