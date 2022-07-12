@@ -46,13 +46,24 @@
     <div class="container">
         {{-- map --}}
         <div class="mt-5 mb-5 shadow" id="map" style="height: 318px;border-radius:12px">INI MAP</div>
-
         <script src="{{ asset('js/maps.js') }}"></script>
         <script src="{{ asset('js/markercluster.js') }}"></script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&callback=initMap">
         </script>
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
         </script>
+        <label>Point Of Interest</label>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="show-poi"
+                name="show-poi">
+            <label class="form-check-label" for="show-poi">Munculkan Point of Interest </label>
+        </div>
+        <div id="style-selector-control" class="map-control">
+            <input class="form-check-input" type="radio" name="hide-poi" id="hide-poi" checked />
+            <label for="hide-poi">Hide</label>
+            <input class="form-check-input" type="radio" name="show-poi" id="show-poi" />
+            <label for="show-poi">Show</label>
+        </div>
         {{-- map --}}
 
         {{-- list hotel & filter --}}
