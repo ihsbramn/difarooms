@@ -352,6 +352,7 @@
                                                                     alt="ramp-icon">ramp</p>
                                                         @endif
 
+
                                                         @if ($fas->antarjemput == '1')
                                                             <p><span class="iconify"
                                                                     data-icon="fa6-solid:car"></span>Antar jemput bandara
@@ -399,9 +400,11 @@
                                                 </div>
                                                 <div class="col-6">
                                                     @foreach ($fav as $fv)
-                                                    @if ($fv->fv_hotel_id == $htl->id)
-                                                        <p>{{ $fv->fv_hotel_name }}</p>
-                                                    @endif
+                                                        @if ($fv->fv_hotel_id == $htl->id)
+                                                            @if ($loop->first)
+                                                                <p>{{ $loop->count }}</p>
+                                                            @endif
+                                                        @endif
                                                     @endforeach
                                                 </div>
                                             </div>
