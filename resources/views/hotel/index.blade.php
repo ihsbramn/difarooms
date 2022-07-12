@@ -396,14 +396,19 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-6">
-
+                                                    <p>{{ $htl->ht_key }}</p>
                                                 </div>
                                                 <div class="col-6">
                                                     @foreach ($fav as $fv)
                                                         @if ($fv->fv_hotel_id == $htl->id)
-                                                            @if ($loop->first)
-                                                                <p>{{ $loop->count }}</p>
-                                                            @endif
+                                                            {{-- @if ($loop->first) --}}
+                                                                <p id="total">{{ $fv->fv_count }}</p>
+                                                                <p></p>
+                                                            <script>
+                                                                const a = document.getElementById('total');
+
+                                                            </script>
+                                                            {{-- @endif --}}
                                                         @endif
                                                     @endforeach
                                                 </div>

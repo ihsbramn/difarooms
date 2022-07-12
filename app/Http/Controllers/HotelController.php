@@ -39,6 +39,13 @@ class HotelController extends Controller
         }
 
         $hotel_fascility = HotelFascility::all();
+
+        foreach ($hotel as $ht) {
+            $key[] = array(
+                $ht->ht_key,
+            );
+        }
+        
         // dd($hotel, $marker, $hotel_fascility);
 
         return view('hotel/index',compact('hotel','marker','hotel_fascility','fav','count'));
@@ -187,12 +194,14 @@ class HotelController extends Controller
             
         };
 
-        $rates = (object)$idr_rate;
+        $slice = array_slice($idr_rate,0,4);
+
+        $rates = (object)$slice;
 
         // testing
         // dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$rates,$url_tripadvisor,$fa_id);
         
-        // dd($idr_rate);
+        // dd($rates);
         
         return view('/hotel/show', compact(
             'hotel',
