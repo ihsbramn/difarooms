@@ -98,7 +98,6 @@ class FavouritesController extends Controller
     public function destroy($id)
     {
         Favourites::find($id)->delete();
-
-        return back()->with('success', 'Images deleted successfully');
+        return back()->with('success', 'Favourites deleted successfully');
     }
 }
