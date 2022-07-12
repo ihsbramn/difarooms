@@ -69,6 +69,7 @@ Route::post('/comment/store',[CommentController::class,'store'])->name('/comment
 
 // Favourites
 Route::post('/favourites/store',[FavouritesController::class,'store'])->name('/favourites/store');
+Route::delete('/favourites/destroy/{id}',[FavouritesController::class,'destroy'])->name('/favourites/destroy');
 // Favourites
 
 // About US

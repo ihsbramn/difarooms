@@ -193,7 +193,7 @@ class HotelController extends Controller
         // testing
         // dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$rates,$url_tripadvisor,$fa_id);
         
-        // dd($idr_rate);
+        // dd($hotel_roomtype);
         
         return view('/hotel/show', compact(
             'hotel',

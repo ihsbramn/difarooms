@@ -206,7 +206,7 @@
                 </div>
             </div>
             <div class="col-3">
-                <div class="card border-0 shadow" style="border-radius: 12px"">
+                <div class="card border-0 shadow" style="border-radius: 12px">
                     <div class="card-body">
                         <p class="text-center">Add Fascilites</p>
                         <form method="post" action="{{ route('hotel_fascility/store') }}"
