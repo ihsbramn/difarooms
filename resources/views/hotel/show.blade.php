@@ -11,6 +11,32 @@
                     <h1 style="font-weight: 700; font-size: 64px">{{ $hotel->ht_name }}</h1>
                 </div>
             </div>
+            <div class="card-img-overlay d-flex">
+                <div class="container-fluid mt-auto" style="padding-inline: 7rem;">
+                    @auth
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="fv_user_id" name="fv_user_id"
+                                value="{{ Auth::user()->id }}" hidden>
+                            <input type="text" class="form-control" id="fv_hotel_id" name="fv_hotel_id"
+                                value="{{ $hotel->id }}" hidden>
+                            <input type="text" class="form-control" id="fv_hotel_name" name="fv_hotel_name"
+                                value="{{ $hotel->ht_name }}" hidden>
+                            <input type="text" class="form-control" id="fv_count" name="fv_count" value="1" hidden>
+                        </div>
+                        <button href="submit" class="btn btn-secondary rounded-circle me-md-2"><i
+                                class="bi bi-heart"></i></button>
+                    @endauth
+                    @guest
+                        <button onclick="like()" class="btn btn-secondary rounded-circle me-md-2"><i
+                                class="bi bi-heart"></i></button>
+                        <script>
+                            function like() {
+                                alert("Harap login terlebih dahulu");
+                            }
+                        </script>
+                    @endguest
+                </div>
+            </div>
         </div>
     </div>
 
@@ -37,7 +63,11 @@
                 <div class="row">
                     {{-- gambar --}}
 
-                    ini gambar
+                    {{-- @foreach ($hotel_img as $hi)
+                        <a type="button" data-bs-toggle="modal" data-bs-target="#lightbox">
+                            <img src="/storage/uploads/{{ $hi->name }}" alt="" data-bs-toggle="modal" data-bs-target="#lightbox">
+                        </a>
+                    @endforeach --}}
 
                 </div>
                 <div class="row">
@@ -82,14 +112,20 @@
                         @if ($hotel->ht_accesible == 'Ya')
                             <div class="row ps-2">
                                 <div class="col-6">
-                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="el:wheelchair"></span>Akses kursi roda</p>
-                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="ph:toilet-fill"></span>Toilet dengan pegangan</p>
-                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="medical-icon:elevators"></span>Lift disabel</p>
+                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                            data-icon="el:wheelchair"></span>Akses kursi roda</p>
+                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                            data-icon="ph:toilet-fill"></span>Toilet dengan pegangan</p>
+                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                            data-icon="medical-icon:elevators"></span>Lift disabel</p>
                                 </div>
                                 <div class="col-6">
-                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="bxs:car"></span>Antar jemput bandara</p>
-                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="fa:bath"></span>Kamar mandi luas</p>
-                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="fa6-solid:sink"></span>Westafel rendah</p>
+                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                            data-icon="bxs:car"></span>Antar jemput bandara</p>
+                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                            data-icon="fa:bath"></span>Kamar mandi luas</p>
+                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                            data-icon="fa6-solid:sink"></span>Westafel rendah</p>
                                 </div>
                             </div>
                         @else
@@ -103,60 +139,77 @@
                                 @foreach ($hotel_fascility as $hf)
                                     <div class="col-6">
                                         @if ($hf->ramp == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><img src="{{ URL::asset('/img/ramp.png') }}" class="me-2" alt="ramp"></span>Ramp</p>
+                                            <p style="font-weight: 400; font-size: 16px;"><img
+                                                    src="{{ URL::asset('/img/ramp.png') }}" class="me-2"
+                                                    alt="ramp"></span>Ramp</p>
                                         @endif
                                         @if ($hf->antarjemput == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="bxs:taxi"></span>Antar jemput</p>
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="bxs:taxi"></span>Antar jemput</p>
                                         @endif
                                         @if ($hf->akses_kursiroda == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="el:wheelchair"></span>Akses kursi roda</p>
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="el:wheelchair"></span>Akses kursi roda</p>
                                         @endif
                                         @if ($hf->toilet_pegangan == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="ph:toilet-fill"></span>Pegangan toilet</p>
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="ph:toilet-fill"></span>Pegangan toilet</p>
                                         @endif
                                         @if ($hf->parkir_difabel == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="fa6-solid:square-parking"></span>Parkir
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="fa6-solid:square-parking"></span>Parkir
                                                 difabel</p>
                                         @endif
                                         @if ($hf->bantuan_staff == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="bi:people-fill"></span>Bantuan staff</p>
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="bi:people-fill"></span>Bantuan staff</p>
                                         @endif
                                         @if ($hf->pusat_kesehatan == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="fa-solid:clinic-medical"></span>Pusat
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="fa-solid:clinic-medical"></span>Pusat
                                                 kesehatan</p>
                                         @endif
                                         @if ($hf->wifi == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="fa6-solid:wifi"></span>Wifi</p>
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="fa6-solid:wifi"></span>Wifi</p>
                                         @endif
                                         @if ($hf->kamarmandi_luas == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="cil:bathroom"></span>Kamar mandi luas</p>
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="cil:bathroom"></span>Kamar mandi luas</p>
                                         @endif
                                         @if ($hf->jalan_pemandu == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="akar-icons:dot-grid-fill"></span>Jalan
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="akar-icons:dot-grid-fill"></span>Jalan
                                                 pemandu</p>
                                         @endif
                                         @if ($hf->lift_aksesibel == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="fa6-solid:elevator"></span>Lift aksesibel
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="fa6-solid:elevator"></span>Lift aksesibel
                                             </p>
                                         @endif
                                         @if ($hf->ac == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="iconoir:air-conditioner"></span>AC</p>
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="iconoir:air-conditioner"></span>AC</p>
                                         @endif
                                     </div>
                                     <div class="col-6">
                                         @if ($hf->restoran == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="dashicons:food"></span>Restoran</p>
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="dashicons:food"></span>Restoran</p>
                                         @endif
                                         @if ($hf->laundry == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="material-symbols:laundry"></span>Laundry</p>
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="material-symbols:laundry"></span>Laundry</p>
                                         @endif
                                         @if ($hf->ruang_tunggu_tamu == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="medical-icon:waiting-area"></span>Ruang
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="medical-icon:waiting-area"></span>Ruang
                                                 tunggu
                                                 tamu</p>
                                         @endif
                                         @if ($hf->cctv == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="bxs:cctv"></span>CCTV</p>
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="bxs:cctv"></span>CCTV</p>
                                         @endif
                                         @if ($hf->resepsionis_24jam == '1')
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
@@ -164,29 +217,36 @@
                                                 24 Jam</p>
                                         @endif
                                         @if ($hf->kolam_renang == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="ic:round-pool"></span>Kolam renang</p>
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="ic:round-pool"></span>Kolam renang</p>
                                         @endif
                                         @if ($hf->pemadam_api == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="fa-solid:fire-extinguisher"></span>Pemadam
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="fa-solid:fire-extinguisher"></span>Pemadam
                                                 api
                                             </p>
                                         @endif
                                         @if ($hf->pusat_kebugaran == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="maki:fitness-centre"></span>Pusat
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="maki:fitness-centre"></span>Pusat
                                                 kebugaran
                                             </p>
                                         @endif
                                         @if ($hf->mini_bar == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="carbon:bar"></span>Mini bar</p>
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="carbon:bar"></span>Mini bar</p>
                                         @endif
                                         @if ($hf->masjid == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="fa-solid:mosque"></span>Masjid</p>
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="fa-solid:mosque"></span>Masjid</p>
                                         @endif
                                         @if ($hf->westafel_rendah == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="fa6-solid:sink"></span>Westafel rendah</p>
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="fa6-solid:sink"></span>Westafel rendah</p>
                                         @endif
                                         @if ($hf->kloset_rendah == '1')
-                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2" data-icon="ph:toilet-fill"></span>Kloset rendah</p>
+                                            <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                    data-icon="ph:toilet-fill"></span>Kloset rendah</p>
                                         @endif
                                     </div>
                                 @endforeach
@@ -197,7 +257,7 @@
                         </div>
                         <hr>
                         <h2 style="font-weight: 500; font-size: 20px; color:black;">Harga</h2>
-                        @if ($rates != null)
+                        {{-- @if ($rates != null)
                             @foreach ($rates as $rt)
                                 <div class="row">
                                     <p>{{ $rt['name'] }}</p>
@@ -206,18 +266,19 @@
                             @endforeach
                         @else
                             <p>Maaf, harga belum tersedia untuk saat ini</p>
-                        @endif
+                        @endif --}}
                         <hr>
                         <h2 style="font-weight: 500; font-size: 20px; color:black;">Kontak Hotel</h2>
                         <div class="row ps-2">
-                            <p style="font-weight: 500; font-size: 16px;"><i
-                                    class="bi bi-geo-alt-fill me-2" style="color: red;"></i>{{ $hotel->ht_address }}</p>
-                            <p style="font-weight: 500; font-size: 16px;"><i
-                                    class="bi bi-telephone-fill me-2" style="color: green;"></i>{{ $hotel->ht_contact }}</p>
+                            <p style="font-weight: 500; font-size: 16px;"><i class="bi bi-geo-alt-fill me-2"
+                                    style="color: red;"></i>{{ $hotel->ht_address }}</p>
+                            <p style="font-weight: 500; font-size: 16px;"><i class="bi bi-telephone-fill me-2"
+                                    style="color: green;"></i>{{ $hotel->ht_contact }}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 @endsection

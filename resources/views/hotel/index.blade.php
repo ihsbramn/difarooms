@@ -433,15 +433,24 @@
                                                             class="btn btn-secondary rounded-circle me-md-2"><i
                                                                 class="bi bi-heart"></i></button>
                                                     </form>
-                                                    <a class="btn btn-primary"
-                                                        href="{{ route('/hotel/show', $htl->id) }}" style="background: #47A2D6; border-radius: 12px;font-weight: 600; font-size: 16px; border-color: #47A2D6;">Lihat detail</a>
+                                                    <a class="btn btn-primary" href="{{ route('/hotel/show', $htl->id) }}"
+                                                        style="background: #47A2D6; border-radius: 12px;font-weight: 600; font-size: 16px; border-color: #47A2D6;">Lihat
+                                                        detail</a>
                                                 @endauth
+                                                @guest
+                                                    <button onclick="like()" class="btn btn-secondary rounded-circle me-md-2"><i
+                                                            class="bi bi-heart"></i></button>
+                                                            <script>
+                                                                function like() {
+                                                                  alert("Harap login terlebih dahulu");
+                                                                }
+                                                            </script>
+                                                    <a class="btn btn-primary" href="{{ route('/hotel/show', $htl->id) }}"
+                                                        style="background: #47A2D6; border-radius: 12px;font-weight: 600; font-size: 16px; border-color: #47A2D6;">Lihat
+                                                        detail</a>
+                                                @endguest
                                             </div>
                                         </div>
-                                        @guest
-                                            <button>test</button>
-                                        @endguest
-
                                     </div>
                                 </div>
                             </div>

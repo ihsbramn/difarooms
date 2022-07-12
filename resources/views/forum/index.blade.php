@@ -53,16 +53,12 @@
                         <div class="tab-pane fade show active" id="nav-semua" role="tabpanel"
                             aria-labelledby="nav-semua-tab" tabindex="0">
                             @foreach ($forum as $fr)
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p style="font-weight: 500; font-size: 16px;">{{ $fr->fr_author }}</p>
-                                        <p style="font-weight: 500; font-size: 20px;">{{ $fr->fr_title }}</p>
-                                    </div>
-                                    <hr>
-                                    <div class="card-body">
-
-                                    </div>
+                            <a style="text-decoration: none" class="card border-0 shadow mt-3" href="{{ route('/forum/show',$fr->id) }}" style="border-radius: 12px">
+                                <div class="card-body" style="border-radius: 12px">
+                                  <p style="font-weight: 700; font-size: 24px; color: black;">{{ $fr->fr_title }}</p>
+                                  <p class="text-end mb-0" style="font-weight: 500; font-size: 20px; color: black;"><i class="bi bi-person-fill me-2"></i>: {{ $fr->fr_author }}</p>
                                 </div>
+                            </a>    
                             @endforeach
                         </div>
                         <div class="tab-pane fade" id="nav-terbaru" role="tabpanel" aria-labelledby="nav-terbaru-tab"
