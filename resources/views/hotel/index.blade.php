@@ -292,6 +292,7 @@
                     <div class="col-sm-2 d-grid">
                         <p class="my-auto" style="font-weight: 500; font-size:20px; color:#244D64">Urutkan : </p>
                     </div>
+
                     <div class="col-sm-10 ms-0">
                         <input type="radio" class="btn-check" name="options-outlined" id="terdekat"
                             autocomplete="off">
@@ -332,6 +333,7 @@
                                             <p class="mb-0" style="font-weight: 400; font-size: 16px;"><i
                                                     class="bi bi-geo-alt-fill me-2"></i>{{ $htl->ht_address }}</p>
                                             <a href="">Tunjukan di peta</a>
+
                                         </div>
                                         <div class="col-4 text-end">
                                             @if ($htl->ht_accesible == 'Ya')
@@ -491,45 +493,52 @@
                         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
                         </script>
 
-                        @foreach ($hotel as $data)
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">id</th>
-                                        <th scope="col">Nama Hotel</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>{{ $data->id }}</td>
-                                        <td>{{ $data->ht_name }}</td>
-                                        <td>
-                                            @auth
-                                                <a class="btn btn-primary"
-                                                    href="{{ route('/hotel/show', $data->id) }}">Show</a>
-                                                <form action="{{ route('/favourites/store') }}" method="POST">
-                                                    @csrf
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="fv_user_id"
-                                                            name="fv_user_id" value="{{ Auth::user()->id }}" hidden>
-                                                        <input type="text" class="form-control" id="fv_hotel_id"
-                                                            name="fv_hotel_id" value="{{ $data->id }}" hidden>
-                                                        <input type="text" class="form-control" id="fv_hotel_name"
-                                                            name="fv_hotel_name" value="{{ $data->ht_name }}" hidden>
-                                                        <input type="text" class="form-control" id="fv_count"
-                                                            name="fv_count" value="1" hidden>
-                                                    </div>
-                                                    <br>
-                                                    <button href="submit" class="btn btn-dark">Tambah ke Favorit</button>
-                                                </form>
-                                            @endauth
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        @endforeach
-                    </div>
+
+                                @foreach ($hotel as $data)
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">id</th>
+                                                <th scope="col">Nama Hotel</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>{{ $data->id }}</td>
+                                                <td>{{ $data->ht_name }}</td>
+                                                <td>
+                                                    <a class="btn btn-primary"
+                                                        href="{{ route('/hotel/show', $data->id) }}">Show</a>
+                                                        @auth
+                                                        <form action="{{ route('/favourites/store') }}" method="POST">
+                                                            @csrf
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" id="fv_user_id" name="fv_user_id" value="{{ Auth::user()->id }}" hidden>
+                                                                <input type="text" class="form-control" id="fv_hotel_id" name="fv_hotel_id" value="{{ $data->id }}" hidden>
+                                                                <input type="text" class="form-control" id="fv_hotel_name" name="fv_hotel_name" value="{{ $data->ht_name }}" hidden>
+                                                                <input type="text" class="form-control" id="fv_count" name="fv_count" value="1" hidden>
+                                                            </div>
+                                                            <br>
+                                                            <button href="submit" class="btn btn-dark">Tambah ke Favorit</button>
+                                                        </form>
+                                                        @endauth
+                                                        @guest
+                                                            <button class="btn btn-dark" onclick="loginplease()">Tambah Ke Favorit</button>
+                                                            <script>
+                                                                function loginplease() {
+                                                                    alert("Silahkan Login Terlebih Dahulu");
+                                                                }
+                                                            </script>
+                                                        @endguest
+                                                    
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            @endforeach
+                        </div>
+
                 </div>
             </div>
         </div>
