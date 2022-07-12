@@ -35,13 +35,7 @@
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label" for="ht_contact">Nomor Telp</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control " id="ht_contact" name="ht_contact">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label" for="ht_contact">Email</label>
+                        <label class="col-sm-2 col-form-label" for="ht_contact">Contact</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control " id="ht_contact" name="ht_contact">
                         </div>

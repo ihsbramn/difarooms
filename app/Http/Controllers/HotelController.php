@@ -39,6 +39,13 @@ class HotelController extends Controller
         }
 
         $hotel_fascility = HotelFascility::all();
+
+        foreach ($hotel as $ht) {
+            $key[] = array(
+                $ht->ht_key,
+            );
+        }
+        
         // dd($hotel, $marker, $hotel_fascility);
 
         return view('hotel/index',compact('hotel','marker','hotel_fascility','fav','count'));
@@ -117,7 +124,6 @@ class HotelController extends Controller
     {
         //getting spesific id
         $hotel = Hotel::find($id);
-
         $hotel_img = Hotel_Img::where('ht_id', '=' , $id)->get();
         $hotel_fascility = HotelFascility::where('ht_id', '=' , $id)->get();
         $fa_id = HotelFascility::where('ht_id', '=' , $id)->get(['ht_id'])->first();
@@ -188,12 +194,20 @@ class HotelController extends Controller
             
         // };
 
+<<<<<<< HEAD
         // $rates = (object)$idr_rate;
+=======
+        $slice = array_slice($idr_rate,0,4);
+
+        $rates = (object)$slice;
+>>>>>>> bdd6dd24594fc712e0ba109b3c7dda95cf053523
 
         // testing
         // dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$rates,$url_tripadvisor,$fa_id);
         
+
         // dd($hotel_roomtype);
+
         
         return view('/hotel/show', compact(
             'hotel',
@@ -216,14 +230,12 @@ class HotelController extends Controller
     {
         
         $hotel = Hotel::find($id);
-        $hotel_fascilities = HotelFascility::where('ht_id', '=' , $id)->get();
         $hotel_img = Hotel_Img::where('ht_id', '=' , $id)->get();
 
-        // dd($hotel,$hotel_img,$hotel_fascilities);
+        // dd($hotel,$hotel_img);
         return view('/hotel/edit', compact(
             'hotel',
-            'hotel_img',
-            'hotel_fascilities'
+            'hotel_img'
         ));
     }
 
