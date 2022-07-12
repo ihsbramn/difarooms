@@ -337,6 +337,18 @@
                                 <button type="submit" class="btn btn-success">Save</button>
                             </div>
                         </form>
+                        @if ($hotel_fascilities == null)
+                            
+                        @endif
+                        @foreach ($hotel_fascilities as $fas)
+                        <form action="{{ route('hotel_fascility/destroy', $fas->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-lg">
+                                <i class="bi bi-trash-fill" style="color: #CD0202"></i>
+                            </button>
+                        </form>
+                        @endforeach
                     </div>
                 </div>
             </div>

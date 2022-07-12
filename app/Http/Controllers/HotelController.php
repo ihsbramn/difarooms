@@ -186,7 +186,7 @@ class HotelController extends Controller
         };
 
         // testing
-        // dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$rates,$url_tripadvisor);
+        dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$rates,$url_tripadvisor);
         
         // dd($idr_rate);
         
@@ -210,12 +210,14 @@ class HotelController extends Controller
     {
         
         $hotel = Hotel::find($id);
+        $hotel_fascilities = HotelFascility::where('ht_id', '=' , $id)->get();
         $hotel_img = Hotel_Img::where('ht_id', '=' , $id)->get();
 
-        // dd($hotel,$hotel_img);
+        // dd($hotel,$hotel_img,$hotel_fascilities);
         return view('/hotel/edit', compact(
             'hotel',
-            'hotel_img'
+            'hotel_img',
+            'hotel_fascilities'
         ));
     }
 

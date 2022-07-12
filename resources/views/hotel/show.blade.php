@@ -92,7 +92,10 @@
                         <h2 style="font-weight: 500; font-size:24px">Fasilitas Hotel</h2>
                         <div class="row">
                             <div class="col-6">
+                                @foreach ($hotel_facscility as $hf)
+                                @if ($hf = '1')
                                 <p><img src="{{ URL::asset('/img/ramp.png') }}" alt=""> Ramp</p>
+                                @endif
                                 <p><span class="iconify" data-icon="bxs:taxi"></span>Antar jemput</p>
                                 <p><span class="iconify" data-icon="el:wheelchair"></span>Akses kursi roda</p>
                                 <p><span class="iconify" data-icon="ph:toilet-fill"></span>Pegangan toilet</p>
@@ -104,6 +107,7 @@
                                 <p><span class="iconify" data-icon="akar-icons:dot-grid-fill"></span>Jalan pemandu</p>
                                 <p><span class="iconify" data-icon="fa6-solid:elevator"></span>Lift aksesibel</p>
                                 <p><span class="iconify" data-icon="iconoir:air-conditioner"></span>AC</p>
+                                @endforeach
                             </div>
                             <div class="col-6">
                                 <p><span class="iconify" data-icon="dashicons:food"></span>Restoran</p>
