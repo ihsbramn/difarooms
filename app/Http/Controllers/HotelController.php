@@ -117,11 +117,9 @@ class HotelController extends Controller
     {
         //getting spesific id
         $hotel = Hotel::find($id);
-
         $hotel_img = Hotel_Img::where('ht_id', '=' , $id)->get();
-        $hotel_fascility = HotelFascility::where('ht_id', '=' , $id)->first();
-        // if(){
-        // }
+        $hotel_fascility = HotelFascility::where('ht_id', '=' , $id)->get();
+        $fa_id = HotelFascility::where('ht_id', '=' , $id)->get(['ht_id'])->first();
         $hotel_roomtype = HotelRoomtype::where('ht_id', '=' , $id)->get();
 
         //getting date
@@ -192,7 +190,7 @@ class HotelController extends Controller
         $rates = (object)$idr_rate;
 
         // testing
-        dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$rates,$url_tripadvisor);
+        // dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$rates,$url_tripadvisor,$fa_id);
         
         // dd($idr_rate);
         
@@ -202,7 +200,8 @@ class HotelController extends Controller
             'hotel_fascility',
             'hotel_roomtype',
             'rates',
-            'url_tripadvisor'
+            'url_tripadvisor',
+            'fa_id'
         ));
     }
 
