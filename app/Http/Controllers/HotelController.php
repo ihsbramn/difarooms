@@ -181,11 +181,13 @@ class HotelController extends Controller
                         'rate' => $price
                     ]);
                 };
-                $rates = (object)$idr_rate;
                 //getting hotel url by TripAdvisor
                 $url_tripadvisor = $hotel_price->result->hotel_url[0];
             }
+            
         };
+
+        $rates = (object)$idr_rate;
 
         // testing
         // dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$rates,$url_tripadvisor);
