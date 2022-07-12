@@ -8,7 +8,7 @@
 
 {{-- marker maps --}}
 @section('lower_body')
-    <<<<<<< HEAD @foreach ($hotel as $data)
+    @foreach ($hotel as $data)
         <script>
             var markersOnMap = [{
                 placeName: '{{ $data->ht_name }}',
