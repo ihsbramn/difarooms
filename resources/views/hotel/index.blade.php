@@ -323,7 +323,7 @@
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <img src="/storage/uploads/{{ $htl->ht_thumbnail }}" class="img-fluid rounded-start"
-                                        alt="...">
+                                        alt="hotel_img">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
@@ -500,17 +500,28 @@
                                                 <td>
                                                     <a class="btn btn-primary"
                                                         href="{{ route('/hotel/show', $data->id) }}">Show</a>
-                                                    <form action="{{ route('/favourites/store') }}" method="POST">
-                                        @csrf
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="fv_user_id" name="fv_user_id" value="{{ Auth::user()->id }}" hidden>
-                                            <input type="text" class="form-control" id="fv_hotel_id" name="fv_hotel_id" value="{{ $data->id }}" hidden>
-                                            <input type="text" class="form-control" id="fv_hotel_name" name="fv_hotel_name" value="{{ $data->ht_name }}" hidden>
-                                            <input type="text" class="form-control" id="fv_count" name="fv_count" value="1" hidden>
-                                        </div>
-                                        <br>
-                                        <button href="submit" class="btn btn-dark">Tambah ke Favorit</button>
-                                        </form>
+                                                        @auth
+                                                        <form action="{{ route('/favourites/store') }}" method="POST">
+                                                            @csrf
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" id="fv_user_id" name="fv_user_id" value="{{ Auth::user()->id }}" hidden>
+                                                                <input type="text" class="form-control" id="fv_hotel_id" name="fv_hotel_id" value="{{ $data->id }}" hidden>
+                                                                <input type="text" class="form-control" id="fv_hotel_name" name="fv_hotel_name" value="{{ $data->ht_name }}" hidden>
+                                                                <input type="text" class="form-control" id="fv_count" name="fv_count" value="1" hidden>
+                                                            </div>
+                                                            <br>
+                                                            <button href="submit" class="btn btn-dark">Tambah ke Favorit</button>
+                                                        </form>
+                                                        @endauth
+                                                        @guest
+                                                            <button class="btn btn-dark" onclick="loginplease()">Tambah Ke Favorit</button>
+                                                            <script>
+                                                                function loginplease() {
+                                                                    alert("Silahkan Login Terlebih Dahulu");
+                                                                }
+                                                            </script>
+                                                        @endguest
+                                                    
                                             </td>
                                         </tr>
                                     </tbody>
