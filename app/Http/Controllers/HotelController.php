@@ -85,10 +85,17 @@ class HotelController extends Controller
         $idr_rates = [];
 
         foreach ($prices as $i => $item){
-            array_push($idr_rates, [
-                'name' => $prices[$i]->result->rates[0]->name, 
-                'rate' => $prices[$i]->result->rates[0]->rate * $usd_idr_rates
-            ]);
+            if ($prices[$i]->error == null) {
+                array_push($idr_rates, [
+                    'name' => $prices[$i]->result->rates[0]->name, 
+                    'rate' => $prices[$i]->result->rates[0]->rate * $usd_idr_rates
+                ]);
+            }else{
+                array_push($idr_rates, [
+                    'name' => null, 
+                    'rate' => null
+                ]);
+            }
         }
 
         
