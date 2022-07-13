@@ -257,7 +257,7 @@
                         </div>
                         <hr>
                         <h2 style="font-weight: 500; font-size: 20px; color:black;">Harga</h2>
-                        {{-- @if ($rates != null)
+                        @if ($rates != null)
                             @foreach ($rates as $rt)
                                 <div class="row">
                                     <p>{{ $rt['name'] }}</p>
@@ -266,7 +266,7 @@
                             @endforeach
                         @else
                             <p>Maaf, harga belum tersedia untuk saat ini</p>
-                        @endif --}}
+                        @endif
                         <hr>
                         <h2 style="font-weight: 500; font-size: 20px; color:black;">Kontak Hotel</h2>
                         <div class="row ps-2">
