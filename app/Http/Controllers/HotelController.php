@@ -11,7 +11,7 @@ use App\Http\Requests\UpdateHotelRequest;
 use App\Models\Favourites;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
-use AshAllenDesign\LaravelExchangeRates\ExchangeRate;
+use stdClass;
 
 class HotelController extends Controller
 {
@@ -22,10 +22,35 @@ class HotelController extends Controller
      */
     public function index()
     {
+        //getting date
+        $format = 'yyyy-mm-dd';
+        // tomorrow
+        $today = Carbon::today()->format('Y-m-d');
+        // $today = Carbon::today()->addDays(1)->format('Y-m-d');
+        // day after tomorrow
+        $tomorrow = Carbon::tomorrow()->format('Y-m-d');
+        // $tomorrow = Carbon::tomorrow()->addDays(1)->format('Y-m-d');
         $hotel = Hotel::all();
         $fav = Favourites::all();
         $count = 0;
         $marker = [];
+
+        // getting idr rates
+        $req_url = 'https://api.exchangerate.host/convert?from=USD&to=IDR';
+                $response_json = file_get_contents($req_url);
+                
+                if(false !== $response_json) {
+                    try {
+                        $response = json_decode($response_json);
+                        if($response->success === true) {
+                            // dd($response);
+                            $decimal = round($response->result);
+                            $usd_idr_rates = (int)$decimal;
+                        }
+                    } catch(\Exception $e) {
+                            $rates = null;
+                    } 
+                };  
 
         foreach ($hotel as $ht) {
             $marker[] = array(
@@ -36,19 +61,40 @@ class HotelController extends Controller
                 ),
                 "url" =>  route('/hotel/show', $ht->id)
             );
-        }
+        };
 
         $hotel_fascility = HotelFascility::all();
 
         foreach ($hotel as $ht) {
-            $key[] = array(
+            $keys[] = array(
                 $ht->ht_key,
             );
+        };
+        $prices = [];
+
+        foreach ($keys as $key){
+            $response = Http::get('https://data.xotelo.com/api/rates?', [
+                'hotel_key' => $key[0],
+                'chk_in' => $today,
+                'chk_out' => $tomorrow,
+            ]);  
+            $prices[] = json_decode($response);
+            
+        };
+
+        $idr_rates = [];
+
+        foreach ($prices as $i => $item){
+            array_push($idr_rates, [
+                'name' => $prices[$i]->result->rates[0]->name, 
+                'rate' => $prices[$i]->result->rates[0]->rate * $usd_idr_rates
+            ]);
         }
+
         
         // dd($hotel, $marker, $hotel_fascility);
 
-        return view('hotel/index',compact('hotel','marker','hotel_fascility','fav','count'));
+        return view('hotel/index',compact('hotel','marker','hotel_fascility','fav','count','idr_rates'));
     }
 
     public function map()
@@ -189,10 +235,8 @@ class HotelController extends Controller
                     'rate' => $price
                 ]);
             };
-            // dd($idr_rate);
             //getting hotel url by TripAdvisor
             $url_tripadvisor = $hotel_price->result->hotel_url[0];
-            // dd($idr_rate,$url_tripadvisor);
             
             
         };

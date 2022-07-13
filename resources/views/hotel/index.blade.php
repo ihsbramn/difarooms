@@ -397,7 +397,10 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
-                                            <p>harga</p>
+                                            @foreach ($idr_rates as $idr)
+                                            <p> {{ $idr['name'] }}</p>
+                                            <p>{{ $idr['rate'] }}</p>
+                                            @endforeach
                                         </div>
                                         <div class="col-6">
                                             <p>logo external</p>
@@ -442,7 +445,7 @@
                                                             class="bi bi-heart"></i></button>
                                                             <script>
                                                                 function like() {
-                                                                  alert("Harap login terlebih dahulu");
+                                                                    alert("Harap login terlebih dahulu");
                                                                 }
                                                             </script>
                                                     <a class="btn btn-primary" href="{{ route('/hotel/show', $htl->id) }}"
