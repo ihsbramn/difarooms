@@ -59,20 +59,22 @@
         {{-- content --}}
         <div class="row">
             {{-- main --}}
-            <div class="col-7">
+            <div class="col-8">
                 <div class="row">
                     {{-- gambar --}}
 
-                    {{-- @foreach ($hotel_img as $hi)
-                        <a type="button" data-bs-toggle="modal" data-bs-target="#lightbox">
-                            <img src="/storage/uploads/{{ $hi->name }}" alt="" data-bs-toggle="modal" data-bs-target="#lightbox">
-                        </a>
-                    @endforeach --}}
+                    <div id='scrolly'>
+                        @foreach ($hotel_img as $hi)
+                            <a href="/storage/uploads/{{ $hi->name }}" data-lightbox="imghotel">
+                                <img src="/storage/uploads/{{ $hi->name }}" alt="Foto detail hotel" id='img-scroll' style="max-height: 300px; overflow: hidden;">
+                            </a>
+                        @endforeach
+                    </div>
 
                 </div>
                 <div class="row">
                     {{-- desc --}}
-                    <p style="text-align: justify">{{ $hotel->ht_description }}</p>
+                    <p style="text-align: justify; font-weight: 500; font-size: 16px;">{{ $hotel->ht_description }}</p>
                 </div>
                 <hr>
                 <div class="row">
@@ -80,15 +82,20 @@
                 </div>
                 <div class="row">
                     {{-- type kamar --}}
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="row row-cols-1 row-cols-md-3 g-3">
                         @foreach ($hotel_roomtype as $htl_rt)
                             <div class="col">
-                                <div class="card">
+                                <div class="card border-0"
+                                    style="max-height: 30rem; overflow: hidden; border-radius: 12px 12px 0px 0px">
                                     <img src="/storage/uploads/{{ $htl_rt->name }}" class="card-img-top"
-                                        alt="foto type kamar">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $htl_rt->name_roomtype }}</h5>
-                                        <p class="card-text">{{ $htl_rt->description }}</p>
+                                        alt="foto type kamar"
+                                        style="min-height: 10rem; overflow: auto; border-radius: 12px;">
+                                    <div class="card-body p-0 mt-2">
+                                        <h5 class="card-title" style="font-weight: 500; font-size: 16px;">
+                                            {{ $htl_rt->name_roomtype }}</h5>
+                                        <p class="card-text"
+                                            style="font-weight: 400; font-size: 12px; text-align: justify;">
+                                            {{ $htl_rt->description }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -98,7 +105,7 @@
             </div>
 
             {{-- side --}}
-            <div class="col-5 ps-5">
+            <div class="col-4 ps-5 mb-5">
                 {{-- maps --}}
                 <div class="row">
                     <iframe src="{{ $hotel->ht_embedmaps }}" id="embed_maps" class="embed_maps mb-5 shadow"
@@ -256,18 +263,43 @@
 
                         </div>
                         <hr>
+                        {{-- harga --}}
                         <h2 style="font-weight: 500; font-size: 20px; color:black;">Harga</h2>
                         @if ($rates != null)
                             @foreach ($rates as $rt)
-                                <div class="row">
-                                    <p>{{ $rt['name'] }}</p>
-                                    <p>{{ $rt['rate'] }}</p>
+                                <div class="card shadow-sm mt-2" style="border-radius: 12px">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col text-start">
+                                                <p class="mb-0"
+                                                    style="font-weight: 500; font-size: 14px; color: #47A2D6;">
+                                                    @money($rt['rate'])/malam</p>
+                                            </div>
+
+                                            <div class="col text-end">
+                                                <p class="mb-0" style="font-weight: 500; font-size: 14px;">
+                                                    {{ $rt['name'] }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             @endforeach
                         @else
                             <p>Maaf, harga belum tersedia untuk saat ini</p>
                         @endif
+                        <div class="card shadow-sm mt-2 py-2"
+                            style="border-radius: 12px; background: #34E0A1; border-color: #34E0A1;">
+                            <div class="row mx-auto">
+                                <div class="col my-auto">
+                                    <p class="mb-0" href="{{ $url_tripadvisor }}" target="_blank"
+                                        style="font-weight: 500;"><img src="{{ URL::asset('/img/tripadvlogo.jpg') }}"
+                                            alt="tripadvisor logo" style="max-height: 30px;" class="me-2"> Lihat
+                                        hotel ini di tripadvisor</p>
+                                </div>
+                            </div>
+                        </div>
                         <hr>
+                        {{-- kontak hotel --}}
                         <h2 style="font-weight: 500; font-size: 20px; color:black;">Kontak Hotel</h2>
                         <div class="row ps-2">
                             <p style="font-weight: 500; font-size: 16px;"><i class="bi bi-geo-alt-fill me-2"

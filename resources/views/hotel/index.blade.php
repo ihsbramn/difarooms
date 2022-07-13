@@ -54,8 +54,7 @@
         </script>
         <label>Point Of Interest</label>
         <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="show-poi"
-                name="show-poi">
+            <input class="form-check-input" type="checkbox" role="switch" id="show-poi" name="show-poi">
             <label class="form-check-label" for="show-poi">Munculkan Point of Interest </label>
         </div>
         <div id="style-selector-control" class="map-control">
@@ -408,7 +407,8 @@
                                             @foreach ($fav as $fv)
                                                 @if ($fv->fv_hotel_id == $htl->id)
                                                     @if ($loop->first)
-                                                        <p class="my-auto" style="font-weight: 500; font-size: 16px; color: #515151;">
+                                                        <p class="my-auto"
+                                                            style="font-weight: 500; font-size: 16px; color: #515151;">
                                                             Disukai {{ $loop->count }} orang</p>
                                                     @endif
                                                 @endif
@@ -438,13 +438,14 @@
                                                         detail</a>
                                                 @endauth
                                                 @guest
-                                                    <button onclick="like()" class="btn btn-secondary rounded-circle me-md-2"><i
+                                                    <button onclick="like()"
+                                                        class="btn btn-secondary rounded-circle me-md-2"><i
                                                             class="bi bi-heart"></i></button>
-                                                            <script>
-                                                                function like() {
-                                                                  alert("Harap login terlebih dahulu");
-                                                                }
-                                                            </script>
+                                                    <script>
+                                                        function like() {
+                                                            alert("Harap login terlebih dahulu");
+                                                        }
+                                                    </script>
                                                     <a class="btn btn-primary" href="{{ route('/hotel/show', $htl->id) }}"
                                                         style="background: #47A2D6; border-radius: 12px;font-weight: 600; font-size: 16px; border-color: #47A2D6;">Lihat
                                                         detail</a>
@@ -460,5 +461,16 @@
             </div>
         </div>
         {{-- list hotel --}}
+
+        {{-- pagination tab --}}
+        <nav aria-label="pagination">
+            <ul class="pagination justify-content-center">
+                <li class="page-item  ">
+                    {{ $hotel->links() }}
+                </li>
+            </ul>
+        </nav>
+        {{-- pagination tab --}}
+
     </div>
 @endsection

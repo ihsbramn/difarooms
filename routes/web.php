@@ -56,6 +56,7 @@ Route::get('/user/myfavourites',[UserController::class, 'myfavourites']);
 Route::delete('/forum/destroy/{id}',[ForumController::class, 'destroy'])->name('forum/destroy');
 Route::get('/forum/edit/{id}',[ForumController::class, 'edit'])->name('forum/edit');
 Route::match(['put','patch'],'/forum/update/{id}',[ForumController::class,'update'])->name('forum/update');
+Route::get('/forum/search',[ForumController::class, 'search'])->name('forum/search');
 //forum
 
 // forum img

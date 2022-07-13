@@ -22,7 +22,7 @@ class HotelController extends Controller
      */
     public function index()
     {
-        $hotel = Hotel::all();
+        $hotel = Hotel::paginate(10);
         $fav = Favourites::all();
         $count = 0;
         $marker = [];
@@ -207,7 +207,7 @@ class HotelController extends Controller
         // dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$rates,$url_tripadvisor,$fa_id);
         
 
-        // dd($hotel_roomtype);
+        // dd($hotel_img);
 
         
         return view('/hotel/show', compact(

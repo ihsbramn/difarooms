@@ -7,6 +7,8 @@ use App\Models\Forum_Img;
 use App\Http\Requests\StoreForumRequest;
 use App\Http\Requests\UpdateForumRequest;
 use App\Models\Comment;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ForumController extends Controller
 {
@@ -17,11 +19,36 @@ class ForumController extends Controller
      */
     public function index()
     {
-        $forum = Forum::all();
+        $forum = Forum::paginate(20);
         $id = Forum::find('fr_user_id');
         $count = 1;
-        // dd($forum);
-        return view('forum/index', compact('forum','count'));
+
+        $terbaru = DB::table('forums')
+            ->orderByRaw('updated_at DESC')
+            ->paginate(20);
+
+        // dd($request);
+        return view('forum/index', compact('forum', 'terbaru', 'count'));
+    }
+
+    public function search(Request $request)
+    {
+        // menangkap data pencarian
+        $cariforum = $request->cariforum;
+
+        // mengambil data dari table forum sesuai pencarian data
+        $forum = DB::table('forums')
+            ->where('fr_title', 'like', "%" . $cariforum . "%")
+            ->paginate(20);
+        
+        // search+terbaru
+        $terbaru = DB::table('forums')
+            ->where('fr_title', 'like', "%" . $cariforum . "%")
+            ->orderByRaw('updated_at DESC')
+            ->paginate(20);
+
+        // mengirim hasil ke forum index
+        return view('forum/index', compact('forum','terbaru', 'cariforum'));
     }
 
     public function admin()
@@ -30,7 +57,7 @@ class ForumController extends Controller
         $id = Forum::find('fr_user_id');
         $count = 1;
         // dd($forum);
-        return view('forum/admin', compact('forum','count'));
+        return view('forum/admin', compact('forum', 'count'));
     }
 
     /**
@@ -69,7 +96,6 @@ class ForumController extends Controller
         ]);
 
         return redirect('/forum')->with('success', 'Forum Telah Terposting!');
-
     }
 
     /**
@@ -83,11 +109,11 @@ class ForumController extends Controller
         $forum = Forum::find($id);
         $id = $forum->id;
 
-        $comment = Comment::where('cm_forum_id', '=' , $id)->get();
-        $forum_img = Forum_Img::where('fr_id', '=' , $id)->get();
+        $comment = Comment::where('cm_forum_id', '=', $id)->get();
+        $forum_img = Forum_Img::where('fr_id', '=', $id)->get();
 
         // dd($forum, $comment, $forum_img);
-        return view('/forum/show', compact('forum','comment','forum_img'));
+        return view('/forum/show', compact('forum', 'comment', 'forum_img'));
     }
 
     /**
@@ -99,9 +125,9 @@ class ForumController extends Controller
     public function edit($id)
     {
         $forum = Forum::find($id);
-        $forum_img = Forum_Img::where('fr_id', '=' , $id)->get();
+        $forum_img = Forum_Img::where('fr_id', '=', $id)->get();
         // dd($forum,$forum_img);
-        return view('/forum/edit', compact('forum','forum_img'));
+        return view('/forum/edit', compact('forum', 'forum_img'));
     }
 
     /**
@@ -135,11 +161,11 @@ class ForumController extends Controller
 
         $forum = Forum::find($id);
         $forum->update($input);
-        
-        // dd($request);
-        
 
-        return redirect('/user/myforum')->with('success','Update Successfull');
+        // dd($request);
+
+
+        return redirect('/user/myforum')->with('success', 'Update Successfull');
     }
 
     /**

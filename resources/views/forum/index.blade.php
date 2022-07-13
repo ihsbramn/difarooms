@@ -53,18 +53,119 @@
                         <div class="tab-pane fade show active" id="nav-semua" role="tabpanel"
                             aria-labelledby="nav-semua-tab" tabindex="0">
                             @foreach ($forum as $fr)
-                            <a style="text-decoration: none" class="card border-0 shadow mt-3" href="{{ route('/forum/show',$fr->id) }}" style="border-radius: 12px">
-                                <div class="card-body" style="border-radius: 12px">
-                                  <p style="font-weight: 700; font-size: 24px; color: black;">{{ $fr->fr_title }}</p>
-                                  <p class="text-end mb-0" style="font-weight: 500; font-size: 20px; color: black;"><i class="bi bi-person-fill me-2"></i>: {{ $fr->fr_author }}</p>
-                                </div>
-                            </a>    
+                                <a class="card border-0 shadow mt-3" href="{{ route('/forum/show', $fr->id) }}"
+                                    style="text-decoration: none; border-radius: 12px; overflow: hidden;">
+                                    <div class="card-header bg-transparent">
+                                        <div class="row row-cols-auto">
+                                            <div class="col">
+                                                <span class="iconify" data-icon="carbon:user-avatar-filled" data-width="45"
+                                                    data-height="45" style="color: #47A2D6;"></span>
+                                            </div>
+                                            <div class="col">
+                                                <p class="mb-0"
+                                                    style="font-weight: 500; font-size: 16px; color: #000000;">
+                                                    {{ $fr->fr_author }}</p>
+                                                <p class="mb-0"
+                                                    style="font-weight: 400; font-size: 14px; color: #868686;">
+                                                    {{ $fr->created_at }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <p class="mb-0" style="font-weight: 500; font-size: 20px; color: #000000;">
+                                                {{ $fr->fr_title }}</p>
+                                        </div>
+                                        <div class="row mt-2" style="max-height: 10rem;">
+                                            <p class="mb-0" style="font-weight: 400; font-size: 16px; color: #000000;">
+                                                {{ $fr->fr_body }}</p>
+                                        </div>
+                                    </div>
+                                </a>
                             @endforeach
+                            <nav aria-label="pagination">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item">
+                                        {{ $forum->links() }}
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                         <div class="tab-pane fade" id="nav-terbaru" role="tabpanel" aria-labelledby="nav-terbaru-tab"
-                            tabindex="0">2</div>
-                        <div class="tab-pane fade" id="nav-terpopuler" role="tabpanel" aria-labelledby="nav-terpopuler-tab"
-                            tabindex="0">3</div>
+                            tabindex="0">
+                            @foreach ($terbaru as $tb)
+                                <a class="card border-0 shadow mt-3" href="{{ route('/forum/show', $tb->id) }}"
+                                    style="text-decoration: none; border-radius: 12px; overflow: hidden;">
+                                    <div class="card-header bg-transparent">
+                                        <div class="row row-cols-auto">
+                                            <div class="col">
+                                                <span class="iconify" data-icon="carbon:user-avatar-filled" data-width="45"
+                                                    data-height="45" style="color: #47A2D6;"></span>
+                                            </div>
+                                            <div class="col">
+                                                <p class="mb-0"
+                                                    style="font-weight: 500; font-size: 16px; color: #000000;">
+                                                    {{ $tb->fr_author }}</p>
+                                                <p class="mb-0"
+                                                    style="font-weight: 400; font-size: 14px; color: #868686;">
+                                                    {{ $tb->created_at }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <p class="mb-0" style="font-weight: 500; font-size: 20px; color: #000000;">
+                                                {{ $tb->fr_title }}</p>
+                                        </div>
+                                        <div class="row mt-2" style="max-height: 10rem;">
+                                            <p class="mb-0" style="font-weight: 400; font-size: 16px; color: #000000;">
+                                                {{ $tb->fr_body }}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            @endforeach
+                            <nav aria-label="pagination">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item">
+                                        {{ $terbaru->links() }}
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="tab-pane fade" id="nav-terpopuler" role="tabpanel"
+                            aria-labelledby="nav-terpopuler-tab" tabindex="0">
+                            @foreach ($forum as $fr)
+                                <a class="card border-0 shadow mt-3" href="{{ route('/forum/show', $fr->id) }}"
+                                    style="text-decoration: none; border-radius: 12px; overflow: hidden;">
+                                    <div class="card-header bg-transparent">
+                                        <div class="row row-cols-auto">
+                                            <div class="col">
+                                                <span class="iconify" data-icon="carbon:user-avatar-filled"
+                                                    data-width="45" data-height="45" style="color: #47A2D6;"></span>
+                                            </div>
+                                            <div class="col">
+                                                <p class="mb-0"
+                                                    style="font-weight: 500; font-size: 16px; color: #000000;">
+                                                    {{ $fr->fr_author }}</p>
+                                                <p class="mb-0"
+                                                    style="font-weight: 400; font-size: 14px; color: #868686;">
+                                                    {{ $fr->created_at }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <p class="mb-0" style="font-weight: 500; font-size: 20px; color: #000000;">
+                                                {{ $fr->fr_title }}</p>
+                                        </div>
+                                        <div class="row mt-2" style="max-height: 10rem;">
+                                            <p class="mb-0" style="font-weight: 400; font-size: 16px; color: #000000;">
+                                                {{ $fr->fr_body }}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
@@ -72,19 +173,28 @@
             {{-- side section --}}
             <div class="col-3">
                 <div class="d-grid gap-4">
-                    <button class="btn btn-primary py-2" type="button" data-bs-toggle="modal" data-bs-target="#tambahforum"
-                        style="font-weight: 600; font-size: 20px; background: #004973; border-radius: 12px; border-color: #004973;">Ajukan
-                        Pertanyaan</button>
+                    {{-- buat forum --}}
+                    <button class="btn btn-primary py-2" type="button" data-bs-toggle="modal"
+                        data-bs-target="#tambahforum"
+                        style="font-weight: 600; font-size: 20px; background: #004973; border-radius: 12px; border-color: #004973;">Buat
+                        forum</button>
 
+                    {{-- search bar --}}
                     <div class="card border-0 shadow" style="border-radius: 12px">
                         <div class="card-body">
-                            <div class="input-group">
-                                <span class="input-group-text border-0" id="basic-addon1"
-                                    style="background: rgba(217, 217, 217, 1);"><i class="bi bi-search"></i></span>
-                                <input type="text" class="form-control border-0" placeholder="Cari topik"
-                                    aria-label="Username" aria-describedby="basic-addon1"
-                                    style="background: rgba(217, 217, 217, 1); font-weight: 400;font-size: 16px;">
-                            </div>
+                            <form action="{{ '/forum/search' }}" method="get" role="search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Cari topik"
+                                        aria-label="cariforum" aria-describedby="button-addon2" name="cariforum"
+                                        id="cariforum"
+                                        style="background: rgba(217, 217, 217, 1);font-weight: 400;font-size: 16px;">
+                                    <button class="btn btn-outline-secondary border-0" type="submit" id="button-addon2"
+                                        style="background: rgba(217, 217, 217, 1);font-weight: 400;font-size: 16px;">Cari</button>
+                                </div>
+                                <div class="d-grid mt-3">
+                                    <a class="btn btn-danger" type="button" href="{{ '/forum' }}">Clear</a>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -130,8 +240,7 @@
                     
                 </div>
             </div>
-        </div>
-    </div> --}}
+        </div> --}}
     </div>
 
     <!-- Modal Create Forum-->
