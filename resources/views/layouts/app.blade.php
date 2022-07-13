@@ -26,6 +26,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/lightbox.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <style>
         body main {
@@ -34,6 +35,21 @@
 
         footer {
             font-family: 'Montserrat', sans-serif;
+        }
+        #scrolly {
+            width: auto;
+            height: auto;
+            overflow: auto;
+            overflow-y: hidden;
+            margin: 0 auto;
+            white-space: nowrap
+        }
+
+        img #img-scroll {
+            width: 300px;
+            height: 150px;
+            margin: 20px 10px;
+            display: inline;
         }
     </style>
     {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -100,7 +116,7 @@
                         </li>
 
                         <li class="nav-item px-5">
-                            <a class="nav-link {{ Route::currentRouteNamed('/hotel') ? 'active' : '' }}"
+                            <a class="nav-link {{ Route::currentRouteNamed('/hotel','/hotel/*') ? 'active' : '' }}"
                                 href="{{ '/hotel' }}">{{ __('Hotel') }}</a>
                             <div class="underline"></div>
                         </li>
@@ -293,10 +309,13 @@
                     </div>
                 </div>
             </div>
+            
         </main>
     </div>
     @yield('lower_body')
-
+    
+    {{-- script for lightbox --}}
+    <script src="{{ asset('js/lightbox-plus-jquery.js') }}"></script>
 </body>
 
 </html>

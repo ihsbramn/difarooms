@@ -54,8 +54,7 @@
         </script>
         <label>Point Of Interest</label>
         <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="show-poi"
-                name="show-poi">
+            <input class="form-check-input" type="checkbox" role="switch" id="show-poi" name="show-poi">
             <label class="form-check-label" for="show-poi">Munculkan Point of Interest </label>
         </div>
         <div id="style-selector-control" class="map-control">
@@ -407,11 +406,12 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-6 d-grid">
                                             @foreach ($fav as $fv)
                                                 @if ($fv->fv_hotel_id == $htl->id)
                                                     @if ($loop->first)
-                                                        <p style="font-weight: 500; font-size: 16px; color: #515151;">
+                                                        <p class="my-auto"
+                                                            style="font-weight: 500; font-size: 16px; color: #515151;">
                                                             Disukai {{ $loop->count }} orang</p>
                                                     @endif
                                                 @endif
@@ -441,13 +441,16 @@
                                                         detail</a>
                                                 @endauth
                                                 @guest
-                                                    <button onclick="like()" class="btn btn-secondary rounded-circle me-md-2"><i
+                                                    <button onclick="like()"
+                                                        class="btn btn-secondary rounded-circle me-md-2"><i
                                                             class="bi bi-heart"></i></button>
-                                                            <script>
-                                                                function like() {
-                                                                    alert("Harap login terlebih dahulu");
-                                                                }
-                                                            </script>
+
+                                                    <script>
+                                                        function like() {
+                                                            alert("Harap login terlebih dahulu");
+                                                        }
+                                                    </script>
+
                                                     <a class="btn btn-primary" href="{{ route('/hotel/show', $htl->id) }}"
                                                         style="background: #47A2D6; border-radius: 12px;font-weight: 600; font-size: 16px; border-color: #47A2D6;">Lihat
                                                         detail</a>
@@ -463,106 +466,16 @@
             </div>
         </div>
         {{-- list hotel --}}
+
+        {{-- pagination tab --}}
+        <nav aria-label="pagination">
+            <ul class="pagination justify-content-center">
+                <li class="page-item  ">
+                    {{ $hotel->links() }}
+                </li>
+            </ul>
+        </nav>
+        {{-- pagination tab --}}
+
     </div>
-    </div>
-    {{-- list hotel & filter --}}
-    </div>
-
-    {{-- <div class="container">
-
-        @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
-
-        <div class="row justify-content-center">
-            <div class="col">
-                <div class="card">
-                    <h2 class="text-center card-header">Hotel Menu </h2>
-                    <div class="card-body">
-
-                        <label>Point Of Interest</label>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="show-poi"
-                                name="show-poi">
-                            <label class="form-check-label" for="show-poi">Munculkan Point of Interest </label>
-                        </div>
-                        <div id="style-selector-control" class="map-control">
-                            <input class="form-check-input" type="radio" name="hide-poi" id="hide-poi" checked />
-                            <label for="hide-poi">Hide</label>
-                            <input class="form-check-input" type="radio" name="show-poi" id="show-poi" />
-                            <label for="show-poi">Show</label>
-                        </div>
-
-                        <div id="map" style="height: 500px;">INI MAP</div>
-
-                        <script src="{{ asset('js/maps.js') }}"></script>
-                        <script src="{{ asset('js/markercluster.js') }}"></script>
-                        <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&callback=initMap">
-                        </script>
-                        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-                        </script>
-
-
-                                @foreach ($hotel as $data)
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">id</th>
-                                                <th scope="col">Nama Hotel</th>
-                                                <th scope="col">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>{{ $data->id }}</td>
-                                                <td>{{ $data->ht_name }}</td>
-                                                <td>
-                                                    <a class="btn btn-primary"
-                                                        href="{{ route('/hotel/show', $data->id) }}">Show</a>
-                                                        @auth
-                                                        <form action="{{ route('/favourites/store') }}" method="POST">
-                                                            @csrf
-                                                            <div class="form-group">
-                                                                <input type="text" class="form-control" id="fv_user_id" name="fv_user_id" value="{{ Auth::user()->id }}" hidden>
-                                                                <input type="text" class="form-control" id="fv_hotel_id" name="fv_hotel_id" value="{{ $data->id }}" hidden>
-                                                                <input type="text" class="form-control" id="fv_hotel_name" name="fv_hotel_name" value="{{ $data->ht_name }}" hidden>
-                                                                <input type="text" class="form-control" id="fv_count" name="fv_count" value="1" hidden>
-                                                            </div>
-                                                            <br>
-                                                            <button href="submit" class="btn btn-dark">Tambah ke Favorit</button>
-                                                        </form>
-                                                        @endauth
-                                                        @guest
-                                                            <button class="btn btn-dark" onclick="loginplease()">Tambah Ke Favorit</button>
-                                                            <script>
-                                                                function loginplease() {
-                                                                    alert("Silahkan Login Terlebih Dahulu");
-                                                                }
-                                                            </script>
-                                                        @endguest
-                                                    
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            @endforeach
-                        </div>
-
-                </div>
-            </div>
-        </div>
-    </div> --}}
 @endsection

@@ -4,22 +4,6 @@
         .breadcrumb-item+.breadcrumb-item::before {
             color: #FFFFFF;
         }
-
-        #scrolly {
-            width: auto;
-            height: auto;
-            overflow: auto;
-            overflow-y: hidden;
-            margin: 0 auto;
-            white-space: nowrap
-        }
-
-        img #img-scroll {
-            width: 300px;
-            height: 150px;
-            margin: 20px 10px;
-            display: inline;
-        }
     </style>
 @endsection
 @section('content')

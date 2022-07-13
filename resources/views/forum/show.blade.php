@@ -19,6 +19,7 @@
             </div>
         @endif
 
+        {{-- back & title section --}}
         <div class="row d-flex">
             <div class="col-2 text-start">
                 <a class="btn btn-primary btn-lg mt-3 px-4" href="{{ '/forum' }}"
@@ -30,16 +31,19 @@
             </div>
         </div>
 
+        {{-- image section --}}
         <div class="row mt-3">
             @foreach ($forum_img as $img)
                 <img src="/storage/uploads/{{ $img->name }}" alt="gambar" height="200px">
             @endforeach
         </div>
 
+        {{-- body/isi section --}}
         <div class="row mt-3">
             <p style="font-weight: 500; font-size: 20px; text-align: justify;">{{ $forum->fr_body }}</p>
         </div>
-
+        
+        {{-- author section --}}
         <div class="row px-5">
             <hr class="mb-0">
             <p class="px-3 mb-0 mt-0" style="font-weight: 500; font-size: 16px;">Posted by : {{ $forum->fr_author }}</p>
@@ -47,6 +51,7 @@
             <hr>
         </div>
 
+        {{-- comment section view --}}
         <div class="container">
             <div class="card" style="border-radius: 12px 12px 0px 0px">
                 <div class="card-header">
@@ -63,6 +68,7 @@
             </div>
         </div>
 
+        {{-- comment section input --}}
         <div class="container mt-3">
             <form action="{{ route('/comment/store') }}" method="POST">
                 @csrf
