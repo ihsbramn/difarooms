@@ -20,6 +20,6 @@ Difa Rooms Application for People with Special Needs Wheelchair
 ```
 Google Maps Platform (Maps / GIS)
 xotelo.com (Hotel Rates)
-apilayer.com (Exchanges Rates)
+api.exchangerate.host (Exchanges Rates)
 ```
 
