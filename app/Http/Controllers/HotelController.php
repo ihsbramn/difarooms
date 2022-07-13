@@ -194,13 +194,11 @@ class HotelController extends Controller
             
         // };
 
-<<<<<<< HEAD
         // $rates = (object)$idr_rate;
-=======
+
         $slice = array_slice($idr_rate,0,4);
 
         $rates = (object)$slice;
->>>>>>> bdd6dd24594fc712e0ba109b3c7dda95cf053523
 
         // testing
         // dd($hotel, $hotel_img, $hotel_fascility, $hotel_roomtype,$rates,$url_tripadvisor,$fa_id);
