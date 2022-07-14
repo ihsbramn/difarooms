@@ -291,10 +291,10 @@
                             style="border-radius: 12px; background: #34E0A1; border-color: #34E0A1;">
                             <div class="row mx-auto">
                                 <div class="col my-auto">
-                                    <p class="mb-0" href="{{ $url_tripadvisor }}" target="_blank"
-                                        style="font-weight: 500;"><img src="{{ URL::asset('/img/tripadvlogo.jpg') }}"
+                                    <a class="mb-0" href="{{ $url_tripadvisor }}" target="_blank"
+                                        style="font-weight: 500; text-decoration: none; color: black"><img src="{{ URL::asset('/img/tripadvlogo.jpg') }}"
                                             alt="tripadvisor logo" style="max-height: 30px;" class="me-2"> Lihat
-                                        hotel ini di tripadvisor</p>
+                                        hotel ini di tripadvisor</a>
                                 </div>
                             </div>
                         </div>
