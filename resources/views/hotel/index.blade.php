@@ -327,7 +327,7 @@
                     {{-- filter terdekat --}}
                 </div>
                 {{-- list hotel --}}
-                @foreach ($hotel as $htl)
+                @foreach ($hotel as $index => $htl)
                     <div class="card mb-3 border-0 shadow-lg" style="border-radius: 12px">
                         <div class="row g-0">
                             <div class="col-md-4" style="">
@@ -394,18 +394,17 @@
                                             @endif
                                         @endforeach
                                     </div>
-                                    <div class="row">
+                                    <div class="row mt-2">
                                         <div class="col-6">
-                                            @foreach ($idr_rates as $idr)
-                                            <p> {{ $idr['name'] }}</p>
-                                            <p>{{ $idr['rate'] }}</p>
-                                            @endforeach
+                                            {{-- @foreach ($idr_rates as $idr) --}}
+                                            <p class="mb-0" style="font-weight: 500; font-size: 20px; color: #47A2D6;">@money($idr_rates[$index]['rate'])</p>
+                                            {{-- @endforeach --}}
                                         </div>
                                         <div class="col-6">
-                                            <p>logo external</p>
+                                            <p class="mb-0" style="font-weight: 500; font-size: 20px; color: #000000;">{{ $idr_rates[$index]['name'] }}</p>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row mt-2">
                                         <div class="col-6 d-grid">
                                             @foreach ($fav as $fv)
                                                 @if ($fv->fv_hotel_id == $htl->id)

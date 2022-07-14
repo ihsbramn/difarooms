@@ -32,9 +32,11 @@
         </div>
 
         {{-- image section --}}
-        <div class="row mt-3">
+        <div class="row mt-3 scrolly">
             @foreach ($forum_img as $img)
-                <img src="/storage/uploads/{{ $img->name }}" alt="gambar" height="200px">
+            <a href="/storage/uploads/{{ $img->name }}" data-lightbox="imgforum">
+                <img src="/storage/uploads/{{ $img->name }}" alt="gambar" id='img-scroll' style="max-height: 300px; overflow: hidden;">
+            </a>
             @endforeach
         </div>
 
