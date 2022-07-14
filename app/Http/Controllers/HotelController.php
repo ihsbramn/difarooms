@@ -32,7 +32,7 @@ class HotelController extends Controller
         $tomorrow = Carbon::tomorrow()->format('Y-m-d');
         // $tomorrow = Carbon::tomorrow()->addDays(1)->format('Y-m-d');
         $hotel = Hotel::paginate(10);
-         main
+        //  main
         $fav = Favourites::all();
         $count = 0;
         $marker = [];
@@ -99,7 +99,7 @@ class HotelController extends Controller
                 ]);
             }
         }
-
+        // dd($idr_rates);
         
         // dd($hotel, $marker, $hotel_fascility);
 
