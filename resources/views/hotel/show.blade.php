@@ -106,11 +106,19 @@
 
             {{-- side --}}
             <div class="col-4 ps-5 mb-5">
-                {{-- maps --}}
+                {{-- youtube vid --}}
                 <div class="row">
-                    <iframe src="{{ $hotel->ht_embedmaps }}" id="embed_maps" class="embed_maps mb-5 shadow"
-                        style="height: 292px; border-radius:12px" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="card px-0 border-0 shadow mb-3" style="border-radius: 12px">
+                        <iframe src="{{ $hotel->ht_urlvideo }}" id='img-scroll' frameborder="0" style="border-radius: 12px;height: 300px"></iframe>
+                    </div>
+                </div>
+                {{-- maps --}}
+                <div class="row mb-3">
+                    <div class="card px-0 border-0 shadow" style="border-radius:12px">
+                        <iframe src="{{ $hotel->ht_embedmaps }}" id="embed_maps" class="embed_maps"
+                            style="height: 292px;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="card shadow border-0 px-3 py-3" style="border-radius: 12px">
@@ -277,8 +285,22 @@
                                             </div>
 
                                             <div class="col text-end">
+                                                @if ($rt['name']=="Booking.com")
+                                                    <img src="{{ URL::asset('/img/bookingcom-logo.png') }}" alt="logo booking.com">
+                                                @elseif ($rt['name']=="Agoda.com")
+                                                <img src="{{ URL::asset('/img/agoda-logo.png') }}" alt="logo agoda.com" style="max-height: 22px; overflow:hidden">
+                                                @elseif ($rt['name']=="FindHotel")
+                                                <img src="{{ URL::asset('/img/findhotel-logo.svg') }}" alt="logo findhtotel.com" style="max-height: 22px; overflow:hidden">
+                                                @elseif ($rt['name']=="Expedia")
+                                                <img src="{{ URL::asset('/img/expedia-logo.png') }}" alt="logo expedia.com" style="max-height: 22px; overflow:hidden">
+                                                @elseif ($rt['name']=="Hotels.com")
+                                                <img src="{{ URL::asset('/img/hotelcom-logo.png') }}" alt="logo hotel.com" style="max-height: 22px; overflow:hidden">
+                                                @elseif ($rt['name']=="Trip.com")
+                                                <img src="{{ URL::asset('/img/tripcom-logo.png') }}" alt="logo trip.com" style="max-height: 22px; overflow:hidden">
+                                                @else
                                                 <p class="mb-0" style="font-weight: 500; font-size: 14px;">
                                                     {{ $rt['name'] }}</p>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>

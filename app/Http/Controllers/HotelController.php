@@ -100,6 +100,7 @@ class HotelController extends Controller
             }
         }
 
+        // dd($hotel);
         // dd($hotel_fascility);
         // dd($hotel, $marker, $hotel_fascility);
 

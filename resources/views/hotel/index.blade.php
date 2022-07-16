@@ -33,9 +33,10 @@
                     <h1 class="align-self-center mx-auto" style="font-weight: 700; font-size: 96px">Hotel</h1>
                     <div class="input-group pt-5">
                         <input type="text" class="form-control border-0" placeholder="Cari hotel" aria-label="Cari hotel"
-                            aria-describedby="search-hotel" style="background-color: #D9D9D9">
+                            id="searchbar" aria-describedby="search-hotel" style="background-color: #D9D9D9"
+                            onkeyup="search_hotel()" name="searchbar">
                         <button class="btn btn-primary" type="button" id="search-hotel"
-                            style="background-color: #244D64; border-color:#244D64">Button</button>
+                            style="background-color: #244D64; border-color:#244D64">search</button>
                     </div>
                 </div>
             </div>
@@ -45,23 +46,28 @@
 
     <div class="container">
         {{-- map --}}
-        <div class="mt-5 mb-5 shadow" id="map" style="height: 318px;border-radius:12px">INI MAP</div>
-        <script src="{{ asset('js/maps.js') }}"></script>
-        <script src="{{ asset('js/markercluster.js') }}"></script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&callback=initMap">
-        </script>
-        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-        </script>
-        <label>Point Of Interest</label>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="show-poi" name="show-poi">
-            <label class="form-check-label" for="show-poi">Munculkan Point of Interest </label>
-        </div>
-        <div id="style-selector-control" class="map-control">
-            <input class="form-check-input" type="radio" name="hide-poi" id="hide-poi" checked />
-            <label for="hide-poi">Hide</label>
-            <input class="form-check-input" type="radio" name="show-poi" id="show-poi" />
-            <label for="show-poi">Show</label>
+        <div class="card border-0 shadow p-2 mt-3 mb-5" style="border-radius: 12px">
+            <div class="shadow-sm" id="map" style="height: 318px;border-radius:12px">INI MAP</div>
+            <script src="{{ asset('js/maps.js') }}"></script>
+            <script src="{{ asset('js/markercluster.js') }}"></script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&callback=initMap">
+            </script>
+            <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+            </script>
+            <div class="row mt-3">
+                <div class="col-2 my-auto">
+                    <p class="mb-0" style="font-weight: 700; font-size: 20px;">Point Of Interest</p>
+                </div>
+                <div class="col-10">
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btn-radio" id="hide-poi" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary" for="hide-poi">Hide</label>
+
+                        <input type="radio" class="btn-check" name="btn-radio" id="show-poi" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="show-poi">Show</label>
+                    </div>
+                </div>
+            </div>
         </div>
         {{-- map --}}
 
@@ -73,7 +79,7 @@
                     <div class="card-body p-2">
                         <h3 class="card-tittle" style="font-weight: 700; font-size:20px">Filter</h3>
                         {{-- kelas --}}
-                        <h3 class="card-subtittle mt-4" style="font-weight: 600; font-size: 16px">Kelas Hotel</h3>
+                        {{-- <h3 class="card-subtittle mt-4" style="font-weight: 600; font-size: 16px">Kelas Hotel</h3>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="5" id="bintang5">
                             <label class="form-check-label" for="bintang5">
@@ -163,7 +169,7 @@
                                         d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
                                 </svg> <span class="me-1"> (2) </span>
                             </label>
-                        </div>
+                        </div> --}}
                         {{-- kelas --}}
                         <hr>
                         {{-- harga --}}
@@ -328,11 +334,11 @@
                 </div>
                 {{-- list hotel --}}
                 @foreach ($hotel as $index => $htl)
-                    <div class="card mb-3 border-0 shadow-lg" style="border-radius: 12px">
+                    <div class="card mb-3 border-0 shadow-lg listhotel" style="border-radius: 12px">
                         <div class="row g-0">
                             <div class="col-md-4" style="">
                                 <img src="/storage/uploads/{{ $htl->ht_thumbnail }}" class="img-fluid rounded-start"
-                                    alt="thumbnail hotel" style="height: 100%; overflow:hidden;">
+                                    alt="thumbnail hotel" style="height: 100%; width: 100%; overflow:hidden;">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
@@ -342,8 +348,6 @@
                                                 {{ $htl->ht_name }}</p>
                                             <p class="mb-0" style="font-weight: 400; font-size: 16px;"><i
                                                     class="bi bi-geo-alt-fill me-2"></i>{{ $htl->ht_address }}</p>
-                                            <a href="">Tunjukan di peta</a>
-
                                         </div>
                                         <div class="col-4 text-end">
                                             @if ($htl->ht_accesible == 'Ya')
@@ -397,11 +401,35 @@
                                     <div class="row mt-2">
                                         <div class="col-6">
                                             {{-- @foreach ($idr_rates as $idr) --}}
-                                            <p class="mb-0" style="font-weight: 500; font-size: 20px; color: #47A2D6;">@money($idr_rates[$index]['rate'])</p>
+                                            <p class="mb-0" style="font-weight: 500; font-size: 20px; color: #47A2D6;">
+                                                @money($idr_rates[$index]['rate'])</p>
                                             {{-- @endforeach --}}
                                         </div>
-                                        <div class="col-6">
-                                            <p class="mb-0" style="font-weight: 500; font-size: 20px; color: #000000;">{{ $idr_rates[$index]['name'] }}</p>
+                                        <div class="col-6 my-auto">
+                                            {{-- @if ($idr_rates[$index]['name'] = 'booking.com') --}}
+                                            @if ($idr_rates[$index]['name'] == 'Booking.com')
+                                                <img src="{{ URL::asset('/img/bookingcom-logo.png') }}"
+                                                    alt="logo booking.com">
+                                            @elseif ($idr_rates[$index]['name'] == 'Agoda.com')
+                                                <img src="{{ URL::asset('/img/agoda-logo.png') }}" alt="logo agoda.com"
+                                                    style="max-height: 22px; overflow:hidden">
+                                            @elseif ($idr_rates[$index]['name'] == 'FindHotel')
+                                                <img src="{{ URL::asset('/img/findhotel-logo.svg') }}"
+                                                    alt="logo findhtotel.com" style="max-height: 22px; overflow:hidden">
+                                            @elseif ($idr_rates[$index]['name'] == 'Expedia')
+                                                <img src="{{ URL::asset('/img/expedia-logo.png') }}"
+                                                    alt="logo expedia.com" style="max-height: 22px; overflow:hidden">
+                                            @elseif ($idr_rates[$index]['name'] == 'Hotels.com')
+                                                <img src="{{ URL::asset('/img/hotelcom-logo.png') }}"
+                                                    alt="logo hotel.com" style="max-height: 22px; overflow:hidden">
+                                            @elseif ($idr_rates[$index]['name'] == 'Trip.com')
+                                                <img src="{{ URL::asset('/img/tripcom-logo.png') }}"
+                                                    alt="logo trip.com" style="max-height: 22px; overflow:hidden">
+                                            @else
+                                                <p class="mb-0"
+                                                    style="font-weight: 500; font-size: 20px; color: #000000;">
+                                                    {{ $idr_rates[$index]['name'] }}</p>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="row mt-2">
@@ -417,42 +445,60 @@
                                             @endforeach
                                         </div>
                                         <div class="col-6">
-                                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                            <div class="row justify-content-md-end">
                                                 @auth
-                                                    <form action="{{ route('/favourites/store') }}" method="POST">
-                                                        @csrf
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" id="fv_user_id"
-                                                                name="fv_user_id" value="{{ Auth::user()->id }}" hidden>
-                                                            <input type="text" class="form-control" id="fv_hotel_id"
-                                                                name="fv_hotel_id" value="{{ $data->id }}" hidden>
-                                                            <input type="text" class="form-control" id="fv_hotel_name"
-                                                                name="fv_hotel_name" value="{{ $data->ht_name }}" hidden>
-                                                            <input type="text" class="form-control" id="fv_count"
-                                                                name="fv_count" value="1" hidden>
-                                                        </div>
-                                                        <button href="submit"
-                                                            class="btn btn-secondary rounded-circle me-md-2"><i
-                                                                class="bi bi-heart"></i></button>
-                                                    </form>
-                                                    <a class="btn btn-primary" href="{{ route('/hotel/show', $htl->id) }}"
-                                                        style="background: #47A2D6; border-radius: 12px;font-weight: 600; font-size: 16px; border-color: #47A2D6;">Lihat
-                                                        detail</a>
+                                                    <div class="col-2 my-auto">
+                                                        <form action="{{ route('/favourites/store') }}" method="POST">
+                                                            @csrf
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" id="fv_user_id"
+                                                                    name="fv_user_id" value="{{ Auth::user()->id }}"
+                                                                    hidden>
+                                                                <input type="text" class="form-control" id="fv_hotel_id"
+                                                                    name="fv_hotel_id" value="{{ $data->id }}" hidden>
+                                                                <input type="text" class="form-control" id="fv_hotel_name"
+                                                                    name="fv_hotel_name" value="{{ $data->ht_name }}"
+                                                                    hidden>
+                                                                <input type="text" class="form-control" id="fv_count"
+                                                                    name="fv_count" value="1" hidden>
+                                                            </div>
+                                                            <button href="submit" class="btn bg-transparent btn-lg"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                data-bs-class="tooltip" title="Favoritkan hotel ini"><i
+                                                                    class="bi bi-heart-fill"
+                                                                    style="font-size: 24px; color: grey;"></i></button>
+                                                        </form>
+                                                        <script>
+                                                            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+                                                            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+                                                        </script>
+                                                    </div>
+                                                    <div class="col-7 text-end my-auto">
+                                                        <a class="btn btn-primary"
+                                                            href="{{ route('/hotel/show', $htl->id) }}"
+                                                            style="background: #47A2D6; border-radius: 12px; font-weight: 600; font-size: 16px; border-color: #47A2D6;">Lihat
+                                                            detail</a>
+                                                    </div>
                                                 @endauth
                                                 @guest
-                                                    <button onclick="like()"
-                                                        class="btn btn-secondary rounded-circle me-md-2"><i
-                                                            class="bi bi-heart"></i></button>
+                                                    <div class="col-2 my-auto">
+                                                        <button onclick="like()" class="btn bg-transparent btn-lg"><i
+                                                                class="bi bi-heart-fill"
+                                                                style="font-size: 24px; color: grey;"></i></button>
 
-                                                    <script>
-                                                        function like() {
-                                                            alert("Harap login terlebih dahulu");
-                                                        }
-                                                    </script>
+                                                        <script>
+                                                            function like() {
+                                                                alert("Harap login terlebih dahulu");
+                                                            }
+                                                        </script>
+                                                    </div>
 
-                                                    <a class="btn btn-primary" href="{{ route('/hotel/show', $htl->id) }}"
-                                                        style="background: #47A2D6; border-radius: 12px;font-weight: 600; font-size: 16px; border-color: #47A2D6;">Lihat
-                                                        detail</a>
+                                                    <div class="col-7 text-end my-auto">
+                                                        <a class="btn btn-primary"
+                                                            href="{{ route('/hotel/show', $htl->id) }}"
+                                                            style="background: #47A2D6; border-radius: 12px;font-weight: 600; font-size: 16px; border-color: #47A2D6;">Lihat
+                                                            detail</a>
+                                                    </div>
                                                 @endguest
                                             </div>
                                         </div>
@@ -475,6 +521,23 @@
             </ul>
         </nav>
         {{-- pagination tab --}}
+
+        {{-- JavaScript code --}}
+        <script>
+            function search_hotel() {
+                let input = document.getElementById('searchbar').value
+                input = input.toLowerCase();
+                let x = document.getElementsByClassName('listhotel');
+
+                for (i = 0; i < x.length; i++) {
+                    if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                        x[i].style.display = "none";
+                    } else {
+                        x[i].style.display = "list-item";
+                    }
+                }
+            }
+        </script>
 
     </div>
 @endsection
