@@ -51,9 +51,11 @@
             margin: 20px 10px;
             display: inline;
         }
+
+        #more {
+            display: none;
+        }
     </style>
-    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script> --}}
     <script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
@@ -63,20 +65,6 @@
         integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
     </script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-    <script>
-        (function($) {
-            "use strict";
-            $('.next').click(function() {
-                $('.carousel').carousel('next');
-                return false;
-            });
-            $('.prev').click(function() {
-                $('.carousel').carousel('prev');
-                return false;
-            });
-        })
-        (jQuery);
-    </script>
     @yield('head')
 </head>
 
@@ -251,7 +239,7 @@
                                         <input id="name" type="text"
                                             class="form-control @error('name') is-invalid @enderror" name="name"
                                             value="{{ old('name') }}" required autocomplete="name" autofocus
-                                            placeholder="Nama">
+                                            placeholder="Nama" style="font-weight: 500">
 
                                         @error('name')
                                             <span class="invalid-feedback" role="alert">
@@ -266,7 +254,7 @@
                                         <input id="email" type="email"
                                             class="form-control @error('email') is-invalid @enderror" name="email"
                                             value="{{ old('email') }}" required autocomplete="email"
-                                            placeholder="Email">
+                                            placeholder="Email" style="font-weight: 500">
 
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
@@ -281,7 +269,7 @@
                                         <input id="password" type="password"
                                             class="form-control @error('password') is-invalid @enderror"
                                             name="password" required autocomplete="new-password"
-                                            placeholder="Kata sandi">
+                                            placeholder="Kata sandi" style="font-weight: 500">
 
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
@@ -295,7 +283,7 @@
                                     <div class="col">
                                         <input id="password-confirm" type="password" class="form-control"
                                             name="password_confirmation" required autocomplete="new-password"
-                                            placeholder="Konfirmasi kata sandi">
+                                            placeholder="Konfirmasi kata sandi" style="font-weight: 500">
                                     </div>
                                 </div>
                                 <div class="d-grid">

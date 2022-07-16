@@ -104,6 +104,7 @@ class HotelController extends Controller
         
 =======
 
+        // dd($hotel);
         // dd($hotel_fascility);
 >>>>>>> 0f36ba60ae0616e44bd54be42c014c8b7f33a913
         // dd($hotel, $marker, $hotel_fascility);

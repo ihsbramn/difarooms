@@ -125,7 +125,7 @@
                                 <input id="name" type="text"
                                     class="form-control @error('name') is-invalid @enderror" name="name"
                                     value="{{ old('name') }}" required autocomplete="name" autofocus
-                                    placeholder="Nama">
+                                    placeholder="Nama" style="font-weight: 500;">
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -139,7 +139,7 @@
                             <div class="col">
                                 <input id="email" type="email"
                                     class="form-control @error('email') is-invalid @enderror" name="email"
-                                    value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
+                                    value="{{ old('email') }}" required autocomplete="email" placeholder="Email" style="font-weight: 500;">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -153,7 +153,7 @@
                             <div class="col">
                                 <input id="password" type="password"
                                     class="form-control @error('password') is-invalid @enderror" name="password" required
-                                    autocomplete="new-password" placeholder="Kata sandi">
+                                    autocomplete="new-password" placeholder="Kata sandi" style="font-weight: 500;">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -167,7 +167,7 @@
                             <div class="col">
                                 <input id="password-confirm" type="password" class="form-control"
                                     name="password_confirmation" required autocomplete="new-password"
-                                    placeholder="Konfirmasi kata sandi">
+                                    placeholder="Konfirmasi kata sandi" style="font-weight: 500;">
                             </div>
                         </div>
                         <div class="d-grid">
