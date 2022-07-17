@@ -333,30 +333,47 @@
                     {{-- filter terdekat --}}
                 </div>
                 {{-- list hotel --}}
-                @foreach ($hotel as $index => $htl)
-                    <div class="card mb-3 border-0 shadow-lg listhotel" style="border-radius: 12px; height: 290px;">
-                        <div class="row g-0">
-                            <div class="col-md-4" style="max-height: 290px; overflow: hidden; border-radius: 12px;">
-                                <img src="/storage/uploads/{{ $htl->ht_thumbnail }}" class="img-fluid p-2"
-                                    alt="thumbnail hotel"
-                                    style="height: 290px; width: 100%; overflow:hidden; border-radius: 20px;">
-                                <div class="card-img-overlay">
-                                    @auth
-                                        <form action="{{ route('/favourites/store') }}" method="POST">
-                                            @csrf
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="fv_user_id" name="fv_user_id"
-                                                    value="{{ Auth::user()->id }}" hidden>
-                                                <input type="text" class="form-control" id="fv_hotel_id"
-                                                    name="fv_hotel_id" value="{{ $data->id }}" hidden>
-                                                <input type="text" class="form-control" id="fv_hotel_name"
-                                                    name="fv_hotel_name" value="{{ $data->ht_name }}" hidden>
-                                                <input type="text" class="form-control" id="fv_count" name="fv_count"
-                                                    value="1" hidden>
-                                            </div>
-                                            <button href="submit" class="btn btn-secondary rounded-circle border-0"
-                                                style="background: rgba(36, 36, 36, 0.54);" data-bs-toggle="tooltip"
-                                                data-bs-placement="top" data-bs-class="tooltip" title="Favoritkan hotel ini">
+                    @foreach ($hotel as $index => $htl)
+                    <div class="hotels">
+                        <div class="card mb-3 border-0 shadow-lg" style="border-radius: 12px; height: 290px;">
+                            <div class="row g-0">
+                                <div class="col-md-4" style="max-height: 290px; overflow: hidden; border-radius: 12px;">
+                                    <img src="/storage/uploads/{{ $htl->ht_thumbnail }}" class="img-fluid p-2"
+                                        alt="thumbnail hotel"
+                                        style="height: 290px; width: 100%; overflow:hidden; border-radius: 20px;">
+                                    <div class="card-img-overlay">
+                                        @auth
+                                            <form action="{{ route('/favourites/store') }}" method="POST">
+                                                @csrf
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="fv_user_id" name="fv_user_id"
+                                                        value="{{ Auth::user()->id }}" hidden>
+                                                    <input type="text" class="form-control" id="fv_hotel_id"
+                                                        name="fv_hotel_id" value="{{ $data->id }}" hidden>
+                                                    <input type="text" class="form-control" id="fv_hotel_name"
+                                                        name="fv_hotel_name" value="{{ $data->ht_name }}" hidden>
+                                                    <input type="text" class="form-control" id="fv_count" name="fv_count"
+                                                        value="1" hidden>
+                                                </div>
+                                                <button href="submit" class="btn btn-secondary rounded-circle border-0"
+                                                    style="background: rgba(36, 36, 36, 0.54);" data-bs-toggle="tooltip"
+                                                    data-bs-placement="top" data-bs-class="tooltip" title="Favoritkan hotel ini">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                                <script>
+                                                    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+                                                    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+                                                </script>
+                                            </form>
+                                        @endauth
+                                        @guest
+                                            <button onclick="like()" class="btn btn-secondary rounded-circle"
+                                                style="background: rgba(36, 36, 36, 0.54);">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
                                                     <path
@@ -365,140 +382,125 @@
                                                 </svg>
                                             </button>
                                             <script>
-                                                const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-                                                const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+                                                function like() {
+                                                    alert("Harap login terlebih dahulu");
+                                                }
                                             </script>
-                                        </form>
-                                    @endauth
-                                    @guest
-                                        <button onclick="like()" class="btn btn-secondary rounded-circle"
-                                            style="background: rgba(36, 36, 36, 0.54);">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-                                                <path
-                                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z">
-                                                </path>
-                                            </svg>
-                                        </button>
-                                        <script>
-                                            function like() {
-                                                alert("Harap login terlebih dahulu");
-                                            }
-                                        </script>
-                                    @endguest
+                                        @endguest
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <p class="mb-0" style="font-weight: 600; font-size: 20px;">
-                                                {{ $htl->ht_name }}</p>
-                                            <p class="mb-0" style="font-weight: 400; font-size: 14px;"><i
-                                                    class="bi bi-geo-alt-fill me-2"></i>{{ $htl->ht_address }}</p>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <p class="mb-0" style="font-weight: 600; font-size: 20px;">
+                                                    {{ $htl->ht_name }}</p>
+                                                <p class="mb-0" style="font-weight: 400; font-size: 14px;"><i
+                                                        class="bi bi-geo-alt-fill me-2"></i>{{ $htl->ht_address }}</p>
+                                            </div>
+                                            <div class="col-4 text-end">
+                                                @if ($htl->ht_accesible == 'Ya')
+                                                    <p style="font-weight: 600; font-size: 18px; color: #004973;"><span
+                                                            class="iconify" data-icon="map:wheelchair"></span>Aksesibel</p>
+                                                @endif
+                                            </div>
                                         </div>
-                                        <div class="col-4 text-end">
-                                            @if ($htl->ht_accesible == 'Ya')
-                                                <p style="font-weight: 600; font-size: 18px; color: #004973;"><span
-                                                        class="iconify" data-icon="map:wheelchair"></span>Aksesibel</p>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        @foreach ($hotel_fascility as $fas)
-                                            @if ($fas->ht_id == $htl->id)
-                                                <div class="col-6">
-
-                                                    @if ($fas->ramp == '1')
-                                                        <p class="mb-0" style="font-weight: 400; font-size: 18px;"><img
-                                                                class="me-2" src="{{ URL::asset('/img/ramp.png') }}"
-                                                                alt="ramp-icon">Ramp</p>
-                                                    @endif
-
-
-                                                    @if ($fas->antarjemput == '1')
-                                                        <p class="mb-0" style="font-weight: 400; font-size: 18px;"><span
-                                                                class="iconify me-2"
-                                                                data-icon="fa6-solid:car"></span>Antar
-                                                            jemput bandara
-                                                        </p>
-                                                    @endif
-
-                                                </div>
-
-                                                <div class="col-6">
-
-                                                    @if ($fas->akses_kursiroda == '1')
-                                                        <p class="mb-0" style="font-weight: 400; font-size: 18px;"><span
-                                                                class="iconify me-2"
-                                                                data-icon="map:wheelchair"></span></span>Akses kursi
-                                                            roda</p>
-                                                    @endif
-
-                                                    @if ($fas->toilet_pegangan == '1')
-                                                        <p class="mb-0" style="font-weight: 400; font-size: 18px;"><span
-                                                                class="iconify me-2"
-                                                                data-icon="ph:toilet-fill"></span></span>Pegangan
-                                                            toilet</p>
-                                                    @endif
-
-                                                </div>
-                                            @endif
-                                        @endforeach
-                                    </div>
-                                    <div class="row mt-2">
-                                        <div class="col-6">
-                                            {{-- @foreach ($idr_rates as $idr) --}}
-                                            <p class="mb-0" style="font-weight: 500; font-size: 20px; color: #47A2D6;">
-                                                @money($idr_rates[$index]['rate'])</p>
-                                            {{-- @endforeach --}}
-                                        </div>
-                                        <div class="col-6 my-auto">
-                                            {{-- @if ($idr_rates[$index]['name'] = 'booking.com') --}}
-                                            @if ($idr_rates[$index]['name'] == 'Booking.com')
-                                                <img src="{{ URL::asset('/img/bookingcom-logo.png') }}"
-                                                    alt="logo booking.com">
-                                            @elseif ($idr_rates[$index]['name'] == 'Agoda.com')
-                                                <img src="{{ URL::asset('/img/agoda-logo.png') }}" alt="logo agoda.com"
-                                                    style="max-height: 24px; overflow:hidden">
-                                            @elseif ($idr_rates[$index]['name'] == 'FindHotel')
-                                                <img src="{{ URL::asset('/img/findhotel-logo.svg') }}"
-                                                    alt="logo findhtotel.com" style="max-height: 24px; overflow:hidden">
-                                            @elseif ($idr_rates[$index]['name'] == 'Expedia')
-                                                <img src="{{ URL::asset('/img/expedia-logo.png') }}"
-                                                    alt="logo expedia.com" style="max-height: 24px; overflow:hidden">
-                                            @elseif ($idr_rates[$index]['name'] == 'Hotels.com')
-                                                <img src="{{ URL::asset('/img/hotelcom-logo.png') }}"
-                                                    alt="logo hotel.com" style="max-height: 24px; overflow:hidden">
-                                            @elseif ($idr_rates[$index]['name'] == 'Trip.com')
-                                                <img src="{{ URL::asset('/img/tripcom-logo.png') }}"
-                                                    alt="logo trip.com" style="max-height: 24px; overflow:hidden">
-                                            @else
-                                                <p class="mb-0"
-                                                    style="font-weight: 500; font-size: 20px; color: #000000;">
-                                                    {{ $idr_rates[$index]['name'] }}</p>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="row mt-2">
-                                        <div class="col-6 d-grid">
-                                            @foreach ($fav as $fv)
-                                                @if ($fv->fv_hotel_id == $htl->id)
-                                                    @if ($loop->first)
-                                                        <p class="my-auto"
-                                                            style="font-weight: 500; font-size: 16px; color: #515151;">
-                                                            Disukai {{ $loop->count }} orang</p>
-                                                    @endif
+                                        <div class="row">
+                                            @foreach ($hotel_fascility as $fas)
+                                                @if ($fas->ht_id == $htl->id)
+                                                    <div class="col-6">
+    
+                                                        @if ($fas->ramp == '1')
+                                                            <p class="mb-0" style="font-weight: 400; font-size: 18px;"><img
+                                                                    class="me-2" src="{{ URL::asset('/img/ramp.png') }}"
+                                                                    alt="ramp-icon">Ramp</p>
+                                                        @endif
+    
+    
+                                                        @if ($fas->antarjemput == '1')
+                                                            <p class="mb-0" style="font-weight: 400; font-size: 18px;"><span
+                                                                    class="iconify me-2"
+                                                                    data-icon="fa6-solid:car"></span>Antar
+                                                                jemput bandara
+                                                            </p>
+                                                        @endif
+    
+                                                    </div>
+    
+                                                    <div class="col-6">
+    
+                                                        @if ($fas->akses_kursiroda == '1')
+                                                            <p class="mb-0" style="font-weight: 400; font-size: 18px;"><span
+                                                                    class="iconify me-2"
+                                                                    data-icon="map:wheelchair"></span></span>Akses kursi
+                                                                roda</p>
+                                                        @endif
+    
+                                                        @if ($fas->toilet_pegangan == '1')
+                                                            <p class="mb-0" style="font-weight: 400; font-size: 18px;"><span
+                                                                    class="iconify me-2"
+                                                                    data-icon="ph:toilet-fill"></span></span>Pegangan
+                                                                toilet</p>
+                                                        @endif
+    
+                                                    </div>
                                                 @endif
                                             @endforeach
                                         </div>
-                                        <div class="col-6 position-absolute bottom-0 end-0" style="margin-bottom: 14px">
-                                            <div class="row row-cols-auto justify-content-md-end">
-                                                <div class="col text-end my-auto">
-                                                    <a class="btn btn-primary"
-                                                        href="{{ route('/hotel/show', $htl->id) }}"
-                                                        style="background: #47A2D6; border-radius: 12px; font-weight: 600; font-size: 16px; border-color: #47A2D6;">Lihat
-                                                        detail</a>
+                                        <div class="row mt-2">
+                                            <div class="col-6">
+                                                {{-- @foreach ($idr_rates as $idr) --}}
+                                                <p class="mb-0" style="font-weight: 500; font-size: 20px; color: #47A2D6;">
+                                                    @money($idr_rates[$index]['rate'])</p>
+                                                {{-- @endforeach --}}
+                                            </div>
+                                            <div class="col-6 my-auto">
+                                                {{-- @if ($idr_rates[$index]['name'] = 'booking.com') --}}
+                                                @if ($idr_rates[$index]['name'] == 'Booking.com')
+                                                    <img src="{{ URL::asset('/img/bookingcom-logo.png') }}"
+                                                        alt="logo booking.com">
+                                                @elseif ($idr_rates[$index]['name'] == 'Agoda.com')
+                                                    <img src="{{ URL::asset('/img/agoda-logo.png') }}" alt="logo agoda.com"
+                                                        style="max-height: 24px; overflow:hidden">
+                                                @elseif ($idr_rates[$index]['name'] == 'FindHotel')
+                                                    <img src="{{ URL::asset('/img/findhotel-logo.svg') }}"
+                                                        alt="logo findhtotel.com" style="max-height: 24px; overflow:hidden">
+                                                @elseif ($idr_rates[$index]['name'] == 'Expedia')
+                                                    <img src="{{ URL::asset('/img/expedia-logo.png') }}"
+                                                        alt="logo expedia.com" style="max-height: 24px; overflow:hidden">
+                                                @elseif ($idr_rates[$index]['name'] == 'Hotels.com')
+                                                    <img src="{{ URL::asset('/img/hotelcom-logo.png') }}"
+                                                        alt="logo hotel.com" style="max-height: 24px; overflow:hidden">
+                                                @elseif ($idr_rates[$index]['name'] == 'Trip.com')
+                                                    <img src="{{ URL::asset('/img/tripcom-logo.png') }}"
+                                                        alt="logo trip.com" style="max-height: 24px; overflow:hidden">
+                                                @else
+                                                    <p class="mb-0"
+                                                        style="font-weight: 500; font-size: 20px; color: #000000;">
+                                                        {{ $idr_rates[$index]['name'] }}</p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-6 d-grid">
+                                                @foreach ($fav as $fv)
+                                                    @if ($fv->fv_hotel_id == $htl->id)
+                                                        @if ($loop->first)
+                                                            <p class="my-auto"
+                                                                style="font-weight: 500; font-size: 16px; color: #515151;">
+                                                                Disukai {{ $loop->count }} orang</p>
+                                                        @endif
+                                                    @endif
+                                                @endforeach
+                                            </div>
+                                            <div class="col-6 position-absolute bottom-0 end-0" style="margin-bottom: 14px">
+                                                <div class="row row-cols-auto justify-content-md-end">
+                                                    <div class="col text-end my-auto">
+                                                        <a class="btn btn-primary"
+                                                            href="{{ route('/hotel/show', $htl->id) }}"
+                                                            style="background: #47A2D6; border-radius: 12px; font-weight: 600; font-size: 16px; border-color: #47A2D6;">Lihat
+                                                            detail</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -507,7 +509,7 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                    @endforeach
             </div>
         </div>
         {{-- list hotel --}}
@@ -527,13 +529,13 @@
             function search_hotel() {
                 let input = document.getElementById('searchbar').value
                 input = input.toLowerCase();
-                let x = document.getElementsByClassName('listhotel');
+                let x = document.getElementsByClassName('hotels');
 
                 for (i = 0; i < x.length; i++) {
                     if (!x[i].innerHTML.toLowerCase().includes(input)) {
                         x[i].style.display = "none";
                     } else {
-                        x[i].style.display = "list-item";
+                        x[i].style.display = "initial";
                     }
                 }
             }

@@ -7,12 +7,12 @@
                 <h3 class="mt-5 subtitle">Temukan pilihan destinasi menarik bagi Anda dan keluarga</h3>
                 <div class="col-12">
                     <div class="mb-3 mt-5">
-                        <input type="text" class="form-control form-control-lg mx-auto" id="searchdestinasi"
-                            placeholder="Cari kota" style="max-width: 727px">
+                        <input type="text" class="form-control form-control-lg mx-auto" id="searchbardestinasi"
+                            placeholder="Cari kota" style="max-width: 727px" onkeyup="search_destinasi()">
                     </div>
                 </div>
                 <div class="row row-cols-1 row-cols-md-3 g-5 mt-3 mb-5">
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/bandung' }}">
                             <img src="{{ URL::asset('/img/dest-bd.png') }}" class="dest-card" alt="bandung">
                             <div class="card-img-overlay grad dest-card">
@@ -21,7 +21,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/yogya' }}">
                             <img src="{{ URL::asset('/img/dest-yg.png') }}" class="dest-card" alt="yogyakarta">
                             <div class="card-img-overlay grad dest-card">
@@ -30,7 +30,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/malang' }}">
                             <img src="{{ URL::asset('/img/dest-ml.png') }}" class="dest-card" alt="malang">
                             <div class="card-img-overlay grad dest-card">
@@ -39,7 +39,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/jakarta' }}">
                             <img src="{{ URL::asset('/img/dest-jkt.png') }}" class="dest-card" alt="jakarta">
                             <div class="card-img-overlay grad dest-card">
@@ -48,7 +48,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/bali' }}">
                             <img src="{{ URL::asset('/img/dest-bl.png') }}" class="dest-card" alt="bali">
                             <div class="card-img-overlay grad dest-card">
@@ -57,7 +57,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/lombok' }}">
                             <img src="{{ URL::asset('/img/dest-lb.png') }}" class="dest-card" alt="lombok">
                             <div class="card-img-overlay grad dest-card">
@@ -66,7 +66,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/manado' }}">
                             <img src="{{ URL::asset('/img/dest-md.png') }}" class="dest-card" alt="manado">
                             <div class="card-img-overlay grad dest-card">
@@ -75,7 +75,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/solo' }}">
                             <img src="{{ URL::asset('/img/dest-sl.png') }}" class="dest-card" alt="solo">
                             <div class="card-img-overlay grad dest-card">
@@ -84,7 +84,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/bogor' }}">
                             <img src="{{ URL::asset('/img/dest-bgr.png') }}" class="dest-card" alt="bogor">
                             <div class="card-img-overlay grad dest-card">
@@ -93,7 +93,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/batam' }}">
                             <img src="{{ URL::asset('/img/dest-btm.png') }}" class="dest-card" alt="batam">
                             <div class="card-img-overlay grad dest-card">
@@ -102,7 +102,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/padang' }}">
                             <img src="{{ URL::asset('/img/dest-pdg.png') }}" class="dest-card" alt="Padang">
                             <div class="card-img-overlay grad dest-card">
@@ -111,7 +111,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/makassar' }}">
                             <img src="{{ URL::asset('/img/dest-mks.png') }}" class="dest-card" alt="Makassar">
                             <div class="card-img-overlay grad dest-card">
@@ -120,7 +120,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/rajaampat' }}">
                             <img src="{{ URL::asset('/img/dest-ra.png') }}" class="dest-card" alt="Raja Ampat">
                             <div class="card-img-overlay grad dest-card">
@@ -129,7 +129,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/surabaya' }}">
                             <img src="{{ URL::asset('/img/dest-sby.png') }}" class="dest-card" alt="Surabaya">
                             <div class="card-img-overlay grad dest-card">
@@ -138,7 +138,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/semarang' }}">
                             <img src="{{ URL::asset('/img/dest-smg.png') }}" class="dest-card" alt="Semarang">
                             <div class="card-img-overlay grad dest-card">
@@ -147,7 +147,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/aceh' }}">
                             <img src="{{ URL::asset('/img/dest-ach.png') }}" class="dest-card" alt="Aceh">
                             <div class="card-img-overlay grad dest-card">
@@ -156,7 +156,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/palembang' }}">
                             <img src="{{ URL::asset('/img/dest-plg.png') }}" class="dest-card" alt="Palembang">
                             <div class="card-img-overlay grad dest-card">
@@ -165,7 +165,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col">
+                    <div class="col destinasi">
                         <a class="card border-0" href="{{ '/destinasi/kudus' }}">
                             <img src="{{ URL::asset('/img/dest-kds.png') }}" class="dest-card" alt="Kudus">
                             <div class="card-img-overlay grad dest-card">
@@ -189,4 +189,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function search_destinasi() {
+            let input = document.getElementById('searchbardestinasi').value
+            input = input.toLowerCase();
+            let x = document.getElementsByClassName('destinasi');
+
+            for (i = 0; i < x.length; i++) {
+                if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                    x[i].style.display = "none";
+                } else {
+                    x[i].style.display = "initial";
+                }
+            }
+        }
+    </script>
+
 @endsection
