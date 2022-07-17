@@ -19,8 +19,8 @@ class CreateCommentsTable extends Migration
             $table->foreign('cm_user_id')->references('id')->on('users');
             $table->foreignId('cm_forum_id')->unsigned();
             $table->foreign('cm_forum_id')->references('id')->on('forums');
-            $table->string('cm_author');
-            $table->longText('cm_body');
+            $table->string('cm_author')->nullable();
+            $table->longText('cm_body')->nullable();
             $table->timestamps();
         });
     }

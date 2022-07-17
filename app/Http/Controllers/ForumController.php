@@ -31,7 +31,7 @@ class ForumController extends Controller
             ->orderByRaw('updated_at DESC')
             ->get();
 
-        // dd($comment);
+        // dd($comment, $forum);
         return view('forum/index', compact('forum', 'terbaru', 'count','comment','forum_img'));
     }
 

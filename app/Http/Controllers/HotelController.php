@@ -36,6 +36,11 @@ class HotelController extends Controller
         $fav = Favourites::all();
         $count = 0;
         $marker = [];
+        $prices = [];
+        $idr_rates = [];
+        $hotel_fascility = HotelFascility::all();
+
+
 
         // getting idr rates
         $req_url = 'https://api.exchangerate.host/convert?from=USD&to=IDR';
@@ -53,58 +58,76 @@ class HotelController extends Controller
                             $rates = null;
                     } 
                 };  
+                
+        if ($hotel->isNotEmpty()) {
 
-        foreach ($hotel as $ht) {
-            $marker[] = array(
-                "placeName" => $ht->ht_name,
-                "LatLng" => array(
-                    "lat" =>$ht->ht_latitude,
-                    "lng" =>$ht->ht_longitude
-                ),
-                "url" =>  route('/hotel/show', $ht->id)
-            );
-        };
+            foreach ($hotel as $ht) {
+                $marker[] = array(
+                    "placeName" => $ht->ht_name,
+                    "LatLng" => array(
+                        "lat" =>$ht->ht_latitude,
+                        "lng" =>$ht->ht_longitude
+                    ),
+                    "url" =>  route('/hotel/show', $ht->id)
+                );
+            };
 
-        $hotel_fascility = HotelFascility::all();
+            // dd($marker);
 
-        foreach ($hotel as $ht) {
-            $keys[] = array(
-                $ht->ht_key,
-            );
-        };
-        $prices = [];
-
-        foreach ($keys as $key){
-            $response = Http::get('https://data.xotelo.com/api/rates?', [
-                'hotel_key' => $key[0],
-                'chk_in' => $today,
-                'chk_out' => $tomorrow,
-            ]);  
-            $prices[] = json_decode($response);
+            foreach ($hotel as $ht) {
+                $keys[] = array(
+                    $ht->ht_key,
+                );
+            };
             
-        };
+            foreach ($keys as $key){
+                $response = Http::get('https://data.xotelo.com/api/rates?', [
+                    'hotel_key' => $key[0],
+                    'chk_in' => $today,
+                    'chk_out' => $tomorrow,
+                ]);  
+                $prices[] = json_decode($response);
+                
+            };
+            foreach ($prices as $i => $item){
+                if ($prices[$i]->error == null) {
+                    array_push($idr_rates, [
+                        'name' => $prices[$i]->result->rates[0]->name, 
+                        'rate' => $prices[$i]->result->rates[0]->rate * $usd_idr_rates
+                    ]);
+                }else{
+                    array_push($idr_rates, [
+                        'name' => null, 
+                        'rate' => null
+                    ]);
+                }
+            }
 
-        $idr_rates = [];
+        }elseif($hotel->isEmpty()){
 
-        foreach ($prices as $i => $item){
-            if ($prices[$i]->error == null) {
-                array_push($idr_rates, [
-                    'name' => $prices[$i]->result->rates[0]->name, 
-                    'rate' => $prices[$i]->result->rates[0]->rate * $usd_idr_rates
-                ]);
-            }else{
-                array_push($idr_rates, [
+            array_push($idr_rates, [
                     'name' => null, 
                     'rate' => null
                 ]);
-            }
+
         }
+
+        // testing
+
         // dd($idr_rates);
         // dd($hotel);
         // dd($hotel_fascility);
         // dd($hotel, $marker, $hotel_fascility);
 
-        return view('hotel/index',compact('hotel','marker','hotel_fascility','fav','count','idr_rates'));
+        return view('hotel/index',compact(
+            'hotel',
+            'marker',
+            'hotel_fascility',
+            'fav',
+            'count'
+            ,'idr_rates',
+            'marker'
+        ));
     }
 
     public function map()

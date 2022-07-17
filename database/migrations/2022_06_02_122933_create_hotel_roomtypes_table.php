@@ -16,9 +16,9 @@ class CreateHotelRoomtypesTable extends Migration
         Schema::create('hotel_roomtypes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('ht_id')->unsigned();
-            $table->foreign('ht_id')->references('id')->on('hotels');
-            $table->string('name_roomtype');
-            $table->longText('description');
+            $table->foreign('ht_id')->references('id')->on('hotels')->onDelete('cascade');
+            $table->string('name_roomtype')->nullable();
+            $table->longText('description')->nullable();
             $table->string('name')->nullable();
             $table->string('path')->nullable();
             $table->timestamps();
