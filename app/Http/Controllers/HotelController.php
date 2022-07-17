@@ -99,13 +99,8 @@ class HotelController extends Controller
                 ]);
             }
         }
-<<<<<<< HEAD
         // dd($idr_rates);
         
-=======
-
-        // dd($hotel_fascility);
->>>>>>> 0f36ba60ae0616e44bd54be42c014c8b7f33a913
         // dd($hotel, $marker, $hotel_fascility);
 
         return view('hotel/index',compact('hotel','marker','hotel_fascility','fav','count','idr_rates'));
