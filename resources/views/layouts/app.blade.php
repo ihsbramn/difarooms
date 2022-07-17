@@ -36,6 +36,7 @@
         footer {
             font-family: 'Montserrat', sans-serif;
         }
+        
         #scrolly {
             width: auto;
             height: auto;

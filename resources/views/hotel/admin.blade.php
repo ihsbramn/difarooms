@@ -56,8 +56,8 @@
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
-                    @foreach ($hotel as $data)
-                        <tbody>
+                    <tbody>
+                        @foreach ($hotel as $data)
                             <tr>
                                 <td>
                                     <div class="form-check">
@@ -90,8 +90,8 @@
                                     </div>
                                 </td>
                             </tr>
-                        </tbody>
-                    @endforeach
+                        @endforeach
+                    </tbody>
                 </table>
             </div>
         </div>

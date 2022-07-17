@@ -74,25 +74,12 @@
                                         </div>
                                     </div>
                                     <div class="card-body pt-0  ">
-                                        {{-- main text --}}
+                                        {{-- title forum --}}
                                         <div class="row">
                                             <p class="mb-0" style="font-weight: 500; font-size: 20px; color: #000000;">
                                                 {{ $fr->fr_title }}</p>
                                         </div>
-                                        
-                                        {{-- img sectioon --}}
-                                        {{-- <div class="row mt-2">
-                                            @if ($fr->id == $forum_img[$index]->fr_id)
-                                            @foreach ($forum_img as $img)
-                                                <a href="/storage/uploads/{{ $img->name }}" data-lightbox="imgforum">
-                                                    <img src="/storage/uploads/{{ $img->name }}" alt="gambar"
-                                                        id='img-scroll' style="max-height: 300px; overflow: hidden;">
-                                                </a>
-                                            @endforeach
-                                            @endif
-                                        </div> --}}
-
-                                        {{-- main content text --}}
+                                        {{-- isi forum --}}
                                         <div class="row mt-2">
                                             @php
                                                 $showless = substr($fr['fr_body'], 0, 160);
@@ -102,29 +89,10 @@
                                                 <p class="mb-0"
                                                     style="font-weight: 400; font-size: 16px; color: #000000;">
                                                     {{ $showless }}
-                                                    <span id="dots">...</span><span
-                                                        id="more">{{ $showmore }}</span>
-                                                    <a onclick="myFunction()" type="button" id="myBtn"
+                                                    <span id="dots">...</span>
+                                                    <a onclick="myFunction()" type="button" href="{{ route('/forum/show',$fr->id) }}"
                                                         style="color: blue">Read more</a>
                                                 </p>
-
-                                                <script>
-                                                    function myFunction() {
-                                                        var dots = document.getElementById("dots");
-                                                        var moreText = document.getElementById("more");
-                                                        var btnText = document.getElementById("myBtn");
-
-                                                        if (dots.style.display === "none") {
-                                                            dots.style.display = "inline";
-                                                            btnText.innerHTML = "Read more";
-                                                            moreText.style.display = "none";
-                                                        } else {
-                                                            dots.style.display = "none";
-                                                            btnText.innerHTML = "Read less";
-                                                            moreText.style.display = "inline";
-                                                        }
-                                                    }
-                                                </script>
                                             @else
                                                 <p class="mb-0"
                                                     style="font-weight: 400; font-size: 16px; color: #000000;">
@@ -132,41 +100,9 @@
                                             @endif
                                         </div>
                                     </div>
-                                    {{-- comment view --}}
-                                    <div class="card-footer" style="background: rgba(185, 208, 218, 0.54);">
-                                        @if ($fr->id == $comment[$index]['cm_forum_id'])
-                                            <div class="col-10">
-                                                <div class="card border-0 p-2"
-                                                    style="border-radius: 10px; background: rgba(194, 202, 206, 1);">
-                                                    <p class="mb-0" style="font-weight: 600; font-size: 14px;">
-                                                        {{ $comment[$index]['cm_author'] }}</p>
-                                                    <p class="mb-0" style="font-weight: 400; font-size: 14px;">
-                                                        {{ $comment[$index]['cm_body'] }}</p>
-                                                </div>
-                                            </div>
-                                        @endif
-                                        {{-- comment input --}}
-                                        <form action="{{ route('/comment/store') }}" method="POST">
-                                            @csrf
-                                            <div class="row mt-3">
-                                                <div class="col-10">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="cm_user_id"
-                                                            name="cm_user_id" value="{{ Auth::user()->id }}" hidden>
-                                                        <input type="text" class="form-control" id="cm_forum_id"
-                                                            name="cm_forum_id" value="{{ $fr->id }}" hidden>
-                                                        <input type="text" class="form-control" id="cm_author"
-                                                            name="cm_author" value="{{ Auth::user()->name }}" hidden>
-                                                        <input type="text" class="form-control" id="cm_body"
-                                                            name="cm_body" placeholder="Comment here">
-                                                    </div>
-                                                </div>
-                                                <div class="col-2 text-center d-grid">
-                                                    <button href="submit" class="btn btn-dark">Post !</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                                    <a class="card-footer bg-transparent" href="{{ route('/forum/show',$fr->id) }}" style="text-decoration: none;">
+                                        <p class="mb-0" style="font-weight: 400;font-size: 14px; color: #4D4D4D;"><i class="bi bi-chat me-2"></i>Tulis komentar</p>
+                                    </a>
                                 </div>
                             @endforeach
                         </div>
@@ -174,134 +110,7 @@
                         {{-- terbaru --}}
                         <div class="tab-pane fade" id="nav-terbaru" role="tabpanel" aria-labelledby="nav-terbaru-tab"
                             tabindex="0">
-                            @foreach ($terbaru as $index => $tb)
-                                <div class="card border-0 shadow mt-3">
-                                    <div class="card-header bg-transparent border-0">
-                                        <div class="row row-cols-auto">
-                                            <div class="col">
-                                                <span class="iconify" data-icon="carbon:user-avatar-filled"
-                                                    data-width="45" data-height="45" style="color: #47A2D6;"></span>
-                                            </div>
-                                            {{-- author --}}
-                                            <div class="col">
-                                                <p class="mb-0"
-                                                    style="font-weight: 500; font-size: 16px; color: #000000;">
-                                                    {{ $tb->fr_author }}</p>
-                                                <p class="mb-0"
-                                                    style="font-weight: 400; font-size: 14px; color: #868686;">
-                                                    {{ $tb->created_at }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body pt-0  ">
-                                        {{-- main text --}}
-                                        <div class="row">
-                                            <p class="mb-0" style="font-weight: 500; font-size: 20px; color: #000000;">
-                                                {{ $tb->fr_title }}</p>
-                                        </div>
-                                        <div class="row mt-2">
-                                            @php
-                                                $showless = substr($tb->fr_body, 0, 160);
-                                                $showmore = substr($tb->fr_body, 160);
-                                            @endphp
-                                            @if ($showmore !== false)
-                                                <p class="mb-0"
-                                                    style="font-weight: 400; font-size: 16px; color: #000000;">
-                                                    {{ $showless }}
-                                                    <span id="dots">...</span><span
-                                                        id="more">{{ $showmore }}</span>
-                                                    <a onclick="myFunction()" type="button" id="myBtn"
-                                                        style="color: blue">Read more</a>
-                                                </p>
 
-                                                <script>
-                                                    function myFunction() {
-                                                        var dots = document.getElementById("dots");
-                                                        var moreText = document.getElementById("more");
-                                                        var btnText = document.getElementById("myBtn");
-
-                                                        if (dots.style.display === "none") {
-                                                            dots.style.display = "inline";
-                                                            btnText.innerHTML = "Read more";
-                                                            moreText.style.display = "none";
-                                                        } else {
-                                                            dots.style.display = "none";
-                                                            btnText.innerHTML = "Read less";
-                                                            moreText.style.display = "inline";
-                                                        }
-                                                    }
-                                                </script>
-                                            @else
-                                                <p class="mb-0"
-                                                    style="font-weight: 400; font-size: 16px; color: #000000;">
-                                                    {{ $tb->fr_body }}</p>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="card-footer" style="background: rgba(185, 208, 218, 0.54);">
-                                        @if ($tb->id = $comment[$index]['cm_forum_id'])
-                                            <div class="col-10">
-                                                <div class="card border-0 p-2"
-                                                    style="border-radius: 10px; background: rgba(194, 202, 206, 1);">
-                                                    <p class="mb-0" style="font-weight: 600; font-size: 14px;">
-                                                        {{ $comment[$index]['cm_author'] }}</p>
-                                                    <p class="mb-0" style="font-weight: 400; font-size: 14px;">
-                                                        {{ $comment[$index]['cm_body'] }}</p>
-                                                </div>
-                                            </div>
-                                        @endif
-                                        <form action="{{ route('/comment/store') }}" method="POST">
-                                            @csrf
-                                            <div class="row mt-3">
-                                                <div class="col-10">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="cm_user_id"
-                                                            name="cm_user_id" value="{{ Auth::user()->id }}" hidden>
-                                                        <input type="text" class="form-control" id="cm_forum_id"
-                                                            name="cm_forum_id" value="{{ $tb->id }}" hidden>
-                                                        <input type="text" class="form-control" id="cm_author"
-                                                            name="cm_author" value="{{ Auth::user()->name }}" hidden>
-                                                        <input type="text" class="form-control" id="cm_body"
-                                                            name="cm_body" placeholder="Comment here">
-                                                    </div>
-                                                </div>
-                                                <div class="col-2 text-center d-grid">
-                                                    <button href="submit" class="btn btn-dark">Post !</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                {{-- <a class="card border-0 shadow mt-3" href="{{ route('/forum/show', $tb->id) }}"
-                                    style="text-decoration: none; border-radius: 12px; overflow: hidden;">
-                                    <div class="card-header bg-transparent">
-                                        <div class="row row-cols-auto">
-                                            <div class="col">
-                                                <span class="iconify" data-icon="carbon:user-avatar-filled"
-                                                    data-width="45" data-height="45" style="color: #47A2D6;"></span>
-                                            </div>
-                                            <div class="col">
-                                                <p class="mb-0"
-                                                    style="font-weight: 500; font-size: 16px; color: #000000;">
-                                                    {{ $tb->fr_author }}</p>
-                                                <p class="mb-0"
-                                                    style="font-weight: 400; font-size: 14px; color: #868686;">
-                                                    {{ $tb->created_at }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <p class="mb-0" style="font-weight: 500; font-size: 20px; color: #000000;">
-                                                {{ $tb->fr_title }}</p>
-                                        </div>
-                                        <div class="row mt-2" style="max-height: 10rem;">
-                                            <p class="mb-0" style="font-weight: 400; font-size: 16px; color: #000000;">
-                                                {{ $tb->fr_body }}</p>
-                                        </div>
-                                    </div>
-                                </a> --}}
-                            @endforeach
                         </div>
 
                         {{-- terpopuler --}}
@@ -441,10 +250,7 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="form-group">
-                    <label for="fr_filename">Isi</label>
-                    <input type="file" name="fr_filename" id="fr_filename" class="form-control">
-                </div> --}}
+                        
                         <div class="form-group mt-2">
                             <div class="row">
                                 <div class="col-2">

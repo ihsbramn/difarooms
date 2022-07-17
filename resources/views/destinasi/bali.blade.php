@@ -17,7 +17,8 @@
                     <img src="{{ URL::asset('/img/bg-bali.jpg') }}" class="card-img" alt="background">
                     <div class="card-img-overlay d-flex gradbg">
                         <div class="container my-auto">
-                            <h1 style="font-size: 40px; font-weight:800">Nikmati eksotisnya Kota Bali <br> dengan bersantai di daerah yang asri
+                            <h1 style="font-size: 40px; font-weight:800">Nikmati eksotisnya Kota Bali <br> dengan bersantai
+                                di daerah yang asri
                             </h1>
                         </div>
                     </div>

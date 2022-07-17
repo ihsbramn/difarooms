@@ -124,8 +124,8 @@ class HotelController extends Controller
             'marker',
             'hotel_fascility',
             'fav',
-            'count'
-            ,'idr_rates',
+            'count',
+            'idr_rates',
             'marker'
         ));
     }
