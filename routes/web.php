@@ -44,6 +44,32 @@ Route::get('/hotel/show/{id}',[HotelController::class, 'show'])->name('/hotel/sh
 Route::get('/destinasi',[destinasicontroller::class, 'destinasi'])->name('/destinasi');
 Route::get('/destinasi/bandung',[destinasicontroller::class, 'bandung'])->name('/destinasi/bandung');
 Route::get('/destinasi/bandung/asia-afrika',[destinasicontroller::class, 'asaf'])->name('/destinasi/bandung/asia-afrika');
+Route::get('/destinasi/aceh',[destinasicontroller::class, 'aceh'])->name('/destinasi/aceh');
+Route::get('/destinasi/bali',[destinasicontroller::class, 'bali'])->name('/destinasi/bali');
+Route::get('/destinasi/batam',[destinasicontroller::class, 'batam'])->name('/destinasi/batam');
+Route::get('/destinasi/bogor',[destinasicontroller::class, 'bogor'])->name('/destinasi/bogor');
+Route::get('/destinasi/jakarta',[destinasicontroller::class, 'jakarta'])->name('/destinasi/jakarta');
+Route::get('/destinasi/kudus',[destinasicontroller::class, 'kudus'])->name('/destinasi/kudus');
+Route::get('/destinasi/lombok',[destinasicontroller::class, 'lombok'])->name('/destinasi/lombok');
+Route::get('/destinasi/makassar',[destinasicontroller::class, 'makassar'])->name('/destinasi/makassar');
+Route::get('/destinasi/malang',[destinasicontroller::class, 'malang'])->name('/destinasi/malang');
+Route::get('/destinasi/manado',[destinasicontroller::class, 'manado'])->name('/destinasi/manado');
+Route::get('/destinasi/padang',[destinasicontroller::class, 'padang'])->name('/destinasi/padang');
+Route::get('/destinasi/palembang',[destinasicontroller::class, 'palembang'])->name('/destinasi/palembang');
+Route::get('/destinasi/rajaampat',[destinasicontroller::class, 'rajaampat'])->name('/destinasi/rajaampat');
+Route::get('/destinasi/semarang',[destinasicontroller::class, 'semarang'])->name('/destinasi/semarang');
+Route::get('/destinasi/solo',[destinasicontroller::class, 'solo'])->name('/destinasi/solo');
+Route::get('/destinasi/surabaya',[destinasicontroller::class, 'surabaya'])->name('/destinasi/surabaya');
+Route::get('/destinasi/yogya',[destinasicontroller::class, 'yogya'])->name('/destinasi/yogya');
+Route::get('/destinasi/bedugul',[destinasicontroller::class, 'bedugul'])->name('/destinasi/bedugul');
+Route::get('/destinasi/bandung/rancaupas',[destinasicontroller::class, 'rancaupas'])->name('/destinasi//bandung/rancaupas');
+Route::get('/destinasi/bandung/floatingmarket',[destinasicontroller::class, 'floatingmarket'])->name('/destinasi/bandung/floatingmarket');
+Route::get('/destinasi/bandung/gedungsate',[destinasicontroller::class, 'gedungsate'])->name('/destinasi/bandung/gedungsate');
+Route::get('/destinasi/bandung/farmhouse',[destinasicontroller::class, 'farmhouse'])->name('/destinasi/bandung/farmhouse');
+Route::get('/destinasi/bandung/tangkubanprahu',[destinasicontroller::class, 'tangkubanprahu'])->name('/destinasi/bandung/tangkubanprahu');
+Route::get('/destinasi/bandung/cartil',[destinasicontroller::class, 'cartil'])->name('/destinasi/bandung/cartil');
+Route::get('/destinasi/bandung/braga',[destinasicontroller::class, 'braga'])->name('/destinasi/bandung/braga');
+Route::get('/destinasi/borobudur',[destinasicontroller::class, 'borobudur'])->name('/destinasi/borobudur');
 //destinasi
 
 //forum

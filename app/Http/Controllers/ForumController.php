@@ -19,16 +19,20 @@ class ForumController extends Controller
      */
     public function index()
     {
-        $forum = Forum::paginate(20);
+        $forum = Forum::get();
         $id = Forum::find('fr_user_id');
         $count = 1;
 
+        $comment = Comment::all();
+        
+        $forum_img = Forum_Img::all();
+        
         $terbaru = DB::table('forums')
             ->orderByRaw('updated_at DESC')
-            ->paginate(20);
+            ->get();
 
-        // dd($request);
-        return view('forum/index', compact('forum', 'terbaru', 'count'));
+        // dd($comment);
+        return view('forum/index', compact('forum', 'terbaru', 'count','comment','forum_img'));
     }
 
     public function search(Request $request)
@@ -41,6 +45,9 @@ class ForumController extends Controller
             ->where('fr_title', 'like', "%" . $cariforum . "%")
             ->paginate(20);
         
+        //ambil data comment
+        $comment = Comment::all();
+
         // search+terbaru
         $terbaru = DB::table('forums')
             ->where('fr_title', 'like', "%" . $cariforum . "%")
@@ -48,7 +55,7 @@ class ForumController extends Controller
             ->paginate(20);
 
         // mengirim hasil ke forum index
-        return view('forum/index', compact('forum','terbaru', 'cariforum'));
+        return view('forum/index', compact('forum','terbaru', 'cariforum', 'comment'));
     }
 
     public function admin()
@@ -107,6 +114,7 @@ class ForumController extends Controller
     public function show($id)
     {
         $forum = Forum::find($id);
+        
         $id = $forum->id;
 
         $comment = Comment::where('cm_forum_id', '=', $id)->get();
