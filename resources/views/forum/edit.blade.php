@@ -2,18 +2,12 @@
 @section('content')
 <div class="container">
 
-    @if(session()->has('success'))
-        <div class="alert alert-success">
-            {{ session()->get('success') }}
-        </div>
-    @endif
-
+    <h1 class="mt-3" style="font-weight: 800; font-size: 40px;"><i class="bi bi-chat-left-text-fill me-4"></i></i>Edit Forum</h1>
     <div class="row justify-content-center">
         <div class="col">
             <div class="card">
-                <h4 class="text-center card-header">My Forum</h2>
                 <div class="card-body">
-                    <p class="text-center">Edit Forum</p>
+                    <p class="text-center" style="font-weight: 400">Edit Forum</p>
                     <form action="{{ route('forum/update', $forum->id) }}" method="POST">
                         @csrf
                         @method('PUT')
@@ -40,7 +34,7 @@
             <br>
             <div class="card">
                 <div class="card-body">
-                    <p class="text-center">Delete Photo</p>
+                    <p class="text-center" style="font-weight: 400">Delete Photo</p>
                     @foreach ($forum_img as $img )
                     <br>
                         <img src="/storage/uploads/{{ $img->name }}" alt="gambar" height="200px" >
@@ -58,7 +52,7 @@
             <br>
             <div class="card">
                 <div class="card-body">
-                    <p class="text-center">Tambah Photo</p>
+                    <p class="text-center" style="font-weight: 400">Tambah Photo</p>
                     <form method="post" action="{{ route('forum_img/store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">

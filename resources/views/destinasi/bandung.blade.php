@@ -179,7 +179,7 @@
                             <div class="carousel-item active">
                                 <div class="row row-cols-1 row-cols-md-4 g-2">
                                     @foreach ($hotel as $index => $htl)
-                                        <div class="col">
+                                        <div class="col card-group">
                                             <div class="card border-0" style="max-width: 25rem; border-radius: 20px;">
                                                 <img src="/storage/uploads/{{ $htl->ht_thumbnail }}"
                                                     class="card-img-top p-3" alt="foto thumbnail hotel"
@@ -238,6 +238,8 @@
                                                             @endif
                                                         </div>
                                                     </div>
+                                                </div>
+                                                <div class="card-footer bg-transparent border-top-0">
                                                     <div class="row px-5 mt-2">
                                                         <a href="{{ route('/hotel/show', $htl->id) }}"
                                                             class="btn btn-primary border-0" type="button"

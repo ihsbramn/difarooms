@@ -23,16 +23,16 @@ class ForumController extends Controller
         $id = Forum::find('fr_user_id');
         $count = 1;
 
-        $comment = Comment::all();
+        // $comment = Comment::all();
         
-        $forum_img = Forum_Img::all();
+        // $forum_img = Forum_Img::all();
         
         $terbaru = DB::table('forums')
             ->orderByRaw('updated_at DESC')
             ->get();
 
         // dd($comment, $forum);
-        return view('forum/index', compact('forum', 'terbaru', 'count','comment','forum_img'));
+        return view('forum/index', compact('forum', 'terbaru', 'count'));
     }
 
     public function search(Request $request)
