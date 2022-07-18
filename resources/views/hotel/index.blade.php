@@ -8,18 +8,11 @@
 
 {{-- marker maps --}}
 @section('lower_body')
-    @foreach ($hotel as $data)
-        <script>
-            var markersOnMap = [{
-                placeName: '{{ $data->ht_name }}',
-                LatLng: [{
-                    lat: {{ $data->ht_latitude }},
-                    lng: {{ $data->ht_longitude }}
-                }],
-                url: '{{ route('/hotel/show', $data->id) }}'
-            }];
-        </script>
-    @endforeach
+    <script>
+        var locations = {{ Js::from($marker) }};
+    </script>
+    <script src="{{ asset('js/maps.js') }}"></script>
+    <script src="{{ asset('js/markercluster.js') }}"></script>
 @endsection
 {{-- marker maps --}}
 
@@ -47,9 +40,7 @@
     <div class="container">
         {{-- map --}}
         <div class="card border-0 shadow p-2 mt-3 mb-5" style="border-radius: 12px">
-            <div class="shadow-sm" id="map" style="height: 318px;border-radius:12px">INI MAP</div>
-            <script src="{{ asset('js/maps.js') }}"></script>
-            <script src="{{ asset('js/markercluster.js') }}"></script>
+            <div class="shadow-sm" id="map2" style="height: 318px;border-radius:12px">INI MAP</div>
             <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&callback=initMap">
             </script>
             <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">

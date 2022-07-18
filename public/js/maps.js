@@ -1,67 +1,26 @@
-var map;
-var InforObj = [];
-// Add a marker clusterer to manage the markers.
+var map = new google.maps.Map(document.getElementById('map2'), {
+    zoom: 13,
+    center: new google.maps.LatLng(-6.917076, 107.618979),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+});
 
-// center map
-var centerCords = {
-    lat: -6.917076,
-    lng: 107.618979
-};
+var infowindow = new google.maps.InfoWindow();
 
-window.onload = function() {
-    initMap();
-};
+var marker, i;
 
-// marker funtion
-function addMarker() {
-    var markers = [];
-    for (var i = 0; i < markersOnMap.length; i++) {
-        var contentString = '<div id="content"> <p> <b>' + markersOnMap[i].placeName +
-            '</b> </p></div>' + '<a target="_blank" href="' + markersOnMap[i].url + '">Show Details</a>';
-
-        const marker = new google.maps.Marker({
-            position: markersOnMap[i].LatLng[0],
-            map: map
-        });
-
-        const infowindow = new google.maps.InfoWindow({
-            content: contentString,
-            maxWidth: 200
-        });
-
-        marker.addListener('click', function() {
-            closeOtherInfo();
-            infowindow.open(marker.get('map'), marker);
-            InforObj[0] = infowindow;
-        });
-        marker.addListener('mouseover', function() {
-            closeOtherInfo();
-            infowindow.open(marker.get('map'), marker);
-            InforObj[0] = infowindow;
-        });
-
-
-    }
-    var markerCluster = new MarkerClusterer(map, markers, {
-        imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js'
+for (i = 0; i < locations.length; i++) {
+    marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][2], locations[i][3]),
+        map: map
     });
+
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+            infowindow.setContent('<p>' + locations[i][0] + '</p>' + locations[i][1] + '<br>' + '<a target="_blank" href="' + locations[i][4] + '">Show Details</a>');
+            infowindow.open(map, marker);
+        }
+    })(marker, i));
 }
-
-function closeOtherInfo() {
-    if (InforObj.length > 0) {
-        /* detach the info-window from the marker ... undocumented in the API docs */
-        InforObj[0].set("marker", null);
-        /* and close it */
-        InforObj[0].close();
-        /* blank the array */
-        InforObj.length = 0;
-    }
-}
-
-// Add controls to the map, allowing users to hide/show features.
-const styleControl = document.getElementById("style-selector-control");
-
-
 
 const styles = {
     default: [],
@@ -77,26 +36,12 @@ const styles = {
     ],
 };
 
+map.setOptions({ styles: styles["hide"] });
 
-function initMap() {
-
-    map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 13,
-        center: centerCords,
-        mapTypeControl: false,
-    });
-
-    // map.controls[google.maps.ControlPosition.TOP_LEFT].push(styleControl);
+document.getElementById("hide-poi").addEventListener("click", () => {
     map.setOptions({ styles: styles["hide"] });
+});
 
-    document.getElementById("hide-poi").addEventListener("click", () => {
-        map.setOptions({ styles: styles["hide"] });
-    });
-
-    document.getElementById("show-poi").addEventListener("click", () => {
-        map.setOptions({ styles: styles["default"] });
-    });
-
-    addMarker();
-
-}
+document.getElementById("show-poi").addEventListener("click", () => {
+    map.setOptions({ styles: styles["default"] });
+});
