@@ -14,7 +14,7 @@
                 placeName: '{{ $data->ht_name }}',
                 LatLng: [{
                     lat: {{ $data->ht_latitude }},
-                    lng: {{ $data->ht_longitude }}
+                    Lng: {{ $data->ht_longitude }}
                 }],
                 url: '{{ route('/hotel/show', $data->id) }}'
             }];
