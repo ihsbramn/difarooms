@@ -316,11 +316,13 @@ class HotelController extends Controller
         
         $hotel = Hotel::find($id);
         $hotel_img = Hotel_Img::where('ht_id', '=' , $id)->get();
+        $hotel_fas = HotelFascility::where('ht_id', '=' , $id)->get();
 
-        // dd($hotel,$hotel_img);
+        // dd($hotel,$hotel_img,$hotel_fas);
         return view('/hotel/edit', compact(
             'hotel',
-            'hotel_img'
+            'hotel_img',
+            'hotel_fas'
         ));
     }
 
