@@ -41,7 +41,7 @@
         {{-- map --}}
         <div class="card border-0 shadow p-2 mt-3 mb-5" style="border-radius: 12px">
             <div class="shadow-sm" id="map2" style="height: 318px;border-radius:12px">INI MAP</div>
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&callback=initMap">
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}">
             </script>
             <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
             </script>
@@ -339,9 +339,9 @@
                                                 <input type="text" class="form-control" id="fv_user_id" name="fv_user_id"
                                                     value="{{ Auth::user()->id }}" hidden>
                                                 <input type="text" class="form-control" id="fv_hotel_id"
-                                                    name="fv_hotel_id" value="{{ $data->id }}" hidden>
+                                                    name="fv_hotel_id" value="{{ $htl->id }}" hidden>
                                                 <input type="text" class="form-control" id="fv_hotel_name"
-                                                    name="fv_hotel_name" value="{{ $data->ht_name }}" hidden>
+                                                    name="fv_hotel_name" value="{{ $htl->ht_name }}" hidden>
                                                 <input type="text" class="form-control" id="fv_count" name="fv_count"
                                                     value="1" hidden>
                                             </div>

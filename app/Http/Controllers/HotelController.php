@@ -22,7 +22,6 @@ class HotelController extends Controller
      */
     public function index()
     {
-
         //getting date
         $format = 'yyyy-mm-dd';
         // tomorrow
@@ -39,9 +38,6 @@ class HotelController extends Controller
         $prices = [];
         $idr_rates = [];
         $hotel_fascility = HotelFascility::all();
-
-
-
         // getting idr rates
         $req_url = 'https://api.exchangerate.host/convert?from=USD&to=IDR';
                 $response_json = file_get_contents($req_url);
@@ -60,16 +56,7 @@ class HotelController extends Controller
                 };  
                 
         if ($hotel->isNotEmpty()) {
-
             foreach ($hotel as $ht) {
-                // $marker[] = array(
-                //     "placeName" => $ht->ht_name,
-                //     "LatLng" => array(
-                //         "lat" =>$ht->ht_latitude,
-                //         "lng" =>$ht->ht_longitude
-                //     ),
-                //     "url" =>  route('/hotel/show', $ht->id)
-                // );
                 $marker[] = array(
                     $ht->ht_name,
                     $ht->ht_address,
@@ -111,12 +98,10 @@ class HotelController extends Controller
             }
 
         }elseif($hotel->isEmpty()){
-
             array_push($idr_rates, [
                     'name' => null, 
                     'rate' => null
                 ]);
-
         }
 
         // testing
