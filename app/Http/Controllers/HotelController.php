@@ -62,13 +62,20 @@ class HotelController extends Controller
         if ($hotel->isNotEmpty()) {
 
             foreach ($hotel as $ht) {
+                // $marker[] = array(
+                //     "placeName" => $ht->ht_name,
+                //     "LatLng" => array(
+                //         "lat" =>$ht->ht_latitude,
+                //         "lng" =>$ht->ht_longitude
+                //     ),
+                //     "url" =>  route('/hotel/show', $ht->id)
+                // );
                 $marker[] = array(
-                    "placeName" => $ht->ht_name,
-                    "LatLng" => array(
-                        "lat" =>$ht->ht_latitude,
-                        "lng" =>$ht->ht_longitude
-                    ),
-                    "url" =>  route('/hotel/show', $ht->id)
+                    $ht->ht_name,
+                    $ht->ht_address,
+                    $ht->ht_latitude,
+                    $ht->ht_longitude,
+                    route('/hotel/show', $ht->id)
                 );
             };
 
@@ -309,11 +316,13 @@ class HotelController extends Controller
         
         $hotel = Hotel::find($id);
         $hotel_img = Hotel_Img::where('ht_id', '=' , $id)->get();
+        $hotel_fas = HotelFascility::where('ht_id', '=' , $id)->get();
 
-        // dd($hotel,$hotel_img);
+        // dd($hotel,$hotel_img,$hotel_fas);
         return view('/hotel/edit', compact(
             'hotel',
-            'hotel_img'
+            'hotel_img',
+            'hotel_fas'
         ));
     }
 
