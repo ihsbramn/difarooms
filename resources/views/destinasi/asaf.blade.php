@@ -1,4 +1,8 @@
 @extends('layouts.app')
+@section('lower_body')
+    <script src="{{ asset('js/maps.js') }}"></script>
+    <script src="{{ asset('js/markercluster.js') }}"></script>
+@endsection
 @section('head')
     <style>
         .breadcrumb-item+.breadcrumb-item::before {
@@ -81,7 +85,7 @@
             </div>
             <div class="col-5 position-relative">
                 {{-- map --}}
-                <div class="shadow position-absolute top-50 end-0 translate-middle-y" id="map"
+                <div class="shadow position-absolute top-50 end-0 translate-middle-y" id="map2"
                     style="height: 300px; width: 570px; border-radius:12px;">INI MAP
                 </div>
 

@@ -324,7 +324,7 @@
                     {{-- filter terdekat --}}
                 </div>
                 {{-- list hotel --}}
-                    @foreach ($hotel as $index => $htl)
+                @foreach ($hotel as $index => $htl)
                     <div class="hotels">
                         <div class="card mb-3 border-0 shadow-lg" style="border-radius: 12px; height: 290px;">
                             <div class="row g-0">
@@ -337,18 +337,19 @@
                                             <form action="{{ route('/favourites/store') }}" method="POST">
                                                 @csrf
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" id="fv_user_id" name="fv_user_id"
-                                                        value="{{ Auth::user()->id }}" hidden>
+                                                    <input type="text" class="form-control" id="fv_user_id"
+                                                        name="fv_user_id" value="{{ Auth::user()->id }}" hidden>
                                                     <input type="text" class="form-control" id="fv_hotel_id"
                                                         name="fv_hotel_id" value="{{ $data->id }}" hidden>
                                                     <input type="text" class="form-control" id="fv_hotel_name"
                                                         name="fv_hotel_name" value="{{ $data->ht_name }}" hidden>
-                                                    <input type="text" class="form-control" id="fv_count" name="fv_count"
-                                                        value="1" hidden>
+                                                    <input type="text" class="form-control" id="fv_count"
+                                                        name="fv_count" value="1" hidden>
                                                 </div>
                                                 <button href="submit" class="btn btn-secondary rounded-circle border-0"
                                                     style="background: rgba(36, 36, 36, 0.54);" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" data-bs-class="tooltip" title="Favoritkan hotel ini">
+                                                    data-bs-placement="top" data-bs-class="tooltip"
+                                                    title="Favoritkan hotel ini">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                         fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
                                                         <path
@@ -392,7 +393,8 @@
                                             <div class="col-4 text-end">
                                                 @if ($htl->ht_accesible == 'Ya')
                                                     <p style="font-weight: 600; font-size: 18px; color: #004973;"><span
-                                                            class="iconify" data-icon="map:wheelchair"></span>Aksesibel</p>
+                                                            class="iconify" data-icon="map:wheelchair"></span>Aksesibel
+                                                    </p>
                                                 @endif
                                             </div>
                                         </div>
@@ -400,40 +402,41 @@
                                             @foreach ($hotel_fascility as $fas)
                                                 @if ($fas->ht_id == $htl->id)
                                                     <div class="col-6">
-    
+
                                                         @if ($fas->ramp == '1')
-                                                            <p class="mb-0" style="font-weight: 400; font-size: 18px;"><img
-                                                                    class="me-2" src="{{ URL::asset('/img/ramp.png') }}"
+                                                            <p class="mb-0" style="font-weight: 400; font-size: 18px;">
+                                                                <img class="me-2"
+                                                                    src="{{ URL::asset('/img/ramp.png') }}"
                                                                     alt="ramp-icon">Ramp</p>
                                                         @endif
-    
-    
+
+
                                                         @if ($fas->antarjemput == '1')
-                                                            <p class="mb-0" style="font-weight: 400; font-size: 18px;"><span
-                                                                    class="iconify me-2"
+                                                            <p class="mb-0" style="font-weight: 400; font-size: 18px;">
+                                                                <span class="iconify me-2"
                                                                     data-icon="fa6-solid:car"></span>Antar
                                                                 jemput bandara
                                                             </p>
                                                         @endif
-    
+
                                                     </div>
-    
+
                                                     <div class="col-6">
-    
+
                                                         @if ($fas->akses_kursiroda == '1')
-                                                            <p class="mb-0" style="font-weight: 400; font-size: 18px;"><span
-                                                                    class="iconify me-2"
+                                                            <p class="mb-0" style="font-weight: 400; font-size: 18px;">
+                                                                <span class="iconify me-2"
                                                                     data-icon="map:wheelchair"></span></span>Akses kursi
                                                                 roda</p>
                                                         @endif
-    
+
                                                         @if ($fas->toilet_pegangan == '1')
-                                                            <p class="mb-0" style="font-weight: 400; font-size: 18px;"><span
-                                                                    class="iconify me-2"
+                                                            <p class="mb-0" style="font-weight: 400; font-size: 18px;">
+                                                                <span class="iconify me-2"
                                                                     data-icon="ph:toilet-fill"></span></span>Pegangan
                                                                 toilet</p>
                                                         @endif
-    
+
                                                     </div>
                                                 @endif
                                             @endforeach
@@ -441,7 +444,8 @@
                                         <div class="row mt-2">
                                             <div class="col-6">
                                                 {{-- @foreach ($idr_rates as $idr) --}}
-                                                <p class="mb-0" style="font-weight: 500; font-size: 20px; color: #47A2D6;">
+                                                <p class="mb-0"
+                                                    style="font-weight: 500; font-size: 20px; color: #47A2D6;">
                                                     @money($idr_rates[$index]['rate'])</p>
                                                 {{-- @endforeach --}}
                                             </div>
@@ -451,11 +455,12 @@
                                                     <img src="{{ URL::asset('/img/bookingcom-logo.png') }}"
                                                         alt="logo booking.com">
                                                 @elseif ($idr_rates[$index]['name'] == 'Agoda.com')
-                                                    <img src="{{ URL::asset('/img/agoda-logo.png') }}" alt="logo agoda.com"
-                                                        style="max-height: 24px; overflow:hidden">
+                                                    <img src="{{ URL::asset('/img/agoda-logo.png') }}"
+                                                        alt="logo agoda.com" style="max-height: 24px; overflow:hidden">
                                                 @elseif ($idr_rates[$index]['name'] == 'FindHotel')
                                                     <img src="{{ URL::asset('/img/findhotel-logo.svg') }}"
-                                                        alt="logo findhtotel.com" style="max-height: 24px; overflow:hidden">
+                                                        alt="logo findhtotel.com"
+                                                        style="max-height: 24px; overflow:hidden">
                                                 @elseif ($idr_rates[$index]['name'] == 'Expedia')
                                                     <img src="{{ URL::asset('/img/expedia-logo.png') }}"
                                                         alt="logo expedia.com" style="max-height: 24px; overflow:hidden">
@@ -484,7 +489,8 @@
                                                     @endif
                                                 @endforeach
                                             </div>
-                                            <div class="col-6 position-absolute bottom-0 end-0" style="margin-bottom: 14px">
+                                            <div class="col-6 position-absolute bottom-0 end-0"
+                                                style="margin-bottom: 14px">
                                                 <div class="row row-cols-auto justify-content-md-end">
                                                     <div class="col text-end my-auto">
                                                         <a class="btn btn-primary"
@@ -500,10 +506,10 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach
+                @endforeach
+                {{-- list hotel --}}
             </div>
         </div>
-        {{-- list hotel --}}
 
         {{-- pagination tab --}}
         <nav aria-label="pagination">

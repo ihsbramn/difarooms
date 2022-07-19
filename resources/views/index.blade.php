@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('lower_body')
+    <script src="{{ asset('js/maps.js') }}"></script>
+    <script src="{{ asset('js/markercluster.js') }}"></script>
+@endsection
+
 @section('content')
     <div class="container-fluid">
         <div class="row justify-content-center">
@@ -421,7 +426,7 @@
                     <div class="row mt-5" style="margin-bottom: 90px">
                         <div class="col-8">
                             {{-- map --}}
-                            <div id="map"
+                            <div id="map2"
                                 style="height: 568px; border-radius:12px; filter: drop-shadow(0px 0px 4px #00A3FF);">INI
                                 MAP
                             </div>
