@@ -41,7 +41,7 @@
         {{-- map --}}
         <div class="card border-0 shadow p-2 mt-3 mb-5" style="border-radius: 12px">
             <div class="shadow-sm" id="map2" style="height: 318px;border-radius:12px">INI MAP</div>
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&callback=initMap">
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}">
             </script>
             <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
             </script>
