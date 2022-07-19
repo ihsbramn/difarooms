@@ -324,30 +324,47 @@
                     {{-- filter terdekat --}}
                 </div>
                 {{-- list hotel --}}
-                @foreach ($hotel as $index => $htl)
-                    <div class="card mb-3 border-0 shadow-lg listhotel" style="border-radius: 12px; height: 290px;">
-                        <div class="row g-0">
-                            <div class="col-md-4" style="max-height: 290px; overflow: hidden; border-radius: 12px;">
-                                <img src="/storage/uploads/{{ $htl->ht_thumbnail }}" class="img-fluid p-2"
-                                    alt="thumbnail hotel"
-                                    style="height: 290px; width: 100%; overflow:hidden; border-radius: 20px;">
-                                <div class="card-img-overlay">
-                                    @auth
-                                        <form action="{{ route('/favourites/store') }}" method="POST">
-                                            @csrf
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="fv_user_id" name="fv_user_id"
-                                                    value="{{ Auth::user()->id }}" hidden>
-                                                <input type="text" class="form-control" id="fv_hotel_id"
-                                                    name="fv_hotel_id" value="{{ $htl->id }}" hidden>
-                                                <input type="text" class="form-control" id="fv_hotel_name"
-                                                    name="fv_hotel_name" value="{{ $htl->ht_name }}" hidden>
-                                                <input type="text" class="form-control" id="fv_count" name="fv_count"
-                                                    value="1" hidden>
-                                            </div>
-                                            <button href="submit" class="btn btn-secondary rounded-circle border-0"
-                                                style="background: rgba(36, 36, 36, 0.54);" data-bs-toggle="tooltip"
-                                                data-bs-placement="top" data-bs-class="tooltip" title="Favoritkan hotel ini">
+                    @foreach ($hotel as $index => $htl)
+                    <div class="hotels">
+                        <div class="card mb-3 border-0 shadow-lg" style="border-radius: 12px; height: 290px;">
+                            <div class="row g-0">
+                                <div class="col-md-4" style="max-height: 290px; overflow: hidden; border-radius: 12px;">
+                                    <img src="/storage/uploads/{{ $htl->ht_thumbnail }}" class="img-fluid p-2"
+                                        alt="thumbnail hotel"
+                                        style="height: 290px; width: 100%; overflow:hidden; border-radius: 20px;">
+                                    <div class="card-img-overlay">
+                                        @auth
+                                            <form action="{{ route('/favourites/store') }}" method="POST">
+                                                @csrf
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="fv_user_id" name="fv_user_id"
+                                                        value="{{ Auth::user()->id }}" hidden>
+                                                    <input type="text" class="form-control" id="fv_hotel_id"
+                                                        name="fv_hotel_id" value="{{ $data->id }}" hidden>
+                                                    <input type="text" class="form-control" id="fv_hotel_name"
+                                                        name="fv_hotel_name" value="{{ $data->ht_name }}" hidden>
+                                                    <input type="text" class="form-control" id="fv_count" name="fv_count"
+                                                        value="1" hidden>
+                                                </div>
+                                                <button href="submit" class="btn btn-secondary rounded-circle border-0"
+                                                    style="background: rgba(36, 36, 36, 0.54);" data-bs-toggle="tooltip"
+                                                    data-bs-placement="top" data-bs-class="tooltip" title="Favoritkan hotel ini">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                                <script>
+                                                    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+                                                    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+                                                </script>
+                                            </form>
+                                        @endauth
+                                        @guest
+                                            <button onclick="like()" class="btn btn-secondary rounded-circle"
+                                                style="background: rgba(36, 36, 36, 0.54);">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
                                                     <path
