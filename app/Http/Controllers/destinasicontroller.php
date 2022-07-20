@@ -21,7 +21,7 @@ class destinasicontroller extends Controller
     public function bandung()
     {
         //getiing hotel data from db
-        $hotel = Hotel::simplePaginate(4);
+        $hotel = Hotel::get();
 
         //getting date
         $format = 'yyyy-mm-dd';

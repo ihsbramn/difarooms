@@ -1,5 +1,23 @@
 @extends('layouts.app')
 
+@section('head')
+<script>
+    function search_forum() {
+            let input = document.getElementById('searchforumbar').value
+            input = input.toLowerCase();
+            let x = document.getElementsByClassName('forum');
+
+            for (i = 0; i < x.length; i++) {
+                if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                    x[i].style.display = "none";
+                } else {
+                    x[i].style.display = "initial";
+                }
+            }
+        }
+</script>
+@endsection
+
 @section('content')
     <div class="container-fluid mt-5 mb-5" style="padding-inline: 7rem">
 
@@ -55,6 +73,7 @@
                         <div class="tab-pane fade show active" id="nav-semua" role="tabpanel"
                             aria-labelledby="nav-semua-tab" tabindex="0">
                             @foreach ($forum as $index => $fr)
+                            <div class="forum">
                                 <div class="card border-0 shadow mt-3">
                                     <div class="card-header bg-transparent border-0">
                                         <div class="row row-cols-auto">
@@ -104,20 +123,73 @@
                                         <p class="mb-0" style="font-weight: 400;font-size: 14px; color: #4D4D4D;"><i class="bi bi-chat me-2"></i>Tulis komentar</p>
                                     </a>
                                 </div>
+                            </div>
                             @endforeach
                         </div>
 
                         {{-- terbaru --}}
                         <div class="tab-pane fade" id="nav-terbaru" role="tabpanel" aria-labelledby="nav-terbaru-tab"
                             tabindex="0">
-
+                            @foreach ($terbaru as $index => $fr)
+                            <div class="forum">
+                                <div class="card border-0 shadow mt-3">
+                                    <div class="card-header bg-transparent border-0">
+                                        <div class="row row-cols-auto">
+                                            <div class="col">
+                                                <span class="iconify" data-icon="carbon:user-avatar-filled" data-width="45"
+                                                    data-height="45" style="color: #47A2D6;"></span>
+                                            </div>
+                                            {{-- author --}}
+                                            <div class="col">
+                                                <p class="mb-0"
+                                                    style="font-weight: 500; font-size: 16px; color: #000000;">
+                                                    {{ $fr->fr_author }}</p>
+                                                <p class="mb-0"
+                                                    style="font-weight: 400; font-size: 14px; color: #868686;">
+                                                    {{ $fr->created_at }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pt-0  ">
+                                        {{-- title forum --}}
+                                        <div class="row">
+                                            <p class="mb-0" style="font-weight: 500; font-size: 20px; color: #000000;">
+                                                {{ $fr->fr_title }}</p>
+                                        </div>
+                                        {{-- isi forum --}}
+                                        <div class="row mt-2">
+                                            @php
+                                                $showless = substr($fr->fr_body, 0, 160);
+                                                $showmore = substr($fr->fr_body, 160);
+                                            @endphp
+                                            @if ($showmore !== false)
+                                                <p class="mb-0"
+                                                    style="font-weight: 400; font-size: 16px; color: #000000;">
+                                                    {{ $showless }}
+                                                    <span id="dots">...</span>
+                                                    <a onclick="myFunction()" type="button" href="{{ route('/forum/show',$fr->id) }}"
+                                                        style="color: blue">Read more</a>
+                                                </p>
+                                            @else
+                                                <p class="mb-0"
+                                                    style="font-weight: 400; font-size: 16px; color: #000000;">
+                                                    {{ $fr->fr_body }}</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <a class="card-footer bg-transparent" href="{{ route('/forum/show',$fr->id) }}" style="text-decoration: none;">
+                                        <p class="mb-0" style="font-weight: 400;font-size: 14px; color: #4D4D4D;"><i class="bi bi-chat me-2"></i>Tulis komentar</p>
+                                    </a>
+                                </div>
+                            </div>
+                            @endforeach
                         </div>
 
                         {{-- terpopuler --}}
                         <div class="tab-pane fade" id="nav-terpopuler" role="tabpanel"
                             aria-labelledby="nav-terpopuler-tab" tabindex="0">
                             @foreach ($forum as $fr)
-                                <a class="card border-0 shadow mt-3" href="{{ route('/forum/show', $fr->id) }}"
+                                <a class="card border-0 shadow mt-3 forum" href="{{ route('/forum/show', $fr->id) }}"
                                     style="text-decoration: none; border-radius: 12px; overflow: hidden;">
                                     <div class="card-header bg-transparent">
                                         <div class="row row-cols-auto">
@@ -166,63 +238,22 @@
                         <div class="card-body">
                             <form action="{{ '/forum/search' }}" method="get" role="search">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Cari topik"
-                                        aria-label="cariforum" aria-describedby="button-addon2" name="cariforum"
-                                        id="cariforum"
+                                    <input type="text" class="form-control" placeholder="Cari topik" onkeyup="search_forum()"
+                                        aria-label="cariforum" aria-describedby="button-addon2" name="searchbar"
+                                        id="searchforumbar"
                                         style="background: rgba(217, 217, 217, 1);font-weight: 400;font-size: 16px;">
-                                    <button class="btn btn-outline-secondary border-0" type="submit" id="button-addon2"
-                                        style="background: rgba(217, 217, 217, 1);font-weight: 400;font-size: 16px;">Cari</button>
+                                    {{-- <button class="btn btn-outline-secondary border-0" type="submit" id="button-addon2"
+                                        style="background: rgba(217, 217, 217, 1);font-weight: 400;font-size: 16px;">Cari</button> --}}
                                 </div>
-                                <div class="d-grid mt-3">
+                                {{-- <div class="d-grid mt-3">
                                     <a class="btn btn-danger" type="button" href="{{ '/forum' }}">Clear</a>
-                                </div>
+                                </div> --}}
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-        {{-- <div class="row justify-content-center">
-        <div class="col">
-            <div class="card">
-                <h4 class="text-center card-header">Forum Diskusi </h2>
-                <div class="card-body">
-                    <a class="btn btn-light" href="{{ '/forum/create' }}">Tambah Forum</a>
-                    <a class="btn btn-light" href="{{ '/' }}">back</a>
-                    <a class="btn btn-light" href="{{ '/user/myforum' }}">My Forum</a>
-
-                    @foreach ($forum as $fr)
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Judul</th>
-                                <th>Author</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">{{ $count++ }}</th>
-                                <td>{{ $fr->fr_title }}</td>
-                                <td>{{ $fr->fr_author }}</td>
-                                <td>
-                                    <a class="btn btn-primary" href="{{ route('/forum/show',$fr->id) }}">Show</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    @endforeach
-                    
-                </div>
-            </div>
-        </div> --}}
     </div>
 
     <!-- Modal Create Forum-->
@@ -273,6 +304,4 @@
             </div>
         </div>
     </div>
-
-
 @endsection

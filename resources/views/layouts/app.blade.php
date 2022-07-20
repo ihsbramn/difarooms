@@ -36,7 +36,7 @@
         footer {
             font-family: 'Montserrat', sans-serif;
         }
-        
+
         #scrolly {
             width: auto;
             height: auto;
@@ -51,9 +51,14 @@
             height: 150px;
             margin: 20px 10px;
             display: inline;
+            -webkit-overflow-scrolling: touch;
         }
 
         #more {
+            display: none;
+        }
+
+        #hotelslider::-webkit-scrollbar {
             display: none;
         }
     </style>
@@ -106,7 +111,7 @@
                         </li>
 
                         <li class="nav-item px-5">
-                            <a class="nav-link {{ Route::currentRouteNamed('/hotel','/hotel/*') ? 'active' : '' }}"
+                            <a class="nav-link {{ Route::currentRouteNamed('/hotel', '/hotel/*') ? 'active' : '' }}"
                                 href="{{ '/hotel' }}">{{ __('Hotel') }}</a>
                             <div class="underline"></div>
                         </li>
@@ -159,7 +164,8 @@
                                         {{ __('My Favourites Hotel') }}
                                     </a>
                                     <a class="dropdown-item px-4 py-3"
-                                        href="{{ '/user/myforum' }}"style="font-weight: 400; font-size: 16px;"><i class="bi bi-chat-left-text-fill me-2"></i></i>
+                                        href="{{ '/user/myforum' }}"style="font-weight: 400; font-size: 16px;"><i
+                                            class="bi bi-chat-left-text-fill me-2"></i></i>
                                         {{ __('My Forum') }}
                                     </a>
                                     <a class="dropdown-item px-4 py-3" href="{{ route('logout') }}"
@@ -184,21 +190,21 @@
 
         <main class="min-vh-100" style="display:flex; flex-direction:column;">
             @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+                <div class="alert alert-danger">
+                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             @yield('content')
             <!-- Footer -->
             <footer class="container-fluid mt-auto" style="background: #47A2D6; margin-top:auto; ">
@@ -299,11 +305,11 @@
                     </div>
                 </div>
             </div>
-            
+
         </main>
     </div>
     @yield('lower_body')
-    
+
     {{-- script for lightbox --}}
     <script src="{{ asset('js/lightbox-plus-jquery.js') }}"></script>
 </body>
