@@ -22,6 +22,7 @@
                     <img src="{{ URL::asset('/img/bg-asaf.png') }}" class="card-img" alt="background">
                 </div>
             </div>
+            {{-- title n breadcrumb --}}
             <div class="col-12" style="background-color: #3B87B2">
                 <h1 class="mt-5" style="font-weight: 700; font-size: 36px; color:#FFFFFF; padding-inline: 7rem">Asia
                     Afrika</h1>
@@ -51,19 +52,39 @@
         <div class="row mt-4">
             <h2 style="font-weight: 600; font-size: 24px; color: #3B87B2;">Galeri Foto</h2>
         </div>
+        {{-- photos --}}
         <div id='scrolly'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
+            <a href="{{ URL::asset('/img/asaf-1.png') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}'>
+            </a>
+            <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
+            </a>
+            <a href="{{ URL::asset('/img/asaf-3.png') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}'>
+            </a>
+            <a href="{{ URL::asset('/img/asaf-4.png') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}'>
+            </a>
+            <a href="{{ URL::asset('/img/asaf-1.png') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}'>
+            </a>
+            <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
+            </a>
+            <a href="{{ URL::asset('/img/asaf-3.png') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}'>
+            </a>
+            <a href="{{ URL::asset('/img/asaf-4.png') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}'>
+            </a>
+            <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
+            </a>
         </div>
         <div class="row mt-5">
             <div class="col-7">
+                {{-- main text --}}
                 <p style="font-weight: 400; font-size: 16px; text-align:justify;">
                     Jalan Asia Afrika ini sangatlah bersejarah mulai dari banyak-nya bangunan yang di bangun dari Jaman
                     penjajahan Belanda, maka banyak masyarakat yang berdatangan ke Jalan Asia Afrika ini hanya untuk berburu
@@ -88,9 +109,11 @@
             </div>
             <div class="col-5 position-relative">
                 {{-- map --}}
-                <div class="shadow position-absolute top-50 end-0 translate-middle-y" id="map2"
-                    style="height: 300px; width: 570px; border-radius:12px;">INI MAP
-                </div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7360592245573!2d107.61272571535724!3d-6.922122969677291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e62592fbeb5b%3A0x3f35bcf7f235386b!2sJl.%20Asia%20Afrika%2C%20Kb.%20Pisang%2C%20Kec.%20Sumur%20Bandung%2C%20Kota%20Bandung%2C%20Jawa%20Barat!5e0!3m2!1sen!2sid!4v1658404980534!5m2!1sen!2sid"
+                    width="570" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="shadow position-absolute top-50 end-0 translate-middle-y" style="border-radius: 12px;" title="map asia afrika"></iframe>
                 <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&callback=initMap">
                 </script>
                 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
@@ -104,8 +127,8 @@
         </div>
         <div class="row row-cols-1 row-cols-md-4 g-5">
             <div class="col">
-                <a class="card border-0" href="{{ '/destinasi/bandung/asia-afrika' }}">
-                    <img src="{{ URL::asset('/img/bd-asaf.png') }}" class="dest-card" alt="asia afrika">
+                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/asia-afrika' }}">
+                    <img src="{{ URL::asset('/img/bd-asaf.png') }}" class="dest-card" alt="foto destinasi">
                     <div class="card-img-overlay grad dest-card">
                         <h5 class="card-title position-absolute bottom-0 start-20"
                             style="font-weight: 700; font-size: 24px; color: #ffffff">Asia Afrika</h5>
@@ -113,67 +136,69 @@
                 </a>
             </div>
             <div class="col">
-                <div class="card border-0">
-                    <img src="{{ URL::asset('/img/bd-rcupas.png') }}" class="dest-card" alt="ranca upas">
+                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/rancaupas' }}">
+                    <img src="{{ URL::asset('/img/bd-rcupas.png') }}" class="dest-card" alt="foto destinasi">
                     <div class="card-img-overlay grad dest-card">
                         <h5 class="card-title position-absolute bottom-0 start-20"
                             style="font-weight: 700; font-size: 24px; color: #ffffff">Ranca Upas</h5>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col">
-                <div class="card border-0">
-                    <img src="{{ URL::asset('/img/bd-flmarket.png') }}" class="dest-card" alt="floating market">
+                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/floatingmarket' }}">
+                    <img src="{{ URL::asset('/img/bd-flmarket.png') }}" class="dest-card" alt="foto destinasi">
                     <div class="card-img-overlay grad dest-card">
                         <h5 class="card-title position-absolute bottom-0 start-20"
                             style="font-weight: 700; font-size: 24px; color: #ffffff">Floating Market</h5>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col">
-                <div class="card border-0">
-                    <img src="{{ URL::asset('/img/bd-gdsate.png') }}" class="dest-card" alt="gedung sate">
+                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/gedungsate' }}">
+                    <img src="{{ URL::asset('/img/bd-gdsate.png') }}" class="dest-card" alt="foto destinasi">
                     <div class="card-img-overlay grad dest-card">
                         <h5 class="card-title position-absolute bottom-0 start-20"
                             style="font-weight: 700; font-size: 24px; color: #ffffff">Gedung Sate</h5>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col">
-                <div class="card border-0">
-                    <img src="{{ URL::asset('/img/bd-tkperahu.png') }}" class="dest-card" alt="tangkuban perahu">
+                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/tangkubanprahu' }}">
+                    <img src="{{ URL::asset('/img/bd-tkperahu.png') }}" class="dest-card" alt="foto destinasi">
                     <div class="card-img-overlay grad dest-card">
                         <h5 class="card-title position-absolute bottom-0 start-20"
                             style="font-weight: 700; font-size: 24px; color: #ffffff">Tangkuban Perahu</h5>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col">
-                <div class="card border-0">
-                    <img src="{{ URL::asset('/img/bd-fhlembang.png') }}" class="dest-card" alt="farmhouse lembang">
+                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/farmhouse' }}">
+                    <img src="{{ URL::asset('/img/bd-fhlembang.png') }}" class="dest-card" alt="foto destinasi">
                     <div class="card-img-overlay grad dest-card">
                         <h5 class="card-title position-absolute bottom-0 start-20"
                             style="font-weight: 700; font-size: 24px; color: #ffffff">Farmhouse Lembang</h5>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col">
-                <div class="card border-0">
-                    <img src="{{ URL::asset('/img/bd-tkperahu.png') }}" class="dest-card" alt="tangkuban perahu">
+                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/cartil' }}">
+                    <img src="{{ URL::asset('/img/cartil.jpg') }}" class="dest-card" alt="foto destinasi"
+                        style="width: 100%; height: 100%; overflow:hidden;">
                     <div class="card-img-overlay grad dest-card">
                         <h5 class="card-title position-absolute bottom-0 start-20"
-                            style="font-weight: 700; font-size: 24px; color: #ffffff">Tangkuban Perahu</h5>
+                            style="font-weight: 700; font-size: 24px; color: #ffffff">Caringin Tilu</h5>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col">
-                <div class="card border-0">
-                    <img src="{{ URL::asset('/img/bd-fhlembang.png') }}" class="dest-card" alt="farmhouse lembang">
+                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/braga' }}">
+                    <img src="{{ URL::asset('/img/braga.jpg') }}" class="dest-card" alt="foto destinasi"
+                        style="width: 100%; height: 100%; overflow:hidden;">
                     <div class="card-img-overlay grad dest-card">
                         <h5 class="card-title position-absolute bottom-0 start-20"
-                            style="font-weight: 700; font-size: 24px; color: #ffffff">Farmhouse Lembang</h5>
+                            style="font-weight: 700; font-size: 24px; color: #ffffff">Braga</h5>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -187,13 +212,17 @@
                     menginap?</h2>
             </div>
             <div class="col-6 text-end mt-3">
-                <button id="slideLeft" type="button" class="btn btn-lg rounded-circle shadow-sm" style="border-color: rgba(71, 162, 214, 1); color: rgba(71, 162, 214, 1);"><i class="bi bi-chevron-left"></i></button>
-                <button id="slideRight" type="button" class="btn btn-lg rounded-circle shadow-sm" style="background: rgba(71, 162, 214, 1); border-color: rgba(71, 162, 214, 1); color: white;"><i class="bi bi-chevron-right"></i></button>
+                <button id="slideLeft" type="button" class="btn btn-lg rounded-circle shadow-sm" aria-label="button-left"
+                    style="border-color: rgba(71, 162, 214, 1); color: rgba(71, 162, 214, 1);"><i
+                        class="bi bi-chevron-left"></i></button>
+                <button id="slideRight" type="button" class="btn btn-lg rounded-circle shadow-sm" aria-label="button-right"
+                    style="background: rgba(71, 162, 214, 1); border-color: rgba(71, 162, 214, 1); color: white;"><i
+                        class="bi bi-chevron-right"></i></button>
             </div>
         </div>
         <div class="d-flex overflow-auto mt-3" id="hotelslider">
             @foreach ($hotel as $index => $htl)
-                <div class="card border-0" style="border-radius: 20px; min-width: 370px; margin-right: 35px">
+                <div class="card border-0 pb-3 shadow-sm" style="border-radius: 20px; min-width: 370px; margin-right: 35px">
                     <img src="/storage/uploads/{{ $htl->ht_thumbnail }}" class="card-img-top p-3"
                         alt="foto thumbnail hotel" style="height: 300px; overflow:hidden;border-radius: 20px;">
                     <div class="card-body pt-0">
@@ -242,9 +271,9 @@
                     </div>
                     <div class="card-footer bg-transparent border-top-0">
                         <div class="row px-5">
-                            <a href="{{ route('/hotel/show', $htl->id) }}"
-                                class="btn btn-primary border-0" type="button"
-                                style="border-radius: 12px; background-color:#244D64">Lihat
+                            <a href="{{ route('/hotel/show', $htl->id) }}" class="btn btn-primary border-0 px-3 py-2"
+                                type="button"
+                                style="border-radius: 12px; background-color:rgba(71, 162, 214, 1); font-weight: 600; font-size: 20px;">Lihat
                                 detail</a>
                         </div>
                     </div>
@@ -258,10 +287,10 @@
             buttonRight.onclick = function() {
                 var container = document.getElementById('hotelslider');
                 scrollAmount = 0;
-                var slideTimer = setInterval(function(){
+                var slideTimer = setInterval(function() {
                     container.scrollLeft += 100;
                     scrollAmount += 100;
-                    if(scrollAmount >= 200){
+                    if (scrollAmount >= 200) {
                         window.clearInterval(slideTimer);
                     }
                 }, 50);
@@ -269,10 +298,10 @@
             buttonLeft.onclick = function() {
                 var container = document.getElementById('hotelslider');
                 scrollAmount = 0;
-                var slideTimer = setInterval(function(){
+                var slideTimer = setInterval(function() {
                     container.scrollLeft -= 100;
                     scrollAmount += 100;
-                    if(scrollAmount >= 200){
+                    if (scrollAmount >= 200) {
                         window.clearInterval(slideTimer);
                     }
                 }, 50);

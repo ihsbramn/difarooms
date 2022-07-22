@@ -76,7 +76,7 @@
                 <h2 class="mb-3">Wajib dikunjungi</h2>
                 <div class="row row-cols-1 row-cols-md-4 g-5">
                     <div class="col">
-                        <a class="card border-0" href="{{ '/destinasi/bandung/asia-afrika' }}">
+                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/asia-afrika' }}">
                             <img src="{{ URL::asset('/img/bd-asaf.png') }}" class="dest-card" alt="foto destinasi">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
@@ -85,7 +85,7 @@
                         </a>
                     </div>
                     <div class="col">
-                        <a class="card border-0" href="{{ '/destinasi/bandung/rancaupas' }}">
+                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/rancaupas' }}">
                             <img src="{{ URL::asset('/img/bd-rcupas.png') }}" class="dest-card" alt="foto destinasi">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
@@ -94,7 +94,7 @@
                         </a>
                     </div>
                     <div class="col">
-                        <a class="card border-0" href="{{ '/destinasi/bandung/floatingmarket' }}">
+                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/floatingmarket' }}">
                             <img src="{{ URL::asset('/img/bd-flmarket.png') }}" class="dest-card" alt="foto destinasi">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
@@ -103,7 +103,7 @@
                         </a>
                     </div>
                     <div class="col">
-                        <a class="card border-0" href="{{ '/destinasi/bandung/gedungsate' }}">
+                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/gedungsate' }}">
                             <img src="{{ URL::asset('/img/bd-gdsate.png') }}" class="dest-card" alt="foto destinasi">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
@@ -112,7 +112,7 @@
                         </a>
                     </div>
                     <div class="col">
-                        <a class="card border-0" href="{{ '/destinasi/bandung/tangkubanprahu' }}">
+                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/tangkubanprahu' }}">
                             <img src="{{ URL::asset('/img/bd-tkperahu.png') }}" class="dest-card" alt="foto destinasi">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
@@ -121,7 +121,7 @@
                         </a>
                     </div>
                     <div class="col">
-                        <a class="card border-0" href="{{ '/destinasi/bandung/farmhouse' }}">
+                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/farmhouse' }}">
                             <img src="{{ URL::asset('/img/bd-fhlembang.png') }}" class="dest-card" alt="foto destinasi">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
@@ -130,7 +130,7 @@
                         </a>
                     </div>
                     <div class="col">
-                        <a class="card border-0" href="{{ '/destinasi/bandung/cartil' }}">
+                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/cartil' }}">
                             <img src="{{ URL::asset('/img/cartil.jpg') }}" class="dest-card" alt="foto destinasi"
                                 style="width: 100%; height: 100%; overflow:hidden;">
                             <div class="card-img-overlay grad dest-card">
@@ -140,7 +140,7 @@
                         </a>
                     </div>
                     <div class="col">
-                        <a class="card border-0" href="{{ '/destinasi/bandung/braga' }}">
+                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/braga' }}">
                             <img src="{{ URL::asset('/img/braga.jpg') }}" class="dest-card" alt="foto destinasi"
                                 style="width: 100%; height: 100%; overflow:hidden;">
                             <div class="card-img-overlay grad dest-card">
@@ -172,7 +172,7 @@
         </div>
         <div class="d-flex overflow-auto mt-3" id="hotelslider">
             @foreach ($hotel as $index => $htl)
-                <div class="card border-0" style="border-radius: 20px; min-width: 370px; margin-right: 35px">
+                <div class="card border-0 pb-3 shadow-sm" style="border-radius: 20px; min-width: 370px; margin-right: 35px;">
                     <img src="/storage/uploads/{{ $htl->ht_thumbnail }}" class="card-img-top p-3"
                         alt="foto thumbnail hotel" style="height: 300px; overflow:hidden;border-radius: 20px;">
                     <div class="card-body pt-0">
@@ -221,8 +221,8 @@
                     </div>
                     <div class="card-footer bg-transparent border-top-0">
                         <div class="row px-5">
-                            <a href="{{ route('/hotel/show', $htl->id) }}" class="btn btn-primary border-0"
-                                type="button" style="border-radius: 12px; background-color:#244D64">Lihat
+                            <a href="{{ route('/hotel/show', $htl->id) }}" class="btn btn-primary border-0 px-3 py-2"
+                                type="button" style="border-radius: 12px; background-color:rgba(71, 162, 214, 1); font-weight: 600; font-size: 20px;">Lihat
                                 detail</a>
                         </div>
                     </div>

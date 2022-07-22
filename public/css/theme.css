@@ -89,3 +89,43 @@ p{
     -webkit-overflow-scrolling: touch;
 }
 
+body main {
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#scrolly {
+    width: auto;
+    height: auto;
+    overflow: auto;
+    overflow-y: hidden;
+    margin: 0 auto;
+    white-space: nowrap
+}
+
+img #img-scroll {
+    width: 300px;
+    height: 150px;
+    margin: 20px 10px;
+    display: inline;
+    -webkit-overflow-scrolling: touch;
+}
+
+#more {
+    display: none;
+}
+
+#hotelslider::-webkit-scrollbar {
+    display: none;
+}
+
+.zoom {
+    transition: transform .2s;
+}
+
+.zoom:hover {
+    transform: scale(1.05);
+}

@@ -50,7 +50,7 @@
                         <div class="col-sm-12 mt-3">
                             <div class="row row-cols-1 row-cols-md-3 g-5">
                                 <div class="col">
-                                    <a class="card bg-transparent text-white border-0" href="{{ '/destinasi/bandung' }}">
+                                    <a class="card bg-transparent text-white border-0 zoom" href="{{ '/destinasi/bandung' }}">
                                         <img src="{{ URL::asset('/img/bandung-icon.png') }}" class="card-img-top"
                                             alt="icon kota bandung" style="border-radius: 12px">
                                         <div class="card-img-overlay grad" style="border-radius: 12px">
@@ -60,7 +60,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a class="card bg-transparent text-white border-0 rounded" href="{{ '/destinasi/yogya' }}">
+                                    <a class="card bg-transparent text-white border-0 rounded zoom" href="{{ '/destinasi/yogya' }}">
                                         <img src="{{ URL::asset('/img/yogya-icon.png') }}" class="card-img-top"
                                             alt="icon kota yogyakarta" style="border-radius: 12px">
                                         <div class="card-img-overlay grad" style="border-radius: 12px">
@@ -70,7 +70,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a class="card bg-transparent text-white border-0 rounded" href="{{ '/destinasi/malang' }}">
+                                    <a class="card bg-transparent text-white border-0 rounded zoom" href="{{ '/destinasi/malang' }}">
                                         <img src="{{ URL::asset('/img/malang-icon.png') }}" class="card-img-top"
                                             alt="icon kota malang" style="border-radius: 12px">
                                         <div class="card-img-overlay grad" style="border-radius: 12px">
@@ -80,7 +80,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a class="card bg-transparent text-white border-0 rounded" href="{{ '/destinasi/jakarta' }}">
+                                    <a class="card bg-transparent text-white border-0 rounded zoom" href="{{ '/destinasi/jakarta' }}">
                                         <img src="{{ URL::asset('/img/jakarta-icon.png') }}" class="card-img-top"
                                             alt="icon kota jakarta" style="border-radius: 12px">
                                         <div class="card-img-overlay grad" style="border-radius: 12px">
@@ -90,7 +90,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a class="card bg-transparent text-white border-0 rounded" href="{{ '/destinasi/bali' }}">
+                                    <a class="card bg-transparent text-white border-0 rounded zoom" href="{{ '/destinasi/bali' }}">
                                         <img src="{{ URL::asset('/img/bali-icon.png') }}" class="card-img-top"
                                             alt="icon kota bali" style="border-radius: 12px">
                                         <div class="card-img-overlay grad" style="border-radius: 12px">
@@ -100,7 +100,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a class="card bg-transparent text-white border-0 rounded" href="{{ '/destinasi/lombok' }}">
+                                    <a class="card bg-transparent text-white border-0 rounded zoom" href="{{ '/destinasi/lombok' }}">
                                         <img src="{{ URL::asset('/img/lombok-icon.png') }}" class="card-img-top"
                                             alt="icon kota lombok" style="border-radius: 12px">
                                         <div class="card-img-overlay grad" style="border-radius: 12px">
@@ -177,7 +177,7 @@
                                     <div class="carousel-item active">
                                         <div class="row row-cols-1 row-cols-md-5 g-5">
                                             <div class="col">
-                                                <a class="card text-white"
+                                                <a class="card text-white zoom"
                                                     style="border-radius: 12px; max-width: 20rem; overlay: hidden;"  href="{{ '/destinasi/bandung/asia-afrika' }}">
                                                     <img src="{{ URL::asset('/img/dest-pop1.png') }}" class="card-img"
                                                         alt="..." style="border-radius: 12px">
@@ -192,7 +192,7 @@
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="card text-white"
+                                                <a class="card text-white zoom"
                                                     style="border-radius: 12px; max-width: 20rem; overlay: hidden;" href="{{ '/destinasi/bandung/rancaupas' }}">
                                                     <img src="{{ URL::asset('/img/dest-pop2.png') }}" class="card-img"
                                                         alt="..." style="border-radius: 12px">
@@ -207,7 +207,7 @@
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="card text-white"
+                                                <a class="card text-white zoom"
                                                     style="border-radius: 12px; max-width: 20rem; overlay: hidden;"href="{{ '/destinasi/bedugul' }}">
                                                     <img src="{{ URL::asset('/img/dest-pop3.png') }}" class="card-img"
                                                         alt="..." style="border-radius: 12px">
@@ -222,7 +222,7 @@
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="card text-white"
+                                                <a class="card text-white zoom"
                                                     style="border-radius: 12px; max-width: 20rem; overlay: hidden;" href="{{ '/destinasi/borobudur' }}">
                                                     <img src="{{ URL::asset('/img/dest-pop4.png') }}" class="card-img"
                                                         alt="..." style="border-radius: 12px">
@@ -237,7 +237,7 @@
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="card text-white"
+                                                <a class="card text-white zoom"
                                                     style="border-radius: 12px; max-width: 20rem; max-height: 478.83px; overflow: hidden" href="{{ '/destinasi/bandung/floatingmarket' }}">
                                                     <img src="{{ URL::asset('/img/dest-pop5.png') }}" class="card-img"
                                                         alt="...">
@@ -257,7 +257,7 @@
                                     <div class="carousel-item">
                                         <div class="row row-cols-1 row-cols-md-5 g-5">
                                             <div class="col">
-                                                <a class="card text-white"
+                                                <a class="card text-white zoom"
                                                     style="border-radius: 12px; max-width: 20rem; overlay: hidden;"  href="{{ '/destinasi/bandung/asia-afrika' }}">
                                                     <img src="{{ URL::asset('/img/dest-pop1.png') }}" class="card-img"
                                                         alt="..." style="border-radius: 12px">
@@ -272,7 +272,7 @@
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="card text-white"
+                                                <a class="card text-white zoom"
                                                     style="border-radius: 12px; max-width: 20rem; overlay: hidden;" href="{{ '/destinasi/bandung/rancaupas' }}">
                                                     <img src="{{ URL::asset('/img/dest-pop2.png') }}" class="card-img"
                                                         alt="..." style="border-radius: 12px">
@@ -287,7 +287,7 @@
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="card text-white"
+                                                <a class="card text-white zoom"
                                                     style="border-radius: 12px; max-width: 20rem; overlay: hidden;"href="{{ '/destinasi/bedugul' }}">
                                                     <img src="{{ URL::asset('/img/dest-pop3.png') }}" class="card-img"
                                                         alt="..." style="border-radius: 12px">
@@ -302,7 +302,7 @@
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="card text-white"
+                                                <a class="card text-white zoom"
                                                     style="border-radius: 12px; max-width: 20rem; overlay: hidden;" href="{{ '/destinasi/borobudur' }}">
                                                     <img src="{{ URL::asset('/img/dest-pop4.png') }}" class="card-img"
                                                         alt="..." style="border-radius: 12px">
@@ -317,7 +317,7 @@
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="card text-white"
+                                                <a class="card text-white zoom"
                                                     style="border-radius: 12px; max-width: 20rem; max-height: 478.83px; overflow: hidden" href="{{ '/destinasi/bandung/floatingmarket' }}">
                                                     <img src="{{ URL::asset('/img/dest-pop5.png') }}" class="card-img"
                                                         alt="...">
@@ -337,7 +337,7 @@
                                     <div class="carousel-item">
                                         <div class="row row-cols-1 row-cols-md-5 g-5">
                                             <div class="col">
-                                                <a class="card text-white"
+                                                <a class="card text-white zoom"
                                                     style="border-radius: 12px; max-width: 20rem; overlay: hidden;"  href="{{ '/destinasi/bandung/asia-afrika' }}">
                                                     <img src="{{ URL::asset('/img/dest-pop1.png') }}" class="card-img"
                                                         alt="..." style="border-radius: 12px">
@@ -352,7 +352,7 @@
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="card text-white"
+                                                <a class="card text-white zoom"
                                                     style="border-radius: 12px; max-width: 20rem; overlay: hidden;" href="{{ '/destinasi/bandung/rancaupas' }}">
                                                     <img src="{{ URL::asset('/img/dest-pop2.png') }}" class="card-img"
                                                         alt="..." style="border-radius: 12px">
@@ -367,7 +367,7 @@
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="card text-white"
+                                                <a class="card text-white zoom"
                                                     style="border-radius: 12px; max-width: 20rem; overlay: hidden;"href="{{ '/destinasi/bedugul' }}">
                                                     <img src="{{ URL::asset('/img/dest-pop3.png') }}" class="card-img"
                                                         alt="..." style="border-radius: 12px">
@@ -382,7 +382,7 @@
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="card text-white"
+                                                <a class="card text-white zoom"
                                                     style="border-radius: 12px; max-width: 20rem; overlay: hidden;" href="{{ '/destinasi/borobudur' }}">
                                                     <img src="{{ URL::asset('/img/dest-pop4.png') }}" class="card-img"
                                                         alt="..." style="border-radius: 12px">
@@ -397,7 +397,7 @@
                                                 </a>
                                             </div>
                                             <div class="col">
-                                                <a class="card text-white"
+                                                <a class="card text-white zoom"
                                                     style="border-radius: 12px; max-width: 20rem; max-height: 478.83px; overflow: hidden" href="{{ '/destinasi/bandung/floatingmarket' }}">
                                                     <img src="{{ URL::asset('/img/dest-pop5.png') }}" class="card-img"
                                                         alt="...">
@@ -425,15 +425,17 @@
                 <div class="container">
                     <div class="row mt-5" style="margin-bottom: 90px">
                         <div class="col-8">
+
                             {{-- map --}}
-                            <div id="map2"
-                                style="height: 568px; border-radius:12px; filter: drop-shadow(0px 0px 4px #00A3FF);">INI
+                            <div id="map2" style="height: 568px; border-radius:12px; filter: drop-shadow(0px 0px 4px #00A3FF);">INI
                                 MAP
                             </div>
                             <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}">
                             </script>
                             <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
                             </script>
+                            {{-- <script src="{{ asset('js/maps.js') }}"></script>
+                            <script src="{{ asset('js/markercluster.js') }}"></script> --}}
                             {{-- map --}}
 
                         </div>
@@ -467,6 +469,7 @@
                     </div>
                 </div>
                 {{-- diskusi --}}
+
             </div>
         </div>
     </div>
