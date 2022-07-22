@@ -1,53 +1,52 @@
 @extends('layouts.app')
 
 @section('head')
-{{-- search --}}
-<script>
-    function search_hotel() {
-        let input = document.getElementById('searchbar').value;
-        input = input.toLowerCase();
-        let x = document.getElementsByClassName('hotels');
+    {{-- search --}}
+    <script>
+        function search_hotel() {
+            let input = document.getElementById('searchbar').value;
+            input = input.toLowerCase();
+            let x = document.getElementsByClassName('hotels');
 
-        for (i = 0; i < x.length; i++) {
-            if (!x[i].innerHTML.toLowerCase().includes(input)) {
-                x[i].style.display = "none";
-            } else {
-                x[i].style.display = "initial";
+            for (i = 0; i < x.length; i++) {
+                if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                    x[i].style.display = "none";
+                } else {
+                    x[i].style.display = "initial";
+                }
             }
         }
-    }
-    
-    function filter_hotel() {
-        let input = document.querySelector('input[name="akses"]:checked').value;
-        input = input.toLowerCase();
-        let x = document.getElementsByClassName('hotels');
 
-        for (i = 0; i < x.length; i++) {
-            if (!x[i].innerHTML.toLowerCase().includes(input)) {
-                x[i].style.display = "none";
-            } else {
-                x[i].style.display = "initial";
+        function filter_hotel() {
+            let input = document.querySelector('input[name="akses"]:checked').value;
+            input = input.toLowerCase();
+            let x = document.getElementsByClassName('hotels');
+
+            for (i = 0; i < x.length; i++) {
+                if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                    x[i].style.display = "none";
+                } else {
+                    x[i].style.display = "initial";
+                }
             }
         }
-    }
 
-    function filter_harga() {
-        let input = document.getElementById('pricemin').value;
-        input = input.toLowerCase();
-        let input2 = document.getElementById('pricemax').value;
-        input2 = input2.toLowerCase();
-        let x = document.getElementsByClassName('hotels');
+        function filter_harga() {
+            let input = document.getElementById('pricemin').value;
+            input = input.toLowerCase();
+            let input2 = document.getElementById('pricemax').value;
+            input2 = input2.toLowerCase();
+            let x = document.getElementsByClassName('hotels');
 
-        for (i = 0; i < x.length; i++) {
-            if (input < x[i] < input2) {
-                x[i].style.display = "initial";
-            } else {
-                x[i].style.display = "none";
+            for (i = 0; i < x.length; i++) {
+                if (input < x[i] < input2) {
+                    x[i].style.display = "initial";
+                } else {
+                    x[i].style.display = "none";
+                }
             }
         }
-    }
-
-</script>
+    </script>
 @endsection
 
 @section('up_body')
@@ -84,8 +83,8 @@
 
     <div class="container">
         {{-- map --}}
-        <div class="card border-0 shadow p-2 mt-3 mb-5" style="border-radius: 12px">
-            <div class="shadow-sm" id="map2" style="height: 318px;border-radius:12px">INI MAP</div>
+        <div class="card border-0 shadow p-2 mt-3 mb-5" style="border-radius: 12px;">
+            <div class="shadow-sm" id="map2" style="height: 318px;border-radius:12px;">INI MAP</div>
             <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}"></script>
             <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
             </script>
@@ -211,12 +210,14 @@
                         <h3 class="card-subtittle" style="font-weight: 600; font-size: 16px">Harga</h3>
                         <div class="input-group">
                             <input type="text" class="form-control border-0" aria-label="IDR amount"
-                                placeholder="Harga minimum" style="background-color: #EAEAEA;" onkeyup="price_filter()" id="pricemin">
+                                placeholder="Harga minimum" style="background-color: #EAEAEA;" onkeyup="price_filter()"
+                                id="pricemin">
                             <span class="input-group-text border-0">Rp</span>
                         </div>
                         <div class="input-group pt-3">
                             <input type="text" class="form-control border-0" aria-label="IDR amount"
-                                placeholder="Harga maksimum" style="background-color: #EAEAEA;" onkeyup="price_filter()" id="pricemax">
+                                placeholder="Harga maksimum" style="background-color: #EAEAEA;" onkeyup="price_filter()"
+                                id="pricemax">
                             <span class="input-group-text border-0">Rp</span>
                         </div>
                         {{-- harga --}}
@@ -224,13 +225,15 @@
                         {{-- Lokasi --}}
                         <h3 class="card-subtittle" style="font-weight: 600; font-size: 16px">Lokasi</h3>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value=bandung id="bandung" name="akses" onclick="filter_hotel()">
+                            <input class="form-check-input" type="checkbox" value=bandung id="bandung" name="akses"
+                                onclick="filter_hotel()">
                             <label class="form-check-label" for="bandung">
                                 Bandung
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value=yogyakarta id="Yogyakarta" name="akses" onclick="filter_hotel()">
+                            <input class="form-check-input" type="checkbox" value=yogyakarta id="Yogyakarta" name="akses"
+                                onclick="filter_hotel()">
                             <label class="form-check-label" for="Yogyakarta">
                                 Yogyakarta
                             </label>
@@ -276,7 +279,8 @@
                         {{-- fasilitas --}}
                         <h3 class="card-subtittle" style="font-weight: 600; font-size: 16px">Fasilitas</h3>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value=kursi id="akses-kursi-roda" name="akses" onclick="filter_hotel()">
+                            <input class="form-check-input" type="checkbox" value=kursi id="akses-kursi-roda"
+                                name="akses" onclick="filter_hotel()">
                             <label class="form-check-label" for="akses-kursi-roda">
                                 Akses kursi roda
                             </label>
@@ -304,7 +308,8 @@
 
                         {{-- button resset & terapkan --}}
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
-                            <button class="btn btn-outline-secondary border-0 me-md-2" type="button" onclick="resetfilter()">Reset</button>
+                            <button class="btn btn-outline-secondary border-0 me-md-2" type="button"
+                                onclick="resetfilter()">Reset</button>
                             <button class="btn btn-primary border-0" type="button"
                                 style="border-radius: 12px; background-color:#244D64">Terapkan</button>
                         </div>

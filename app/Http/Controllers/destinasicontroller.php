@@ -154,8 +154,6 @@ class destinasicontroller extends Controller
                 );
             };
 
-            // dd($marker);
-
             foreach ($hotel as $ht) {
                 $keys[] = array(
                     $ht->ht_key,
@@ -193,7 +191,6 @@ class destinasicontroller extends Controller
                 ]);
         }
 
-        // dd($hotel, $marker);
         return view('destinasi/asaf', compact('hotel', 'idr_rates'));
     }
 
@@ -202,7 +199,87 @@ class destinasicontroller extends Controller
     }
 
     public function floatingmarket(){
-        return view('destinasi/floatingmarket');
+        $hotel = Hotel::all();
+
+        $marker = [];
+
+        //getting date
+        $format = 'yyyy-mm-dd';
+        // tomorrow
+        $today = Carbon::today()->format('Y-m-d');
+        // day after tomorrow
+        $tomorrow = Carbon::tomorrow()->format('Y-m-d');
+
+        $prices = [];
+        $idr_rates = [];
+
+        // getting idr rates
+        $req_url = 'https://api.exchangerate.host/convert?from=USD&to=IDR';
+                $response_json = file_get_contents($req_url);
+                
+                if(false !== $response_json) {
+                    try {
+                        $response = json_decode($response_json);
+                        if($response->success === true) {
+                            // dd($response);
+                            $decimal = round($response->result);
+                            $usd_idr_rates = (int)$decimal;
+                        }
+                    } catch(\Exception $e) {
+                            $rates = null;
+                    } 
+                };  
+                
+        if ($hotel->isNotEmpty()) {
+
+            foreach ($hotel as $ht) {
+                $marker[] = array(
+                    "placeName" => $ht->ht_name,
+                    "LatLng" => array(
+                        "lat" =>$ht->ht_latitude,
+                        "lng" =>$ht->ht_longitude
+                    ),
+                    "url" =>  route('/hotel/show', $ht->id)
+                );
+            };
+
+            foreach ($hotel as $ht) {
+                $keys[] = array(
+                    $ht->ht_key,
+                );
+            };
+            
+            foreach ($keys as $key){
+                $response = Http::get('https://data.xotelo.com/api/rates?', [
+                    'hotel_key' => $key[0],
+                    'chk_in' => $today,
+                    'chk_out' => $tomorrow,
+                ]);  
+                $prices[] = json_decode($response);
+                
+            };
+            foreach ($prices as $i => $item){
+                if ($prices[$i]->error == null) {
+                    array_push($idr_rates, [
+                        'name' => $prices[$i]->result->rates[0]->name, 
+                        'rate' => $prices[$i]->result->rates[0]->rate * $usd_idr_rates
+                    ]);
+                }else{
+                    array_push($idr_rates, [
+                        'name' => null, 
+                        'rate' => null
+                    ]);
+                }
+            }
+
+        }elseif($hotel->isEmpty()){
+
+            array_push($idr_rates, [
+                    'name' => null, 
+                    'rate' => null
+                ]);
+        }
+        return view('destinasi/floatingmarket', compact('hotel', 'idr_rates'));
     }
 
     public function borobudur(){
@@ -210,27 +287,507 @@ class destinasicontroller extends Controller
     }
 
     public function rancaupas(){
-        return view('destinasi/rancaupas');
+        $hotel = Hotel::all();
+
+        $marker = [];
+
+        //getting date
+        $format = 'yyyy-mm-dd';
+        // tomorrow
+        $today = Carbon::today()->format('Y-m-d');
+        // day after tomorrow
+        $tomorrow = Carbon::tomorrow()->format('Y-m-d');
+
+        $prices = [];
+        $idr_rates = [];
+
+        // getting idr rates
+        $req_url = 'https://api.exchangerate.host/convert?from=USD&to=IDR';
+                $response_json = file_get_contents($req_url);
+                
+                if(false !== $response_json) {
+                    try {
+                        $response = json_decode($response_json);
+                        if($response->success === true) {
+                            // dd($response);
+                            $decimal = round($response->result);
+                            $usd_idr_rates = (int)$decimal;
+                        }
+                    } catch(\Exception $e) {
+                            $rates = null;
+                    } 
+                };  
+                
+        if ($hotel->isNotEmpty()) {
+
+            foreach ($hotel as $ht) {
+                $marker[] = array(
+                    "placeName" => $ht->ht_name,
+                    "LatLng" => array(
+                        "lat" =>$ht->ht_latitude,
+                        "lng" =>$ht->ht_longitude
+                    ),
+                    "url" =>  route('/hotel/show', $ht->id)
+                );
+            };
+
+            foreach ($hotel as $ht) {
+                $keys[] = array(
+                    $ht->ht_key,
+                );
+            };
+            
+            foreach ($keys as $key){
+                $response = Http::get('https://data.xotelo.com/api/rates?', [
+                    'hotel_key' => $key[0],
+                    'chk_in' => $today,
+                    'chk_out' => $tomorrow,
+                ]);  
+                $prices[] = json_decode($response);
+                
+            };
+            foreach ($prices as $i => $item){
+                if ($prices[$i]->error == null) {
+                    array_push($idr_rates, [
+                        'name' => $prices[$i]->result->rates[0]->name, 
+                        'rate' => $prices[$i]->result->rates[0]->rate * $usd_idr_rates
+                    ]);
+                }else{
+                    array_push($idr_rates, [
+                        'name' => null, 
+                        'rate' => null
+                    ]);
+                }
+            }
+
+        }elseif($hotel->isEmpty()){
+
+            array_push($idr_rates, [
+                    'name' => null, 
+                    'rate' => null
+                ]);
+        }
+        return view('destinasi/rancaupas', compact('hotel', 'idr_rates'));
     }
     
     public function farmhouse(){
-        return view('destinasi/farmhouse');
+        $hotel = Hotel::all();
+
+        $marker = [];
+
+        //getting date
+        $format = 'yyyy-mm-dd';
+        // tomorrow
+        $today = Carbon::today()->format('Y-m-d');
+        // day after tomorrow
+        $tomorrow = Carbon::tomorrow()->format('Y-m-d');
+
+        $prices = [];
+        $idr_rates = [];
+
+        // getting idr rates
+        $req_url = 'https://api.exchangerate.host/convert?from=USD&to=IDR';
+                $response_json = file_get_contents($req_url);
+                
+                if(false !== $response_json) {
+                    try {
+                        $response = json_decode($response_json);
+                        if($response->success === true) {
+                            // dd($response);
+                            $decimal = round($response->result);
+                            $usd_idr_rates = (int)$decimal;
+                        }
+                    } catch(\Exception $e) {
+                            $rates = null;
+                    } 
+                };  
+                
+        if ($hotel->isNotEmpty()) {
+
+            foreach ($hotel as $ht) {
+                $marker[] = array(
+                    "placeName" => $ht->ht_name,
+                    "LatLng" => array(
+                        "lat" =>$ht->ht_latitude,
+                        "lng" =>$ht->ht_longitude
+                    ),
+                    "url" =>  route('/hotel/show', $ht->id)
+                );
+            };
+
+            foreach ($hotel as $ht) {
+                $keys[] = array(
+                    $ht->ht_key,
+                );
+            };
+            
+            foreach ($keys as $key){
+                $response = Http::get('https://data.xotelo.com/api/rates?', [
+                    'hotel_key' => $key[0],
+                    'chk_in' => $today,
+                    'chk_out' => $tomorrow,
+                ]);  
+                $prices[] = json_decode($response);
+                
+            };
+            foreach ($prices as $i => $item){
+                if ($prices[$i]->error == null) {
+                    array_push($idr_rates, [
+                        'name' => $prices[$i]->result->rates[0]->name, 
+                        'rate' => $prices[$i]->result->rates[0]->rate * $usd_idr_rates
+                    ]);
+                }else{
+                    array_push($idr_rates, [
+                        'name' => null, 
+                        'rate' => null
+                    ]);
+                }
+            }
+
+        }elseif($hotel->isEmpty()){
+
+            array_push($idr_rates, [
+                    'name' => null, 
+                    'rate' => null
+                ]);
+        }
+        return view('destinasi/farmhouse', compact('idr_rates', 'hotel'));
     }
    
     public function tangkubanprahu(){
-        return view('destinasi/tangkubanprahu');
+        $hotel = Hotel::all();
+
+        $marker = [];
+
+        //getting date
+        $format = 'yyyy-mm-dd';
+        // tomorrow
+        $today = Carbon::today()->format('Y-m-d');
+        // day after tomorrow
+        $tomorrow = Carbon::tomorrow()->format('Y-m-d');
+
+        $prices = [];
+        $idr_rates = [];
+
+        // getting idr rates
+        $req_url = 'https://api.exchangerate.host/convert?from=USD&to=IDR';
+                $response_json = file_get_contents($req_url);
+                
+                if(false !== $response_json) {
+                    try {
+                        $response = json_decode($response_json);
+                        if($response->success === true) {
+                            // dd($response);
+                            $decimal = round($response->result);
+                            $usd_idr_rates = (int)$decimal;
+                        }
+                    } catch(\Exception $e) {
+                            $rates = null;
+                    } 
+                };  
+                
+        if ($hotel->isNotEmpty()) {
+
+            foreach ($hotel as $ht) {
+                $marker[] = array(
+                    "placeName" => $ht->ht_name,
+                    "LatLng" => array(
+                        "lat" =>$ht->ht_latitude,
+                        "lng" =>$ht->ht_longitude
+                    ),
+                    "url" =>  route('/hotel/show', $ht->id)
+                );
+            };
+
+            foreach ($hotel as $ht) {
+                $keys[] = array(
+                    $ht->ht_key,
+                );
+            };
+            
+            foreach ($keys as $key){
+                $response = Http::get('https://data.xotelo.com/api/rates?', [
+                    'hotel_key' => $key[0],
+                    'chk_in' => $today,
+                    'chk_out' => $tomorrow,
+                ]);  
+                $prices[] = json_decode($response);
+                
+            };
+            foreach ($prices as $i => $item){
+                if ($prices[$i]->error == null) {
+                    array_push($idr_rates, [
+                        'name' => $prices[$i]->result->rates[0]->name, 
+                        'rate' => $prices[$i]->result->rates[0]->rate * $usd_idr_rates
+                    ]);
+                }else{
+                    array_push($idr_rates, [
+                        'name' => null, 
+                        'rate' => null
+                    ]);
+                }
+            }
+
+        }elseif($hotel->isEmpty()){
+
+            array_push($idr_rates, [
+                    'name' => null, 
+                    'rate' => null
+                ]);
+        }
+        return view('destinasi/tangkubanprahu', compact('hotel', 'idr_rates'));
     }
     
     public function gedungsate(){
-        return view('destinasi/gedungsate');
+        $hotel = Hotel::all();
+
+        $marker = [];
+
+        //getting date
+        $format = 'yyyy-mm-dd';
+        // tomorrow
+        $today = Carbon::today()->format('Y-m-d');
+        // day after tomorrow
+        $tomorrow = Carbon::tomorrow()->format('Y-m-d');
+
+        $prices = [];
+        $idr_rates = [];
+
+        // getting idr rates
+        $req_url = 'https://api.exchangerate.host/convert?from=USD&to=IDR';
+                $response_json = file_get_contents($req_url);
+                
+                if(false !== $response_json) {
+                    try {
+                        $response = json_decode($response_json);
+                        if($response->success === true) {
+                            // dd($response);
+                            $decimal = round($response->result);
+                            $usd_idr_rates = (int)$decimal;
+                        }
+                    } catch(\Exception $e) {
+                            $rates = null;
+                    } 
+                };  
+                
+        if ($hotel->isNotEmpty()) {
+
+            foreach ($hotel as $ht) {
+                $marker[] = array(
+                    "placeName" => $ht->ht_name,
+                    "LatLng" => array(
+                        "lat" =>$ht->ht_latitude,
+                        "lng" =>$ht->ht_longitude
+                    ),
+                    "url" =>  route('/hotel/show', $ht->id)
+                );
+            };
+
+            foreach ($hotel as $ht) {
+                $keys[] = array(
+                    $ht->ht_key,
+                );
+            };
+            
+            foreach ($keys as $key){
+                $response = Http::get('https://data.xotelo.com/api/rates?', [
+                    'hotel_key' => $key[0],
+                    'chk_in' => $today,
+                    'chk_out' => $tomorrow,
+                ]);  
+                $prices[] = json_decode($response);
+                
+            };
+            foreach ($prices as $i => $item){
+                if ($prices[$i]->error == null) {
+                    array_push($idr_rates, [
+                        'name' => $prices[$i]->result->rates[0]->name, 
+                        'rate' => $prices[$i]->result->rates[0]->rate * $usd_idr_rates
+                    ]);
+                }else{
+                    array_push($idr_rates, [
+                        'name' => null, 
+                        'rate' => null
+                    ]);
+                }
+            }
+
+        }elseif($hotel->isEmpty()){
+
+            array_push($idr_rates, [
+                    'name' => null, 
+                    'rate' => null
+                ]);
+        }
+        return view('destinasi/gedungsate', compact('hotel', 'idr_rates'));
     }
     
     public function cartil(){
-        return view('destinasi/cartil');
+        $hotel = Hotel::all();
+
+        $marker = [];
+
+        //getting date
+        $format = 'yyyy-mm-dd';
+        // tomorrow
+        $today = Carbon::today()->format('Y-m-d');
+        // day after tomorrow
+        $tomorrow = Carbon::tomorrow()->format('Y-m-d');
+
+        $prices = [];
+        $idr_rates = [];
+
+        // getting idr rates
+        $req_url = 'https://api.exchangerate.host/convert?from=USD&to=IDR';
+                $response_json = file_get_contents($req_url);
+                
+                if(false !== $response_json) {
+                    try {
+                        $response = json_decode($response_json);
+                        if($response->success === true) {
+                            // dd($response);
+                            $decimal = round($response->result);
+                            $usd_idr_rates = (int)$decimal;
+                        }
+                    } catch(\Exception $e) {
+                            $rates = null;
+                    } 
+                };  
+                
+        if ($hotel->isNotEmpty()) {
+
+            foreach ($hotel as $ht) {
+                $marker[] = array(
+                    "placeName" => $ht->ht_name,
+                    "LatLng" => array(
+                        "lat" =>$ht->ht_latitude,
+                        "lng" =>$ht->ht_longitude
+                    ),
+                    "url" =>  route('/hotel/show', $ht->id)
+                );
+            };
+
+            foreach ($hotel as $ht) {
+                $keys[] = array(
+                    $ht->ht_key,
+                );
+            };
+            
+            foreach ($keys as $key){
+                $response = Http::get('https://data.xotelo.com/api/rates?', [
+                    'hotel_key' => $key[0],
+                    'chk_in' => $today,
+                    'chk_out' => $tomorrow,
+                ]);  
+                $prices[] = json_decode($response);
+                
+            };
+            foreach ($prices as $i => $item){
+                if ($prices[$i]->error == null) {
+                    array_push($idr_rates, [
+                        'name' => $prices[$i]->result->rates[0]->name, 
+                        'rate' => $prices[$i]->result->rates[0]->rate * $usd_idr_rates
+                    ]);
+                }else{
+                    array_push($idr_rates, [
+                        'name' => null, 
+                        'rate' => null
+                    ]);
+                }
+            }
+
+        }elseif($hotel->isEmpty()){
+
+            array_push($idr_rates, [
+                    'name' => null, 
+                    'rate' => null
+                ]);
+        }
+        return view('destinasi/cartil', compact('hotel', 'idr_rates'));
     }
     
     public function braga(){
-        return view('destinasi/braga');
+        $hotel = Hotel::all();
+
+        $marker = [];
+
+        //getting date
+        $format = 'yyyy-mm-dd';
+        // tomorrow
+        $today = Carbon::today()->format('Y-m-d');
+        // day after tomorrow
+        $tomorrow = Carbon::tomorrow()->format('Y-m-d');
+
+        $prices = [];
+        $idr_rates = [];
+
+        // getting idr rates
+        $req_url = 'https://api.exchangerate.host/convert?from=USD&to=IDR';
+                $response_json = file_get_contents($req_url);
+                
+                if(false !== $response_json) {
+                    try {
+                        $response = json_decode($response_json);
+                        if($response->success === true) {
+                            // dd($response);
+                            $decimal = round($response->result);
+                            $usd_idr_rates = (int)$decimal;
+                        }
+                    } catch(\Exception $e) {
+                            $rates = null;
+                    } 
+                };  
+                
+        if ($hotel->isNotEmpty()) {
+
+            foreach ($hotel as $ht) {
+                $marker[] = array(
+                    "placeName" => $ht->ht_name,
+                    "LatLng" => array(
+                        "lat" =>$ht->ht_latitude,
+                        "lng" =>$ht->ht_longitude
+                    ),
+                    "url" =>  route('/hotel/show', $ht->id)
+                );
+            };
+
+            foreach ($hotel as $ht) {
+                $keys[] = array(
+                    $ht->ht_key,
+                );
+            };
+            
+            foreach ($keys as $key){
+                $response = Http::get('https://data.xotelo.com/api/rates?', [
+                    'hotel_key' => $key[0],
+                    'chk_in' => $today,
+                    'chk_out' => $tomorrow,
+                ]);  
+                $prices[] = json_decode($response);
+                
+            };
+            foreach ($prices as $i => $item){
+                if ($prices[$i]->error == null) {
+                    array_push($idr_rates, [
+                        'name' => $prices[$i]->result->rates[0]->name, 
+                        'rate' => $prices[$i]->result->rates[0]->rate * $usd_idr_rates
+                    ]);
+                }else{
+                    array_push($idr_rates, [
+                        'name' => null, 
+                        'rate' => null
+                    ]);
+                }
+            }
+
+        }elseif($hotel->isEmpty()){
+
+            array_push($idr_rates, [
+                    'name' => null, 
+                    'rate' => null
+                ]);
+        }
+        return view('destinasi/braga', compact('hotel','idr_rates'));
     }
 
     public function aceh(){

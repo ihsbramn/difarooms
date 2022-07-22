@@ -28,40 +28,8 @@
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/lightbox.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <style>
-        body main {
-            font-family: 'Montserrat', sans-serif;
-        }
 
-        footer {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        #scrolly {
-            width: auto;
-            height: auto;
-            overflow: auto;
-            overflow-y: hidden;
-            margin: 0 auto;
-            white-space: nowrap
-        }
-
-        img #img-scroll {
-            width: 300px;
-            height: 150px;
-            margin: 20px 10px;
-            display: inline;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        #more {
-            display: none;
-        }
-
-        #hotelslider::-webkit-scrollbar {
-            display: none;
-        }
-    </style>
+    <!-- Script -->
     <script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
     <script src="{{ asset('js/maps.css') }}"></script>
@@ -81,8 +49,7 @@
         <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #47A2D6; font-size: 20px">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{-- {{ config('app.name', 'Difa Rooms') }} --}}
-                    <img src="{{ URL::asset('/img/difarooms-logo.png') }}" alt="">
+                    <img src="{{ URL::asset('/img/difarooms-logo.png') }}" alt="difarooms logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -100,31 +67,31 @@
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item pe-5">
                             <a class="nav-link {{ Route::currentRouteNamed('index') ? 'active' : '' }}"
-                                href="{{ url('/') }}">{{ __('Beranda') }}</a>
+                                href="{{ url('/') }}" style="font-weight: 500; font-size: 20px;">{{ __('Beranda') }}</a>
                             <div class="underline"></div>
                         </li>
 
                         <li class="nav-item px-5">
                             <a class="nav-link {{ Route::currentRouteNamed('/destinasi', '/destinasi/*') ? 'active' : '' }}"
-                                href="{{ url('/destinasi') }}">{{ __('Destinasi') }}</a>
+                                href="{{ url('/destinasi') }}" style="font-weight: 500; font-size: 20px;">{{ __('Destinasi') }}</a>
                             <div class="underline"></div>
                         </li>
 
                         <li class="nav-item px-5">
                             <a class="nav-link {{ Route::currentRouteNamed('/hotel', '/hotel/*') ? 'active' : '' }}"
-                                href="{{ '/hotel' }}">{{ __('Hotel') }}</a>
+                                href="{{ '/hotel' }}" style="font-weight: 500; font-size: 20px;">{{ __('Hotel') }}</a>
                             <div class="underline"></div>
                         </li>
 
                         <li class="nav-item px-5">
                             <a class="nav-link {{ Route::currentRouteNamed('/forum', '/forum/*') ? 'active' : '' }}"
-                                href="{{ '/forum' }}">{{ __('Forum') }}</a>
+                                href="{{ '/forum' }}" style="font-weight: 500; font-size: 20px;">{{ __('Forum') }}</a>
                             <div class="underline"></div>
                         </li>
 
                         <li class="nav-item ps-5">
                             <a class="nav-link {{ Route::currentRouteNamed('/aboutus') ? 'active' : '' }}"
-                                href="{{ '/aboutus' }}">{{ __('Tentang Kami') }}</a>
+                                href="{{ '/aboutus' }}" style="font-weight: 500; font-size: 20px;">{{ __('Tentang Kami') }}</a>
                             <div class="underline"></div>
                         </li>
                     </ul>
@@ -135,22 +102,22 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link btn btn-outline-light rounded-pill px-4 me-2" type="button"
-                                        href="{{ route('login') }}" style="font-size: 17px">{{ __('Login') }}</a>
+                                    <a class="nav-link btn btn-primary rounded-pill px-4 me-2 bg-transparent" type="button"
+                                        href="{{ route('login') }}" style="font-size: 20px; font-weight: 500; border-color: white;">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link btn btn-light rounded-pill px-3 ms-2" type="button" href=""
+                                    <a class="nav-link btn btn-primary rounded-pill px-3 ms-2" type="button" href=""
                                         data-bs-toggle="modal" data-bs-target="#register"
-                                        style="color: #47A2D6; font-size: 17px">{{ __('Register') }}</a>
+                                        style="color: #47A2D6; font-size: 20px; font-weight: 500; background: white; border-color: white; color: #47A2D6;">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#navbarDropdown"
-                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-weight: 500; font-size: 20px; color: white;"
                                     v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
@@ -305,7 +272,8 @@
                     </div>
                 </div>
             </div>
-
+            <script src="{{ asset('js/maps.js') }}"></script>
+            <script src="{{ asset('js/markercluster.js') }}"></script>
         </main>
     </div>
     @yield('lower_body')
