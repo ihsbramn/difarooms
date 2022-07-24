@@ -225,51 +225,64 @@
                         {{-- Lokasi --}}
                         <h3 class="card-subtittle" style="font-weight: 600; font-size: 16px">Lokasi</h3>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value=bandung id="bandung" name="akses"
+                            <input class="form-check-input" type="radio" value="" id="semua" name="akses"
+                                onclick="filter_hotel()" checked>
+                            <label class="form-check-label" for="semua">
+                                Semua
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="bandung" id="bandung" name="akses"
                                 onclick="filter_hotel()">
                             <label class="form-check-label" for="bandung">
                                 Bandung
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value=yogyakarta id="Yogyakarta" name="akses"
-                                onclick="filter_hotel()">
+                            <input class="form-check-input" type="radio" value="yogyakarta" id="Yogyakarta"
+                                name="akses" onclick="filter_hotel()">
                             <label class="form-check-label" for="Yogyakarta">
                                 Yogyakarta
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="malang" id="malang">
+                            <input class="form-check-input" type="radio" value="malang" id="malang" name="akses"
+                                onclick="filter_hotel()">
                             <label class="form-check-label" for="malang">
                                 Malang
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="solo" id="solo">
+                            <input class="form-check-input" type="radio" value="solo" id="solo" name="akses"
+                                onclick="filter_hotel()">
                             <label class="form-check-label" for="solo">
                                 Solo
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="bali" id="bali">
+                            <input class="form-check-input" type="radio" value="bali" id="bali" name="akses"
+                                onclick="filter_hotel()">
                             <label class="form-check-label" for="bali">
                                 Bali
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="jakarta" id="jakarta">
+                            <input class="form-check-input" type="radio" value="jakarta" id="jakarta"
+                                name="akses" onclick="filter_hotel()">
                             <label class="form-check-label" for="jakarta">
                                 Jakarta
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="24-jam" id="24-jam">
-                            <label class="form-check-label" for="24-jam">
+                            <input class="form-check-input" type="radio" value="aceh" id="aceh" name="akses"
+                                onclick="filter_hotel()">
+                            <label class="form-check-label" for="aceh">
                                 Aceh
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="semarang" id="semarang">
+                            <input class="form-check-input" type="radio" value="semarang" id="semarang"
+                                name="akses" onclick="filter_hotel()">
                             <label class="form-check-label" for="semarang">
                                 Semarang
                             </label>
@@ -279,27 +292,29 @@
                         {{-- fasilitas --}}
                         <h3 class="card-subtittle" style="font-weight: 600; font-size: 16px">Fasilitas</h3>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value=kursi id="akses-kursi-roda"
+                            <input class="form-check-input" type="checkbox" value="kursi" id="checkakses"
                                 name="akses" onclick="filter_hotel()">
                             <label class="form-check-label" for="akses-kursi-roda">
                                 Akses kursi roda
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="toilet-tinggi" id="toilet-tinggi">
+                            <input class="form-check-input" type="checkbox" value="pegangan toilet" id="checkakses"
+                                name="akses" onclick="filter_hotel()">
                             <label class="form-check-label" for="toilet-tinggi">
                                 Toilet Tinggi
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="lift" id="lift">
+                            <input class="form-check-input" type="checkbox" value="lift" id="checkakses"
+                                name="akses" onclick="filter_hotel()">
                             <label class="form-check-label" for="lift">
                                 Lift
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="westafel-rendah"
-                                id="westafel-rendah">
+                            <input class="form-check-input" type="checkbox" value="westafel-rendah" id="checkakses"
+                                name="akses" onclick="filter_hotel()">
                             <label class="form-check-label" for="westafel-rendah">
                                 Wastafel rendah
                             </label>
@@ -309,7 +324,18 @@
                         {{-- button resset & terapkan --}}
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
                             <button class="btn btn-outline-secondary border-0 me-md-2" type="button"
-                                onclick="resetfilter()">Reset</button>
+                                id="reset">Reset</button>
+
+                            <script>
+                                document.getElementById("reset").onclick = function() {
+                                    resetakses()
+                                };
+
+                                function resetakses() {
+                                    document.getElementById("checkakses").checked = true;
+                                }
+                            </script>
+
                             <button class="btn btn-primary border-0" type="button"
                                 style="border-radius: 12px; background-color:#244D64">Terapkan</button>
                         </div>

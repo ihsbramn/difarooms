@@ -272,8 +272,6 @@
                     </div>
                 </div>
             </div>
-            <script src="{{ asset('js/maps.js') }}"></script>
-            <script src="{{ asset('js/markercluster.js') }}"></script>
         </main>
     </div>
     @yield('lower_body')
