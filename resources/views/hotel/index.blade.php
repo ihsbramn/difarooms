@@ -31,18 +31,39 @@
             }
         }
 
-        function filter_harga() {
-            let input = document.getElementById('pricemin').value;
+        function filter_aksesibilitas() {
+            let input = document.querySelector('input[name="aksesibilitas"]:checked').value;
             input = input.toLowerCase();
-            let input2 = document.getElementById('pricemax').value;
-            input2 = input2.toLowerCase();
             let x = document.getElementsByClassName('hotels');
 
             for (i = 0; i < x.length; i++) {
-                if (input < x[i] < input2) {
-                    x[i].style.display = "initial";
-                } else {
+                if (!x[i].innerHTML.toLowerCase().includes(input)) {
                     x[i].style.display = "none";
+                } else {
+                    x[i].style.display = "initial";
+                }
+            }
+        }
+
+        function reset() {
+            var res = document.getElementsByName('aksesibilitas');
+            for (var i = 0; i < res.length; i++) {
+                if (res[i].type == 'checkbox')
+                    res[i].checked = false;
+            }
+
+            var semua = document.getElementById('semua');
+            for (var i = 0; i < semua.length; i++) {
+                if (semua[i].type == 'radio')
+                    semua[i].checked = true;
+            }
+
+            let input = " ";
+            input = input.toLowerCase();
+            let x = document.getElementsByClassName('hotels');
+            for (i = 0; i < x.length; i++) {
+                if (x[i].innerHTML.toLowerCase().includes(input)) {
+                    x[i].style.display = "initial";
                 }
             }
         }
@@ -85,7 +106,7 @@
         {{-- map --}}
         <div class="card border-0 shadow p-2 mt-3 mb-5" style="border-radius: 12px;">
             <div class="shadow-sm" id="map2" style="height: 318px;border-radius:12px;">INI MAP</div>
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}"></script>
+            {{-- <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}"></script> --}}
             <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
             </script>
             <div class="row mt-3">
@@ -210,14 +231,12 @@
                         <h3 class="card-subtittle" style="font-weight: 600; font-size: 16px">Harga</h3>
                         <div class="input-group">
                             <input type="text" class="form-control border-0" aria-label="IDR amount"
-                                placeholder="Harga minimum" style="background-color: #EAEAEA;" onkeyup="price_filter()"
-                                id="pricemin">
+                                placeholder="Harga minimum" style="background-color: #EAEAEA;" id="pricemin">
                             <span class="input-group-text border-0">Rp</span>
                         </div>
                         <div class="input-group pt-3">
                             <input type="text" class="form-control border-0" aria-label="IDR amount"
-                                placeholder="Harga maksimum" style="background-color: #EAEAEA;" onkeyup="price_filter()"
-                                id="pricemax">
+                                placeholder="Harga maksimum" style="background-color: #EAEAEA;" id="pricemax">
                             <span class="input-group-text border-0">Rp</span>
                         </div>
                         {{-- harga --}}
@@ -225,51 +244,64 @@
                         {{-- Lokasi --}}
                         <h3 class="card-subtittle" style="font-weight: 600; font-size: 16px">Lokasi</h3>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value=bandung id="bandung" name="akses"
+                            <input class="form-check-input" type="radio" value="" id="semua" name="akses"
+                                onclick="filter_hotel()" checked>
+                            <label class="form-check-label" for="semua">
+                                Semua
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="bandung" id="bandung" name="akses"
                                 onclick="filter_hotel()">
                             <label class="form-check-label" for="bandung">
                                 Bandung
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value=yogyakarta id="Yogyakarta" name="akses"
+                            <input class="form-check-input" type="radio" value="yogyakarta" id="Yogyakarta" name="akses"
                                 onclick="filter_hotel()">
                             <label class="form-check-label" for="Yogyakarta">
                                 Yogyakarta
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="malang" id="malang">
+                            <input class="form-check-input" type="radio" value="malang" id="malang" name="akses"
+                                onclick="filter_hotel()">
                             <label class="form-check-label" for="malang">
                                 Malang
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="solo" id="solo">
+                            <input class="form-check-input" type="radio" value="solo" id="solo" name="akses"
+                                onclick="filter_hotel()">
                             <label class="form-check-label" for="solo">
                                 Solo
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="bali" id="bali">
+                            <input class="form-check-input" type="radio" value="bali" id="bali" name="akses"
+                                onclick="filter_hotel()">
                             <label class="form-check-label" for="bali">
                                 Bali
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="jakarta" id="jakarta">
+                            <input class="form-check-input" type="radio" value="jakarta" id="jakarta"
+                                name="akses" onclick="filter_hotel()">
                             <label class="form-check-label" for="jakarta">
                                 Jakarta
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="24-jam" id="24-jam">
-                            <label class="form-check-label" for="24-jam">
+                            <input class="form-check-input" type="radio" value="aceh" id="aceh" name="akses"
+                                onclick="filter_hotel()">
+                            <label class="form-check-label" for="aceh">
                                 Aceh
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="semarang" id="semarang">
+                            <input class="form-check-input" type="radio" value="semarang" id="semarang"
+                                name="akses" onclick="filter_hotel()">
                             <label class="form-check-label" for="semarang">
                                 Semarang
                             </label>
@@ -279,39 +311,59 @@
                         {{-- fasilitas --}}
                         <h3 class="card-subtittle" style="font-weight: 600; font-size: 16px">Fasilitas</h3>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value=kursi id="akses-kursi-roda"
-                                name="akses" onclick="filter_hotel()">
+                            <input class="form-check-input" type="checkbox" value="antar jemput" id="aksesibilitas"
+                                name="aksesibilitas" onclick="filter_aksesibilitas()">
                             <label class="form-check-label" for="akses-kursi-roda">
+                                Antar jemput bandara
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="toilet dengan" id="aksesibilitas"
+                                name="aksesibilitas" onclick="filter_aksesibilitas()">
+                            <label class="form-check-label" for="toilet-tinggi">
+                                Toilet dengan pegangan
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="akses kursi" id="aksesibilitas"
+                                name="aksesibilitas" onclick="filter_aksesibilitas()">
+                            <label class="form-check-label" for="lift">
                                 Akses kursi roda
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="toilet-tinggi" id="toilet-tinggi">
-                            <label class="form-check-label" for="toilet-tinggi">
-                                Toilet Tinggi
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="lift" id="lift">
-                            <label class="form-check-label" for="lift">
-                                Lift
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="westafel-rendah"
-                                id="westafel-rendah">
+                            <input class="form-check-input" type="checkbox" value="kamar mandi" id="aksesiibilitas"
+                                name="aksesibilitas" onclick="filter_aksesibilitas()">
                             <label class="form-check-label" for="westafel-rendah">
-                                Wastafel rendah
+                                Kamar mandi luas
                             </label>
                         </div>
                         {{-- fasilitas --}}
 
                         {{-- button resset & terapkan --}}
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
-                            <button class="btn btn-outline-secondary border-0 me-md-2" type="button"
-                                onclick="resetfilter()">Reset</button>
+                            <button class="btn btn-outline-secondary border-0 me-md-2" type="button" value="" id="aksesiibilitas"
+                                onclick="reset()">Reset</button>
                             <button class="btn btn-primary border-0" type="button"
-                                style="border-radius: 12px; background-color:#244D64">Terapkan</button>
+                                style="border-radius: 12px; background-color:#244D64"
+                                onclick="filter_harga()">Terapkan</button>
+                            <script>
+                                function filter_harga() {
+                                    let input = document.getElementById('pricemin').value;
+                                    input = input.toLowerCase();
+                                    let input2 = document.getElementById('pricemax').value;
+                                    input2 = input2.toLowerCase();
+                                    let x = document.getElementsByClassName('hotels');
+
+                                    for (i = 0; i < x.length; i++) {
+                                        if (x[i].innerHTML >= input && x[i].innerHTML <= input2) {
+                                            x[i].style.display = "none";
+                                        } else {
+                                            x[i].style.display = "initial";
+                                        }
+                                    }
+                                }
+                            </script>
                         </div>
                         {{-- button resset & terapkan --}}
                     </div>
@@ -425,22 +477,21 @@
                                         <div class="row row-cols-1 row-cols-md-2">
                                             @foreach ($hotel_fascility as $fas)
                                                 @if ($fas->ht_id == $htl->id)
-                                                    @if ($fas->ramp == '1')
-                                                        <div class="col">
-                                                            <p class="mb-0" style="font-weight: 400; font-size: 18px;">
-                                                                <img class="me-2"
-                                                                    src="{{ URL::asset('/img/ramp.png') }}"
-                                                                    alt="ramp-icon">Akses jalan landai
-                                                            </p>
-                                                        </div>
-                                                    @endif
-
                                                     @if ($fas->antarjemput == '1')
                                                         <div class="col">
                                                             <p class="mb-0" style="font-weight: 400; font-size: 18px;">
                                                                 <span class="iconify me-2"
-                                                                    data-icon="fa6-solid:car"></span>Antar
-                                                                jemput bandara
+                                                                    data-icon="fa6-solid:car"></span>Antar jemput bandara
+                                                            </p>
+                                                        </div>
+                                                    @endif
+
+                                                    @if ($fas->toilet_pegangan == '1')
+                                                        <div class="col">
+                                                            <p class="mb-0" style="font-weight: 400; font-size: 18px;">
+                                                                <span class="iconify me-2"
+                                                                    data-icon="fa-solid:toilet"></span>Toilet dengan
+                                                                pegangan
                                                             </p>
                                                         </div>
                                                     @endif
@@ -449,18 +500,17 @@
                                                         <div class="col">
                                                             <p class="mb-0" style="font-weight: 400; font-size: 18px;">
                                                                 <span class="iconify me-2"
-                                                                    data-icon="map:wheelchair"></span></span>Akses kursi
+                                                                    data-icon="fa6-solid:wheelchair"></span>Akses kursi
                                                                 roda
                                                             </p>
                                                         </div>
                                                     @endif
 
                                                     <div class="col">
-                                                        @if ($fas->toilet_pegangan == '1')
+                                                        @if ($fas->kamarmandi_luas == '1')
                                                             <p class="mb-0" style="font-weight: 400; font-size: 18px;">
                                                                 <span class="iconify me-2"
-                                                                    data-icon="ph:toilet-fill"></span></span>Pegangan
-                                                                toilet
+                                                                    data-icon="fa6-solid:bath"></span>Kamar mandi luas
                                                             </p>
                                                         @endif
                                                     </div>
