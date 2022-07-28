@@ -434,9 +434,6 @@
                             </script>
                             <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
                             </script>
-                            {{-- <script src="{{ asset('js/maps.js') }}"></script>
-                            <script src="{{ asset('js/markercluster.js') }}"></script> --}}
-                            {{-- map --}}
 
                         </div>
                         <div class="col-4">
