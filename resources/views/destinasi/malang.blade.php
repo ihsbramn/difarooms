@@ -17,7 +17,8 @@
                     <img src="{{ URL::asset('/img/bg-malang.jpg') }}" class="card-img" alt="background">
                     <div class="card-img-overlay d-flex gradbg">
                         <div class="container my-auto">
-                            <h1 style="font-size: 40px; font-weight:800">Nikmati indahnya Kota Malang <br> dan rasakan segarnya udara pegunungan
+                            <h1 style="font-size: 40px; font-weight:800">Nikmati indahnya Kota Malang <br> dan rasakan
+                                segarnya udara pegunungan
                             </h1>
                         </div>
                     </div>
@@ -42,31 +43,42 @@
             </div>
             {{-- text content --}}
             <div class="col-12">
-                <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Bandung</h2>
+                <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Malang</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Berkunjung ke Kota Kembang akan kurang
-                    lengkap apabila Anda tidak singgah di tempat wisata Bandung yang
-                    sedang hits akhir-akhir ini. Bandung sendiri memiliki berbagai atraksi alam yang menarik, destinasi
-                    wisata kota-kota yang sarat akan pengetahuan, dan beragam wisata kuliner. <br>
-                    Selain menarik minat wisatawan dari luar kota atau bahkan mancanegara, Anda yang warga Bandung mungkin
-                    belum tahu ada beberapa destinasi baru yang bisa Anda kunjungi bersama keluarga akhir pekan ini.</p>
+                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Kota Malang adalah sebuah kota yang
+                    terletak di provinsi
+                    Jawa Timur, Indonesia, kota terbesar kedua di Jawa Timur setelah Surabaya, dan kota terbesar ke-12
+                    di Indonesia. Kota ini didirikan pada masa Pemerintahan Belanda pada tanggal 1 April 1914, yang dimana
+                    E.K Broeveldt sebagai wali kota pertama,Kota ini terletak di dataran tinggi seluas 145,28 km² yang
+                    merupakan enklave Kabupaten Malang. Bersama dengan Kota Batu dan Kabupaten Malang, Kota Malang
+                    merupakan bagian dari kesatuan wilayah yang dikenal dengan Malang Raya.
+                    <br>
+                    <br>
+                    Kota Malang dikenal baik sebagai kota pendidikan. Kota ini memiliki berbagai perguruan tinggi terbaik
+                    seperti Universitas Brawijaya, Universitas Negeri Malang, UIN Maulana Malik Ibrahim Malang, dan
+                    Politeknik Negeri Malang. Selain itu, kota ini merupakan kota pariwisata karena alamnya yang menawan
+                    yang dikelilingi oleh pegunungan serta udaranya yang sejuk. Malang pun terkenal sebagai kota
+                    bunga karena banyaknya bunga yang menghiasi kota. Kota Malang juga merupakan kota seni karena
+                    banyaknya kesenian khas dari kota ini, mulai dari tarian hingga pertunjukan.
+                </p>
             </div>
             <div class="col-6 mt-4">
-                <div class="row row-cols-1 row-cols-md-3 g-3">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
-                        <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-mtrl1.png') }}" class="card-img-top" alt="foto kota bandung">
+                        <div class="card h-100 border-0">
+                            <img src="{{ URL::asset('/img/mlg-1.jpg') }}" class="card-img h-100" alt="foto kota bandung"
+                                style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-mtrl2.png') }}" class="card-img-top" alt="foto kota bandung">
+                        <div class="card h-100 border-0">
+                            <img src="{{ URL::asset('/img/mlg-2.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-mtrl3.png') }}" class="card-img-top" alt="foto kota bandung">
+                        <div class="card h-100 border-0">
+                            <img src="{{ URL::asset('/img/mlg-3.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
                         </div>
                     </div>
                 </div>

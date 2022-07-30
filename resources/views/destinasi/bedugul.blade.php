@@ -16,7 +16,8 @@
                 </div>
             </div>
             <div class="col-12" style="background-color: #3B87B2">
-                <h1 class="mt-5" style="font-weight: 700; font-size: 36px; color:#FFFFFF; padding-inline: 7rem">Bedugul</h1>
+                <h1 class="mt-5" style="font-weight: 700; font-size: 36px; color:#FFFFFF; padding-inline: 7rem">Bedugul
+                </h1>
                 <nav class="mb-5" style="--bs-breadcrumb-divider: '>'; color: #FFFFFF; padding-inline: 7rem"
                     aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -44,48 +45,56 @@
             <h2 style="font-weight: 600; font-size: 24px; color: #3B87B2;">Galeri Foto</h2>
         </div>
         <div id='scrolly'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
+            <a href="{{ URL::asset('/img/bgl-1.jpg') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/bgl-1.jpg') }}' id='img-scroll'
+                    style="max-height: 300px; overflow: hidden;">
+            </a>
+            <a href="{{ URL::asset('/img/bgl-2.jpg') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/bgl-2.jpg') }}' id='img-scroll'
+                    style="max-height: 300px; overflow: hidden;">
+            </a>
+            <a href="{{ URL::asset('/img/bgl-3.jpg') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/bgl-3.jpg') }}' id='img-scroll'
+                    style="max-height: 300px; overflow: hidden;">
+            </a>
+            <a href="{{ URL::asset('/img/bgl-4.jpg') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/bgl-4.jpg') }}' id='img-scroll'
+                    style="max-height: 300px; overflow: hidden;">
+            </a>
+            <a href="{{ URL::asset('/img/bgl-5.jpg') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/bgl-5.jpg') }}' id='img-scroll'
+                    style="max-height: 300px; overflow: hidden;">
+            </a>
+            <a href="{{ URL::asset('/img/bgl-6.jpg') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/bgl-6.jpg') }}' id='img-scroll'
+                    style="max-height: 300px; overflow: hidden;">
+            </a>
         </div>
-        <div class="row mt-5">
+        <div class="row mt-5 mb-5">
             <div class="col-7">
                 <p style="font-weight: 400; font-size: 16px; text-align:justify;">
-                    Jalan Asia Afrika ini sangatlah bersejarah mulai dari banyak-nya bangunan yang di bangun dari Jaman
-                    penjajahan Belanda, maka banyak masyarakat yang berdatangan ke Jalan Asia Afrika ini hanya untuk berburu
-                    Foto, bahkan tidak warga Bandung saja, sampai luar pulau bahkan banyak Turis dari luar negeri datang ke
-                    Kota Bandung untuk Foto dan ingin tau sejarah yang ada.
+                    Bedugul adalah sebuah kawasan wisata dengan danau dan gunung di Bali, Indonesia, terletak di bagian
+                    tengah pulau di dekat Danau Bratan antara Denpasar dan Singaraja. Daerah ini mencakup desa Bedugul
+                    sendiri, Candikuning, Pancasari, Pacung dan Wanagiri.
                     <br>
                     <br>
-                    Banyak bangunan bersejarah yang ada di Asia Afrika bangunan tersebut yaitu adalah Gedung Merdeka. Bukan
-                    hanya gedung Merdeka saja di sekitaran sebelum Gedung Merdeka pun ada gedung yang cukup ikonik yaitu
-                    Gedung De Vries.
+                    Bedugul terletak di Kabupaten Tabanan, 48 kilometer (30 mi) di sebelah utara kota Denpasar atau 20
+                    kilometer (12 mi) sebelah selatan Singaraja. Di daerah ini terdapat tiga danau kawah yaitu Danau Bratan,
+                    Danau Buyan, dan Danau Tamblingan.
                     <br>
                     <br>
-                    <span style="font-weight: 700; font-size: 16px;">Sejarah</span>
-                    <br>
-                    <br>
-                    Gedung Merdeka di Jalan Asia-Afrika ini merupakan gedung bersejarah yang menjadi saksi sejarah pertemuan
-                    Konferensi Tingkat Tinggi Asia-Afrika pada Tanggal 18-24 April Tahun 1955. Sebanyak 29 negara pada saat
-                    KTT mengirimkan perwakilan-nya dari masing – masing Negara. Tidak hanya itu, sekarang Gedung Merdeka ini
-                    juga di gunakan menjadi Museum yang menjadi tempat benda dan koleksi foto pada saat Konferensi Asia
-                    Afrika.
+                    Tempat wisata utama di Bedugul adalah Pura Ulun Danu Bratan dan Kebun Raya Bali. Kebun Raya Bali dibuka
+                    pada tahun 1959. Kebun raya ini memiliki luas 1.575 hektare (3.890 ekar), menjadi salah satu kebun raya
+                    terbesar di Indonesia.
                 </p>
             </div>
             <div class="col-5 position-relative">
                 {{-- map --}}
-                <div class="shadow position-absolute top-50 end-0 translate-middle-y" id="map"
-                    style="height: 300px; width: 570px; border-radius:12px;">INI MAP
-                </div>
-
-                <script src="{{ asset('js/maps.js') }}"></script>
-                <script src="{{ asset('js/markercluster.js') }}"></script>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.208857755975!2d115.16076942848154!3d-8.282001066487478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd189733eb730a3%3A0xf9e3caa4b52d5d14!2sBedugul!5e0!3m2!1sen!2sid!4v1659206666450!5m2!1sen!2sid"
+                    width="570" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="shadow position-absolute top-50 end-0 translate-middle-y" style="border-radius: 12px;" title="map asia afrika"></iframe>
                 <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&callback=initMap">
                 </script>
                 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">

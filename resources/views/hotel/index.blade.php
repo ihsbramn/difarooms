@@ -226,9 +226,9 @@
                             </label>
                         </div> --}}
                         {{-- kelas --}}
-                        <hr>
+                        {{-- <hr> --}}
                         {{-- harga --}}
-                        <h3 class="card-subtittle" style="font-weight: 600; font-size: 16px">Harga</h3>
+                        {{-- <h3 class="card-subtittle" style="font-weight: 600; font-size: 16px">Harga</h3>
                         <div class="input-group">
                             <input type="text" class="form-control border-0" aria-label="IDR amount"
                                 placeholder="Harga minimum" style="background-color: #EAEAEA;" id="pricemin">
@@ -238,7 +238,7 @@
                             <input type="text" class="form-control border-0" aria-label="IDR amount"
                                 placeholder="Harga maksimum" style="background-color: #EAEAEA;" id="pricemax">
                             <span class="input-group-text border-0">Rp</span>
-                        </div>
+                        </div> --}}
                         {{-- harga --}}
                         <hr>
                         {{-- Lokasi --}}
@@ -342,17 +342,21 @@
 
                         {{-- button resset & terapkan --}}
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
-                            <button class="btn btn-outline-secondary border-0 me-md-2" type="button" value="" id="aksesiibilitas"
-                                onclick="reset()">Reset</button>
-                            <button class="btn btn-primary border-0" type="button"
+                            <button class="btn btn-outline-secondary border-0 me-md-2" type="button" value=""
+                                id="aksesiibilitas" onclick="reset()">Reset</button>
+                            {{-- <button class="btn btn-primary border-0" type="button"
                                 style="border-radius: 12px; background-color:#244D64"
                                 onclick="filter_harga()">Terapkan</button>
                             <script>
                                 function filter_harga() {
+                                    var formatter = new Intl.NumberFormat('id-ID', {
+                                        style: 'currency',
+                                        currency: 'IDR',
+                                    });
                                     let input = document.getElementById('pricemin').value;
-                                    input = input.toLowerCase();
+                                    input = formater.format(input);
                                     let input2 = document.getElementById('pricemax').value;
-                                    input2 = input2.toLowerCase();
+                                    input2 = formater.format(input2);
                                     let x = document.getElementsByClassName('hotels');
 
                                     for (i = 0; i < x.length; i++) {
@@ -363,16 +367,16 @@
                                         }
                                     }
                                 }
-                            </script>
+                            </script> --}}
                         </div>
                         {{-- button resset & terapkan --}}
                     </div>
                 </div>
             </div>
             <div class="col-sm-8 ps-4">
-                <div class="row mb-3 mt-1">
+                {{-- <div class="row mb-3 mt-1"> --}}
                     {{-- filter terdekat --}}
-                    <div class="col-sm-2 d-grid">
+                    {{-- <div class="col-sm-2 d-grid">
                         <p class="my-auto" style="font-weight: 500; font-size:20px; color:#244D64">Urutkan : </p>
                     </div>
 
@@ -396,9 +400,9 @@
                         <label class="btn btn-outline ms-4" for="harga-tertinggi"
                             style="color:#244D64; border-color:#244D64; border-radius: 12px; font-size: 16px">Harga
                             Tertinggi</label>
-                    </div>
+                    </div> --}}
                     {{-- filter terdekat --}}
-                </div>
+                {{-- </div> --}}
                 {{-- list hotel --}}
                 @foreach ($hotel as $index => $htl)
                     <div class="hotels">

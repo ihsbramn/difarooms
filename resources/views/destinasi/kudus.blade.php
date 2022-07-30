@@ -9,15 +9,15 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid mb-5">
         <div class="row">
             {{-- header --}}
             <div class="col px-0">
                 <div class="card bg-dark text-white rounded-0 border-0" style="max-height: 467px; overflow:hidden">
-                    <img src="{{ URL::asset('/img/bg-bandung.png') }}" class="card-img" alt="background">
-                    <div class="card-img-overlay d-flex">
+                    <img src="{{ URL::asset('/img/bg-kds.jpg') }}" class="card-img" alt="background">
+                    <div class="card-img-overlay d-flex gradbg">
                         <div class="container my-auto">
-                            <h1 style="font-size: 40px; font-weight:800">Nikmati indahnya Kota Bandung <br> dengan Bandros
+                            <h1 style="font-size: 40px; font-weight:800">Nikmati indahnya Kota Kudus
                             </h1>
                         </div>
                     </div>
@@ -36,52 +36,36 @@
                                 style="text-decoration: none; font-weight: 500; font-size: 14px; color: #47A2D6;">Destinasi</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page"
-                            style="font-weight: 500; font-size: 14px; color: #47A2D6;">Bandung</li>
+                            style="font-weight: 500; font-size: 14px; color: #47A2D6;">Kudus</li>
                     </ol>
                 </nav>
             </div>
             {{-- text content --}}
             <div class="col-12">
-                <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Bandung</h2>
+                <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Kudus</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Berkunjung ke Kota Kembang akan kurang
-                    lengkap apabila Anda tidak singgah di tempat wisata Bandung yang
-                    sedang hits akhir-akhir ini. Bandung sendiri memiliki berbagai atraksi alam yang menarik, destinasi
-                    wisata kota-kota yang sarat akan pengetahuan, dan beragam wisata kuliner. <br>
-                    Selain menarik minat wisatawan dari luar kota atau bahkan mancanegara, Anda yang warga Bandung mungkin
-                    belum tahu ada beberapa destinasi baru yang bisa Anda kunjungi bersama keluarga akhir pekan ini.</p>
+                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Kota Kudus (ditulis juga sebagai Kota)
+                    adalah sebuah kecamatan yang berada di Kabupaten Kudus, Jawa Tengah, Indonesia. Ibu kota Kabupaten Kudus
+                    terletak di kecamatan ini. Kecamatan ini disebut sebagai Kecamatan Kota, karena kawasan perkotaan di
+                    Kabupaten Kudus berada di kecamatan ini.</p>
             </div>
             <div class="col-6 mt-4">
                 <div class="row row-cols-1 row-cols-md-3 g-3">
                     <div class="col">
-                        <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-mtrl1.png') }}" class="card-img-top" alt="foto kota bandung">
+                        <div class="card h-100 border-0">
+                            <img src="{{ URL::asset('/img/kds-1.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-mtrl2.png') }}" class="card-img-top" alt="foto kota bandung">
+                        <div class="card h-100 border-0">
+                            <img src="{{ URL::asset('/img/kds-2.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-mtrl3.png') }}" class="card-img-top" alt="foto kota bandung">
+                        <div class="card h-100 border-0">
+                            <img src="{{ URL::asset('/img/kds-3.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="card bg-dark text-white rounded-0 border-0" style="max-height: 379px; overflow:hidden">
-                <img src="{{ URL::asset('/img/ft-bdg.png') }}" class="card-img" alt="background">
-                <div class="card-img-overlay d-flex">
-                    <div class="container my-auto">
-                        <h1 style="font-size: 40px; font-weight:700">Penginapan terbaik ada disini
-                        </h1>
                     </div>
                 </div>
             </div>

@@ -16,7 +16,8 @@
                 </div>
             </div>
             <div class="col-12" style="background-color: #3B87B2">
-                <h1 class="mt-5" style="font-weight: 700; font-size: 36px; color:#FFFFFF; padding-inline: 7rem">Borobudur</h1>
+                <h1 class="mt-5" style="font-weight: 700; font-size: 36px; color:#FFFFFF; padding-inline: 7rem">Borobudur
+                </h1>
                 <nav class="mb-5" style="--bs-breadcrumb-divider: '>'; color: #FFFFFF; padding-inline: 7rem"
                     aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -44,48 +45,90 @@
             <h2 style="font-weight: 600; font-size: 24px; color: #3B87B2;">Galeri Foto</h2>
         </div>
         <div id='scrolly'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}'>
-            <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
+            <a href="{{ URL::asset('/img/brd-1.jpg') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/brd-1.jpg') }}' id='img-scroll'
+                    style="max-height: 300px; overflow: hidden;">
+            </a>
+            <a href="{{ URL::asset('/img/brd-2.jpg') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/brd-2.jpg') }}' id='img-scroll'
+                    style="max-height: 300px; overflow: hidden;">
+            </a>
+            <a href="{{ URL::asset('/img/brd-3.jpg') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/brd-3.jpg') }}' id='img-scroll'
+                    style="max-height: 300px; overflow: hidden;">
+            </a>
+            <a href="{{ URL::asset('/img/brd-4.jpg') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/brd-4.jpg') }}' id='img-scroll'
+                    style="max-height: 300px; overflow: hidden;">
+            </a>
+            <a href="{{ URL::asset('/img/brd-5.jpg') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/brd-5.jpg') }}' id='img-scroll'
+                    style="max-height: 300px; overflow: hidden;">
+            </a>
+            <a href="{{ URL::asset('/img/brd-6.jpg') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/brd-6.jpg') }}' id='img-scroll'
+                    style="max-height: 300px; overflow: hidden;">
+            </a>
+            <a href="{{ URL::asset('/img/brd-7.jpg') }}" data-lightbox="imghotel">
+                <img id='img-scroll' src='{{ URL::asset('/img/brd-7.jpg') }}' id='img-scroll'
+                    style="max-height: 300px; overflow: hidden;">
+            </a>
         </div>
         <div class="row mt-5">
             <div class="col-7">
                 <p style="font-weight: 400; font-size: 16px; text-align:justify;">
-                    Jalan Asia Afrika ini sangatlah bersejarah mulai dari banyak-nya bangunan yang di bangun dari Jaman
-                    penjajahan Belanda, maka banyak masyarakat yang berdatangan ke Jalan Asia Afrika ini hanya untuk berburu
-                    Foto, bahkan tidak warga Bandung saja, sampai luar pulau bahkan banyak Turis dari luar negeri datang ke
-                    Kota Bandung untuk Foto dan ingin tau sejarah yang ada.
+                    Candi Borobudur (bahasa Jawa: ꦕꦤ꧀ꦝꦶ​ꦧꦫꦧꦸꦝꦸꦂ, translit. Candhi Båråbudhur) adalah sebuah candi Buddha
+                    yang terletak di Borobudur, Magelang, Jawa Tengah, Indonesia. Candi ini terletak kurang lebih 100 km di
+                    sebelah barat daya Semarang, 86 km di sebelah barat Surakarta, dan 40 km di sebelah barat laut
+                    Yogyakarta. Candi dengan banyak stupa ini didirikan oleh para penganut agama Buddha Mahayana sekitar
+                    tahun 800-an Masehi pada masa pemerintahan wangsa Syailendra. Borobudur adalah candi atau kuil Buddha
+                    terbesar di dunia, sekaligus salah satu monumen Buddha terbesar di dunia.
                     <br>
                     <br>
-                    Banyak bangunan bersejarah yang ada di Asia Afrika bangunan tersebut yaitu adalah Gedung Merdeka. Bukan
-                    hanya gedung Merdeka saja di sekitaran sebelum Gedung Merdeka pun ada gedung yang cukup ikonik yaitu
-                    Gedung De Vries.
+                    Monumen ini terdiri atas enam teras berbentuk bujur sangkar yang di atasnya terdapat tiga pelataran
+                    melingkar, pada dindingnya dihiasi dengan 2.672 panel relief dan aslinya terdapat 504 arca Buddha.
+                    Borobudur memiliki koleksi relief Buddha terlengkap dan terbanyak di dunia. Stupa utama terbesar
+                    teletak di tengah sekaligus memahkotai bangunan ini, dikelilingi oleh tiga barisan melingkar 72 stupa
+                    berlubang yang di dalamnya terdapat arca Buddha tengah duduk bersila dalam posisi teratai sempurna
+                    dengan mudra (sikap tangan) Dharmachakra mudra (memutar roda dharma).
                     <br>
                     <br>
-                    <span style="font-weight: 700; font-size: 16px;">Sejarah</span>
+                    Monumen ini merupakan model alam semesta dan dibangun sebagai tempat suci untuk memuliakan Buddha
+                    sekaligus berfungsi sebagai tempat ziarah untuk menuntun umat manusia beralih dari alam nafsu duniawi
+                    menuju pencerahan dan kebijaksanaan sesuai ajaran Buddha. Para peziarah masuk melalui sisi timur dan
+                    memulai ritual di dasar candi dengan berjalan melingkari bangunan suci ini searah jarum jam, sambil
+                    terus naik ke undakan berikutnya melalui tiga tingkatan ranah dalam kosmologi Buddha. Ketiga tingkatan
+                    itu adalah Kāmadhātu (ranah hawa nafsu), Rupadhatu (ranah berwujud), dan Arupadhatu (ranah tak
+                    berwujud). Dalam perjalanannya para peziarah berjalan melalui serangkaian lorong dan tangga dengan
+                    menyaksikan tak kurang dari 1.460 panel relief indah yang terukir pada dinding dan pagar langkan.
                     <br>
                     <br>
-                    Gedung Merdeka di Jalan Asia-Afrika ini merupakan gedung bersejarah yang menjadi saksi sejarah pertemuan
-                    Konferensi Tingkat Tinggi Asia-Afrika pada Tanggal 18-24 April Tahun 1955. Sebanyak 29 negara pada saat
-                    KTT mengirimkan perwakilan-nya dari masing – masing Negara. Tidak hanya itu, sekarang Gedung Merdeka ini
-                    juga di gunakan menjadi Museum yang menjadi tempat benda dan koleksi foto pada saat Konferensi Asia
-                    Afrika.
+                    Menurut bukti-bukti sejarah, Borobudur ditinggalkan pada abad ke-10 seiring dipindahnya pusat Kerajaan
+                    Mataram Kuno ke Jawa Timur oleh Pu Sindok. Dunia mulai menyadari keberadaan bangunan ini sejak
+                    ditemukan 1814 oleh Sir Thomas Stamford Raffles, yang saat itu menjabat sebagai Gubernur Jenderal
+                    Inggris atas Jawa. Sejak saat itu Borobudur telah mengalami serangkaian upaya penyelamatan dan pemugaran
+                    (perbaikan kembali). Proyek pemugaran terbesar digelar pada kurun waktu 1975 hingga 1982 atas upaya
+                    Pemerintah Republik Indonesia dan UNESCO, kemudian situs bersejarah ini masuk dalam daftar Situs Warisan
+                    Dunia.
+                    <br>
+                    <br>
+                    Borobudur kini masih digunakan sebagai tempat ziarah keagamaan; tiap tahun umat Buddha yang datang dari
+                    seluruh Indonesia dan mancanegara berkumpul di Borobudur untuk memperingati Trisuci Waisak. Terkait
+                    kepariwisataan, Borobudur adalah objek wisata tunggal di Indonesia yang paling banyak dikunjungi
+                    wisatawan.
+                    <br>
+                    <br>
+                    Pada 11 Februari 2022, pemerintah meresmikan status Candi Borobudur kembali sebagai tempat peribadatan
+                    umat Buddhis di Indonesia dan dunia.
                 </p>
             </div>
             <div class="col-5 position-relative">
                 {{-- map --}}
-                <div class="shadow position-absolute top-50 end-0 translate-middle-y" id="map"
-                    style="height: 300px; width: 570px; border-radius:12px;">INI MAP
-                </div>
-
-                <script src="{{ asset('js/maps.js') }}"></script>
-                <script src="{{ asset('js/markercluster.js') }}"></script>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63274.36937797716!2d110.16444805188124!3d-7.613217594635842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a8cef5e6c0f59%3A0x4027a76e352eb60!2sBorobudur%2C%20Magelang%20Regency%2C%20Central%20Java!5e0!3m2!1sen!2sid!4v1659206445170!5m2!1sen!2sid"
+                    width="570" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="shadow position-absolute top-50 end-0 translate-middle-y" style="border-radius: 12px;" title="map asia afrika"></iframe>
                 <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&callback=initMap">
                 </script>
                 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">

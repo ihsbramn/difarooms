@@ -46,46 +46,40 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Bali</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Berkunjung ke Kota Kembang akan kurang
-                    lengkap apabila Anda tidak singgah di tempat wisata Bandung yang
-                    sedang hits akhir-akhir ini. Bandung sendiri memiliki berbagai atraksi alam yang menarik, destinasi
-                    wisata kota-kota yang sarat akan pengetahuan, dan beragam wisata kuliner. <br>
-                    Selain menarik minat wisatawan dari luar kota atau bahkan mancanegara, Anda yang warga Bandung mungkin
-                    belum tahu ada beberapa destinasi baru yang bisa Anda kunjungi bersama keluarga akhir pekan ini.</p>
+                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Bali adalah sebuah
+                    provinsi di Indonesia yang ibu kotanya bernama Denpasar. Provinsi Bali terletak di bagian barat
+                    Kepulauan Nusa Tenggara. Di awal kemerdekaan Indonesia, pulau ini termasuk dalam Provinsi Sunda Kecil
+                    yang beribu kota di Singaraja, dan kini terbagi menjadi 3 provinsi, yakni Bali, Nusa Tenggara Barat, dan
+                    Nusa Tenggara Timur. Pada tahun 2020, penduduk provinsi Bali berjumlah 4.317.404 jiwa, dengan
+                    kepadatan 747 jiwa/km2.
+                    <br>
+                    <br>
+                    Selain terdiri dari pulau Bali, wilayah provinsi Bali juga terdiri dari pulau-pulau yang lebih kecil di
+                    sekitarnya, yaitu pulau Nusa Penida, pulau Nusa Lembongan, pulau Nusa Ceningan, Pulau Serangan, dan
+                    Pulau Menjangan. Secara geografis, Bali terletak di antara Pulau Jawa dan Pulau Lombok. Mayoritas
+                    penduduk Bali adalah pemeluk agama Hindu. Di dunia, Bali terkenal sebagai tujuan pariwisata dengan
+                    keunikan berbagai hasil seni-budayanya, khususnya bagi para wisatawan Jepang dan Australia. Bali juga
+                    dikenal dengan julukan Pulau Dewata dan Pulau Seribu Pura.</p>
             </div>
             <div class="col-6 mt-4">
-                <div class="row row-cols-1 row-cols-md-3 g-3">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
-                        <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-mtrl1.png') }}" class="card-img-top" alt="foto kota bandung">
+                        <div class="card h-100 border-0">
+                            <img src="{{ URL::asset('/img/bli-1.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px;">
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-mtrl2.png') }}" class="card-img-top" alt="foto kota bandung">
+                        <div class="card h-100 border-0">
+                            <img src="{{ URL::asset('/img/bli-2.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px;">
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-mtrl3.png') }}" class="card-img-top" alt="foto kota bandung">
+                        <div class="card h-100 border-0">
+                            <img src="{{ URL::asset('/img/bli-3.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px;">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    {{-- <div class="container-fluid">
-        <div class="row">
-            <div class="card bg-dark text-white rounded-0 border-0" style="max-height: 379px; overflow:hidden">
-                <img src="{{ URL::asset('/img/ft-bdg.png') }}" class="card-img" alt="background">
-                <div class="card-img-overlay d-flex">
-                    <div class="container my-auto">
-                        <h1 style="font-size: 40px; font-weight:700">Penginapan terbaik ada disini
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 @endsection
