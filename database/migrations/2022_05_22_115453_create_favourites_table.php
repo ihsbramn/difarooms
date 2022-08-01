@@ -19,8 +19,8 @@ class CreateFavouritesTable extends Migration
             $table->foreign('fv_user_id')->references('id')->on('users');
             $table->foreignId('fv_hotel_id')->unsigned();
             $table->foreign('fv_hotel_id')->references('id')->on('hotels');
-            $table->string('fv_hotel_name');
-            $table->string('fv_count');
+            $table->string('fv_hotel_name')->nullable();
+            $table->string('fv_count')->nullable();
             $table->timestamps();
         });
     }

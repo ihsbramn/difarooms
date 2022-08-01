@@ -354,7 +354,6 @@
                                     let input2 = document.getElementById('pricemax').value;
                                     input2 = input2.toLowerCase();
                                     let x = document.getElementsByClassName('hotels');
-
                                     for (i = 0; i < x.length; i++) {
                                         if (x[i].innerHTML >= input && x[i].innerHTML <= input2) {
                                             x[i].style.display = "none";
