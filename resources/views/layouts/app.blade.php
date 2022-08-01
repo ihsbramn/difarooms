@@ -66,31 +66,36 @@
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item pe-5">
                             <a class="nav-link {{ Route::currentRouteNamed('index') ? 'active' : '' }}"
-                                href="{{ url('/') }}" style="font-weight: 500; font-size: 20px;">{{ __('Beranda') }}</a>
+                                href="{{ url('/') }}"
+                                style="font-weight: 500; font-size: 20px;">{{ __('Beranda') }}</a>
                             <div class="underline"></div>
                         </li>
 
                         <li class="nav-item px-5">
                             <a class="nav-link {{ Route::currentRouteNamed('/destinasi', '/destinasi/*') ? 'active' : '' }}"
-                                href="{{ url('/destinasi') }}" style="font-weight: 500; font-size: 20px;">{{ __('Destinasi') }}</a>
+                                href="{{ url('/destinasi') }}"
+                                style="font-weight: 500; font-size: 20px;">{{ __('Destinasi') }}</a>
                             <div class="underline"></div>
                         </li>
 
                         <li class="nav-item px-5">
                             <a class="nav-link {{ Route::currentRouteNamed('/hotel', '/hotel/*') ? 'active' : '' }}"
-                                href="{{ '/hotel' }}" style="font-weight: 500; font-size: 20px;">{{ __('Hotel') }}</a>
+                                href="{{ '/hotel' }}"
+                                style="font-weight: 500; font-size: 20px;">{{ __('Hotel') }}</a>
                             <div class="underline"></div>
                         </li>
 
                         <li class="nav-item px-5">
                             <a class="nav-link {{ Route::currentRouteNamed('/forum', '/forum/*') ? 'active' : '' }}"
-                                href="{{ '/forum' }}" style="font-weight: 500; font-size: 20px;">{{ __('Forum') }}</a>
+                                href="{{ '/forum' }}"
+                                style="font-weight: 500; font-size: 20px;">{{ __('Forum') }}</a>
                             <div class="underline"></div>
                         </li>
 
                         <li class="nav-item ps-5">
                             <a class="nav-link {{ Route::currentRouteNamed('/aboutus') ? 'active' : '' }}"
-                                href="{{ '/aboutus' }}" style="font-weight: 500; font-size: 20px;">{{ __('Tentang Kami') }}</a>
+                                href="{{ '/aboutus' }}"
+                                style="font-weight: 500; font-size: 20px;">{{ __('Tentang Kami') }}</a>
                             <div class="underline"></div>
                         </li>
                     </ul>
@@ -102,7 +107,8 @@
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link btn btn-primary rounded-pill px-4 me-2 bg-transparent" type="button"
-                                        href="{{ route('login') }}" style="font-size: 20px; font-weight: 500; border-color: white;">{{ __('Login') }}</a>
+                                        href="{{ route('login') }}"
+                                        style="font-size: 20px; font-weight: 500; border-color: white;">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
@@ -116,8 +122,8 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#navbarDropdown"
-                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-weight: 500; font-size: 20px; color: white;"
-                                    v-pre>
+                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    style="font-weight: 500; font-size: 20px; color: white;" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -182,11 +188,14 @@
                     </div>
                     <div class="col-sm-6 my-auto">
                         <div class="hstack gap-3 d-flex text-white">
-                            <div class="mx-auto my-auto" style="font-weight: 400; font-size: 18px;">Tujuan
+                            <div class="mx-auto my-auto"><a href="{{ '/aboutus' }}"
+                                    style="font-weight: 400; font-size: 18px; text-decoration: none; color: white;">Tujuan</a>
                             </div>
-                            <div class="mx-auto my-auto" style="font-weight: 400; font-size: 18px;">Pusat
-                                Bantuan</div>
-                            <div class="mx-auto my-auto" style="font-weight: 400; font-size: 18px;">Kontak
+                            <div class="mx-auto my-auto"><a href="{{ '/aboutus' }}"
+                                    style="font-weight: 400; font-size: 18px; text-decoration: none; color: white;">Pusat Bantuan</a>
+                            </div>
+                            <div class="mx-auto my-auto"><a href="{{ '/aboutus' }}"
+                                    style="font-weight: 400; font-size: 18px; text-decoration: none; color: white;">Kontak</a>
                             </div>
                         </div>
                     </div>

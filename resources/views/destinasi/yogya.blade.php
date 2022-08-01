@@ -17,7 +17,8 @@
                     <img src="{{ URL::asset('/img/bg-yk.jpg') }}" class="card-img" alt="background">
                     <div class="card-img-overlay d-flex gradbg">
                         <div class="container my-auto">
-                            <h1 style="font-size: 40px; font-weight:800">Nikmati indahnya Kota Yogyakarta <br> dengan berkeliling naik delman
+                            <h1 style="font-size: 40px; font-weight:800">Nikmati indahnya Kota Yogyakarta <br> dengan
+                                berkeliling naik delman
                             </h1>
                         </div>
                     </div>
@@ -45,28 +46,36 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Yogyakarta</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Berkunjung ke Kota Kembang akan kurang
-                    lengkap apabila Anda tidak singgah di tempat wisata Bandung yang
-                    sedang hits akhir-akhir ini. Bandung sendiri memiliki berbagai atraksi alam yang menarik, destinasi
-                    wisata kota-kota yang sarat akan pengetahuan, dan beragam wisata kuliner. <br>
-                    Selain menarik minat wisatawan dari luar kota atau bahkan mancanegara, Anda yang warga Bandung mungkin
-                    belum tahu ada beberapa destinasi baru yang bisa Anda kunjungi bersama keluarga akhir pekan ini.</p>
+                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Kota Yogyakarta (bahasa Jawa: ꦪꦺꦴꦒꦾꦏꦂꦠ,
+                    translit. Ngayogyakarta, atau dikenal oleh masyarakat
+                    setempat dengan nama Kota Jogja atau Kota Yogya adalah ibu kota dan pusat pemerintahan Daerah Istimewa
+                    Yogyakarta, Indonesia. Kota ini adalah kota besar yang mempertahankan konsep tradisional dan budaya
+                    Jawa. Kota Yogyakarta adalah kediaman bagi Sultan Hamengkubuwana dan Adipati Paku Alam. Kota Yogyakarta
+                    merupakan salah satu kota terbesar di Indonesia dan kota terbesar keempat di wilayah Pulau Jawa bagian
+                    selatan menurut jumlah penduduk. Kota Yogyakarta juga pernah menjadi ibu kota RI pada tahun 1946.
+                    <br>
+                    <br>
+                    Salah satu kecamatan di Yogyakarta, yaitu Kotagede pernah menjadi pusat Kesultanan Mataram antara kurun
+                    tahun 1575–1640. Keraton (Istana) yang masih berfungsi dalam arti yang sesungguhnya adalah Keraton
+                    Ngayogyakarta dan Puro Paku Alaman, yang merupakan pecahan dari Kesultanan Mataram. Pada masa revolusi,
+                    Yogyakarta juga pernah menjadi ibu kota Indonesia antara tahun 1946 hingga 1950.
+                </p>
             </div>
             <div class="col-6 mt-4">
-                <div class="row row-cols-1 row-cols-md-3 g-3">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
-                        <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-mtrl1.png') }}" class="card-img-top" alt="foto kota bandung">
+                        <div class="card h-100 border-0">
+                            <img src="{{ URL::asset('/img/yk-1.jpg') }}" class="card-img-top" alt="foto kota bandung" style="border-radius: 12px;">
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-mtrl2.png') }}" class="card-img-top" alt="foto kota bandung">
+                        <div class="card h-100 border-0">
+                            <img src="{{ URL::asset('/img/yk-2.jpg') }}" class="card-img-top" alt="foto kota bandung" style="border-radius: 12px;">
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-mtrl3.png') }}" class="card-img-top" alt="foto kota bandung">
+                        <div class="card h-100 border-0">
+                            <img src="{{ URL::asset('/img/yk-3.jpg') }}" class="card-img-top" alt="foto kota bandung" style="border-radius: 12px;">
                         </div>
                     </div>
                 </div>
@@ -74,17 +83,4 @@
         </div>
     </div>
 
-    {{-- <div class="container-fluid">
-        <div class="row">
-            <div class="card bg-dark text-white rounded-0 border-0" style="max-height: 379px; overflow:hidden">
-                <img src="{{ URL::asset('/img/ft-bdg.png') }}" class="card-img" alt="background">
-                <div class="card-img-overlay d-flex">
-                    <div class="container my-auto">
-                        <h1 style="font-size: 40px; font-weight:700">Penginapan terbaik ada disini
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 @endsection

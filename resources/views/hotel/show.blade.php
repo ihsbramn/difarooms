@@ -62,7 +62,6 @@
             <div class="col-8">
                 <div class="row">
                     {{-- gambar --}}
-
                     <div id='scrolly'>
                         @foreach ($hotel_img as $hi)
                             <a href="/storage/uploads/{{ $hi->name }}" data-lightbox="imghotel">
