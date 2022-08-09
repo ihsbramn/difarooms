@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,38 +26,19 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/lightbox.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <style>
-        body main {
-            font-family: 'Montserrat', sans-serif;
-        }
 
-        footer {
-            font-family: 'Montserrat', sans-serif;
-        }
-    </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+    <!-- Script -->
+    <script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
         integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
         integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
     </script>
-    <script>
-        (function($) {
-            "use strict";
-            $('.next').click(function() {
-                $('.carousel').carousel('next');
-                return false;
-            });
-            $('.prev').click(function() {
-                $('.carousel').carousel('prev');
-                return false;
-            });
-        })
-        (jQuery);
-    </script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     @yield('head')
 </head>
 
@@ -133,29 +114,40 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#navbarDropdown"
-                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    v-pre>
-                                    {{ Auth::user()->name }}
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                style="font-weight: 500; font-size: 20px; color: white;" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+
+                            <div class="dropdown-menu dropdown-menu-end mt-3 border-0 shadow"
+                                aria-labelledby="navbarDropdown" style="border-radius: 12px">
+                                <a class="dropdown-item px-4 py-3"
+                                    href="{{ '/user/myfavourites' }}"style="font-weight: 400; font-size: 16px;"><i
+                                        class="bi bi-heart-fill me-2"></i>
+                                    {{ __('My Favourites Hotel') }}
+                                </a>
+                                <a class="dropdown-item px-4 py-3"
+                                    href="{{ '/user/myforum' }}"style="font-weight: 400; font-size: 16px;"><i
+                                        class="bi bi-chat-left-text-fill me-2"></i></i>
+                                    {{ __('My Forum') }}
+                                </a>
+                                <a class="dropdown-item px-4 py-3" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();"
+                                    style="color: #BB5353;font-weight: 400; font-size: 16px;"><i
+                                        class="bi bi-box-arrow-right me-2"></i>
+                                    {{ __('Logout') }}
                                 </a>
 
-
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ '/user/myfavourites' }}">
-                                        {{ __('My Favourites Hotel') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                            document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
                         @endguest
                     </ul>
                 </div>

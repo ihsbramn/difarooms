@@ -222,7 +222,7 @@
                     <div class="card-footer bg-transparent border-top-0">
                         <div class="row px-5">
                             <a href="{{ route('/hotel/show', $htl->id) }}" class="btn btn-primary border-0 px-3 py-2"
-                                type="button" style="border-radius: 12px; background-color:rgba(71, 162, 214, 1); font-weight: 600; font-size: 20px;">Lihat
+                                type="button" style="border-radius: 12px; background-color: #244D64; font-weight: 600; font-size: 20px;">Lihat
                                 detail</a>
                         </div>
                     </div>
