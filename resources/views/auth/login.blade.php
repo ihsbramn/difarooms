@@ -1,5 +1,21 @@
 @extends('layouts.login')
 
+@section('head')
+    <script>
+        function showpass() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+@endsection
+
 @section('content')
     <div class="container-fluid">
         <div class="row" style="min-height:100vh">
@@ -24,7 +40,7 @@
                                     <input id="email" type="email"
                                         class="form-control form-control-lg @error('email') is-invalid @enderror"
                                         name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
-                                        placeholder="email anda">
+                                        placeholder="email anda" style="border-radius: 12px;">
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -33,11 +49,15 @@
                                     @enderror
                                 </div>
 
-                                <div class="row mb-3 mx-5">
+                                <div class="input-group mb-3 px-5">
                                     <input id="password" type="password"
                                         class="form-control form-control-lg @error('password') is-invalid @enderror"
-                                        name="password" required autocomplete="current-password" placeholder="password">
-
+                                        name="password" required autocomplete="current-password" placeholder="password"
+                                        aria-describedby="button-addon2" style="border-radius: 12px 0px 0px 12px;">
+                                    <button class="btn btn-outline-secondary" type="button" id="eye"
+                                        onclick="showpass()" style="font-size: 20px; border-radius: 0px 12px 12px 0px;"><i
+                                            onclick="show(this)" class="bi bi-eye-fill"></i>
+                                    </button>
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -60,15 +80,16 @@
 
                                 <div class="row mb-2 mx-5">
                                     <button type="submit" class="btn btn-primary"
-                                        style="background: rgba(36, 77, 100, 1); border-color: rgba(36, 77, 100, 1); border-radius: 12px;">
+                                        style="background: rgba(36, 77, 100, 1); border-color: rgba(36, 77, 100, 1); border-radius: 12px;font-weight: 500; font-size: 16px;">
                                         {{ __('Login') }}
                                     </button>
                                 </div>
 
                                 <div class="row mb-0 mx-5">
                                     @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
+                                        <a class="btn btn-link" href="{{ route('password.request') }}"
+                                            style="text-decoration: none; color: #244D64; font-weight: 500; font-size: 16px;">
+                                            {{ __('Lupa Kata Sandi?') }}
                                         </a>
                                     @endif
                                 </div>
@@ -76,7 +97,7 @@
                             <hr class="mx-auto" style="width: 82%">
                             <a type="button" class="btn btn-success mx-5 mb-5 mt-3" href="" data-bs-toggle="modal"
                                 data-bs-target="#register"
-                                style="font-size: 16px; background: rgba(26, 186, 0, 1); border-color: rgba(26, 186, 0, 1); border-radius: 12px">{{ __('Buat Akun') }}</a>
+                                style="font-size: 16px; background: rgba(26, 186, 0, 1); border-color: rgba(26, 186, 0, 1); border-radius: 12px; font-weight: 500; font-size: 16px;">{{ __('Buat Akun') }}</a>
                         </div>
                     </div>
                 </div>
@@ -120,59 +141,60 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="row mb-3">
-                            <div class="col">
-                                <input id="name" type="text"
-                                    class="form-control @error('name') is-invalid @enderror" name="name"
-                                    value="{{ old('name') }}" required autocomplete="name" autofocus
-                                    placeholder="Nama" style="font-weight: 500;">
+                        <div class="input-group mb-3">
+                            <input id="name" type="text"
+                                class="form-control form-control-lg @error('name') is-invalid @enderror" name="name"
+                                value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Nama"
+                                style="font-weight: 500; border-radius: 12px;">
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
 
-                        <div class="row mb-3">
-                            <div class="col">
-                                <input id="email" type="email"
-                                    class="form-control @error('email') is-invalid @enderror" name="email"
-                                    value="{{ old('email') }}" required autocomplete="email" placeholder="Email" style="font-weight: 500;">
+                        <div class="input-group mb-3">
+                            <input id="email" type="email"
+                                class="form-control form-control-lg @error('email') is-invalid @enderror" name="email"
+                                value="{{ old('email') }}" required autocomplete="email" placeholder="Email"
+                                style="font-weight: 500; border-radius: 12px;">
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
 
-                        <div class="row mb-3">
-                            <div class="col">
-                                <input id="password" type="password"
-                                    class="form-control @error('password') is-invalid @enderror" name="password" required
-                                    autocomplete="new-password" placeholder="Kata sandi" style="font-weight: 500;">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                        <div class="input-group mb-3">
+                            <input id="password" type="password"
+                                class="form-control form-control-lg @error('password') is-invalid @enderror"
+                                name="password" required autocomplete="new-password" placeholder="Kata sandi"
+                                style="font-weight: 500; border-radius: 12px 0px 0px 12px;">
+                            <button class="btn btn-outline-secondary" type="button" id="eye" onclick="showpass()"
+                                style="font-size: 20px; border-radius: 0px 12px 12px 0px;"><i onclick="show(this)"
+                                    class="bi bi-eye-fill"></i>
+                            </button>
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
 
-                        <div class="row mb-5">
-                            <div class="col">
-                                <input id="password-confirm" type="password" class="form-control"
-                                    name="password_confirmation" required autocomplete="new-password"
-                                    placeholder="Konfirmasi kata sandi" style="font-weight: 500;">
-                            </div>
+                        <div class="input-group mb-5">
+                            <input id="password-confirm" type="password" class="form-control form-control-lg"
+                                name="password_confirmation" required autocomplete="new-password"
+                                placeholder="Konfirmasi kata sandi" style="font-weight: 500; border-radius: 12px 0px 0px 12px;">
+                            <button class="btn btn-outline-secondary" type="button" id="eye" onclick="showpass()"
+                                style="font-size: 20px; border-radius: 0px 12px 12px 0px;"><i onclick="show(this)"
+                                    class="bi bi-eye-fill"></i>
+                            </button>
                         </div>
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary"
-                                style="background: rgba(36, 77, 100, 1); border-radius: 12px;">
+                                style="background: rgba(36, 77, 100, 1); border-radius: 12px; font-weight: 500; font-size: 16px; border-color: rgba(36, 77, 100, 1);">
                                 {{ __('Register') }}
                             </button>
                         </div>

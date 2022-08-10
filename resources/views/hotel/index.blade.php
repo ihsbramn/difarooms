@@ -574,7 +574,7 @@
                                                     <div class="col text-end my-auto">
                                                         <a class="btn btn-primary"
                                                             href="{{ route('/hotel/show', $htl->id) }}"
-                                                            style="background: #47A2D6; border-radius: 12px; font-weight: 600; font-size: 16px; border-color: #47A2D6;">Lihat
+                                                            style="background: #244D64; border-radius: 12px; font-weight: 600; font-size: 16px; border-color: #244D64;">Lihat
                                                             detail</a>
                                                     </div>
                                                 </div>
