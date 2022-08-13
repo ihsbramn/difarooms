@@ -238,6 +238,30 @@
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
                             <button class="btn btn-outline-secondary me-md-2" type="button" value=""
                                 id="aksesiibilitas" onclick="reset()">Reset</button>
+
+                            {{-- <button class="btn btn-primary border-0" type="button"
+                                style="border-radius: 12px; background-color:#244D64"
+                                onclick="filter_harga()">Terapkan</button>
+                            <script>
+                                function filter_harga() {
+                                    var formatter = new Intl.NumberFormat('id-ID', {
+                                        style: 'currency',
+                                        currency: 'IDR',
+                                    });
+                                    let input = document.getElementById('pricemin').value;
+                                    input = formater.format(input);
+                                    let input2 = document.getElementById('pricemax').value;
+                                    input2 = formater.format(input2);
+                                    let x = document.getElementsByClassName('hotels');
+                                    for (i = 0; i < x.length; i++) {
+                                        if (x[i].innerHTML >= input && x[i].innerHTML <= input2) {
+                                            x[i].style.display = "none";
+                                        } else {
+                                            x[i].style.display = "initial";
+                                        }
+                                    }
+                                }
+                            </script> --}}
                         </div>
                         {{-- button resset & terapkan --}}
                     </div>

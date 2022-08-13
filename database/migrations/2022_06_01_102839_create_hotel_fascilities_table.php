@@ -16,7 +16,7 @@ class CreateHotelFascilitiesTable extends Migration
         Schema::create('hotel_fascilities', function (Blueprint $table) {
             $table->id();
             $table->foreignId('ht_id')->unsigned();
-            $table->foreign('ht_id')->references('id')->on('hotels');
+            $table->foreign('ht_id')->references('id')->on('hotels')->onDelete('cascade');
             $table->boolean('ramp')->nullable();
             $table->boolean('antarjemput')->nullable();
             $table->boolean('akses_kursiroda')->nullable();
