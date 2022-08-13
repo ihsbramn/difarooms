@@ -91,8 +91,9 @@
             <div class="card-img-overlay d-flex">
                 <div class="container my-auto">
                     <h1 class="align-self-center mx-auto" style="font-weight: 700; font-size: 96px">Hotel</h1>
+                    <p style="font-weight: 500; font-size: 20px;">Berbagai pilihan hotel yang tentunya aksesibel bagi Anda</p>
                     <div class="input-group pt-5">
-                        <input type="text" class="form-control border-0" placeholder="Cari hotel" aria-label="Cari hotel"
+                        <input type="text" class="form-control form-control-lg border-0" placeholder="Cari hotel" aria-label="Cari hotel"
                             id="searchbar" aria-describedby="search-hotel" style="background-color: #D9D9D9"
                             onkeyup="search_hotel()" name="searchbar">
                     </div>
@@ -133,113 +134,6 @@
                 <div class="card border-0 shadow p-3 mb-5" style="border-radius:12px">
                     <div class="card-body p-2">
                         <h3 class="card-tittle" style="font-weight: 700; font-size:20px">Filter</h3>
-                        {{-- kelas --}}
-                        {{-- <h3 class="card-subtittle mt-4" style="font-weight: 600; font-size: 16px">Kelas Hotel</h3>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="5" id="bintang5">
-                            <label class="form-check-label" for="bintang5">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="gold"
-                                    class="bi bi-star-fill" viewBox="0 0 17 17">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="gold"
-                                    class="bi bi-star-fill" viewBox="0 0 17 17">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="gold"
-                                    class="bi bi-star-fill" viewBox="0 0 17 17">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="gold"
-                                    class="bi bi-star-fill" viewBox="0 0 17 17">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="gold"
-                                    class="bi bi-star-fill" viewBox="0 0 17 17">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg> <span class="me-1"> (5) </span>
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="4" id="bintang4">
-                            <label class="form-check-label" for="bintang4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="gold"
-                                    class="bi bi-star-fill" viewBox="0 0 17 17">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="gold"
-                                    class="bi bi-star-fill" viewBox="0 0 17 17">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="gold"
-                                    class="bi bi-star-fill" viewBox="0 0 17 17">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="gold"
-                                    class="bi bi-star-fill" viewBox="0 0 17 17">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg> <span class="me-1"> (4) </span>
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="3" id="bintang3">
-                            <label class="form-check-label" for="bintang3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="gold"
-                                    class="bi bi-star-fill" viewBox="0 0 17 17">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="gold"
-                                    class="bi bi-star-fill" viewBox="0 0 17 17">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="gold"
-                                    class="bi bi-star-fill" viewBox="0 0 17 17">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg> <span class="me-1"> (3) </span>
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="2" id="bintang2">
-                            <label class="form-check-label" for="bintang2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="gold"
-                                    class="bi bi-star-fill" viewBox="0 0 17 17">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="gold"
-                                    class="bi bi-star-fill" viewBox="0 0 17 17">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg> <span class="me-1"> (2) </span>
-                            </label>
-                        </div> --}}
-                        {{-- kelas --}}
-                        {{-- <hr> --}}
-                        {{-- harga --}}
-                        {{-- <h3 class="card-subtittle" style="font-weight: 600; font-size: 16px">Harga</h3>
-                        <div class="input-group">
-                            <input type="text" class="form-control border-0" aria-label="IDR amount"
-                                placeholder="Harga minimum" style="background-color: #EAEAEA;" id="pricemin">
-                            <span class="input-group-text border-0">Rp</span>
-                        </div>
-                        <div class="input-group pt-3">
-                            <input type="text" class="form-control border-0" aria-label="IDR amount"
-                                placeholder="Harga maksimum" style="background-color: #EAEAEA;" id="pricemax">
-                            <span class="input-group-text border-0">Rp</span>
-                        </div> --}}
-                        {{-- harga --}}
                         <hr>
                         {{-- Lokasi --}}
                         <h3 class="card-subtittle" style="font-weight: 600; font-size: 16px">Lokasi</h3>
@@ -342,67 +236,14 @@
 
                         {{-- button resset & terapkan --}}
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
-                            <button class="btn btn-outline-secondary border-0 me-md-2" type="button" value=""
+                            <button class="btn btn-outline-secondary me-md-2" type="button" value=""
                                 id="aksesiibilitas" onclick="reset()">Reset</button>
-                            {{-- <button class="btn btn-primary border-0" type="button"
-                                style="border-radius: 12px; background-color:#244D64"
-                                onclick="filter_harga()">Terapkan</button>
-                            <script>
-                                function filter_harga() {
-                                    var formatter = new Intl.NumberFormat('id-ID', {
-                                        style: 'currency',
-                                        currency: 'IDR',
-                                    });
-                                    let input = document.getElementById('pricemin').value;
-                                    input = formater.format(input);
-                                    let input2 = document.getElementById('pricemax').value;
-                                    input2 = formater.format(input2);
-                                    let x = document.getElementsByClassName('hotels');
-
-                                    for (i = 0; i < x.length; i++) {
-                                        if (x[i].innerHTML >= input && x[i].innerHTML <= input2) {
-                                            x[i].style.display = "none";
-                                        } else {
-                                            x[i].style.display = "initial";
-                                        }
-                                    }
-                                }
-                            </script> --}}
                         </div>
                         {{-- button resset & terapkan --}}
                     </div>
                 </div>
             </div>
             <div class="col-sm-8 ps-4">
-                {{-- <div class="row mb-3 mt-1"> --}}
-                    {{-- filter terdekat --}}
-                    {{-- <div class="col-sm-2 d-grid">
-                        <p class="my-auto" style="font-weight: 500; font-size:20px; color:#244D64">Urutkan : </p>
-                    </div>
-
-                    <div class="col-sm-10 ms-0">
-                        <input type="radio" class="btn-check" name="options-outlined" id="terdekat"
-                            autocomplete="off">
-                        <label class="btn btn-outline me-4" for="terdekat"
-                            style="color:#244D64; border-color:#244D64; border-radius: 12px; font-size: 16px">Terdekat</label>
-                        <input type="radio" class="btn-check" name="options-outlined" id="paling-disukai"
-                            autocomplete="off">
-                        <label class="btn btn-outline mx-4" for="paling-disukai"
-                            style="color:#244D64; border-color:#244D64; border-radius: 12px; font-size: 16px">Paling
-                            Disukai</label>
-                        <input type="radio" class="btn-check" name="options-outlined" id="harga-terendah"
-                            autocomplete="off">
-                        <label class="btn btn-outline mx-4" for="harga-terendah"
-                            style="color:#244D64; border-color:#244D64; border-radius: 12px; font-size: 16px">Harga
-                            Terendah</label>
-                        <input type="radio" class="btn-check" name="options-outlined" id="harga-tertinggi"
-                            autocomplete="off">
-                        <label class="btn btn-outline ms-4" for="harga-tertinggi"
-                            style="color:#244D64; border-color:#244D64; border-radius: 12px; font-size: 16px">Harga
-                            Tertinggi</label>
-                    </div> --}}
-                    {{-- filter terdekat --}}
-                {{-- </div> --}}
                 {{-- list hotel --}}
                 @foreach ($hotel as $index => $htl)
                     <div class="hotels">

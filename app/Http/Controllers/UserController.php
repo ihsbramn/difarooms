@@ -35,6 +35,7 @@ class UserController extends Controller
 
     public function myfavourites(){
         $count = 1;
+        $hotel = Hotel::get();
 
          // getting logged user
         $user_id = auth()->user()->id;
@@ -46,11 +47,26 @@ class UserController extends Controller
 
             // dd($fav);
 
-        return view('user/myfavourites', compact('fav'));
+        return view('user/myfavourites', compact('fav','hotel'));
     }
 
     public function aboutus(){
         
         return view('aboutus');
+    }
+    
+    public function tujuan(){
+        
+        return view('tujuan');
+    }
+    
+    public function bantuan(){
+        
+        return view('bantuan');
+    }
+    
+    public function kontak(){
+        
+        return view('kontak');
     }
 }

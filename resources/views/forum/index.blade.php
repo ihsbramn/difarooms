@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.forum')
 
 @section('head')
     <script>
@@ -132,7 +132,7 @@
                                         <a class="card-footer bg-transparent" href="{{ route('/forum/show', $fr->id) }}"
                                             style="text-decoration: none;">
                                             <p class="mb-0" style="font-weight: 400;font-size: 14px; color: #4D4D4D;"><i
-                                                    class="bi bi-chat me-2"></i>Tulis komentar</p>
+                                                    class="bi bi-chat me-2"></i>Lihat balasan</p>
                                         </a>
                                     </div>
                                 </div>
@@ -246,8 +246,7 @@
                     {{-- buat forum --}}
                     <button class="btn btn-primary py-2" type="button" data-bs-toggle="modal"
                         data-bs-target="#tambahforum"
-                        style="font-weight: 600; font-size: 20px; background: #004973; border-radius: 12px; border-color: #004973;">Buat
-                        forum</button>
+                        style="font-weight: 600; font-size: 20px; background: #004973; border-radius: 12px; border-color: #004973;">Ajukan Pertanyaan</button>
 
                     {{-- search bar --}}
                     <div class="card border-0 shadow" style="border-radius: 12px">

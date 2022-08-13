@@ -67,6 +67,19 @@ class ForumController extends Controller
         return view('forum/admin', compact('forum', 'count'));
     }
 
+    public function adminshow($id)
+    {
+        $forum = Forum::find($id);
+        
+        $id = $forum->id;
+
+        $comment = Comment::where('cm_forum_id', '=', $id)->get();
+        $forum_img = Forum_Img::where('fr_id', '=', $id)->get();
+
+        // dd($forum, $comment, $forum_img);
+        return view('/forum/adminshow', compact('forum', 'comment', 'forum_img'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

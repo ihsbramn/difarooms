@@ -48,7 +48,7 @@
                 <p style="font-weight: 400; font-size: 24px; text-align: justify;">Berkunjung ke Kota Kembang akan kurang
                     lengkap apabila Anda tidak singgah di tempat wisata Bandung yang
                     sedang hits akhir-akhir ini. Bandung sendiri memiliki berbagai atraksi alam yang menarik, destinasi
-                    wisata kota-kota yang sarat akan pengetahuan, dan beragam wisata kuliner. <br>
+                    wisata kota-kota yang sarat akan pengetahuan, dan beragam wisata kuliner. <br> <br>
                     Selain menarik minat wisatawan dari luar kota atau bahkan mancanegara, Anda yang warga Bandung mungkin
                     belum tahu ada beberapa destinasi baru yang bisa Anda kunjungi bersama keluarga akhir pekan ini.</p>
             </div>
@@ -71,6 +71,15 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12">
+                <p style="font-weight: 400; font-size: 24px; text-align: justify;"><br> Kota Bandung sebagai salah satu kota
+                    besar yang ada di Indonesia sudah mulai menerapkan teknologi untuk
+                    meningkatkan kualitas layanan publik dan juga berupaya untuk mewujudkan konsep smart city. Destinasi
+                    wisata yang aksesibel juga menjadi salah satu tujuan utama oleh pemerintah kota Bandung. Oleh karena
+                    itu, Difa Rooms menyajikan beberapa destinasi wisata yang dapat diakses oleh penyandang disabilitas
+                    dengan kondisi apapun. Dengan begitu, Anda tidak perlu khawatir terkait mobilitas Anda pada tempat
+                    wisata yang Anda kunjungi</p>
+            </div>
             <div class="col-12 mt-5">
                 {{-- card destinasi --}}
                 <h2 class="mb-3">Wajib dikunjungi</h2>
@@ -85,67 +94,67 @@
                         </a>
                     </div>
                     <div class="col">
-                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/rancaupas' }}">
-                            <img src="{{ URL::asset('/img/bd-rcupas.png') }}" class="dest-card" alt="foto destinasi">
+                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/kiara-arta-park' }}">
+                            <img src="{{ URL::asset('/img/bd-kap.png') }}" class="dest-card" alt="foto destinasi">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Ranca Upas</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Kiara Artha Park</h5>
                             </div>
                         </a>
                     </div>
                     <div class="col">
-                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/floatingmarket' }}">
-                            <img src="{{ URL::asset('/img/bd-flmarket.png') }}" class="dest-card" alt="foto destinasi">
+                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/bandung-zoo' }}">
+                            <img src="{{ URL::asset('/img/bd-bz.png') }}" class="dest-card" alt="foto destinasi">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Floating Market</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Bandung Zoo</h5>
                             </div>
                         </a>
                     </div>
                     <div class="col">
-                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/gedungsate' }}">
-                            <img src="{{ URL::asset('/img/bd-gdsate.png') }}" class="dest-card" alt="foto destinasi">
+                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/museum-geologi' }}">
+                            <img src="{{ URL::asset('/img/bd-mg.png') }}" class="dest-card" alt="foto destinasi">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Gedung Sate</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Museum Geologi</h5>
                             </div>
                         </a>
                     </div>
                     <div class="col">
-                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/tangkubanprahu' }}">
-                            <img src="{{ URL::asset('/img/bd-tkperahu.png') }}" class="dest-card" alt="foto destinasi">
+                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/taman-lalu-lintas' }}">
+                            <img src="{{ URL::asset('/img/bd-tll.png') }}" class="dest-card" alt="foto destinasi">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Tangkuban Perahu</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Taman Lalu Lintas</h5>
                             </div>
                         </a>
                     </div>
                     <div class="col">
-                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/farmhouse' }}">
-                            <img src="{{ URL::asset('/img/bd-fhlembang.png') }}" class="dest-card" alt="foto destinasi">
+                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/trans-studio-mall' }}">
+                            <img src="{{ URL::asset('/img/bd-tsm.png') }}" class="dest-card" alt="foto destinasi">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Farmhouse Lembang</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Trans Studio Mall</h5>
                             </div>
                         </a>
                     </div>
                     <div class="col">
-                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/cartil' }}">
-                            <img src="{{ URL::asset('/img/cartil.jpg') }}" class="dest-card" alt="foto destinasi"
+                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/museum-sri-baduga' }}">
+                            <img src="{{ URL::asset('/img/bd-msb.png') }}" class="dest-card" alt="foto destinasi"
                                 style="width: 100%; height: 100%; overflow:hidden;">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Caringin Tilu</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Museum Sri Baduga</h5>
                             </div>
                         </a>
                     </div>
                     <div class="col">
-                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/braga' }}">
-                            <img src="{{ URL::asset('/img/braga.jpg') }}" class="dest-card" alt="foto destinasi"
+                        <a class="card border-0 zoom" href="{{ '/destinasi/bandung/braga-city-walk' }}">
+                            <img src="{{ URL::asset('/img/bd-bcw.jpg') }}" class="dest-card" alt="foto destinasi"
                                 style="width: 100%; height: 100%; overflow:hidden;">
                             <div class="card-img-overlay grad dest-card">
                                 <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Braga</h5>
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Braga City Walk</h5>
                             </div>
                         </a>
                     </div>
@@ -172,7 +181,8 @@
         </div>
         <div class="d-flex overflow-auto mt-3" id="hotelslider">
             @foreach ($hotel as $index => $htl)
-                <div class="card border-0 pb-3 shadow-sm" style="border-radius: 20px; min-width: 370px; margin-right: 35px;">
+                <div class="card border-0 pb-3 shadow-sm"
+                    style="border-radius: 20px; min-width: 370px; margin-right: 35px;">
                     <img src="/storage/uploads/{{ $htl->ht_thumbnail }}" class="card-img-top p-3"
                         alt="foto thumbnail hotel" style="height: 300px; overflow:hidden;border-radius: 20px;">
                     <div class="card-body pt-0">
@@ -222,7 +232,8 @@
                     <div class="card-footer bg-transparent border-top-0">
                         <div class="row px-5">
                             <a href="{{ route('/hotel/show', $htl->id) }}" class="btn btn-primary border-0 px-3 py-2"
-                                type="button" style="border-radius: 12px; background-color: #244D64; font-weight: 600; font-size: 20px;">Lihat
+                                type="button"
+                                style="border-radius: 12px; background-color: #244D64; font-weight: 600; font-size: 20px;">Lihat
                                 detail</a>
                         </div>
                     </div>
@@ -259,300 +270,186 @@
     </div>
     {{-- Butuh Tempat Menginap --}}
 
-    {{-- Destinasi Lainnya --}}
-    <div class="container-fluid mt-5 mb-5 px-5" style="background-color: white;">
-        <div id="destinasipopuler" class="carousel slide" data-bs-ride="carousel">
-            <div class="row">
-                <div class="col-6 text-start">
-                    <h2 class="mt-3" style="font-weight: 700; font-size: 36px; color: #3B87B2;">Jelajahi
-                        destinasi lainnya</h2>
-                    <p class="mt-3" style="font-weight: 500; font-size: 24px; color: #47A2D6;">Banyak pilihan untuk
-                        menikmati waktu berlibur Anda</p>
-                </div>
-                <div class="col-6 text-end mt-3">
-                    <button class="btn btn-lg rounded-circle me-2" type="button" data-bs-target="#destinasipopuler"
-                        data-bs-slide="prev" style="border-color: rgba(71, 162, 214, 1);">
-                        <span class="bi bi-chevron-left" style="color: rgba(71, 162, 214, 1);"></span>
-                    </button>
-                    <button class="btn btn-lg rounded-circle" type="button" data-bs-target="#destinasipopuler"
-                        data-bs-slide="next"
-                        style="border-color: rgba(71, 162, 214, 1); background: rgba(71, 162, 214, 1);">
-                        <span class="bi bi-chevron-right" style="color: rgba(255, 255, 255, 1);"></span>
-                    </button>
-                </div>
+    {{-- wisata aksesibel --}}
+    <div class="container-fluid mt-5 pb-5 px-5">
+        <div class="row">
+            <h2 class="mt-3" style="font-weight: 700; font-size: 36px; color: #2F6C8F;">Wisata Aksesibel</h2>
+        </div>
+        <div class="row">
+            <div class="col-6 text-start my-auto">
+                <p class="m-0" style="font-weight: 500; font-size: 20px; color: #2F6C8F;">Liburan terasa mudah dan
+                    inklusif bagi siapapun</p>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="carousel-inner" style="border-radius: 12px">
-                        <div class="carousel-item active">
-                            <div class="row row-cols-1 row-cols-md-5 g-5">
-                                <div class="col">
-                                    <a class="card text-white"
-                                        style="border-radius: 12px; max-width: 20rem; overlay: hidden;"
-                                        href="{{ '/destinasi/bandung/asia-afrika' }}">
-                                        <img src="{{ URL::asset('/img/dest-pop1.png') }}" class="card-img"
-                                            alt="..." style="border-radius: 12px">
-                                        <div class="card-img-overlay grad" style="border-radius: 12px">
-                                            <div class="row position-absolute bottom-0 start-20 mb-2">
-                                                <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Asia
-                                                    Afirka</h5>
-                                                <p class="card-text" style="font-weight: 400; font-size: 20px;">
-                                                    Bandung</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a class="card text-white"
-                                        style="border-radius: 12px; max-width: 20rem; overlay: hidden;"
-                                        href="{{ '/destinasi/bandung/rancaupas' }}">
-                                        <img src="{{ URL::asset('/img/dest-pop2.png') }}" class="card-img"
-                                            alt="..." style="border-radius: 12px">
-                                        <div class="card-img-overlay grad" style="border-radius: 12px">
-                                            <div class="row position-absolute bottom-0 start-20 mb-2">
-                                                <h5 class="card-title" style="font-weight: 700; font-size: 24px;">
-                                                    Ranca Upas</h5>
-                                                <p class="card-text" style="font-weight: 400; font-size: 20px;">
-                                                    Bandung</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a class="card text-white"
-                                        style="border-radius: 12px; max-width: 20rem; overlay: hidden;"
-                                        href="{{ '/destinasi/bedugul' }}">
-                                        <img src="{{ URL::asset('/img/dest-pop3.png') }}" class="card-img"
-                                            alt="..." style="border-radius: 12px">
-                                        <div class="card-img-overlay grad" style="border-radius: 12px">
-                                            <div class="row position-absolute bottom-0 start-20 mb-2">
-                                                <h5 class="card-title" style="font-weight: 700; font-size: 24px;">
-                                                    Bedugul</h5>
-                                                <p class="card-text" style="font-weight: 400; font-size: 20px;">Bali
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a class="card text-white"
-                                        style="border-radius: 12px; max-width: 20rem; overlay: hidden;"
-                                        href="{{ '/destinasi/borobudur' }}">
-                                        <img src="{{ URL::asset('/img/dest-pop4.png') }}" class="card-img"
-                                            alt="..." style="border-radius: 12px">
-                                        <div class="card-img-overlay grad" style="border-radius: 12px">
-                                            <div class="row position-absolute bottom-0 start-20 mb-2">
-                                                <h5 class="card-title" style="font-weight: 700; font-size: 24px;">
-                                                    Borobudur</h5>
-                                                <p class="card-text" style="font-weight: 400; font-size: 20px;">
-                                                    Magelang</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a class="card text-white"
-                                        style="border-radius: 12px; max-width: 20rem; max-height: 478.83px; overflow: hidden"
-                                        href="{{ '/destinasi/bandung/floatingmarket' }}">
-                                        <img src="{{ URL::asset('/img/dest-pop5.png') }}" class="card-img"
-                                            alt="...">
-                                        <div class="card-img-overlay grad" style="border-radius: 12px">
-                                            <div class="row position-absolute bottom-0 start-20 mb-2">
-                                                <h5 class="card-title" style="font-weight: 700; font-size: 24px;">
-                                                    Floating Market</h5>
-                                                <p class="card-text" style="font-weight: 400; font-size: 20px;">
-                                                    Bandung</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row row-cols-1 row-cols-md-5 g-5">
-                                <div class="col">
-                                    <a class="card text-white"
-                                        style="border-radius: 12px; max-width: 20rem; overlay: hidden;"
-                                        href="{{ '/destinasi/bandung/asia-afrika' }}">
-                                        <img src="{{ URL::asset('/img/dest-pop1.png') }}" class="card-img"
-                                            alt="..." style="border-radius: 12px">
-                                        <div class="card-img-overlay grad" style="border-radius: 12px">
-                                            <div class="row position-absolute bottom-0 start-20 mb-2">
-                                                <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Asia
-                                                    Afirka</h5>
-                                                <p class="card-text" style="font-weight: 400; font-size: 20px;">
-                                                    Bandung</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a class="card text-white"
-                                        style="border-radius: 12px; max-width: 20rem; overlay: hidden;"
-                                        href="{{ '/destinasi/bandung/rancaupas' }}">
-                                        <img src="{{ URL::asset('/img/dest-pop2.png') }}" class="card-img"
-                                            alt="..." style="border-radius: 12px">
-                                        <div class="card-img-overlay grad" style="border-radius: 12px">
-                                            <div class="row position-absolute bottom-0 start-20 mb-2">
-                                                <h5 class="card-title" style="font-weight: 700; font-size: 24px;">
-                                                    Ranca Upas</h5>
-                                                <p class="card-text" style="font-weight: 400; font-size: 20px;">
-                                                    Bandung</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a class="card text-white"
-                                        style="border-radius: 12px; max-width: 20rem; overlay: hidden;"
-                                        href="{{ '/destinasi/bedugul' }}">
-                                        <img src="{{ URL::asset('/img/dest-pop3.png') }}" class="card-img"
-                                            alt="..." style="border-radius: 12px">
-                                        <div class="card-img-overlay grad" style="border-radius: 12px">
-                                            <div class="row position-absolute bottom-0 start-20 mb-2">
-                                                <h5 class="card-title" style="font-weight: 700; font-size: 24px;">
-                                                    Bedugul</h5>
-                                                <p class="card-text" style="font-weight: 400; font-size: 20px;">Bali
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a class="card text-white"
-                                        style="border-radius: 12px; max-width: 20rem; overlay: hidden;"
-                                        href="{{ '/destinasi/borobudur' }}">
-                                        <img src="{{ URL::asset('/img/dest-pop4.png') }}" class="card-img"
-                                            alt="..." style="border-radius: 12px">
-                                        <div class="card-img-overlay grad" style="border-radius: 12px">
-                                            <div class="row position-absolute bottom-0 start-20 mb-2">
-                                                <h5 class="card-title" style="font-weight: 700; font-size: 24px;">
-                                                    Borobudur</h5>
-                                                <p class="card-text" style="font-weight: 400; font-size: 20px;">
-                                                    Magelang</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a class="card text-white"
-                                        style="border-radius: 12px; max-width: 20rem; max-height: 478.83px; overflow: hidden;"
-                                        href="{{ '/destinasi/bandung/floatingmarket' }}">
-                                        <img src="{{ URL::asset('/img/dest-pop5.png') }}" class="card-img"
-                                            alt="...">
-                                        <div class="card-img-overlay grad" style="border-radius: 12px">
-                                            <div class="row position-absolute bottom-0 start-20 mb-2">
-                                                <h5 class="card-title" style="font-weight: 700; font-size: 24px;">
-                                                    Floating Market</h5>
-                                                <p class="card-text" style="font-weight: 400; font-size: 20px;">
-                                                    Bandung</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row row-cols-1 row-cols-md-5 g-5">
-                                <div class="col">
-                                    <a class="card text-white"
-                                        style="border-radius: 12px; max-width: 20rem; overlay: hidden;"
-                                        href="{{ '/destinasi/bandung/asia-afrika' }}">
-                                        <img src="{{ URL::asset('/img/dest-pop1.png') }}" class="card-img"
-                                            alt="..." style="border-radius: 12px">
-                                        <div class="card-img-overlay grad" style="border-radius: 12px">
-                                            <div class="row position-absolute bottom-0 start-20 mb-2">
-                                                <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Asia
-                                                    Afirka</h5>
-                                                <p class="card-text" style="font-weight: 400; font-size: 20px;">
-                                                    Bandung</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a class="card text-white"
-                                        style="border-radius: 12px; max-width: 20rem; overlay: hidden;"
-                                        href="{{ '/destinasi/bandung/rancaupas' }}">
-                                        <img src="{{ URL::asset('/img/dest-pop2.png') }}" class="card-img"
-                                            alt="..." style="border-radius: 12px">
-                                        <div class="card-img-overlay grad" style="border-radius: 12px">
-                                            <div class="row position-absolute bottom-0 start-20 mb-2">
-                                                <h5 class="card-title" style="font-weight: 700; font-size: 24px;">
-                                                    Ranca Upas</h5>
-                                                <p class="card-text" style="font-weight: 400; font-size: 20px;">
-                                                    Bandung</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a class="card text-white"
-                                        style="border-radius: 12px; max-width: 20rem; overlay: hidden;"
-                                        href="{{ '/destinasi/bedugul' }}">
-                                        <img src="{{ URL::asset('/img/dest-pop3.png') }}" class="card-img"
-                                            alt="..." style="border-radius: 12px">
-                                        <div class="card-img-overlay grad" style="border-radius: 12px">
-                                            <div class="row position-absolute bottom-0 start-20 mb-2">
-                                                <h5 class="card-title" style="font-weight: 700; font-size: 24px;">
-                                                    Bedugul</h5>
-                                                <p class="card-text" style="font-weight: 400; font-size: 20px;">Bali
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a class="card text-white"
-                                        style="border-radius: 12px; max-width: 20rem; overlay: hidden;"
-                                        href="{{ '/destinasi/magelang' }}">
-                                        <img src="{{ URL::asset('/img/dest-pop4.png') }}" class="card-img"
-                                            alt="..." style="border-radius: 12px">
-                                        <div class="card-img-overlay grad" style="border-radius: 12px">
-                                            <div class="row position-absolute bottom-0 start-20 mb-2">
-                                                <h5 class="card-title" style="font-weight: 700; font-size: 24px;">
-                                                    Borobudur</h5>
-                                                <p class="card-text" style="font-weight: 400; font-size: 20px;">
-                                                    Magelang</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a class="card text-white"
-                                        style="border-radius: 12px; max-width: 20rem; max-height: 478.83px; overflow: hidden"
-                                        href="{{ '/destinasi/bandung/floatingmarket' }}">
-                                        <img src="{{ URL::asset('/img/dest-pop5.png') }}" class="card-img"
-                                            alt="...">
-                                        <div class="card-img-overlay grad" style="border-radius: 12px">
-                                            <div class="row position-absolute bottom-0 start-20 mb-2">
-                                                <h5 class="card-title" style="font-weight: 700; font-size: 24px;">
-                                                    Floating Market</h5>
-                                                <p class="card-text" style="font-weight: 400; font-size: 20px;">
-                                                    Bandung</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-6 text-end mt-3">
+                <button id="slideLeftw" type="button" class="btn btn-lg rounded-circle shadow-sm"
+                    style="border-color: rgba(71, 162, 214, 1); color: rgba(71, 162, 214, 1);"><i
+                        class="bi bi-chevron-left"></i></button>
+                <button id="slideRightw" type="button" class="btn btn-lg rounded-circle shadow-sm"
+                    style="background: rgba(71, 162, 214, 1); border-color: rgba(71, 162, 214, 1); color: white;"><i
+                        class="bi bi-chevron-right"></i></button>
             </div>
         </div>
-    </div>
+        <div class="d-flex overflow-auto mt-3" id="wisataslider">
+            <div class="col me-4">
+                <a class="card text-white"
+                    style="border-radius: 12px; max-width: 20rem; min-width:259px; overlay: hidden;"
+                    href="{{ '/destinasi/bandung/asia-afrika' }}">
+                    <img src="{{ URL::asset('/img/dest-pop1.png') }}" class="card-img" alt="photo-wisata"
+                        style="border-radius: 12px">
+                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                            <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Asia Afirka</h5>
+                            <p class="card-text" style="font-weight: 400; font-size: 20px;">Bandung</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col me-4">
+                <a class="card text-white"
+                    style="border-radius: 12px; max-width: 20rem; min-width:259px; overlay: hidden;"
+                    href="{{ '/destinasi/bandung/kiara-arta-park' }}">
+                    <img src="{{ URL::asset('/img/dest-pop2.png') }}" class="card-img" alt="photo-wisata"
+                        style="border-radius: 12px">
+                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                            <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Ranca Upas</h5>
+                            <p class="card-text" style="font-weight: 400; font-size: 20px;">Bandung</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col me-4">
+                <a class="card text-white"
+                    style="border-radius: 12px; max-width: 20rem; min-width:259px; overlay: hidden;"
+                    href="{{ '/destinasi/bedugul' }}">
+                    <img src="{{ URL::asset('/img/dest-pop3.png') }}" class="card-img" alt="photo-wisata"
+                        style="border-radius: 12px">
+                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                            <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Bedugul</h5>
+                            <p class="card-text" style="font-weight: 400; font-size: 20px;">Bali</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col me-4">
+                <a class="card text-white"
+                    style="border-radius: 12px; max-width: 20rem; min-width:259px; overlay: hidden;"
+                    href="{{ '/destinasi/borobudur' }}">
+                    <img src="{{ URL::asset('/img/dest-pop4.png') }}" class="card-img" alt="photo-wisata"
+                        style="border-radius: 12px">
+                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                            <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Borobudur</h5>
+                            <p class="card-text" style="font-weight: 400; font-size: 20px;">Magelang</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col me-4">
+                <a class="card text-white"
+                    style="border-radius: 12px; max-width: 20rem; min-width:259px; overlay: hidden;"
+                    href="{{ '/destinasi/bandung/floatingmarket' }}">
+                    <img src="{{ URL::asset('/img/dest-pop5.jpg') }}" class="card-img" alt="photo-wisata"
+                        style="border-radius: 12px">
+                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                            <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Floating Market</h5>
+                            <p class="card-text" style="font-weight: 400; font-size: 20px;">Lembang</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col me-4">
+                <a class="card text-white"
+                    style="border-radius: 12px; max-width: 20rem; min-width:259px; overlay: hidden;"
+                    href="{{ '/destinasi/pulaukomodo' }}">
+                    <img src="{{ URL::asset('/img/dest-popkm.png') }}" class="card-img" alt="photo-wisata"
+                        style="border-radius: 12px">
+                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                            <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Pulau Komodo</h5>
+                            <p class="card-text" style="font-weight: 400; font-size: 20px;">Nusa Tenggara Timur</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col me-4">
+                <a class="card text-white"
+                    style="border-radius: 12px; max-width: 20rem; min-width:259px; overlay: hidden;"
+                    href="{{ '/destinasi/bunaken' }}">
+                    <img src="{{ URL::asset('/img/dest-popbn.png') }}" class="card-img" alt="photo-wisata"
+                        style="border-radius: 12px">
+                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                            <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Bunaken</h5>
+                            <p class="card-text" style="font-weight: 400; font-size: 20px;">Sulawesi Utara</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col me-4">
+                <a class="card text-white"
+                    style="border-radius: 12px; max-width: 20rem; min-width:259px; overlay: hidden;"
+                    href="{{ '/destinasi/gilitrawangan' }}">
+                    <img src="{{ URL::asset('/img/dest-popgt.jpg') }}" class="card-img" alt="photo-wisata"
+                        style="border-radius: 12px">
+                    <div class="card-img-overlay grad" style="border-radius: 12px">
+                        <div class="row position-absolute bottom-0 start-20 mb-2">
+                            <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Gili Trawangan</h5>
+                            <p class="card-text" style="font-weight: 400; font-size: 20px;">Lombok</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
+        </div>
+        <script>
+            const buttonRight = document.getElementById('slideRightw');
+            const buttonLeft = document.getElementById('slideLeftw');
+
+            buttonRight.onclick = function() {
+                var container = document.getElementById('wisataslider');
+                scrollAmount = 0;
+                var slideTimer = setInterval(function() {
+                    container.scrollLeft += 100;
+                    scrollAmount += 100;
+                    if (scrollAmount >= 200) {
+                        window.clearInterval(slideTimer);
+                    }
+                }, 50);
+            };
+            buttonLeft.onclick = function() {
+                var container = document.getElementById('wisataslider');
+                scrollAmount = 0;
+                var slideTimer = setInterval(function() {
+                    container.scrollLeft -= 100;
+                    scrollAmount += 100;
+                    if (scrollAmount >= 200) {
+                        window.clearInterval(slideTimer);
+                    }
+                }, 50);
+            };
+        </script>
+    </div>
+    {{-- wisata aksesibel --}}
+
+    {{-- banner --}}
     <div class="container-fluid">
         <div class="row">
             <div class="card bg-dark text-white rounded-0 border-0" style="max-height: 379px; overflow:hidden">
                 <img src="{{ URL::asset('/img/ft-bdg.png') }}" class="card-img" alt="background">
                 <div class="card-img-overlay d-flex">
                     <div class="container my-auto">
-                        <h1 style="font-size: 40px; font-weight:700">Penginapan terbaik ada disini
-                        </h1>
+                        <h2 style="font-weight: 700; font-size: 36px; color: white;">Penginapan nyaman dan <br> aksesibel ada disini
+                        </h2>
+                        <a class="btn btn-primary px-5 btn-lg bg-white border-white mt-4 shadow"
+                                href="{{ '/hotel' }}" type="button"
+                                style="border-radius: 12px; color: rgba(71, 162, 214, 1);">Cek hotel</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {{-- banner --}}
 @endsection

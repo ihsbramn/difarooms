@@ -24,18 +24,6 @@
             <div class="col-6">
                 <h1 style="font-weight: 800; font-size: 40px;">Kelola Forum</h1>
             </div>
-            <div class="col-6 text-end">
-                {{-- <form action="{{ route('hotel/destroy', $data->id) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger"><span class="bi bi-trash-fill"></span>
-                        Hapus
-                    </button>
-                </form> --}}
-                <a type="button" class="btn btn-primary btn-lg" href=""
-                    style="background: rgba(237, 193, 193, 1); border-color: rgba(237, 193, 193, 1); border-radius: 12px;"><span
-                        class="bi bi-trash-fill" style="color: rgba(205, 2, 2, 1);">Hapus</a>
-            </div>
         </div>
 
         <div class="row mx-2">
@@ -58,7 +46,7 @@
                                 <td>
                                     <div class="row">
                                         <div class="col-3">
-                                            <a class="btn btn-lg" href="{{ route('/forum/show', $fr->id) }}"><i
+                                            <a class="btn btn-lg" href="{{ route('forum/admin/show', $fr->id) }}"><i
                                                     class="bi bi-eye-fill" style="color: #3B63B0"></i></a>
                                         </div>
                                         <div class="col-3">
