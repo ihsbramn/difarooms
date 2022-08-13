@@ -5,12 +5,17 @@
             <div class="col text-center">
                 <h2>Destinasi</h2>
                 <h3 class="mt-5 subtitle">Temukan pilihan destinasi menarik bagi Anda dan keluarga</h3>
+                
+                {{-- search bar --}}
                 <div class="col-12">
                     <div class="mb-3 mt-5">
                         <input type="text" class="form-control form-control-lg mx-auto" id="searchbardestinasi"
                             placeholder="Cari kota" style="max-width: 727px" onkeyup="search_destinasi()">
                     </div>
                 </div>
+                {{-- search bar --}}
+
+                {{-- card list of destination --}}
                 <div class="row row-cols-1 row-cols-md-3 g-5 mt-3 mb-5">
                     <div class="col destinasi">
                         <a class="card border-0 zoom" href="{{ '/destinasi/bandung' }}">
@@ -175,21 +180,24 @@
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card bg-dark text-white rounded-0 border-0" style="max-height: 379px; overflow:hidden">
-                <img src="{{ URL::asset('/img/foot-dest.png') }}" class="card-img" alt="background">
-                <div class="card-img-overlay d-flex">
-                    <div class="container my-auto">
-                        <h1 style="font-size: 40px; font-weight:700">Temukan pilihan<br>destinasi wisata lainnya
-                        </h1>
-                    </div>
-                </div>
+                {{-- card list of destination --}}
             </div>
         </div>
     </div>
 
+    {{-- banner --}}
+    <div class="comtainer-fluid">
+        <div class="card bg-dark text-white border-0 rounded-0" style="max-height: 379px; overflow: hidden;">
+            <img src="{{ URL::asset('/img/foot-dest.png') }}" class="card-img" alt="footer image">
+            <div class="card-img-overlay" style="padding-inline: 7rem">
+                <h5 class="card-title position-absolute top-50 start-20 translate-middle-y"
+                    style="font-weight: 700;font-size: 36px;">Rasakan wisata inklusif <br>tanpa diskriminasi</h5>
+            </div>
+        </div>
+    </div>
+    {{-- banner --}}
+
+    {{-- logical for search --}}
     <script>
         function search_destinasi() {
             let input = document.getElementById('searchbardestinasi').value
@@ -205,5 +213,6 @@
             }
         }
     </script>
+    {{-- logical for search --}}
 
 @endsection

@@ -122,6 +122,10 @@ img #img-scroll {
     display: none;
 }
 
+#wisataslider::-webkit-scrollbar {
+    display: none;
+}
+
 .zoom {
     transition: transform .2s;
 }

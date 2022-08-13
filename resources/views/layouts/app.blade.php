@@ -114,8 +114,7 @@
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link btn btn-primary rounded-pill px-3 ms-2" type="button" href=""
-                                        data-bs-toggle="modal" data-bs-target="#register"
+                                    <a class="nav-link btn btn-primary rounded-pill px-3 ms-2" type="button" href="{{ route('register') }}"
                                         style="color: #47A2D6; font-size: 20px; font-weight: 500; background: white; border-color: white; color: #47A2D6;">{{ __('Register') }}</a>
                                 </li>
                             @endif
@@ -180,21 +179,27 @@
             @yield('content')
             <!-- Footer -->
             <footer class="container-fluid mt-auto" style="background: #47A2D6; margin-top:auto; ">
-                <div class="row text-center d-flex my-5">
-                    <div class="col-sm-3">
-                        <a href="{{ url('/') }}">
-                            <img src="{{ URL::asset('/img/difarooms-logo.png') }}" alt="Difarooms Logo">
-                        </a>
+                <div class="row d-flex my-5">
+                    <div class="col-sm-3" style="margin-left: 50px">
+                        <div class="row">
+                            <a href="{{ url('/') }}">
+                                <img src="{{ URL::asset('/img/difarooms-logo.png') }}" alt="Difarooms Logo">
+                            </a>
+                        </div>
+                        <div class="row">
+                            <p class="m-0 mt-1" style="font-weight: 500; font-size: 14px; text-alignt: left; color: white">Platform berbagi informasi<br>
+                                mengenai aksesibilitas bagi <br> penyandang disabilitas</p>
+                        </div>
                     </div>
                     <div class="col-sm-6 my-auto">
                         <div class="hstack gap-3 d-flex text-white">
-                            <div class="mx-auto my-auto"><a href="{{ '/aboutus' }}"
+                            <div class="mx-auto my-auto"><a href="{{ '/tujuan' }}"
                                     style="font-weight: 400; font-size: 18px; text-decoration: none; color: white;">Tujuan</a>
                             </div>
-                            <div class="mx-auto my-auto"><a href="{{ '/aboutus' }}"
+                            <div class="mx-auto my-auto"><a href="{{ '/bantuan' }}"
                                     style="font-weight: 400; font-size: 18px; text-decoration: none; color: white;">Pusat Bantuan</a>
                             </div>
-                            <div class="mx-auto my-auto"><a href="{{ '/aboutus' }}"
+                            <div class="mx-auto my-auto"><a href="{{ '/kontak' }}"
                                     style="font-weight: 400; font-size: 18px; text-decoration: none; color: white;">Kontak</a>
                             </div>
                         </div>
@@ -202,84 +207,6 @@
                     <div class="col-3"></div>
                 </div>
             </footer>
-            <!-- Modal for Register-->
-            <div class="modal fade" id="register" data-bs-backdrop="static" data-bs-keyboard="false"
-                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg rounded" style="border-radius: 12px">
-                    <div class="modal-content border-0 mx-auto" style="border-radius: 12px; max-width: 548px;">
-                        <div class="modal-header" style="border-bottom: 0 none;">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body mx-3 mb-3">
-                            <h5 class="modal-title" style="font-weight: 700; font-size: 24px;">Daftar Akun</h5>
-                            <p style="font-weight: 400; font-size: 20px;">Buat akunmu untuk dapat berjejaring</p>
-                            <form method="POST" action="{{ route('register') }}">
-                                @csrf
-
-                                <div class="row mb-3">
-                                    <div class="col">
-                                        <input id="name" type="text"
-                                            class="form-control @error('name') is-invalid @enderror" name="name"
-                                            value="{{ old('name') }}" required autocomplete="name" autofocus
-                                            placeholder="Nama" style="font-weight: 500">
-
-                                        @error('name')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col">
-                                        <input id="email" type="email"
-                                            class="form-control @error('email') is-invalid @enderror" name="email"
-                                            value="{{ old('email') }}" required autocomplete="email"
-                                            placeholder="Email" style="font-weight: 500">
-
-                                        @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col">
-                                        <input id="password" type="password"
-                                            class="form-control @error('password') is-invalid @enderror"
-                                            name="password" required autocomplete="new-password"
-                                            placeholder="Kata sandi" style="font-weight: 500">
-
-                                        @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-
-                                <div class="row mb-5">
-                                    <div class="col">
-                                        <input id="password-confirm" type="password" class="form-control"
-                                            name="password_confirmation" required autocomplete="new-password"
-                                            placeholder="Konfirmasi kata sandi" style="font-weight: 500">
-                                    </div>
-                                </div>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-primary"
-                                        style="background: rgba(36, 77, 100, 1); border-radius: 12px;">
-                                        {{ __('Register') }}
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </main>
     </div>
     @yield('lower_body')

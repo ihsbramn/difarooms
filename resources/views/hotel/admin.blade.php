@@ -24,16 +24,6 @@
                 <h1 style="font-weight: 800; font-size: 40px;">Kelola Hotel</h1>
             </div>
             <div class="col-6 text-end">
-                {{-- <form action="{{ route('hotel/destroy', $data->id) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger"><span class="bi bi-trash-fill"></span>
-                        Hapus
-                    </button>
-                </form> --}}
-                <a type="button" class="btn btn-primary btn-lg me-2" href=""
-                    style="background: rgba(237, 193, 193, 1); border-color: rgba(237, 193, 193, 1); border-radius: 12px;"><span
-                        class="bi bi-trash-fill" style="color: rgba(205, 2, 2, 1);">Hapus</a>
                 <a type="button" class="btn btn-primary btn-lg" href="{{ '/hotel/create' }}"
                     style="background: rgba(58, 222, 0, 0.4); border-color: rgba(58, 222, 0, 0.4);border-radius: 12px;"><span
                         class="bi bi-plus" style="color: rgba(3, 77, 19, 1)">Tambah hotel</a>
@@ -45,11 +35,6 @@
                 <table class="table table-hover table-borderless align-middle">
                     <thead>
                         <tr>
-                            <th scope="col">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                </div>
-                            </th>
                             <th scope="col">id</th>
                             <th scope="col">Nama Hotel</th>
                             <th scope="col">Address</th>
@@ -59,12 +44,6 @@
                     <tbody>
                         @foreach ($hotel as $data)
                             <tr>
-                                <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckDefault">
-                                    </div>
-                                </td>
                                 <td>{{ $data->id }}</td>
                                 <td>{{ $data->ht_name }}</td>
                                 <td>{{ $data->ht_address }}</td>

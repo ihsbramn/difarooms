@@ -54,31 +54,31 @@
         </div>
         {{-- photos --}}
         <div id='scrolly'>
-            <a href="{{ URL::asset('/img/asaf-1.png') }}" data-lightbox="imghotel">
+            <a href="{{ URL::asset('/img/asaf-1.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
                 <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}'>
             </a>
-            <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="imghotel">
+            <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
                 <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
             </a>
-            <a href="{{ URL::asset('/img/asaf-3.png') }}" data-lightbox="imghotel">
+            <a href="{{ URL::asset('/img/asaf-3.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
                 <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}'>
             </a>
-            <a href="{{ URL::asset('/img/asaf-4.png') }}" data-lightbox="imghotel">
+            <a href="{{ URL::asset('/img/asaf-4.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
                 <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}'>
             </a>
-            <a href="{{ URL::asset('/img/asaf-1.png') }}" data-lightbox="imghotel">
+            <a href="{{ URL::asset('/img/asaf-1.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
                 <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}'>
             </a>
-            <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="imghotel">
+            <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
                 <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
             </a>
-            <a href="{{ URL::asset('/img/asaf-3.png') }}" data-lightbox="imghotel">
+            <a href="{{ URL::asset('/img/asaf-3.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
                 <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}'>
             </a>
-            <a href="{{ URL::asset('/img/asaf-4.png') }}" data-lightbox="imghotel">
+            <a href="{{ URL::asset('/img/asaf-4.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
                 <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}'>
             </a>
-            <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="imghotel">
+            <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
                 <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
             </a>
         </div>
@@ -113,12 +113,28 @@
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7360592245573!2d107.61272571535724!3d-6.922122969677291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e62592fbeb5b%3A0x3f35bcf7f235386b!2sJl.%20Asia%20Afrika%2C%20Kb.%20Pisang%2C%20Kec.%20Sumur%20Bandung%2C%20Kota%20Bandung%2C%20Jawa%20Barat!5e0!3m2!1sen!2sid!4v1658404980534!5m2!1sen!2sid"
                     width="570" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
-                    class="shadow position-absolute top-50 end-0 translate-middle-y" style="border-radius: 12px;" title="map asia afrika"></iframe>
+                    class="shadow position-absolute top-50 end-0 translate-middle-y" style="border-radius: 12px;"
+                    title="map asia afrika"></iframe>
                 <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&callback=initMap">
                 </script>
                 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
                 </script>
                 {{-- map --}}
+            </div>
+        </div>
+
+        <div class="row">
+            <h2 style="font-weight: 700; font-size: 16px; color: black">Aksesibilitas</h2>
+            <div class="col-4">
+                <a href="{{ URL::asset('/img/asaf-aksel.png') }}" data-lightbox="img-asaf" style="margin-right: 30px; width: 100%">
+                    <img id='img-scroll' src='{{ URL::asset('/img/asaf-aksel.png') }}' style="width: 100%">
+                </a>
+            </div>
+            <div class="col-8">
+                <p style="text-align: justify; font-weight: 400; font-size: 16px;">Kawasan Jalan Asia Afrika sudah memiliki beberapa fasilitas yang aksesibel bagi penyandang disabilitas.
+                    Terdapat jalan pemandu di trotoar bagi penyandang tunanetra dan juga jalur landai bagi pengguna kursi
+                    roda untuk naik ke atas trotoar. Meskipun masih ada beberapa titik di Asia Afrika yang masih belum
+                    menyediakan fasilitas aksesibel seperti Masjid Alun-alun yang sepenuhnya menggunakan tangga.</p>
             </div>
         </div>
 
@@ -212,17 +228,19 @@
                     menginap?</h2>
             </div>
             <div class="col-6 text-end mt-3">
-                <button id="slideLeft" type="button" class="btn btn-lg rounded-circle shadow-sm" aria-label="button-left"
-                    style="border-color: rgba(71, 162, 214, 1); color: rgba(71, 162, 214, 1);"><i
+                <button id="slideLeft" type="button" class="btn btn-lg rounded-circle shadow-sm"
+                    aria-label="button-left" style="border-color: rgba(71, 162, 214, 1); color: rgba(71, 162, 214, 1);"><i
                         class="bi bi-chevron-left"></i></button>
-                <button id="slideRight" type="button" class="btn btn-lg rounded-circle shadow-sm" aria-label="button-right"
+                <button id="slideRight" type="button" class="btn btn-lg rounded-circle shadow-sm"
+                    aria-label="button-right"
                     style="background: rgba(71, 162, 214, 1); border-color: rgba(71, 162, 214, 1); color: white;"><i
                         class="bi bi-chevron-right"></i></button>
             </div>
         </div>
         <div class="d-flex overflow-auto mt-3" id="hotelslider">
             @foreach ($hotel as $index => $htl)
-                <div class="card border-0 pb-3 shadow-sm" style="border-radius: 20px; min-width: 370px; margin-right: 35px">
+                <div class="card border-0 pb-3 shadow-sm"
+                    style="border-radius: 20px; min-width: 370px; margin-right: 35px">
                     <img src="/storage/uploads/{{ $htl->ht_thumbnail }}" class="card-img-top p-3"
                         alt="foto thumbnail hotel" style="height: 300px; overflow:hidden;border-radius: 20px;">
                     <div class="card-body pt-0">
@@ -311,14 +329,15 @@
     </div>
     {{-- Butuh Tempat Menginap --}}
 
-    {{-- img footer --}}
+    {{-- banner --}}
     <div class="comtainer-fluid">
         <div class="card bg-dark text-white border-0 rounded-0" style="max-height: 379px; overflow: hidden;">
             <img src="{{ URL::asset('/img/foot-dest.png') }}" class="card-img" alt="footer image">
-            <div class="card-img-overlay">
+            <div class="card-img-overlay" style="padding-inline: 7rem">
                 <h5 class="card-title position-absolute top-50 start-20 translate-middle-y"
-                    style="font-weight: 700;font-size: 36px;">Temukan pilihan <br>destinasi wisata lainnya</h5>
+                    style="font-weight: 700;font-size: 36px;">Rasakan wisata inklusif <br>tanpa diskriminasi</h5>
             </div>
         </div>
     </div>
+    {{-- banner --}}
 @endsection

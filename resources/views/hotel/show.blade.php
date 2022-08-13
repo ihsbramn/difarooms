@@ -4,8 +4,8 @@
 @section('content')
     {{-- header --}}
     <div class="container-fluid px-0">
-        <div class="card bg-dark text-white rounded-0 border-0">
-            <img src="{{ URL::asset('/img/bg-hotel.png') }}" class="card-img" alt="background" height="396px">
+        <div class="card bg-dark text-white rounded-0 border-0" style="max-height: 467px; overflow: hidden;">
+            <img src="{{ URL::asset('/img/bg-hotel.png') }}" class="card-img" alt="background">
             <div class="card-img-overlay d-flex">
                 <div class="container-fluid my-auto" style="padding-inline: 7rem;">
                     <h1 style="font-weight: 700; font-size: 64px">{{ $hotel->ht_name }}</h1>
@@ -65,7 +65,8 @@
                     <div id='scrolly'>
                         @foreach ($hotel_img as $hi)
                             <a href="/storage/uploads/{{ $hi->name }}" data-lightbox="imghotel">
-                                <img src="/storage/uploads/{{ $hi->name }}" alt="Foto detail hotel" id='img-scroll' style="max-height: 300px; overflow: hidden;">
+                                <img src="/storage/uploads/{{ $hi->name }}" alt="Foto detail hotel" id='img-scroll'
+                                    style="max-height: 300px; overflow: hidden;">
                             </a>
                         @endforeach
                     </div>
@@ -108,15 +109,15 @@
                 {{-- youtube vid --}}
                 <div class="row">
                     <div class="card px-0 border-0 shadow mb-3" style="border-radius: 12px">
-                        <iframe src="{{ $hotel->ht_urlvideo }}" id='img-scroll' frameborder="0" style="border-radius: 12px;height: 300px"></iframe>
+                        <iframe src="{{ $hotel->ht_urlvideo }}" id='img-scroll' frameborder="0"
+                            style="border-radius: 12px;height: 300px"></iframe>
                     </div>
                 </div>
                 {{-- maps --}}
                 <div class="row mb-3">
                     <div class="card px-0 border-0 shadow" style="border-radius:12px">
-                        <iframe src="{{ $hotel->ht_embedmaps }}" id="embed_maps" class="embed_maps"
-                            style="height: 292px;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="{{ $hotel->ht_embedmaps }}" id="embed_maps" class="embed_maps" style="height: 292px;"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
                 <div class="row">
@@ -124,145 +125,218 @@
                         {{-- aksesibilitas --}}
                         <h2 style="font-weight: 500; font-size: 22px; color:black;">Aksesibilitas</h2>
                         @if ($hotel->ht_accesible == 'Ya')
-                            <div class="row ps-2">
-                                <div class="col-6">
-                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
-                                            data-icon="el:wheelchair"></span>Akses kursi roda</p>
-                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
-                                            data-icon="ph:toilet-fill"></span>Toilet dengan pegangan</p>
-                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
-                                            data-icon="medical-icon:elevators"></span>Lift disabel</p>
-                                </div>
-                                <div class="col-6">
-                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
-                                            data-icon="bxs:car"></span>Antar jemput bandara</p>
-                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
-                                            data-icon="fa:bath"></span>Kamar mandi luas</p>
-                                    <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
-                                            data-icon="fa6-solid:sink"></span>Westafel rendah</p>
-                                </div>
+                            <div class="row row-cols-1 row-cols-md-2 ps-2">
+                                @if ($hotel_fascility != '[]')
+                                    @foreach ($hotel_fascility as $hf)
+                                        @if ($hf->akses_kursiroda == '1')
+                                            <div class="col">
+                                                <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                        data-icon="el:wheelchair"></span>Akses kursi roda</p>
+                                            </div>
+                                        @endif
+
+                                        @if ($hf->toilet_pegangan == '1')
+                                            <div class="col">
+                                                <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                        data-icon="ph:toilet-fill"></span>Toilet dengan pegangan</p>
+                                            </div>
+                                        @endif
+
+                                        @if ($hf->lift_aksesibel == '1')
+                                            <div class="col">
+                                                <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                        data-icon="medical-icon:elevators"></span>Lift disabel</p>
+                                            </div>
+                                        @endif
+
+                                        @if ($hf->antarjemput == '1')
+                                            <div class="col">
+                                                <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                        data-icon="bxs:car"></span>Antar jemput bandara</p>
+                                            </div>
+                                        @endif
+
+                                        @if ($hf->kamarmandi_luas == '1')
+                                            <div class="col">
+                                                <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                        data-icon="fa:bath"></span>Kamar mandi luas</p>
+                                            </div>
+                                        @endif
+
+                                        @if ($hf->wastafel_rendah == '1')
+                                            <div class="col">
+                                                <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
+                                                        data-icon="fa6-solid:sink"></span>Wastafel rendah</p>
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                @endif
                             </div>
                         @else
-                            <p>suram</p>
+                            <p>maaf, hotel ini belum aksesibel</p>
                         @endif
                         <hr>
                         <h2 style="font-weight: 500; font-size: 22px; color:black;">Fasilitas Hotel</h2>
                         {{-- fasilitas full --}}
-                        <div class="row ps-2">
+                        <div class="row row-cols-1 row-cols-md-2 ps-2">
                             @if ($hotel_fascility != '[]')
                                 @foreach ($hotel_fascility as $hf)
-                                    <div class="col-6">
-                                        @if ($hf->ramp == '1')
+                                    @if ($hf->ramp == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><img
                                                     src="{{ URL::asset('/img/ramp.png') }}" class="me-2"
                                                     alt="ramp"></span>Ramp</p>
-                                        @endif
-                                        @if ($hf->antarjemput == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->antarjemput == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="bxs:taxi"></span>Antar jemput</p>
-                                        @endif
-                                        @if ($hf->akses_kursiroda == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->akses_kursiroda == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="el:wheelchair"></span>Akses kursi roda</p>
-                                        @endif
-                                        @if ($hf->toilet_pegangan == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->toilet_pegangan == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="ph:toilet-fill"></span>Pegangan toilet</p>
-                                        @endif
-                                        @if ($hf->parkir_difabel == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->parkir_difabel == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="fa6-solid:square-parking"></span>Parkir
                                                 difabel</p>
-                                        @endif
-                                        @if ($hf->bantuan_staff == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->bantuan_staff == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="bi:people-fill"></span>Bantuan staff</p>
-                                        @endif
-                                        @if ($hf->pusat_kesehatan == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->pusat_kesehatan == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="fa-solid:clinic-medical"></span>Pusat
                                                 kesehatan</p>
-                                        @endif
-                                        @if ($hf->wifi == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->wifi == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="fa6-solid:wifi"></span>Wifi</p>
-                                        @endif
-                                        @if ($hf->kamarmandi_luas == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->kamarmandi_luas == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="cil:bathroom"></span>Kamar mandi luas</p>
-                                        @endif
-                                        @if ($hf->jalan_pemandu == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->jalan_pemandu == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="akar-icons:dot-grid-fill"></span>Jalan
                                                 pemandu</p>
-                                        @endif
-                                        @if ($hf->lift_aksesibel == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->lift_aksesibel == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="fa6-solid:elevator"></span>Lift aksesibel
                                             </p>
-                                        @endif
-                                        @if ($hf->ac == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->ac == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="iconoir:air-conditioner"></span>AC</p>
-                                        @endif
-                                    </div>
-                                    <div class="col-6">
-                                        @if ($hf->restoran == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->restoran == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="dashicons:food"></span>Restoran</p>
-                                        @endif
-                                        @if ($hf->laundry == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->laundry == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="material-symbols:laundry"></span>Laundry</p>
-                                        @endif
-                                        @if ($hf->ruang_tunggu_tamu == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->ruang_tunggu_tamu == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="medical-icon:waiting-area"></span>Ruang
                                                 tunggu
                                                 tamu</p>
-                                        @endif
-                                        @if ($hf->cctv == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->cctv == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="bxs:cctv"></span>CCTV</p>
-                                        @endif
-                                        @if ($hf->resepsionis_24jam == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->resepsionis_24jam == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="fluent:access-time-24-filled"></span>Resepsionis
                                                 24 Jam</p>
-                                        @endif
-                                        @if ($hf->kolam_renang == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->kolam_renang == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="ic:round-pool"></span>Kolam renang</p>
-                                        @endif
-                                        @if ($hf->pemadam_api == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->pemadam_api == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="fa-solid:fire-extinguisher"></span>Pemadam
                                                 api
                                             </p>
-                                        @endif
-                                        @if ($hf->pusat_kebugaran == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->pusat_kebugaran == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="maki:fitness-centre"></span>Pusat
                                                 kebugaran
                                             </p>
-                                        @endif
-                                        @if ($hf->mini_bar == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->mini_bar == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="carbon:bar"></span>Mini bar</p>
-                                        @endif
-                                        @if ($hf->masjid == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->masjid == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="fa-solid:mosque"></span>Masjid</p>
-                                        @endif
-                                        @if ($hf->westafel_rendah == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->westafel_rendah == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="fa6-solid:sink"></span>Westafel rendah</p>
-                                        @endif
-                                        @if ($hf->kloset_rendah == '1')
+                                        </div>
+                                    @endif
+                                    @if ($hf->kloset_rendah == '1')
+                                        <div class="col">
                                             <p style="font-weight: 400; font-size: 16px;"><span class="iconify me-2"
                                                     data-icon="ph:toilet-fill"></span>Kloset rendah</p>
-                                        @endif
-                                    </div>
+                                        </div>
+                                    @endif
                                 @endforeach
                             @else
                                 <p>Maaf, data belum tersedia</p>
@@ -274,8 +348,8 @@
                         <h2 style="font-weight: 500; font-size: 20px; color:black;">Harga</h2>
                         @if ($rates != null)
                             @foreach ($rates as $rt)
-                                <div class="card shadow-sm mt-2" style="border-radius: 12px">
-                                    <div class="card-body">
+                                <div class="card mt-2 border-0 p-0" style="border-radius: 12px">
+                                    <div class="card-body p-0">
                                         <div class="row">
                                             <div class="col text-start">
                                                 <p class="mb-0"
@@ -284,26 +358,34 @@
                                             </div>
 
                                             <div class="col text-end">
-                                                @if ($rt['name']=="Booking.com")
-                                                    <img src="{{ URL::asset('/img/bookingcom-logo.png') }}" alt="logo booking.com">
-                                                @elseif ($rt['name']=="Agoda.com")
-                                                <img src="{{ URL::asset('/img/agoda-logo.png') }}" alt="logo agoda.com" style="max-height: 22px; overflow:hidden">
-                                                @elseif ($rt['name']=="FindHotel")
-                                                <img src="{{ URL::asset('/img/findhotel-logo.svg') }}" alt="logo findhtotel.com" style="max-height: 22px; overflow:hidden">
-                                                @elseif ($rt['name']=="Expedia")
-                                                <img src="{{ URL::asset('/img/expedia-logo.png') }}" alt="logo expedia.com" style="max-height: 22px; overflow:hidden">
-                                                @elseif ($rt['name']=="Hotels.com")
-                                                <img src="{{ URL::asset('/img/hotelcom-logo.png') }}" alt="logo hotel.com" style="max-height: 22px; overflow:hidden">
-                                                @elseif ($rt['name']=="Trip.com")
-                                                <img src="{{ URL::asset('/img/tripcom-logo.png') }}" alt="logo trip.com" style="max-height: 22px; overflow:hidden">
+                                                @if ($rt['name'] == 'Booking.com')
+                                                    <img src="{{ URL::asset('/img/bookingcom-logo.png') }}"
+                                                        alt="logo booking.com">
+                                                @elseif ($rt['name'] == 'Agoda.com')
+                                                    <img src="{{ URL::asset('/img/agoda-logo.png') }}"
+                                                        alt="logo agoda.com" style="max-height: 22px; overflow:hidden">
+                                                @elseif ($rt['name'] == 'FindHotel')
+                                                    <img src="{{ URL::asset('/img/findhotel-logo.svg') }}"
+                                                        alt="logo findhtotel.com"
+                                                        style="max-height: 22px; overflow:hidden">
+                                                @elseif ($rt['name'] == 'Expedia')
+                                                    <img src="{{ URL::asset('/img/expedia-logo.png') }}"
+                                                        alt="logo expedia.com" style="max-height: 22px; overflow:hidden">
+                                                @elseif ($rt['name'] == 'Hotels.com')
+                                                    <img src="{{ URL::asset('/img/hotelcom-logo.png') }}"
+                                                        alt="logo hotel.com" style="max-height: 22px; overflow:hidden">
+                                                @elseif ($rt['name'] == 'Trip.com')
+                                                    <img src="{{ URL::asset('/img/tripcom-logo.png') }}"
+                                                        alt="logo trip.com" style="max-height: 22px; overflow:hidden">
                                                 @else
-                                                <p class="mb-0" style="font-weight: 500; font-size: 14px;">
-                                                    {{ $rt['name'] }}</p>
+                                                    <p class="mb-0" style="font-weight: 500; font-size: 14px;">
+                                                        {{ $rt['name'] }}</p>
                                                 @endif
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <hr>
                             @endforeach
                         @else
                             <p>Maaf, harga belum tersedia untuk saat ini</p>
@@ -313,8 +395,9 @@
                             <div class="row mx-auto">
                                 <div class="col my-auto">
                                     <a class="mb-0" href="{{ $url_tripadvisor }}" target="_blank"
-                                        style="font-weight: 500; text-decoration: none; color: black"><img src="{{ URL::asset('/img/tripadvlogo.jpg') }}"
-                                            alt="tripadvisor logo" style="max-height: 30px;" class="me-2"> Lihat
+                                        style="font-weight: 500; text-decoration: none; color: black"><img
+                                            src="{{ URL::asset('/img/tripadvlogo.jpg') }}" alt="tripadvisor logo"
+                                            style="max-height: 30px;" class="me-2"> Lihat
                                         hotel ini di tripadvisor</a>
                                 </div>
                             </div>
@@ -333,5 +416,4 @@
             </div>
         </div>
     </div>
-
 @endsection

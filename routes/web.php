@@ -70,6 +70,16 @@ Route::get('/destinasi/bandung/tangkubanprahu',[destinasicontroller::class, 'tan
 Route::get('/destinasi/bandung/cartil',[destinasicontroller::class, 'cartil'])->name('/destinasi/bandung/cartil');
 Route::get('/destinasi/bandung/braga',[destinasicontroller::class, 'braga'])->name('/destinasi/bandung/braga');
 Route::get('/destinasi/borobudur',[destinasicontroller::class, 'borobudur'])->name('/destinasi/borobudur');
+Route::get('/destinasi/pulaukomodo',[destinasicontroller::class, 'pulaukomodo'])->name('/destinasi/pulaukomodo');
+Route::get('/destinasi/bunaken',[destinasicontroller::class, 'bunaken'])->name('/destinasi/bunaken');
+Route::get('/destinasi/gilitrawangan',[destinasicontroller::class, 'gilitrawangan'])->name('/destinasi/gilitrawangan');
+Route::get('/destinasi/bandung/kiara-arta-park',[destinasicontroller::class, 'kap'])->name('/destinasi/bandung/kiara-arta-park');
+Route::get('/destinasi/bandung/bandung-zoo',[destinasicontroller::class, 'zoo'])->name('/destinasi/bandung/bandung-zoo');
+Route::get('/destinasi/bandung/museum-geologi',[destinasicontroller::class, 'museumgeo'])->name('/destinasi/bandung/museum-geologi');
+Route::get('/destinasi/bandung/taman-lalu-lintas',[destinasicontroller::class, 'tamanlalin'])->name('/destinasi/bandung/taman-lalu-lintas');
+Route::get('/destinasi/bandung/trans-studio-mall',[destinasicontroller::class, 'tsm'])->name('/destinasi/bandung/trans-studio-mall');
+Route::get('/destinasi/bandung/museum-sri-baduga',[destinasicontroller::class, 'msb'])->name('/destinasi/bandung/museum-sri-baduga');
+Route::get('/destinasi/bandung/braga-city-walk',[destinasicontroller::class, 'bcw'])->name('/destinasi/bandung/braga-city-walk');
 //destinasi
 
 //forum
@@ -99,9 +109,12 @@ Route::post('/favourites/store',[FavouritesController::class,'store'])->name('/f
 Route::delete('/favourites/destroy/{id}',[FavouritesController::class,'destroy'])->name('/favourites/destroy');
 // Favourites
 
-// About US
+// main control
 Route::get('/aboutus',[UserController::class,'aboutus'])->name('/aboutus');
-// About US
+Route::get('/bantuan',[UserController::class,'bantuan'])->name('/bantuan');
+Route::get('/tujuan',[UserController::class,'tujuan'])->name('/tujuan');
+Route::get('/kontak',[UserController::class,'kontak'])->name('/kontak');
+// main control
 
 // ADMIN ----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -132,5 +145,6 @@ Route::delete('hotel_roomtype/destroy/{id}',[HotelRoomtypeController::class, 'de
 
 //forum
 Route::get('/forum/admin',[ForumController::class, 'admin'])->name('forum/admin')->middleware('is_admin');
+Route::get('/forum/admin/show/{id}',[ForumController::class, 'adminshow'])->name('forum/admin/show')->middleware('is_admin');
 Route::delete('/forum/destroy/{id}',[ForumController::class, 'destroy_admin'])->name('forum/destroy');
 
