@@ -16,7 +16,7 @@ class CreateForumsTable extends Migration
         Schema::create('forums', function (Blueprint $table) {
             $table->id();
             $table->foreignId('fr_user_id')->unsigned();
-            $table->foreign('fr_user_id')->references('id')->on('users');
+            $table->foreign('fr_user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('fr_author')->nullable();
             $table->string('fr_title')->nullable();
             // $table->string('fr_filename')->nullable();

@@ -16,7 +16,7 @@ class CreateHotelImgsTable extends Migration
         Schema::create('hotel__imgs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('ht_id')->unsigned();
-            $table->foreign('ht_id')->references('id')->on('hotels');
+            $table->foreign('ht_id')->references('id')->on('hotels')->onDelete('cascade');
             $table->string('name')->nullable();
             $table->string('path')->nullable();
             $table->timestamps();

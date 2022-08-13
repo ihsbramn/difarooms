@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,5 +30,6 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('money', function ($amount) { 
             return "<?php echo 'Rp.' . number_format($amount,0,'.','.'); ?>";
         });
+        Schema::defaultStringLength(191);
     }
 }

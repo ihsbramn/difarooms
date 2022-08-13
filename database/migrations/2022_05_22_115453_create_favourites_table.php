@@ -16,9 +16,9 @@ class CreateFavouritesTable extends Migration
         Schema::create('favourites', function (Blueprint $table) {
             $table->id();
             $table->foreignId('fv_user_id')->unsigned();
-            $table->foreign('fv_user_id')->references('id')->on('users');
+            $table->foreign('fv_user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreignId('fv_hotel_id')->unsigned();
-            $table->foreign('fv_hotel_id')->references('id')->on('hotels');
+            $table->foreign('fv_hotel_id')->references('id')->on('hotels')->onDelete('cascade');
             $table->string('fv_hotel_name')->nullable();
             $table->string('fv_count')->nullable();
             $table->timestamps();
