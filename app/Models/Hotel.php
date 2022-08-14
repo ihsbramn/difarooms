@@ -18,6 +18,8 @@ class Hotel extends Model
         'ht_description',
         'ht_thumbnail',
         'ht_urlvideo',
+        'ht_path',
+        'ht_urlvideo',
         // 'ht_fascility',
         'ht_accesible',
         // 'ht_accesible_detail',
