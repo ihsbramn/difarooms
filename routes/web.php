@@ -148,3 +148,25 @@ Route::get('/forum/admin',[ForumController::class, 'admin'])->name('forum/admin'
 Route::get('/forum/admin/show/{id}',[ForumController::class, 'adminshow'])->name('forum/admin/show')->middleware('is_admin');
 Route::delete('/forum/destroy/{id}',[ForumController::class, 'destroy_admin'])->name('forum/destroy');
 
+Route::get('storage/{filename}.{ext}', function ($filename, $ext) {
+    $folders = glob(storage_path('app/public/storage/uploads'), GLOB_ONLYDIR);
+    $path = '';
+    foreach ($folders as $folder) {
+       $path = $folder . '/' . $filename . '.' . $ext;
+       if (File::exists($path)) {
+          break;
+       }
+    }
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header('Content-Type', $type);
+
+    return $response;
+});
