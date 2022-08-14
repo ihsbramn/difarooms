@@ -19,7 +19,6 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 
-    RewriteEngine On
     RewriteCond %{HTTP_HOST} !^www\. [NC]
     RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
     
