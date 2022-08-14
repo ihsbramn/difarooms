@@ -26,8 +26,8 @@
                 {{-- img section --}}
                 <div id='scrolly' style="margin-top: 10px">
                     @foreach ($forum_img as $img)
-                        <a href="/storage/uploads/{{ $img->name }}" data-lightbox="imgforum">
-                            <img src="/storage/uploads/{{ $img->name }}" alt="gambar" id='img-scroll'
+                        <a href="{{ asset('/storage/uploads/'.$img->name) }}" data-lightbox="imgforum">
+                            <img src="{{ asset('/storage/uploads/'.$img->name) }}" alt="gambar" id='img-scroll'
                                 style="max-height: 300px; overflow: hidden;">
                         </a>
                     @endforeach

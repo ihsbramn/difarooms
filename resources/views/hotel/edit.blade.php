@@ -130,7 +130,7 @@
                             <p class="text-center">Data Photo</p>
                             @foreach ($hotel_img as $img)
                                 <br>
-                                <img src="/storage/uploads/{{ $img->name }}" alt="gambar" height="200px">
+                                <img src="{{ asset('/storage/uploads/'.$img->name) }}" alt="gambar" height="200px">
                                 <form action="{{ route('hotel_img/destroy', $img->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')

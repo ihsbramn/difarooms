@@ -37,7 +37,7 @@
                     <p class="text-center" style="font-weight: 400">Delete Photo</p>
                     @foreach ($forum_img as $img )
                     <br>
-                        <img src="/storage/uploads/{{ $img->name }}" alt="gambar" height="200px" >
+                        <img src="{{ asset('/storage/uploads/'.$img->name) }}" alt="gambar" height="200px" >
                         <form action="{{ route('forum_img/destroy',$img->id) }}" method="POST">
                             @csrf
                             @method('DELETE')

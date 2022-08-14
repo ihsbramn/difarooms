@@ -87,7 +87,7 @@
                             <div class="col">
                                 <div class="card border-0"
                                     style="max-height: 30rem; overflow: hidden; border-radius: 12px 12px 0px 0px">
-                                    <img src="/storage/uploads/{{ $htl_rt->name }}" class="card-img-top"
+                                    <img src="{{ asset('/storage/uploads/'.$htl_rt->name) }}" class="card-img-top"
                                         alt="foto type kamar"
                                         style="min-height: 10rem; overflow: auto; border-radius: 12px;">
                                     <div class="card-body p-0 mt-2">
