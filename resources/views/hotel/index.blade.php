@@ -207,6 +207,7 @@
                         {{-- Lokasi --}}
                         <hr>
                         {{-- fasilitas --}}
+<<<<<<< HEAD
                         <fieldset>
                         <legend class="card-subtittle" style="font-weight: 600; font-size: 16px">Fasilitas</legend>
                             <div class="form-check">
@@ -246,6 +247,69 @@
                             </div>
                             {{-- button resset & terapkan --}}
                         </fieldset>
+=======
+                        <h3 class="card-subtittle" style="font-weight: 600; font-size: 16px">Fasilitas</h3>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="antar jemput" id="aksesibilitas"
+                                name="aksesibilitas" onclick="filter_aksesibilitas()">
+                            <label class="form-check-label" for="akses-kursi-roda">
+                                Antar jemput bandara
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="toilet dengan" id="aksesibilitas"
+                                name="aksesibilitas" onclick="filter_aksesibilitas()">
+                            <label class="form-check-label" for="toilet-tinggi">
+                                Toilet dengan pegangan
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="akses kursi" id="aksesibilitas"
+                                name="aksesibilitas" onclick="filter_aksesibilitas()">
+                            <label class="form-check-label" for="lift">
+                                Akses kursi roda
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="kamar mandi" id="aksesiibilitas"
+                                name="aksesibilitas" onclick="filter_aksesibilitas()">
+                            <label class="form-check-label" for="westafel-rendah">
+                                Kamar mandi luas
+                            </label>
+                        </div>
+                        {{-- fasilitas --}}
+
+                        {{-- button resset & terapkan --}}
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+                            <button class="btn btn-outline-secondary me-md-2" type="button" value=""
+                                id="aksesiibilitas" onclick="reset()">Reset</button>
+
+                            {{-- <button class="btn btn-primary border-0" type="button"
+                                style="border-radius: 12px; background-color:#244D64"
+                                onclick="filter_harga()">Terapkan</button>
+                            <script>
+                                function filter_harga() {
+                                    var formatter = new Intl.NumberFormat('id-ID', {
+                                        style: 'currency',
+                                        currency: 'IDR',
+                                    });
+                                    let input = document.getElementById('pricemin').value;
+                                    input = formater.format(input);
+                                    let input2 = document.getElementById('pricemax').value;
+                                    input2 = formater.format(input2);
+                                    let x = document.getElementsByClassName('hotels');
+                                    for (i = 0; i < x.length; i++) {
+                                        if (x[i].innerHTML >= input && x[i].innerHTML <= input2) {
+                                            x[i].style.display = "none";
+                                        } else {
+                                            x[i].style.display = "initial";
+                                        }
+                                    }
+                                }
+                            </script> --}}
+                        </div>
+                        {{-- button resset & terapkan --}}
+>>>>>>> 945a4df1409b63354e3dd5f9df68095b5b327f03
                     </div>
                 </div>
             </div>
