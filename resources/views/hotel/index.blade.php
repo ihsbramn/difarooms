@@ -319,7 +319,7 @@
                         <div class="card mb-3 border-0 shadow-lg" style="border-radius: 12px; height: 290px;">
                             <div class="row g-0">
                                 <div class="col-md-4" style="max-height: 290px; overflow: hidden; border-radius: 12px;">
-                                    <img src="{{ asset('/storage/uploads/'.$htl->ht_thumbnail) }}" class="img-fluid p-2"
+                                    <img src="{{ URL::asset('/storage/uploads/'.$htl->ht_thumbnail) }}" class="img-fluid p-2"
                                         alt="thumbnail hotel"
                                         style="height: 290px; width: 100%; overflow:hidden; border-radius: 20px;">
                                     <div class="card-img-overlay">
