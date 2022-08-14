@@ -31,7 +31,7 @@
                         <h2 class="mb-4" style="color: rgba(70, 70, 70, 1);">Kebutuhanmu,<br>Kebutuhan Semua</h2>
 
                         <div class="card shadow rounded-5 border-0" style="border-radius: 12px; min-width: 500px;">
-                            <p class="m-5" style="font-weight: 600; font-size: 24px;">{{ __('Login') }}</p>
+                            <h1 class="m-5" style="font-weight: 600; font-size: 24px;">{{ __('Login') }}</h2>
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
 
@@ -39,7 +39,7 @@
                                     <input id="email" type="email"
                                         class="form-control form-control-lg @error('email') is-invalid @enderror"
                                         name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
-                                        placeholder="email anda" style="border-radius: 12px;">
+                                        placeholder="email anda" style="border-radius: 12px;" aria-label="email">
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -52,10 +52,10 @@
                                     <input id="password" type="password"
                                         class="form-control form-control-lg @error('password') is-invalid @enderror"
                                         name="password" required autocomplete="current-password" placeholder="password"
-                                        aria-describedby="button-addon2" style="border-radius: 12px 0px 0px 12px;">
+                                        style="border-radius: 12px 0px 0px 12px;" aria-label="password">
                                     <button class="btn btn-outline-secondary" type="button" id="eye"
-                                        onclick="showpass()" style="font-size: 20px; border-radius: 0px 12px 12px 0px;"><i
-                                            onclick="show(this)" class="bi bi-eye-fill"></i>
+                                        onclick="showpass()" onkeypress="showpass()" style="font-size: 20px; border-radius: 0px 12px 12px 0px;"
+                                        title="show pass button"><i class="bi bi-eye-fill"></i>
                                     </button>
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -112,13 +112,14 @@
                     <div class="col-sm-6 my-auto">
                         <div class="hstack gap-3 d-flex">
                             <div class="mx-auto my-auto"><a href="{{ '/tujuan' }}"
-                                style="font-weight: 400; font-size: 18px; text-decoration: none; color: #47A2D6;">Tujuan</a>
+                                    style="font-weight: 400; font-size: 18px; text-decoration: none; color: #47A2D6;">Tujuan</a>
                             </div>
                             <div class="mx-auto my-auto"><a href="{{ '/bantuan' }}"
-                                style="font-weight: 400; font-size: 18px; text-decoration: none; color: #47A2D6;">Pusat Bantuan</a>
+                                    style="font-weight: 400; font-size: 18px; text-decoration: none; color: #47A2D6;">Pusat
+                                    Bantuan</a>
                             </div>
                             <div class="mx-auto my-auto"><a href="{{ '/kontak' }}"
-                                style="font-weight: 400; font-size: 18px; text-decoration: none; color: #47A2D6;">Kontak</a>
+                                    style="font-weight: 400; font-size: 18px; text-decoration: none; color: #47A2D6;">Kontak</a>
                             </div>
                         </div>
                     </div>

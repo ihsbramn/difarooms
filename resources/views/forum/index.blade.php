@@ -20,19 +20,19 @@
 
 @section('content')
 
-{{-- modal pop up disaat belum login --}}
-@guest
-    <script type="text/javascript">
-        window.onload = function() {
-            OpenBootstrapPopup();
-        };
+    {{-- modal pop up disaat belum login --}}
+    @guest
+        <script type="text/javascript">
+            window.onload = function() {
+                OpenBootstrapPopup();
+            };
 
-        function OpenBootstrapPopup() {
-            $("#myModal").modal('show');
-        }
-    </script>
-@endguest
-{{-- modal pop up disaat belum login --}}
+            function OpenBootstrapPopup() {
+                $("#myModal").modal('show');
+            }
+        </script>
+    @endguest
+    {{-- modal pop up disaat belum login --}}
 
 
     <div class="container-fluid mt-5 mb-5" style="padding-inline: 7rem">
@@ -52,6 +52,7 @@
 
             {{-- main section --}}
             <div class="col-9 pe-5">
+                <h1 hidden>Forum</h1>
 
                 {{-- nav section --}}
                 <div class="row">
@@ -78,8 +79,7 @@
                 <div class="row">
                     <div class="tab-content mt-4" id="nav-tabContent">
                         {{-- semua --}}
-                        <div class="tab-pane fade show active" id="nav-semua" role="tabpanel"
-                            aria-labelledby="nav-semua-tab" tabindex="0">
+                        <div class="tab-pane fade show active" id="nav-semua" role="tabpanel" tabindex="0">
                             @foreach ($forum as $index => $fr)
                                 <div class="forum">
                                     <div class="card border-0 shadow mt-3">
@@ -140,8 +140,7 @@
                         </div>
 
                         {{-- terbaru --}}
-                        <div class="tab-pane fade" id="nav-terbaru" role="tabpanel" aria-labelledby="nav-terbaru-tab"
-                            tabindex="0">
+                        <div class="tab-pane fade" id="nav-terbaru" role="tabpanel" tabindex="0">
                             @foreach ($terbaru as $index => $fr)
                                 <div class="forum">
                                     <div class="card border-0 shadow mt-3">
@@ -202,8 +201,7 @@
                         </div>
 
                         {{-- terpopuler --}}
-                        <div class="tab-pane fade" id="nav-terpopuler" role="tabpanel"
-                            aria-labelledby="nav-terpopuler-tab" tabindex="0">
+                        <div class="tab-pane fade" id="nav-terpopuler" role="tabpanel" tabindex="0">
                             @foreach ($forum as $fr)
                                 <a class="card border-0 shadow mt-3 forum" href="{{ route('/forum/show', $fr->id) }}"
                                     style="text-decoration: none; border-radius: 12px; overflow: hidden;">
@@ -246,7 +244,8 @@
                     {{-- buat forum --}}
                     <button class="btn btn-primary py-2" type="button" data-bs-toggle="modal"
                         data-bs-target="#tambahforum"
-                        style="font-weight: 600; font-size: 20px; background: #004973; border-radius: 12px; border-color: #004973;">Ajukan Pertanyaan</button>
+                        style="font-weight: 600; font-size: 20px; background: #004973; border-radius: 12px; border-color: #004973;">Ajukan
+                        Pertanyaan</button>
 
                     {{-- search bar --}}
                     <div class="card border-0 shadow" style="border-radius: 12px">
@@ -254,8 +253,8 @@
                             <form action="{{ '/forum/search' }}" method="get" role="search">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Cari topik"
-                                        onkeyup="search_forum()" aria-label="cariforum" aria-describedby="button-addon2"
-                                        name="searchbar" id="searchforumbar"
+                                        onkeyup="search_forum()" aria-label="cariforum" name="searchbar"
+                                        id="searchforumbar"
                                         style="background: rgba(217, 217, 217, 1);font-weight: 400;font-size: 16px;">
                                 </div>
                             </form>
@@ -273,7 +272,7 @@
             <div class="modal-dialog modal-dialog-centered modal-lg border-0">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Tambahkan Pertanyaan</h5>
+                        <h2 class="modal-title" id="staticBackdropLabel">Tambahkan Pertanyaan</h2>
                     </div>
                     <div class="modal-body">
                         <form action="{{ route('/forum/store') }}" method="post" enctype="multipart/form-data">
@@ -285,10 +284,10 @@
                                     </div>
                                     <div class="col-10">
                                         <input type="text" class="form-control" id="fr_user_id" name="fr_user_id"
-                                            value="{{ Auth::user()->id }}" hidden>
+                                            value="{{ Auth::user()->id }}" aria-label="id user" hidden>
                                         <input type="text" class="form-control" id="fr_author" name="fr_author"
-                                            value="{{ Auth::user()->name }}" hidden>
-                                        <input type="text" class="form-control" id="fr_title" name="fr_title">
+                                            value="{{ Auth::user()->name }}" aria-label="author" hidden>
+                                        <input type="text" class="form-control" id="fr_title" name="fr_title" required>
                                     </div>
                                 </div>
                             </div>
@@ -299,7 +298,7 @@
                                         <label for="fr_body" style="font-weight: 400;font-size: 16px;">Pesan</label>
                                     </div>
                                     <div class="col-10">
-                                        <textarea name="fr_body" id="fr_body" class="form-control" rows="8"></textarea>
+                                        <textarea name="fr_body" id="fr_body" class="form-control" rows="8" required></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -321,15 +320,20 @@
         <div class="modal-dialog modal-dialog-centered modal-lg rounded">
             <div class="modal-content" style="border-radius: 12px">
                 <div class="modal-body text-center border-0">
-                    <p class="mb-0" style="font-size: 54px; color: rgba(228, 0, 0, 1);"><i class="bi bi-exclamation-triangle-fill"></i></p>
-                    <p class="mb-0" style="font-weight: 800; font-size: 32px; color: rgba(227, 0, 0, 1);">Anda belum login</p>
-                    <p class="mb-0 mt-3" style="font-weight: 400; font-size: 20px;">Silahkan login terlebih dahulu untuk dapat mengakses forum</p>
+                    <p class="mb-0" style="font-size: 54px; color: rgba(228, 0, 0, 1);"><i
+                            class="bi bi-exclamation-triangle-fill"></i></p>
+                    <h1 class="mb-0" style="font-weight: 800; font-size: 32px; color: rgba(227, 0, 0, 1);">Anda belum
+                        login</h1>
+                    <p class="mb-0 mt-3" style="font-weight: 400; font-size: 20px;">Silahkan login terlebih dahulu untuk
+                        dapat mengakses forum</p>
                     <div class="row mt-5 mb-4">
                         <div class="col">
-                            <a type="button" href="{{ url('/') }}" class="btn btn-secondary px-5" style="font-weight: 600; font-size: 20px; border-radius: 12px;">Beranda</a>    
+                            <a type="button" href="{{ url('/') }}" class="btn btn-secondary px-5"
+                                style="font-weight: 600; font-size: 20px; border-radius: 12px;">Beranda</a>
                         </div>
                         <div class="col">
-                            <a type="button" href="{{ route('login') }}" class="btn btn-danger px-5" style="font-weight: 600; font-size: 20px; border-radius: 12px;">Login</a>
+                            <a type="button" href="{{ route('login') }}" class="btn btn-danger px-5"
+                                style="font-weight: 600; font-size: 20px; border-radius: 12px;">Login</a>
                         </div>
                     </div>
                 </div>
