@@ -27,23 +27,6 @@
 @section('content')
     <div class="container">
 
-        @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
-
         <div class="row mt-5">
             <div class="col-8 my-auto">
                 <h1 style="font-weight: 800; font-size: 40px;"><i class="bi bi-chat-left-text-fill me-4"></i></i>My Forum</h1>

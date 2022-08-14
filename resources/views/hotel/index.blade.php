@@ -207,7 +207,6 @@
                         {{-- Lokasi --}}
                         <hr>
                         {{-- fasilitas --}}
-<<<<<<< HEAD
                         <fieldset>
                         <legend class="card-subtittle" style="font-weight: 600; font-size: 16px">Fasilitas</legend>
                             <div class="form-check">
@@ -247,7 +246,7 @@
                             </div>
                             {{-- button resset & terapkan --}}
                         </fieldset>
-=======
+
                         <h3 class="card-subtittle" style="font-weight: 600; font-size: 16px">Fasilitas</h3>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="antar jemput" id="aksesibilitas"
