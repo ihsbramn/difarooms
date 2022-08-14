@@ -257,12 +257,7 @@
                                         onkeyup="search_forum()" aria-label="cariforum" aria-describedby="button-addon2"
                                         name="searchbar" id="searchforumbar"
                                         style="background: rgba(217, 217, 217, 1);font-weight: 400;font-size: 16px;">
-                                    {{-- <button class="btn btn-outline-secondary border-0" type="submit" id="button-addon2"
-                                        style="background: rgba(217, 217, 217, 1);font-weight: 400;font-size: 16px;">Cari</button> --}}
                                 </div>
-                                {{-- <div class="d-grid mt-3">
-                                    <a class="btn btn-danger" type="button" href="{{ '/forum' }}">Clear</a>
-                                </div> --}}
                             </form>
                         </div>
                     </div>
