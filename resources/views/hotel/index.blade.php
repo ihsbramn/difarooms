@@ -94,7 +94,7 @@
                     <p style="font-weight: 500; font-size: 20px;">Berbagai pilihan hotel yang tentunya aksesibel bagi Anda</p>
                     <div class="input-group pt-5">
                         <input type="text" class="form-control form-control-lg border-0" placeholder="Cari hotel" aria-label="Cari hotel"
-                            id="searchbar" aria-describedby="search-hotel" style="background-color: #D9D9D9"
+                            id="searchbar" style="background-color: #D9D9D9"
                             onkeyup="search_hotel()" name="searchbar">
                     </div>
                 </div>
@@ -111,18 +111,20 @@
             <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
             </script>
             <div class="row mt-3">
-                <div class="col-2 my-auto">
-                    <p class="mb-0" style="font-weight: 700; font-size: 20px;">Point Of Interest</p>
-                </div>
-                <div class="col-10">
-                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" class="btn-check" name="btn-radio" id="hide-poi" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="hide-poi">Hide</label>
-
-                        <input type="radio" class="btn-check" name="btn-radio" id="show-poi" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="show-poi">Show</label>
+                <fieldset>
+                    <div class="col-2 my-auto">
+                        <legend class="mb-0" style="font-weight: 700; font-size: 20px;">Point Of Interest</legend>
                     </div>
-                </div>
+                    <div class="col-10">
+                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="btn-radio" id="hide-poi" autocomplete="off" checked>
+                            <label class="btn btn-outline-primary" for="hide-poi">Hide</label>
+    
+                            <input type="radio" class="btn-check" name="btn-radio" id="show-poi" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="show-poi">Show</label>
+                        </div>
+                    </div>
+                </fieldset>
             </div>
         </div>
         {{-- map --}}
@@ -133,113 +135,117 @@
                 {{-- filter --}}
                 <div class="card border-0 shadow p-3 mb-5" style="border-radius:12px">
                     <div class="card-body p-2">
-                        <h3 class="card-tittle" style="font-weight: 700; font-size:20px">Filter</h3>
+                        <h2 class="card-tittle" style="font-weight: 700; font-size:20px; color: #000000;">Filter</h2>
                         <hr>
                         {{-- Lokasi --}}
-                        <h3 class="card-subtittle" style="font-weight: 600; font-size: 16px">Lokasi</h3>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" value="" id="semua" name="akses"
-                                onclick="filter_hotel()" checked>
-                            <label class="form-check-label" for="semua">
-                                Semua
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" value="bandung" id="bandung" name="akses"
-                                onclick="filter_hotel()">
-                            <label class="form-check-label" for="bandung">
-                                Bandung
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" value="yogyakarta" id="Yogyakarta" name="akses"
-                                onclick="filter_hotel()">
-                            <label class="form-check-label" for="Yogyakarta">
-                                Yogyakarta
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" value="malang" id="malang" name="akses"
-                                onclick="filter_hotel()">
-                            <label class="form-check-label" for="malang">
-                                Malang
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" value="solo" id="solo" name="akses"
-                                onclick="filter_hotel()">
-                            <label class="form-check-label" for="solo">
-                                Solo
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" value="bali" id="bali" name="akses"
-                                onclick="filter_hotel()">
-                            <label class="form-check-label" for="bali">
-                                Bali
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" value="jakarta" id="jakarta"
-                                name="akses" onclick="filter_hotel()">
-                            <label class="form-check-label" for="jakarta">
-                                Jakarta
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" value="aceh" id="aceh" name="akses"
-                                onclick="filter_hotel()">
-                            <label class="form-check-label" for="aceh">
-                                Aceh
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" value="semarang" id="semarang"
-                                name="akses" onclick="filter_hotel()">
-                            <label class="form-check-label" for="semarang">
-                                Semarang
-                            </label>
-                        </div>
+                        <fieldset>
+                            <legend class="card-subtittle" style="font-weight: 600; font-size: 16px">Lokasi</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="" id="semua" name="akses"
+                                    onclick="filter_hotel()" checked>
+                                <label class="form-check-label" for="semua">
+                                    Semua
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="bandung" id="bandung" name="akses"
+                                    onclick="filter_hotel()">
+                                <label class="form-check-label" for="bandung">
+                                    Bandung
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="yogyakarta" id="Yogyakarta" name="akses"
+                                    onclick="filter_hotel()">
+                                <label class="form-check-label" for="Yogyakarta">
+                                    Yogyakarta
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="malang" id="malang" name="akses"
+                                    onclick="filter_hotel()">
+                                <label class="form-check-label" for="malang">
+                                    Malang
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="solo" id="solo" name="akses"
+                                    onclick="filter_hotel()">
+                                <label class="form-check-label" for="solo">
+                                    Solo
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="bali" id="bali" name="akses"
+                                    onclick="filter_hotel()">
+                                <label class="form-check-label" for="bali">
+                                    Bali
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="jakarta" id="jakarta"
+                                    name="akses" onclick="filter_hotel()">
+                                <label class="form-check-label" for="jakarta">
+                                    Jakarta
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="aceh" id="aceh" name="akses"
+                                    onclick="filter_hotel()">
+                                <label class="form-check-label" for="aceh">
+                                    Aceh
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="semarang" id="semarang"
+                                    name="akses" onclick="filter_hotel()">
+                                <label class="form-check-label" for="semarang">
+                                    Semarang
+                                </label>
+                            </div>
+                        </fieldset>
                         {{-- Lokasi --}}
                         <hr>
                         {{-- fasilitas --}}
-                        <h3 class="card-subtittle" style="font-weight: 600; font-size: 16px">Fasilitas</h3>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="antar jemput" id="aksesibilitas"
-                                name="aksesibilitas" onclick="filter_aksesibilitas()">
-                            <label class="form-check-label" for="akses-kursi-roda">
-                                Antar jemput bandara
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="toilet dengan" id="aksesibilitas"
-                                name="aksesibilitas" onclick="filter_aksesibilitas()">
-                            <label class="form-check-label" for="toilet-tinggi">
-                                Toilet dengan pegangan
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="akses kursi" id="aksesibilitas"
-                                name="aksesibilitas" onclick="filter_aksesibilitas()">
-                            <label class="form-check-label" for="lift">
-                                Akses kursi roda
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="kamar mandi" id="aksesiibilitas"
-                                name="aksesibilitas" onclick="filter_aksesibilitas()">
-                            <label class="form-check-label" for="westafel-rendah">
-                                Kamar mandi luas
-                            </label>
-                        </div>
-                        {{-- fasilitas --}}
-
-                        {{-- button resset & terapkan --}}
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
-                            <button class="btn btn-outline-secondary me-md-2" type="button" value=""
-                                id="aksesiibilitas" onclick="reset()">Reset</button>
-                        </div>
-                        {{-- button resset & terapkan --}}
+                        <fieldset>
+                        <legend class="card-subtittle" style="font-weight: 600; font-size: 16px">Fasilitas</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="antar jemput" id="aksesibilitas"
+                                    name="aksesibilitas" onclick="filter_aksesibilitas()" aria-label="antar jemput">
+                                <label class="form-check-label" for="aksesibilitas">
+                                    Antar jemput bandara
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="toilet dengan" id="aksesibilitas"
+                                    name="aksesibilitas" onclick="filter_aksesibilitas()" aria-label="toilet pegangan">
+                                <label class="form-check-label" for="aksesibilitas">
+                                    Toilet dengan pegangan
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="akses kursi" id="aksesibilitas"
+                                    name="aksesibilitas" onclick="filter_aksesibilitas()" aria-label="akses kursi roda">
+                                <label class="form-check-label" for="aksesibilitas">
+                                    Akses kursi roda
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="kamar mandi" id="aksesiibilitas"
+                                    name="aksesibilitas" onclick="filter_aksesibilitas()" aria-label="kamar mandi luas">
+                                <label class="form-check-label" for="aksesibilitas">
+                                    Kamar mandi luas
+                                </label>
+                            </div>
+                            {{-- fasilitas --}}
+    
+                            {{-- button resset & terapkan --}}
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+                                <button class="btn btn-outline-secondary me-md-2" type="button" value=""
+                                    id="aksesiibilitas" onclick="reset()">Reset</button>
+                            </div>
+                            {{-- button resset & terapkan --}}
+                        </fieldset>
                     </div>
                 </div>
             </div>
@@ -259,18 +265,18 @@
                                                 @csrf
                                                 <div class="form-group">
                                                     <input type="text" class="form-control" id="fv_user_id"
-                                                        name="fv_user_id" value="{{ Auth::user()->id }}" hidden>
+                                                        name="fv_user_id" value="{{ Auth::user()->id }}" aria-label="like form user id" hidden>
                                                     <input type="text" class="form-control" id="fv_hotel_id"
-                                                        name="fv_hotel_id" value="{{ $htl->id }}" hidden>
+                                                        name="fv_hotel_id" value="{{ $htl->id }}" aria-label="like form hotel id" hidden>
                                                     <input type="text" class="form-control" id="fv_hotel_name"
-                                                        name="fv_hotel_name" value="{{ $htl->ht_name }}" hidden>
+                                                        name="fv_hotel_name" value="{{ $htl->ht_name }}" aria-label="like form hotel name" hidden>
                                                     <input type="text" class="form-control" id="fv_count"
-                                                        name="fv_count" value="1" hidden>
+                                                        name="fv_count" value="1" aria-label="like form count" hidden>
                                                 </div>
                                                 <button href="submit" class="btn btn-secondary rounded-circle border-0"
                                                     style="background: rgba(36, 36, 36, 0.54);" data-bs-toggle="tooltip"
                                                     data-bs-placement="top" data-bs-class="tooltip"
-                                                    title="Favoritkan hotel ini">
+                                                    title="Favoritkan hotel ini" aria-label="like button">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                         fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
                                                         <path

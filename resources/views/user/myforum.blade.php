@@ -1,4 +1,29 @@
 @extends('layouts.app')
+@section('head')
+    <script>
+        function search_forum() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("forumsearchbar");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myforum");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+@endsection
 @section('content')
     <div class="container">
 
@@ -26,52 +51,57 @@
             <div class="col-4">
                 <div class="card border-0 shadow" style="border-radius: 12px">
                     <div class="card-body">
-                        <div class="input-group">
-                            <span class="input-group-text border-0" id="basic-addon1"
-                                style="background: rgba(217, 217, 217, 1);"><i class="bi bi-search"></i></span>
-                            <input type="text" class="form-control border-0" placeholder="Cari topik"
-                                aria-label="Username" aria-describedby="basic-addon1"
-                                style="background: rgba(217, 217, 217, 1); font-weight: 400;font-size: 16px;">
-                        </div>
+                        <form action="{{ '/forum/search' }}" method="get" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Cari topik" onkeyup="search_forum()"
+                                    aria-label="cariforum" aria-describedby="button-addon2" name="searchbar"
+                                    id="forumsearchbar"
+                                    style="background: rgba(217, 217, 217, 1);font-weight: 400;font-size: 16px;">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="row mt-5">
-            <table class="table">
-                <thead>
-                    <tr class="text-center">
-                        <th>No</th>
-                        <th>Judul</th>
-                        <th>Author</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
+            <div class="card p-3 border-0 shadow" style="border-radius: 12px;">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="myforum">
+                        <thead>
+                            <tr>
+                                <th class="col-1">No</th>
+                                <th class="col-5">Judul</th>
+                                <th class="col-3">Author</th>
+                                <th class="col-3 text-center">Action</th>
+                            </tr>
+                        </thead>
 
-                @foreach ($forum_user as $fr)
-                    <tbody>
-                        <tr>
-                            <th scope="row" class="text-center">{{ $count++ }}</th>
-                            <td>{{ $fr->fr_title }}</td>
-                            <td class="text-center">{{ $fr->fr_author }}</td>
-                            <td>
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                                    <a class="btn btn-light" href="{{ route('/forum/show', $fr->id) }}">Show</a>
-                                    <a class="btn btn-primary" href="{{ route('forum/edit', $fr->id) }}">Edit</a>
-                                    <form action="{{ route('forum/destroy', $fr->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">
-                                            Hapus
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                @endforeach
-            </table>
+                        @foreach ($forum_user as $fr)
+                            <tbody>
+                                <tr>
+                                    <th class="col-1 align-middle" scope="row">{{ $count++ }}</th>
+                                    <td class="col-5 align-middle">{{ $fr->fr_title }}</td>
+                                    <td class="col-3 align-middle">{{ $fr->fr_author }}</td>
+                                    <td class="col-3">
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                            <a class="btn" href="{{ route('/forum/show', $fr->id) }}" style="color: #3B63B0; font-size: 20px;"><i class="bi bi-eye-fill"></i></a>
+                                            <a class="btn" href="{{ route('forum/edit', $fr->id) }}" style="color: #038C11; font-size: 20px;"><i class="bi bi-pencil-fill"></i></a>
+                                            <form action="{{ route('forum/destroy', $fr->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn" style="color: #CD0202; font-size: 20px;">
+                                                    <i class="bi bi-trash-fill"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        @endforeach
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
