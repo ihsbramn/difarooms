@@ -54,32 +54,32 @@
         </div>
         {{-- photos --}}
         <div id='scrolly'>
-            <a href="{{ URL::asset('/img/asaf-1.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
+            <a href="{{ URL::asset('/img/zoo-1.jpg') }}" data-lightbox="img-zoo" style="margin-right: 30px">
+                <img id='img-scroll' src='{{ URL::asset('/img/zoo-1.jpg') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
             </a>
-            <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
+            <a href="{{ URL::asset('/img/zoo-2.jpg') }}" data-lightbox="img-zoo" style="margin-right: 30px">
+                <img id='img-scroll' src='{{ URL::asset('/img/zoo-2.jpg') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
             </a>
-            <a href="{{ URL::asset('/img/asaf-3.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
+            <a href="{{ URL::asset('/img/zoo-3.jpeg') }}" data-lightbox="img-zoo" style="margin-right: 30px">
+                <img id='img-scroll' src='{{ URL::asset('/img/zoo-3.jpeg') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
             </a>
-            <a href="{{ URL::asset('/img/asaf-4.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
+            <a href="{{ URL::asset('/img/zoo-4.jpg') }}" data-lightbox="img-zoo" style="margin-right: 30px">
+                <img id='img-scroll' src='{{ URL::asset('/img/zoo-4.jpg') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
             </a>
-            <a href="{{ URL::asset('/img/asaf-1.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
+            <a href="{{ URL::asset('/img/zoo-5.jpg') }}" data-lightbox="img-zoo" style="margin-right: 30px">
+                <img id='img-scroll' src='{{ URL::asset('/img/zoo-5.jpg') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
             </a>
-            <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
+            <a href="{{ URL::asset('/img/zoo-6.jfif') }}" data-lightbox="img-zoo" style="margin-right: 30px">
+                <img id='img-scroll' src='{{ URL::asset('/img/zoo-6.jfif') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
             </a>
-            <a href="{{ URL::asset('/img/asaf-3.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
+            <a href="{{ URL::asset('/img/zoo-7.jpg') }}" data-lightbox="img-zoo" style="margin-right: 30px">
+                <img id='img-scroll' src='{{ URL::asset('/img/zoo-7.jpg') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
             </a>
-            <a href="{{ URL::asset('/img/asaf-4.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
+            <a href="{{ URL::asset('/img/zoo-4.jpg') }}" data-lightbox="img-zoo" style="margin-right: 30px">
+                <img id='img-scroll' src='{{ URL::asset('/img/zoo-4.jpg') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
             </a>
-            <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
+            <a href="{{ URL::asset('/img/zoo-2.jpg') }}" data-lightbox="img-zoo" style="margin-right: 30px">
+                <img id='img-scroll' src='{{ URL::asset('/img/zoo-2.jpg') }}' style="max-height: 300px; overflow: hidden; border-radius: 12px;">
             </a>
         </div>
         <div class="row mt-5">

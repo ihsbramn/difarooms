@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-12 px-0">
                 <div class="card bg-dark text-white rounded-0 border-0" style="max-height: 467px; overflow:hidden">
-                    <img src="{{ URL::asset('/img/bg-museumgeo.jpg') }}" class="card-img" alt="background">
+                    <img src="{{ URL::asset('/img/bg-geo.jpg') }}" class="card-img" alt="background">
                 </div>
             </div>
             {{-- title n breadcrumb --}}
@@ -54,40 +54,32 @@
         </div>
         {{-- photos --}}
         <div id='scrolly'>
-            <a href="{{ URL::asset('/img/asaf-1.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}'
+            <a href="{{ URL::asset('/img/geo-1.jpg') }}" data-lightbox="img-geo" style="margin-right: 30px">
+                <img id='img-scroll' src='{{ URL::asset('/img/geo-1.jpg') }}'
                     style="max-height: 300px; overflow: hidden; border-radius: 12px;">
             </a>
-            <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'
+            <a href="{{ URL::asset('/img/geo-3.jpg') }}" data-lightbox="img-geo" style="margin-right: 30px">
+                <img id='img-scroll' src='{{ URL::asset('/img/geo-3.jpg') }}'
                     style="max-height: 300px; overflow: hidden; border-radius: 12px;">
             </a>
-            <a href="{{ URL::asset('/img/asaf-3.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}'
+            <a href="{{ URL::asset('/img/geo-4.jpg') }}" data-lightbox="img-geo" style="margin-right: 30px">
+                <img id='img-scroll' src='{{ URL::asset('/img/geo-4.jpg') }}'
                     style="max-height: 300px; overflow: hidden; border-radius: 12px;">
             </a>
-            <a href="{{ URL::asset('/img/asaf-4.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}'
+            <a href="{{ URL::asset('/img/geo-5.jpg') }}" data-lightbox="img-geo" style="margin-right: 30px">
+                <img id='img-scroll' src='{{ URL::asset('/img/geo-5.jpg') }}'
                     style="max-height: 300px; overflow: hidden; border-radius: 12px;">
             </a>
-            <a href="{{ URL::asset('/img/asaf-1.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}'
+            <a href="{{ URL::asset('/img/geo-6.jpg') }}" data-lightbox="img-geo" style="margin-right: 30px">
+                <img id='img-scroll' src='{{ URL::asset('/img/geo-6.jpg') }}'
                     style="max-height: 300px; overflow: hidden; border-radius: 12px;">
             </a>
-            <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'
+            <a href="{{ URL::asset('/img/geo-7.jpg') }}" data-lightbox="img-geo" style="margin-right: 30px">
+                <img id='img-scroll' src='{{ URL::asset('/img/geo-7.jpg') }}'
                     style="max-height: 300px; overflow: hidden; border-radius: 12px;">
             </a>
-            <a href="{{ URL::asset('/img/asaf-3.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}'
-                    style="max-height: 300px; overflow: hidden; border-radius: 12px;">
-            </a>
-            <a href="{{ URL::asset('/img/asaf-4.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}'
-                    style="max-height: 300px; overflow: hidden; border-radius: 12px;">
-            </a>
-            <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'
+            <a href="{{ URL::asset('/img/geo-4.jpg') }}" data-lightbox="img-geo" style="margin-right: 30px">
+                <img id='img-scroll' src='{{ URL::asset('/img/geo-4.jpg') }}'
                     style="max-height: 300px; overflow: hidden; border-radius: 12px;">
             </a>
         </div>
