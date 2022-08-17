@@ -45,7 +45,7 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Raja Ampat</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Kepulauan Raja Ampat merupakan rangkaian
+                <p style="font-weight: 400; font-size: 24px;">Kepulauan Raja Ampat merupakan rangkaian
                     empat gugusan pulau yang berdekatan dan berlokasi di barat bagian Kepala Burung (Vogelkoop) Pulau Papua.
                     Secara administrasi, gugusan ini berada di bawah Kabupaten Raja Ampat, Provinsi Papua Barat. Kepulauan
                     ini sekarang menjadi tujuan para penyelam yang tertarik akan keindahan pemandangan bawah lautnya. Empat
@@ -56,17 +56,17 @@
                 <div class="row row-cols-1 row-cols-md-3 g-3">
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/ra-1.jpg') }}" class="card-img-top" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/ra-1.jpg') }}" class="card-img-top" alt="foto kota raja ampat 1" style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/ra-2.jpg') }}" class="card-img-top" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/ra-2.jpg') }}" class="card-img-top" alt="foto kota raja ampat 2" style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/ra-3.jpg') }}" class="card-img-top" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/ra-3.jpg') }}" class="card-img-top" alt="foto kota raja ampat 3" style="border-radius: 12px">
                         </div>
                     </div>
                 </div>

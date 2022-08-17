@@ -45,7 +45,7 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Makassar</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Kota Makassar adalah ibu kota provinsi Sulawesi Selatan, Indonesia. Kota ini merupakan kota terbesar
+                <p style="font-weight: 400; font-size: 24px;">Kota Makassar adalah ibu kota provinsi Sulawesi Selatan, Indonesia. Kota ini merupakan kota terbesar
                     di wilayah Indonesia Timur dan pusat kota terbesar kelima di Indonesia setelah Jakarta, Surabaya,
                     Bandung, dan Medan. Kota ini terletak di pesisir barat daya pulau Sulawesi, menghadap Selat
                     Makassar. Sebagian besar penduduknya adalah orang Bugis atau To Ugi diikuti oleh penduduk asli Orang
@@ -64,17 +64,17 @@
                 <div class="row row-cols-1 row-cols-md-3 g-3">
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/mks-1.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/mks-1.jpg') }}" class="card-img h-100" alt="foto kota makassar 1" style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/mks-2.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/mks-2.jpg') }}" class="card-img h-100" alt="foto kota makassar 2" style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/mks-3.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/mks-3.jpg') }}" class="card-img h-100" alt="foto kota makassar 3" style="border-radius: 12px">
                         </div>
                     </div>
                 </div>

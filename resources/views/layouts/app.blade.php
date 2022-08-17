@@ -10,6 +10,13 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- web icon logo -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ URL::asset('/img/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ URL::asset('/img/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ URL::asset('/img/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ URL::asset('/img/site.webmanifest') }}">
+    <!-- web icon logo -->
+
     <!-- Scripts -->
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
@@ -114,7 +121,8 @@
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link btn btn-primary rounded-pill px-4 ms-2" type="button" href="{{ route('login') }}"
+                                    <a class="nav-link btn btn-primary rounded-pill px-4 ms-2" type="button"
+                                        href="{{ route('login') }}"
                                         style="color: #47A2D6; font-size: 20px; font-weight: 500; background: white; border-color: white; color: #47A2D6;">{{ __('Login') }}</a>
                                 </li>
                             @endif
@@ -187,7 +195,9 @@
                             </a>
                         </div>
                         <div class="row">
-                            <p class="m-0 mt-1" style="font-weight: 500; font-size: 14px; text-alignt: left; color: white">Platform berbagi informasi<br>
+                            <p class="m-0 mt-1"
+                                style="font-weight: 500; font-size: 14px; text-alignt: left; color: white">Platform
+                                berbagi informasi<br>
                                 mengenai aksesibilitas bagi <br> penyandang disabilitas</p>
                         </div>
                     </div>
@@ -197,7 +207,8 @@
                                     style="font-weight: 400; font-size: 18px; text-decoration: none; color: white;">Tujuan</a>
                             </div>
                             <div class="mx-auto my-auto"><a href="{{ '/bantuan' }}"
-                                    style="font-weight: 400; font-size: 18px; text-decoration: none; color: white;">Pusat Bantuan</a>
+                                    style="font-weight: 400; font-size: 18px; text-decoration: none; color: white;">Pusat
+                                    Bantuan</a>
                             </div>
                             <div class="mx-auto my-auto"><a href="{{ '/kontak' }}"
                                     style="font-weight: 400; font-size: 18px; text-decoration: none; color: white;">Kontak</a>

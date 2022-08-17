@@ -46,7 +46,7 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Bali</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Bali adalah sebuah
+                <p style="font-weight: 400; font-size: 24px;">Bali adalah sebuah
                     provinsi di Indonesia yang ibu kotanya bernama Denpasar. Provinsi Bali terletak di bagian barat
                     Kepulauan Nusa Tenggara. Di awal kemerdekaan Indonesia, pulau ini termasuk dalam Provinsi Sunda Kecil
                     yang beribu kota di Singaraja, dan kini terbagi menjadi 3 provinsi, yakni Bali, Nusa Tenggara Barat, dan
@@ -65,17 +65,17 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/bli-1.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px;">
+                            <img src="{{ URL::asset('/img/bli-1.jpg') }}" class="card-img h-100" alt="foto kota bali 1" style="border-radius: 12px;">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/bli-2.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px;">
+                            <img src="{{ URL::asset('/img/bli-2.jpg') }}" class="card-img h-100" alt="foto kota bali 2" style="border-radius: 12px;">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/bli-3.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px;">
+                            <img src="{{ URL::asset('/img/bli-3.jpg') }}" class="card-img h-100" alt="foto kota bali 3" style="border-radius: 12px;">
                         </div>
                     </div>
                 </div>

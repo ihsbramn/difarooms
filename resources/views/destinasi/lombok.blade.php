@@ -45,7 +45,7 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Lombok</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Pulau Lombok (jumlah penduduk pada tahun
+                <p style="font-weight: 400; font-size: 24px;">Pulau Lombok (jumlah penduduk pada tahun
                     2001: 2.722.123 jiwa) adalah sebuah pulau di kepulauan Sunda Kecil atau Nusa Tenggara yang
                     terpisahkan oleh Selat Lombok dari Bali di sebelah barat dan Selat Alas di sebelah timur dari Sumbawa.
                     Pulau ini kurang lebih berbentuk bulat dengan semacam "ekor" di sisi barat daya yang panjangnya kurang
@@ -56,17 +56,17 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/lbk-1.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px;">
+                            <img src="{{ URL::asset('/img/lbk-1.jpg') }}" class="card-img h-100" alt="foto kota lombok 1" style="border-radius: 12px;">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/lbk-2.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px;">
+                            <img src="{{ URL::asset('/img/lbk-2.jpg') }}" class="card-img h-100" alt="foto kota lombok 2" style="border-radius: 12px;">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/lbk-3.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px;">
+                            <img src="{{ URL::asset('/img/lbk-3.jpg') }}" class="card-img h-100" alt="foto kota lombok 3" style="border-radius: 12px;">
                         </div>
                     </div>
                 </div>

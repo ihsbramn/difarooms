@@ -46,7 +46,7 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Malang</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Kota Malang adalah sebuah kota yang
+                <p style="font-weight: 400; font-size: 24px;">Kota Malang adalah sebuah kota yang
                     terletak di provinsi
                     Jawa Timur, Indonesia, kota terbesar kedua di Jawa Timur setelah Surabaya, dan kota terbesar ke-12
                     di Indonesia. Kota ini didirikan pada masa Pemerintahan Belanda pada tanggal 1 April 1914, yang dimana
@@ -67,18 +67,18 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/mlg-1.jpg') }}" class="card-img h-100" alt="foto kota bandung"
+                            <img src="{{ URL::asset('/img/mlg-1.jpg') }}" class="card-img h-100" alt="foto kota malang 1"
                                 style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/mlg-2.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/mlg-2.jpg') }}" class="card-img h-100" alt="foto kota malang 2" style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/mlg-3.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/mlg-3.jpg') }}" class="card-img h-100" alt="foto kota malang 3" style="border-radius: 12px">
                         </div>
                     </div>
                 </div>

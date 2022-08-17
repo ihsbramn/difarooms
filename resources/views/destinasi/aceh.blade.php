@@ -45,7 +45,7 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Aceh</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Aceh (abjad Jawoë: اچيه دارالسلام) adalah
+                <p style="font-weight: 400; font-size: 24px;">Aceh (abjad Jawoë: اچيه دارالسلام) adalah
                     sebuah provinsi di Indonesia yang ibu kotanya berada di Banda Aceh. Aceh merupakan salah satu provinsi
                     di Indonesia yang diberi status sebagai daerah istimewa dan juga diberi kewenangan otonomi khusus. Aceh
                     terletak di ujung utara pulau Sumatra dan merupakan provinsi paling barat di Indonesia. Menurut hasil
@@ -67,19 +67,19 @@
                 <div class="row row-cols-1 row-cols-md-3 g-3">
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/ach-1.jpg') }}" class="card-img h-100" alt="foto kota bandung"
+                            <img src="{{ URL::asset('/img/ach-1.jpg') }}" class="card-img h-100" alt="foto kota aceh 1"
                                 style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/ach-2.jpg') }}" class="card-img h-100" alt="foto kota bandung"
+                            <img src="{{ URL::asset('/img/ach-2.jpg') }}" class="card-img h-100" alt="foto kota aceh 2"
                                 style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/ach-3.jpg') }}" class="card-img h-100" alt="foto kota bandung"
+                            <img src="{{ URL::asset('/img/ach-3.jpg') }}" class="card-img h-100" alt="foto kota aceh 3"
                                 style="border-radius: 12px">
                         </div>
                     </div>
