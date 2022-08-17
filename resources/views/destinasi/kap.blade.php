@@ -335,7 +335,7 @@
             <img src="{{ URL::asset('/img/foot-dest.png') }}" class="card-img" alt="footer image destinasi">
             <div class="card-img-overlay" style="padding-inline: 7rem">
                 <h2 class="card-title position-absolute top-50 start-20 translate-middle-y"
-                    style="font-weight: 700;font-size: 36px;">Rasakan wisata inklusif <br>tanpa diskriminasi</h2>
+                    style="font-weight: 700;font-size: 36px; color: white;">Rasakan wisata inklusif <br>tanpa diskriminasi</h2>
             </div>
         </div>
     </div>
