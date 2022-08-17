@@ -11,6 +11,7 @@
             }
 
         }
+
         function showcpass() {
             var x = document.getElementById("password-confirm");
             if (x.type === "password-confirm") {
@@ -29,12 +30,12 @@
     <div class="container-fluid"
         style="background-image: URL('/img/bg-regist.png');background-repeat: no-repeat; background-position: center;">
         <div class="position-relative" style="min-height:100vh">
-            
+
             {{-- regist form --}}
             <div class="card position-absolute top-50 start-50 translate-middle border-0 shadow p-4"
                 style="border-radius: 12px; min-width: 548px;">
                 <div class="card-body">
-                    <p class="m-0" style="text-align: left; font-weight: 700; font-size: 24px;">Daftar Akun</p>
+                    <h1 class="m-0" style="text-align: left; font-weight: 700; font-size: 24px;">Daftar Akun</h1>
                     <p class="m-0 mb-3" style="text-align: left; font-weight: 400; font-size: 20px;">Buat akunmu untuk dapat
                         berjejaring</p>
                     <form method="POST" action="{{ route('register') }}">
@@ -45,7 +46,7 @@
                                 <input id="name" type="text"
                                     class="form-control form-control-lg @error('name') is-invalid @enderror" name="name"
                                     value="{{ old('name') }}" required autocomplete="name" placeholder="Nama"
-                                    style="border-radius: 12px;" autofocus>
+                                    style="border-radius: 12px;" aria-label="kolom nama" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -60,7 +61,7 @@
                                 <input id="email" type="email"
                                     class="form-control form-control-lg @error('email') is-invalid @enderror" name="email"
                                     value="{{ old('email') }}" required autocomplete="email" placeholder="Email"
-                                    style="border-radius: 12px;">
+                                    style="border-radius: 12px;" aria-label="kolom email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -74,10 +75,10 @@
                             <input id="password" type="password"
                                 class="form-control form-control-lg @error('password') is-invalid @enderror" name="password"
                                 required autocomplete="new-password" placeholder="Kata sandi"
-                                style="border-radius: 12px 0px 0px 12px;">
+                                style="border-radius: 12px 0px 0px 12px;" aria-label="kolom password">
                             <button class="btn btn-outline-secondary" type="button" id="eye" onclick="showpass()"
-                                style="font-size: 20px; border-radius: 0px 12px 12px 0px;"><i onclick="show(this)"
-                                    class="bi bi-eye-fill"></i>
+                                onkeypress="showpass()" title="show pass"
+                                style="font-size: 20px; border-radius: 0px 12px 12px 0px;"><i class="bi bi-eye-fill"></i>
                             </button>
 
                             @error('password')
@@ -90,10 +91,11 @@
                         <div class="input-group mb-4">
                             <input id="password-confirm" type="password" class="form-control form-control-lg"
                                 name="password_confirmation" required autocomplete="new-password"
-                                placeholder="Konfirmasi kata sandi" style="border-radius: 12px 0px 0px 12px;">
+                                placeholder="Konfirmasi kata sandi" style="border-radius: 12px 0px 0px 12px;"
+                                aria-label="kolom confirm password">
                             <button class="btn btn-outline-secondary" type="button" id="eye" onclick="showcpass()"
-                                style="font-size: 20px; border-radius: 0px 12px 12px 0px;"><i onclick="show(this)"
-                                    class="bi bi-eye-fill"></i>
+                                onkeypress="showcpass()" title="show confirm pass"
+                                style="font-size: 20px; border-radius: 0px 12px 12px 0px;"><i class="bi bi-eye-fill"></i>
                             </button>
                         </div>
 
@@ -120,13 +122,14 @@
                     <div class="col-sm-6 my-auto">
                         <div class="hstack gap-3 d-flex">
                             <div class="mx-auto my-auto"><a href="{{ '/tujuan' }}"
-                                style="font-weight: 400; font-size: 18px; text-decoration: none; color: #47A2D6;">Tujuan</a>
+                                    style="font-weight: 400; font-size: 18px; text-decoration: none; color: #47A2D6;">Tujuan</a>
                             </div>
                             <div class="mx-auto my-auto"><a href="{{ '/bantuan' }}"
-                                style="font-weight: 400; font-size: 18px; text-decoration: none; color: #47A2D6;">Pusat Bantuan</a>
+                                    style="font-weight: 400; font-size: 18px; text-decoration: none; color: #47A2D6;">Pusat
+                                    Bantuan</a>
                             </div>
                             <div class="mx-auto my-auto"><a href="{{ '/kontak' }}"
-                                style="font-weight: 400; font-size: 18px; text-decoration: none; color: #47A2D6;">Kontak</a>
+                                    style="font-weight: 400; font-size: 18px; text-decoration: none; color: #47A2D6;">Kontak</a>
                             </div>
                         </div>
                     </div>

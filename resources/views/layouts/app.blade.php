@@ -106,16 +106,16 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link btn btn-primary rounded-pill px-4 me-2 bg-transparent" type="button"
-                                        href="{{ route('login') }}"
-                                        style="font-size: 20px; font-weight: 500; border-color: white;">{{ __('Login') }}</a>
+                                    <a class="nav-link btn btn-primary rounded-pill px-3 me-2 bg-transparent" type="button"
+                                        href="{{ route('register') }}"
+                                        style="font-size: 20px; font-weight: 500; border-color: white; color: white;">{{ __('Register') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link btn btn-primary rounded-pill px-3 ms-2" type="button" href="{{ route('register') }}"
-                                        style="color: #47A2D6; font-size: 20px; font-weight: 500; background: white; border-color: white; color: #47A2D6;">{{ __('Register') }}</a>
+                                    <a class="nav-link btn btn-primary rounded-pill px-4 ms-2" type="button" href="{{ route('login') }}"
+                                        style="color: #47A2D6; font-size: 20px; font-weight: 500; background: white; border-color: white; color: #47A2D6;">{{ __('Login') }}</a>
                                 </li>
                             @endif
                         @else

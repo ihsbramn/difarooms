@@ -91,10 +91,11 @@
             <div class="card-img-overlay d-flex">
                 <div class="container my-auto">
                     <h1 class="align-self-center mx-auto" style="font-weight: 700; font-size: 96px">Hotel</h1>
-                    <p style="font-weight: 500; font-size: 20px;">Berbagai pilihan hotel yang tentunya aksesibel bagi Anda</p>
+                    <p style="font-weight: 500; font-size: 20px;">Berbagai pilihan hotel yang tentunya aksesibel bagi Anda
+                    </p>
                     <div class="input-group pt-5">
-                        <input type="text" class="form-control form-control-lg border-0" placeholder="Cari hotel" aria-label="Cari hotel"
-                            id="searchbar" style="background-color: #D9D9D9"
+                        <input type="text" class="form-control form-control-lg border-0" placeholder="Cari hotel"
+                            aria-label="Cari hotel" id="searchbar" style="background-color: #D9D9D9"
                             onkeyup="search_hotel()" name="searchbar">
                     </div>
                 </div>
@@ -117,9 +118,10 @@
                     </div>
                     <div class="col-10">
                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                            <input type="radio" class="btn-check" name="btn-radio" id="hide-poi" autocomplete="off" checked>
+                            <input type="radio" class="btn-check" name="btn-radio" id="hide-poi" autocomplete="off"
+                                checked>
                             <label class="btn btn-outline-primary" for="hide-poi">Hide</label>
-    
+
                             <input type="radio" class="btn-check" name="btn-radio" id="show-poi" autocomplete="off">
                             <label class="btn btn-outline-primary" for="show-poi">Show</label>
                         </div>
@@ -142,7 +144,7 @@
                             <legend class="card-subtittle" style="font-weight: 600; font-size: 16px">Lokasi</legend>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" value="" id="semua" name="akses"
-                                    onclick="filter_hotel()" checked>
+                                    onclick="filter_hotel()" aria-label="" checked>
                                 <label class="form-check-label" for="semua">
                                     Semua
                                 </label>
@@ -155,8 +157,8 @@
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" value="yogyakarta" id="Yogyakarta" name="akses"
-                                    onclick="filter_hotel()">
+                                <input class="form-check-input" type="radio" value="yogyakarta" id="Yogyakarta"
+                                    name="akses" onclick="filter_hotel()">
                                 <label class="form-check-label" for="Yogyakarta">
                                     Yogyakarta
                                 </label>
@@ -176,8 +178,8 @@
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" value="bali" id="bali" name="akses"
-                                    onclick="filter_hotel()">
+                                <input class="form-check-input" type="radio" value="bali" id="bali"
+                                    name="akses" onclick="filter_hotel()">
                                 <label class="form-check-label" for="bali">
                                     Bali
                                 </label>
@@ -190,8 +192,8 @@
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" value="aceh" id="aceh" name="akses"
-                                    onclick="filter_hotel()">
+                                <input class="form-check-input" type="radio" value="aceh" id="aceh"
+                                    name="akses" onclick="filter_hotel()">
                                 <label class="form-check-label" for="aceh">
                                     Aceh
                                 </label>
@@ -208,107 +210,44 @@
                         <hr>
                         {{-- fasilitas --}}
                         <fieldset>
-                        <legend class="card-subtittle" style="font-weight: 600; font-size: 16px">Fasilitas</legend>
+                            <legend class="card-subtittle" style="font-weight: 600; font-size: 16px">Fasilitas</legend>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="antar jemput" id="aksesibilitas"
-                                    name="aksesibilitas" onclick="filter_aksesibilitas()" aria-label="antar jemput">
-                                <label class="form-check-label" for="aksesibilitas">
+                                <input class="form-check-input" type="checkbox" value="antar jemput" name="aksesibilitas"
+                                    onclick="filter_aksesibilitas()" aria-label="antar jemput" id="antar jemput">
+                                <label class="form-check-label" for="antar jemput" >
                                     Antar jemput bandara
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="toilet dengan" id="aksesibilitas"
-                                    name="aksesibilitas" onclick="filter_aksesibilitas()" aria-label="toilet pegangan">
-                                <label class="form-check-label" for="aksesibilitas">
+                                <input class="form-check-input" type="checkbox" value="toilet dengan" name="aksesibilitas"
+                                    onclick="filter_aksesibilitas()" aria-label="toilet pegangan" id="toilet pegangan">
+                                <label class="form-check-label" for="toilet pegangan">
                                     Toilet dengan pegangan
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="akses kursi" id="aksesibilitas"
-                                    name="aksesibilitas" onclick="filter_aksesibilitas()" aria-label="akses kursi roda">
-                                <label class="form-check-label" for="aksesibilitas">
+                                <input class="form-check-input" type="checkbox" value="akses kursi" name="aksesibilitas"
+                                    onclick="filter_aksesibilitas()" aria-label="akses kursi roda" id="akses kursi roda">
+                                <label class="form-check-label" for="akses kursi roda">
                                     Akses kursi roda
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="kamar mandi" id="aksesiibilitas"
-                                    name="aksesibilitas" onclick="filter_aksesibilitas()" aria-label="kamar mandi luas">
-                                <label class="form-check-label" for="aksesibilitas">
+                                <input class="form-check-input" type="checkbox" value="kamar mandi" name="aksesiibilitas"
+                                    onclick="filter_aksesibilitas()" aria-label="kamar mandi luas" id="kamar mandi luas">
+                                <label class="form-check-label" for="kamar mandi luas">
                                     Kamar mandi luas
                                 </label>
                             </div>
                             {{-- fasilitas --}}
-    
+                        </fieldset>
+
                             {{-- button resset & terapkan --}}
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
                                 <button class="btn btn-outline-secondary me-md-2" type="button" value=""
                                     id="aksesiibilitas" onclick="reset()">Reset</button>
                             </div>
                             {{-- button resset & terapkan --}}
-                        </fieldset>
-
-                        <h3 class="card-subtittle" style="font-weight: 600; font-size: 16px">Fasilitas</h3>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="antar jemput" id="aksesibilitas"
-                                name="aksesibilitas" onclick="filter_aksesibilitas()">
-                            <label class="form-check-label" for="akses-kursi-roda">
-                                Antar jemput bandara
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="toilet dengan" id="aksesibilitas"
-                                name="aksesibilitas" onclick="filter_aksesibilitas()">
-                            <label class="form-check-label" for="toilet-tinggi">
-                                Toilet dengan pegangan
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="akses kursi" id="aksesibilitas"
-                                name="aksesibilitas" onclick="filter_aksesibilitas()">
-                            <label class="form-check-label" for="lift">
-                                Akses kursi roda
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="kamar mandi" id="aksesiibilitas"
-                                name="aksesibilitas" onclick="filter_aksesibilitas()">
-                            <label class="form-check-label" for="westafel-rendah">
-                                Kamar mandi luas
-                            </label>
-                        </div>
-                        {{-- fasilitas --}}
-
-                        {{-- button resset & terapkan --}}
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
-                            <button class="btn btn-outline-secondary me-md-2" type="button" value=""
-                                id="aksesiibilitas" onclick="reset()">Reset</button>
-
-                            {{-- <button class="btn btn-primary border-0" type="button"
-                                style="border-radius: 12px; background-color:#244D64"
-                                onclick="filter_harga()">Terapkan</button>
-                            <script>
-                                function filter_harga() {
-                                    var formatter = new Intl.NumberFormat('id-ID', {
-                                        style: 'currency',
-                                        currency: 'IDR',
-                                    });
-                                    let input = document.getElementById('pricemin').value;
-                                    input = formater.format(input);
-                                    let input2 = document.getElementById('pricemax').value;
-                                    input2 = formater.format(input2);
-                                    let x = document.getElementsByClassName('hotels');
-                                    for (i = 0; i < x.length; i++) {
-                                        if (x[i].innerHTML >= input && x[i].innerHTML <= input2) {
-                                            x[i].style.display = "none";
-                                        } else {
-                                            x[i].style.display = "initial";
-                                        }
-                                    }
-                                }
-                            </script> --}}
-                        </div>
-                        {{-- button resset & terapkan --}}
->>>>>>> 945a4df1409b63354e3dd5f9df68095b5b327f03
                     </div>
                 </div>
             </div>
@@ -328,18 +267,22 @@
                                                 @csrf
                                                 <div class="form-group">
                                                     <input type="text" class="form-control" id="fv_user_id"
-                                                        name="fv_user_id" value="{{ Auth::user()->id }}" aria-label="like form user id" hidden>
+                                                        name="fv_user_id" value="{{ Auth::user()->id }}"
+                                                        aria-label="like form user id" hidden>
                                                     <input type="text" class="form-control" id="fv_hotel_id"
-                                                        name="fv_hotel_id" value="{{ $htl->id }}" aria-label="like form hotel id" hidden>
+                                                        name="fv_hotel_id" value="{{ $htl->id }}"
+                                                        aria-label="like form hotel id" hidden>
                                                     <input type="text" class="form-control" id="fv_hotel_name"
-                                                        name="fv_hotel_name" value="{{ $htl->ht_name }}" aria-label="like form hotel name" hidden>
+                                                        name="fv_hotel_name" value="{{ $htl->ht_name }}"
+                                                        aria-label="like form hotel name" hidden>
                                                     <input type="text" class="form-control" id="fv_count"
                                                         name="fv_count" value="1" aria-label="like form count" hidden>
                                                 </div>
                                                 <button href="submit" class="btn btn-secondary rounded-circle border-0"
                                                     style="background: rgba(36, 36, 36, 0.54);" data-bs-toggle="tooltip"
                                                     data-bs-placement="top" data-bs-class="tooltip"
-                                                    title="Favoritkan hotel ini" aria-label="like button">
+                                                    title="Favoritkan hotel ini" aria-label="like button"
+                                                    title="like button">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                         fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
                                                         <path
@@ -355,7 +298,8 @@
                                         @endauth
                                         @guest
                                             <button onclick="like()" class="btn btn-secondary rounded-circle"
-                                                style="background: rgba(36, 36, 36, 0.54);">
+                                                style="background: rgba(36, 36, 36, 0.54);" aria-label="like button"
+                                                title="like button">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
                                                     <path
