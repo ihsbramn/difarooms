@@ -44,6 +44,7 @@
                 padding: 20px;
             }
         </style>
+        <meta name="description" content="Kami telah memilih destinasi wisata yang menarik untuk Anda kunjungi bersama keluarga, kerabat, dan rekan kerja Anda. Liburan akan terasa lebih mudah dan aksesibel. Wisata inklusif bagi siapapun dan kondisi apapun yang dapat memuaskan Anda.">
     </head>
     <body>
         <div class="flex-center position-ref full-height">
