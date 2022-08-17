@@ -41,62 +41,71 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="row mb-4">
-                            <div class="col">
-                                <input id="name" type="text"
-                                    class="form-control form-control-lg @error('name') is-invalid @enderror" name="name"
-                                    value="{{ old('name') }}" required autocomplete="name" placeholder="Nama"
-                                    style="border-radius: 12px;" aria-label="kolom nama" autofocus>
+                        <div class="mb-3">
+                            <label for="nama" class="form-label" style="font-weight: 500; font-size: 16px;">Nama<span
+                                    style="color: red;">*</span></label>
+                            <input id="name" type="text"
+                                class="form-control form-control-lg @error('name') is-invalid @enderror" name="name"
+                                value="{{ old('name') }}" required autocomplete="name" placeholder="Nama"
+                                style="border-radius: 12px;" aria-label="kolom nama" autofocus>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-4">
-                            <div class="col">
-                                <input id="email" type="email"
-                                    class="form-control form-control-lg @error('email') is-invalid @enderror" name="email"
-                                    value="{{ old('email') }}" required autocomplete="email" placeholder="Email"
-                                    style="border-radius: 12px;" aria-label="kolom email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="input-group mb-4">
-                            <input id="password" type="password"
-                                class="form-control form-control-lg @error('password') is-invalid @enderror" name="password"
-                                required autocomplete="new-password" placeholder="Kata sandi"
-                                style="border-radius: 12px 0px 0px 12px;" aria-label="kolom password">
-                            <button class="btn btn-outline-secondary" type="button" id="eye" onclick="showpass()"
-                                onkeypress="showpass()" title="show pass"
-                                style="font-size: 20px; border-radius: 0px 12px 12px 0px;"><i class="bi bi-eye-fill"></i>
-                            </button>
-
-                            @error('password')
+                            @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
 
-                        <div class="input-group mb-4">
-                            <input id="password-confirm" type="password" class="form-control form-control-lg"
-                                name="password_confirmation" required autocomplete="new-password"
-                                placeholder="Konfirmasi kata sandi" style="border-radius: 12px 0px 0px 12px;"
-                                aria-label="kolom confirm password">
-                            <button class="btn btn-outline-secondary" type="button" id="eye" onclick="showcpass()"
-                                onkeypress="showcpass()" title="show confirm pass"
-                                style="font-size: 20px; border-radius: 0px 12px 12px 0px;"><i class="bi bi-eye-fill"></i>
-                            </button>
+                        <div class="mb-3">
+                            <label for="email" class="form-label" style="font-weight: 500; font-size: 16px;">Email<span
+                                    style="color: red;">*</span></label>
+                            <input id="email" type="email"
+                                class="form-control form-control-lg @error('email') is-invalid @enderror" name="email"
+                                value="{{ old('email') }}" required autocomplete="email" placeholder="Email"
+                                style="border-radius: 12px;" aria-label="kolom email">
+
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label" style="font-weight: 500; font-size: 16px;">Kata sandi<span
+                                style="color: red;">*</span></label>
+                            <div class="input-group">
+                                <input id="password" type="password"
+                                    class="form-control form-control-lg @error('password') is-invalid @enderror" name="password"
+                                    required autocomplete="new-password" placeholder="Kata sandi"
+                                    style="border-radius: 12px 0px 0px 12px;" aria-label="kolom password">
+                                <button class="btn btn-outline-secondary" type="button" id="eye" onclick="showpass()"
+                                    onkeypress="showpass()" title="show pass"
+                                    style="font-size: 20px; border-radius: 0px 12px 12px 0px;"><i class="bi bi-eye-fill"></i>
+                                </button>
+    
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label" style="font-weight: 500; font-size: 16px;">Konfirmasi kata sandi<span
+                                style="color: red;">*</span></label>
+                            <div class="input-group">
+                                <input id="password-confirm" type="password" class="form-control form-control-lg"
+                                    name="password_confirmation" required autocomplete="new-password"
+                                    placeholder="Konfirmasi kata sandi" style="border-radius: 12px 0px 0px 12px;"
+                                    aria-label="kolom confirm password">
+                                <button class="btn btn-outline-secondary" type="button" id="eye" onclick="showcpass()"
+                                    onkeypress="showcpass()" title="show confirm pass"
+                                    style="font-size: 20px; border-radius: 0px 12px 12px 0px;"><i class="bi bi-eye-fill"></i>
+                                </button>
+                            </div>
                         </div>
 
                         <div class="row mt-5">

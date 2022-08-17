@@ -165,7 +165,7 @@
                                 <div class="card-img-overlay grad" style="border-radius: 12px">
                                     <div class="row position-absolute bottom-0 start-20 mb-2">
                                         <h3 class="card-title"
-                                            style="font-weight: 700; font-size: 24px;">Asia Afirka</h3>
+                                            style="font-weight: 700; font-size: 24px;">Asia Afrika</h3>
                                         <p class="card-text"
                                             style="font-weight: 400; font-size: 20px;">Bandung</p>
                                     </div>
