@@ -58,18 +58,18 @@
                 <div class="row">
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <button class="nav-link active px-5" id="nav-home-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-semua" type="button" role="tab" aria-controls="nav-home"
+                            <button class="nav-link active px-5" id="nav-semua-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-semua" type="button" role="tab" aria-controls="nav-semua"
                                 aria-selected="true"
                                 style="font-weight: 600; font-size: 16px; color: #47A2D6;">Semua</button>
-                            <button class="nav-link px-5" id="nav-profile-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-terbaru" type="button" role="tab" aria-controls="nav-profile"
+                            <button class="nav-link px-5" id="nav-terbaru-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-terbaru" type="button" role="tab" aria-controls="nav-terbaru"
                                 aria-selected="false"
                                 style="font-weight: 600; font-size: 16px; color: #47A2D6;">Terbaru</button>
                             <button class="nav-link
-                                px-5" id="nav-contact-tab"
+                                px-5" id="nav-terpopuler-tab"
                                 data-bs-toggle="tab" data-bs-target="#nav-terpopuler" type="button" role="tab"
-                                aria-controls="nav-contact" aria-selected="false"
+                                aria-controls="nav-terpopuler" aria-selected="false"
                                 style="font-weight: 600; font-size: 16px; color: #47A2D6;">Terpopuler</button>
                         </div>
                     </nav>
@@ -79,7 +79,7 @@
                 <div class="row">
                     <div class="tab-content mt-4" id="nav-tabContent">
                         {{-- semua --}}
-                        <div class="tab-pane fade show active" id="nav-semua" role="tabpanel" tabindex="0">
+                        <div class="tab-pane fade show active" id="nav-semua" role="tabpanel" aria-labelledby="nav-semua-tab" tabindex="0">
                             @foreach ($forum as $index => $fr)
                                 <div class="forum">
                                     <div class="card border-0 shadow mt-3">
@@ -140,7 +140,7 @@
                         </div>
 
                         {{-- terbaru --}}
-                        <div class="tab-pane fade" id="nav-terbaru" role="tabpanel" tabindex="0">
+                        <div class="tab-pane fade" id="nav-terbaru" role="tabpanel"  aria-labelledby="nav-terbaru-tab" tabindex="0">
                             @foreach ($terbaru as $index => $fr)
                                 <div class="forum">
                                     <div class="card border-0 shadow mt-3">
@@ -201,7 +201,7 @@
                         </div>
 
                         {{-- terpopuler --}}
-                        <div class="tab-pane fade" id="nav-terpopuler" role="tabpanel" tabindex="0">
+                        <div class="tab-pane fade" id="nav-terpopuler" role="tabpanel"  aria-labelledby="nav-terpopuler-tab" tabindex="0">
                             @foreach ($forum as $fr)
                                 <a class="card border-0 shadow mt-3 forum" href="{{ route('/forum/show', $fr->id) }}"
                                     style="text-decoration: none; border-radius: 12px; overflow: hidden;">

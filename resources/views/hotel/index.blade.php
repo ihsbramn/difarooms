@@ -32,7 +32,7 @@
         }
 
         function filter_aksesibilitas() {
-            let input = document.querySelector('input[id="aksesibilitas"]:checked').value;
+            let input = document.querySelector('input[name="aksesibilitas"]:checked').value;
             input = input.toLowerCase();
             let x = document.getElementsByClassName('hotels');
 
@@ -212,29 +212,29 @@
                         <fieldset>
                             <legend class="card-subtittle" style="font-weight: 600; font-size: 16px">Fasilitas</legend>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="antar jemput" id="aksesibilitas"
-                                    onclick="filter_aksesibilitas()" aria-label="antar jemput">
-                                <label class="form-check-label" for="antar jemput">
+                                <input class="form-check-input" type="checkbox" value="antar jemput" name="aksesibilitas"
+                                    onclick="filter_aksesibilitas()" aria-label="antar jemput" id="antar jemput">
+                                <label class="form-check-label" for="antar jemput" >
                                     Antar jemput bandara
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="toilet dengan" id="aksesibilitas"
-                                    onclick="filter_aksesibilitas()" aria-label="toilet pegangan">
+                                <input class="form-check-input" type="checkbox" value="toilet dengan" name="aksesibilitas"
+                                    onclick="filter_aksesibilitas()" aria-label="toilet pegangan" id="toilet pegangan">
                                 <label class="form-check-label" for="toilet pegangan">
                                     Toilet dengan pegangan
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="akses kursi" id="aksesibilitas"
-                                    onclick="filter_aksesibilitas()" aria-label="akses kursi roda">
+                                <input class="form-check-input" type="checkbox" value="akses kursi" name="aksesibilitas"
+                                    onclick="filter_aksesibilitas()" aria-label="akses kursi roda" id="akses kursi roda">
                                 <label class="form-check-label" for="akses kursi roda">
                                     Akses kursi roda
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="kamar mandi" id="aksesiibilitas"
-                                    onclick="filter_aksesibilitas()" aria-label="kamar mandi luas">
+                                <input class="form-check-input" type="checkbox" value="kamar mandi" name="aksesiibilitas"
+                                    onclick="filter_aksesibilitas()" aria-label="kamar mandi luas" id="kamar mandi luas">
                                 <label class="form-check-label" for="kamar mandi luas">
                                     Kamar mandi luas
                                 </label>

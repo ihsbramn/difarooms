@@ -45,7 +45,7 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Bandung</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Berkunjung ke Kota Kembang akan kurang
+                <p style="font-weight: 400; font-size: 24px;">Berkunjung ke Kota Kembang akan kurang
                     lengkap apabila Anda tidak singgah di tempat wisata Bandung yang
                     sedang hits akhir-akhir ini. Bandung sendiri memiliki berbagai atraksi alam yang menarik, destinasi
                     wisata kota-kota yang sarat akan pengetahuan, dan beragam wisata kuliner. <br> <br>
@@ -61,18 +61,18 @@
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-mtrl2.png') }}" class="card-img-top" alt="foto kota bandung">
+                            <img src="{{ URL::asset('/img/bd-mtrl2.png') }}" class="card-img-top" alt="foto kota bandung 2">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card border-0">
-                            <img src="{{ URL::asset('/img/bd-mtrl3.png') }}" class="card-img-top" alt="foto kota bandung">
+                            <img src="{{ URL::asset('/img/bd-mtrl3.png') }}" class="card-img-top" alt="foto kota bandung 3">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-12">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;"><br> Kota Bandung sebagai salah satu kota
+                <p style="font-weight: 400; font-size: 24px;"><br> Kota Bandung sebagai salah satu kota
                     besar yang ada di Indonesia sudah mulai menerapkan teknologi untuk
                     meningkatkan kualitas layanan publik dan juga berupaya untuk mewujudkan konsep smart city. Destinasi
                     wisata yang aksesibel juga menjadi salah satu tujuan utama oleh pemerintah kota Bandung. Oleh karena
@@ -86,75 +86,75 @@
                 <div class="row row-cols-1 row-cols-md-4 g-5">
                     <div class="col">
                         <a class="card border-0 zoom" href="{{ '/destinasi/bandung/asia-afrika' }}">
-                            <img src="{{ URL::asset('/img/bd-asaf.png') }}" class="dest-card" alt="foto destinasi">
+                            <img src="{{ URL::asset('/img/bd-asaf.png') }}" class="dest-card" alt="asia afrika">
                             <div class="card-img-overlay grad dest-card">
-                                <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Asia Afrika</h5>
+                                <h3 class="card-title position-absolute bottom-0 start-20"
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Asia Afrika</h3>
                             </div>
                         </a>
                     </div>
                     <div class="col">
                         <a class="card border-0 zoom" href="{{ '/destinasi/bandung/kiara-arta-park' }}">
-                            <img src="{{ URL::asset('/img/bd-kap.png') }}" class="dest-card" alt="foto destinasi">
+                            <img src="{{ URL::asset('/img/bd-kap.png') }}" class="dest-card" alt="kiara artha park">
                             <div class="card-img-overlay grad dest-card">
-                                <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Kiara Artha Park</h5>
+                                <h3 class="card-title position-absolute bottom-0 start-20"
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Kiara Artha Park</h3>
                             </div>
                         </a>
                     </div>
                     <div class="col">
                         <a class="card border-0 zoom" href="{{ '/destinasi/bandung/bandung-zoo' }}">
-                            <img src="{{ URL::asset('/img/bd-bz.png') }}" class="dest-card" alt="foto destinasi">
+                            <img src="{{ URL::asset('/img/bd-bz.png') }}" class="dest-card" alt="Bandung Zoo">
                             <div class="card-img-overlay grad dest-card">
-                                <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Bandung Zoo</h5>
+                                <h3 class="card-title position-absolute bottom-0 start-20"
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Bandung Zoo</h3>
                             </div>
                         </a>
                     </div>
                     <div class="col">
                         <a class="card border-0 zoom" href="{{ '/destinasi/bandung/museum-geologi' }}">
-                            <img src="{{ URL::asset('/img/bd-mg.png') }}" class="dest-card" alt="foto destinasi">
+                            <img src="{{ URL::asset('/img/bd-mg.png') }}" class="dest-card" alt="Museum Geologi">
                             <div class="card-img-overlay grad dest-card">
-                                <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Museum Geologi</h5>
+                                <h3 class="card-title position-absolute bottom-0 start-20"
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Museum Geologi</h3>
                             </div>
                         </a>
                     </div>
                     <div class="col">
                         <a class="card border-0 zoom" href="{{ '/destinasi/bandung/taman-lalu-lintas' }}">
-                            <img src="{{ URL::asset('/img/bd-tll.png') }}" class="dest-card" alt="foto destinasi">
+                            <img src="{{ URL::asset('/img/bd-tll.png') }}" class="dest-card" alt="Taman Lalu Lintas">
                             <div class="card-img-overlay grad dest-card">
-                                <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Taman Lalu Lintas</h5>
+                                <h3 class="card-title position-absolute bottom-0 start-20"
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Taman Lalu Lintas</h3>
                             </div>
                         </a>
                     </div>
                     <div class="col">
                         <a class="card border-0 zoom" href="{{ '/destinasi/bandung/trans-studio-mall' }}">
-                            <img src="{{ URL::asset('/img/bd-tsm.png') }}" class="dest-card" alt="foto destinasi">
+                            <img src="{{ URL::asset('/img/bd-tsm.png') }}" class="dest-card" alt="Trans Studio Mall">
                             <div class="card-img-overlay grad dest-card">
-                                <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Trans Studio Mall</h5>
+                                <h3 class="card-title position-absolute bottom-0 start-20"
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Trans Studio Mall</h3>
                             </div>
                         </a>
                     </div>
                     <div class="col">
                         <a class="card border-0 zoom" href="{{ '/destinasi/bandung/museum-sri-baduga' }}">
-                            <img src="{{ URL::asset('/img/bd-msb.png') }}" class="dest-card" alt="foto destinasi"
+                            <img src="{{ URL::asset('/img/bd-msb.png') }}" class="dest-card" alt="Museum Sri Baduga"
                                 style="width: 100%; height: 100%; overflow:hidden;">
                             <div class="card-img-overlay grad dest-card">
-                                <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Museum Sri Baduga</h5>
+                                <h3 class="card-title position-absolute bottom-0 start-20"
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Museum Sri Baduga</h3>
                             </div>
                         </a>
                     </div>
                     <div class="col">
                         <a class="card border-0 zoom" href="{{ '/destinasi/bandung/braga-city-walk' }}">
-                            <img src="{{ URL::asset('/img/bd-bcw.jpg') }}" class="dest-card" alt="foto destinasi"
+                            <img src="{{ URL::asset('/img/bd-bcw.jpg') }}" class="dest-card" alt="Braga City Walk"
                                 style="width: 100%; height: 100%; overflow:hidden;">
                             <div class="card-img-overlay grad dest-card">
-                                <h5 class="card-title position-absolute bottom-0 start-20"
-                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Braga City Walk</h5>
+                                <h3 class="card-title position-absolute bottom-0 start-20"
+                                    style="font-weight: 700; font-size: 24px; color: #ffffff">Braga City Walk</h3>
                             </div>
                         </a>
                     </div>
@@ -172,10 +172,10 @@
             </div>
             <div class="col-6 text-end mt-3">
                 <button id="slideLeft" type="button" class="btn btn-lg rounded-circle shadow-sm"
-                    style="border-color: rgba(71, 162, 214, 1); color: rgba(71, 162, 214, 1);"><i
+                    style="border-color: rgba(71, 162, 214, 1); color: rgba(71, 162, 214, 1);" title="button slide left"><i
                         class="bi bi-chevron-left"></i></button>
                 <button id="slideRight" type="button" class="btn btn-lg rounded-circle shadow-sm"
-                    style="background: rgba(71, 162, 214, 1); border-color: rgba(71, 162, 214, 1); color: white;"><i
+                    style="background: rgba(71, 162, 214, 1); border-color: rgba(71, 162, 214, 1); color: white;" title="button slide right"><i
                         class="bi bi-chevron-right"></i></button>
             </div>
         </div>
@@ -282,10 +282,10 @@
             </div>
             <div class="col-6 text-end mt-3">
                 <button id="slideLeftw" type="button" class="btn btn-lg rounded-circle shadow-sm"
-                    style="border-color: rgba(71, 162, 214, 1); color: rgba(71, 162, 214, 1);"><i
+                    style="border-color: rgba(71, 162, 214, 1); color: rgba(71, 162, 214, 1);" title="button slide left"><i
                         class="bi bi-chevron-left"></i></button>
                 <button id="slideRightw" type="button" class="btn btn-lg rounded-circle shadow-sm"
-                    style="background: rgba(71, 162, 214, 1); border-color: rgba(71, 162, 214, 1); color: white;"><i
+                    style="background: rgba(71, 162, 214, 1); border-color: rgba(71, 162, 214, 1); color: white;" title="button slide right"><i
                         class="bi bi-chevron-right"></i></button>
             </div>
         </div>
@@ -298,7 +298,7 @@
                         style="border-radius: 12px">
                     <div class="card-img-overlay grad" style="border-radius: 12px">
                         <div class="row position-absolute bottom-0 start-20 mb-2">
-                            <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Asia Afirka</h5>
+                            <h3 class="card-title" style="font-weight: 700; font-size: 24px;">Asia Afirka</h3>
                             <p class="card-text" style="font-weight: 400; font-size: 20px;">Bandung</p>
                         </div>
                     </div>
@@ -308,11 +308,11 @@
                 <a class="card text-white"
                     style="border-radius: 12px; max-width: 20rem; min-width:259px; overlay: hidden;"
                     href="{{ '/destinasi/bandung/kiara-arta-park' }}">
-                    <img src="{{ URL::asset('/img/dest-pop2.png') }}" class="card-img" alt="photo-wisata"
+                    <img src="{{ URL::asset('/img/dest-pop2.png') }}" class="card-img" alt="photo-wisata 2"
                         style="border-radius: 12px">
                     <div class="card-img-overlay grad" style="border-radius: 12px">
                         <div class="row position-absolute bottom-0 start-20 mb-2">
-                            <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Ranca Upas</h5>
+                            <h3 class="card-title" style="font-weight: 700; font-size: 24px;">Ranca Upas</h3>
                             <p class="card-text" style="font-weight: 400; font-size: 20px;">Bandung</p>
                         </div>
                     </div>
@@ -322,11 +322,11 @@
                 <a class="card text-white"
                     style="border-radius: 12px; max-width: 20rem; min-width:259px; overlay: hidden;"
                     href="{{ '/destinasi/bedugul' }}">
-                    <img src="{{ URL::asset('/img/dest-pop3.png') }}" class="card-img" alt="photo-wisata"
+                    <img src="{{ URL::asset('/img/dest-pop3.png') }}" class="card-img" alt="photo-wisata 3"
                         style="border-radius: 12px">
                     <div class="card-img-overlay grad" style="border-radius: 12px">
                         <div class="row position-absolute bottom-0 start-20 mb-2">
-                            <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Bedugul</h5>
+                            <h3 class="card-title" style="font-weight: 700; font-size: 24px;">Bedugul</h3>
                             <p class="card-text" style="font-weight: 400; font-size: 20px;">Bali</p>
                         </div>
                     </div>
@@ -336,11 +336,11 @@
                 <a class="card text-white"
                     style="border-radius: 12px; max-width: 20rem; min-width:259px; overlay: hidden;"
                     href="{{ '/destinasi/borobudur' }}">
-                    <img src="{{ URL::asset('/img/dest-pop4.png') }}" class="card-img" alt="photo-wisata"
+                    <img src="{{ URL::asset('/img/dest-pop4.png') }}" class="card-img" alt="photo-wisata 4"
                         style="border-radius: 12px">
                     <div class="card-img-overlay grad" style="border-radius: 12px">
                         <div class="row position-absolute bottom-0 start-20 mb-2">
-                            <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Borobudur</h5>
+                            <h3 class="card-title" style="font-weight: 700; font-size: 24px;">Borobudur</h3>
                             <p class="card-text" style="font-weight: 400; font-size: 20px;">Magelang</p>
                         </div>
                     </div>
@@ -350,11 +350,11 @@
                 <a class="card text-white"
                     style="border-radius: 12px; max-width: 20rem; min-width:259px; overlay: hidden;"
                     href="{{ '/destinasi/bandung/floatingmarket' }}">
-                    <img src="{{ URL::asset('/img/dest-pop5.jpg') }}" class="card-img" alt="photo-wisata"
+                    <img src="{{ URL::asset('/img/dest-pop5.jpg') }}" class="card-img" alt="photo-wisata 5"
                         style="border-radius: 12px">
                     <div class="card-img-overlay grad" style="border-radius: 12px">
                         <div class="row position-absolute bottom-0 start-20 mb-2">
-                            <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Floating Market</h5>
+                            <h3 class="card-title" style="font-weight: 700; font-size: 24px;">Floating Market</h3>
                             <p class="card-text" style="font-weight: 400; font-size: 20px;">Lembang</p>
                         </div>
                     </div>
@@ -364,11 +364,11 @@
                 <a class="card text-white"
                     style="border-radius: 12px; max-width: 20rem; min-width:259px; overlay: hidden;"
                     href="{{ '/destinasi/pulaukomodo' }}">
-                    <img src="{{ URL::asset('/img/dest-popkm.png') }}" class="card-img" alt="photo-wisata"
+                    <img src="{{ URL::asset('/img/dest-popkm.png') }}" class="card-img" alt="photo-wisata 6"
                         style="border-radius: 12px">
                     <div class="card-img-overlay grad" style="border-radius: 12px">
                         <div class="row position-absolute bottom-0 start-20 mb-2">
-                            <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Pulau Komodo</h5>
+                            <h3 class="card-title" style="font-weight: 700; font-size: 24px;">Pulau Komodo</h3>
                             <p class="card-text" style="font-weight: 400; font-size: 20px;">Nusa Tenggara Timur</p>
                         </div>
                     </div>
@@ -378,11 +378,11 @@
                 <a class="card text-white"
                     style="border-radius: 12px; max-width: 20rem; min-width:259px; overlay: hidden;"
                     href="{{ '/destinasi/bunaken' }}">
-                    <img src="{{ URL::asset('/img/dest-popbn.png') }}" class="card-img" alt="photo-wisata"
+                    <img src="{{ URL::asset('/img/dest-popbn.png') }}" class="card-img" alt="photo-wisata 7"
                         style="border-radius: 12px">
                     <div class="card-img-overlay grad" style="border-radius: 12px">
                         <div class="row position-absolute bottom-0 start-20 mb-2">
-                            <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Bunaken</h5>
+                            <h3 class="card-title" style="font-weight: 700; font-size: 24px;">Bunaken</h3>
                             <p class="card-text" style="font-weight: 400; font-size: 20px;">Sulawesi Utara</p>
                         </div>
                     </div>
@@ -392,11 +392,11 @@
                 <a class="card text-white"
                     style="border-radius: 12px; max-width: 20rem; min-width:259px; overlay: hidden;"
                     href="{{ '/destinasi/gilitrawangan' }}">
-                    <img src="{{ URL::asset('/img/dest-popgt.jpg') }}" class="card-img" alt="photo-wisata"
+                    <img src="{{ URL::asset('/img/dest-popgt.jpg') }}" class="card-img" alt="photo-wisata 8"
                         style="border-radius: 12px">
                     <div class="card-img-overlay grad" style="border-radius: 12px">
                         <div class="row position-absolute bottom-0 start-20 mb-2">
-                            <h5 class="card-title" style="font-weight: 700; font-size: 24px;">Gili Trawangan</h5>
+                            <h3 class="card-title" style="font-weight: 700; font-size: 24px;">Gili Trawangan</h3>
                             <p class="card-text" style="font-weight: 400; font-size: 20px;">Lombok</p>
                         </div>
                     </div>

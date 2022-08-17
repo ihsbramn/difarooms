@@ -55,37 +55,37 @@
         {{-- photos --}}
         <div id='scrolly'>
             <a href="{{ URL::asset('/img/asaf-1.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}'>
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}' alt="asaf-1">
             </a>
             <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}' alt="asaf-2">
             </a>
             <a href="{{ URL::asset('/img/asaf-3.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}'>
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}' alt="asaf-3">
             </a>
             <a href="{{ URL::asset('/img/asaf-4.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}'>
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}' alt="asaf-4">
             </a>
             <a href="{{ URL::asset('/img/asaf-1.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}'>
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-1.png') }}' alt="asaf-5">
             </a>
             <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}' alt="asaf-6">
             </a>
             <a href="{{ URL::asset('/img/asaf-3.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}'>
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-3.png') }}' alt="asaf-7">
             </a>
             <a href="{{ URL::asset('/img/asaf-4.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}'>
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-4.png') }}' alt="asaf-8">
             </a>
             <a href="{{ URL::asset('/img/asaf-2.png') }}" data-lightbox="img-asaf" style="margin-right: 30px">
-                <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}'>
+                <img id='img-scroll' src='{{ URL::asset('/img/asaf-2.png') }}' alt="asaf-9">
             </a>
         </div>
         <div class="row mt-5">
             <div class="col-7">
                 {{-- main text --}}
-                <p style="font-weight: 400; font-size: 16px; text-align:justify;">
+                <p style="font-weight: 400; font-size: 16px;">
                     Jalan Asia Afrika ini sangatlah bersejarah mulai dari banyak-nya bangunan yang di bangun dari Jaman
                     penjajahan Belanda, maka banyak masyarakat yang berdatangan ke Jalan Asia Afrika ini hanya untuk berburu
                     Foto, bahkan tidak warga Bandung saja, sampai luar pulau bahkan banyak Turis dari luar negeri datang ke
@@ -127,11 +127,11 @@
             <h2 style="font-weight: 700; font-size: 16px; color: black">Aksesibilitas</h2>
             <div class="col-4">
                 <a href="{{ URL::asset('/img/asaf-aksel.png') }}" data-lightbox="img-asaf" style="margin-right: 30px; width: 100%">
-                    <img id='img-scroll' src='{{ URL::asset('/img/asaf-aksel.png') }}' style="width: 100%">
+                    <img id='img-scroll' src='{{ URL::asset('/img/asaf-aksel.png') }}' style="width: 100%" alt="asaf-akses">
                 </a>
             </div>
             <div class="col-8">
-                <p style="text-align: justify; font-weight: 400; font-size: 16px;">Kawasan Jalan Asia Afrika sudah memiliki beberapa fasilitas yang aksesibel bagi penyandang disabilitas.
+                <p style="font-weight: 400; font-size: 16px;">Kawasan Jalan Asia Afrika sudah memiliki beberapa fasilitas yang aksesibel bagi penyandang disabilitas.
                     Terdapat jalan pemandu di trotoar bagi penyandang tunanetra dan juga jalur landai bagi pengguna kursi
                     roda untuk naik ke atas trotoar. Meskipun masih ada beberapa titik di Asia Afrika yang masih belum
                     menyediakan fasilitas aksesibel seperti Masjid Alun-alun yang sepenuhnya menggunakan tangga.</p>
@@ -144,75 +144,75 @@
         <div class="row row-cols-1 row-cols-md-4 g-5">
             <div class="col">
                 <a class="card border-0 zoom" href="{{ '/destinasi/bandung/asia-afrika' }}">
-                    <img src="{{ URL::asset('/img/bd-asaf.png') }}" class="dest-card" alt="foto destinasi">
+                    <img src="{{ URL::asset('/img/bd-asaf.png') }}" class="dest-card" alt="asia afrika">
                     <div class="card-img-overlay grad dest-card">
-                        <h5 class="card-title position-absolute bottom-0 start-20"
-                            style="font-weight: 700; font-size: 24px; color: #ffffff">Asia Afrika</h5>
+                        <h3 class="card-title position-absolute bottom-0 start-20"
+                            style="font-weight: 700; font-size: 24px; color: #ffffff">Asia Afrika</h3>
                     </div>
                 </a>
             </div>
             <div class="col">
-                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/rancaupas' }}">
-                    <img src="{{ URL::asset('/img/bd-rcupas.png') }}" class="dest-card" alt="foto destinasi">
+                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/kiara-arta-park' }}">
+                    <img src="{{ URL::asset('/img/bd-kap.png') }}" class="dest-card" alt="kiara artha park">
                     <div class="card-img-overlay grad dest-card">
-                        <h5 class="card-title position-absolute bottom-0 start-20"
-                            style="font-weight: 700; font-size: 24px; color: #ffffff">Ranca Upas</h5>
+                        <h3 class="card-title position-absolute bottom-0 start-20"
+                            style="font-weight: 700; font-size: 24px; color: #ffffff">Kiara Artha Park</h3>
                     </div>
                 </a>
             </div>
             <div class="col">
-                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/floatingmarket' }}">
-                    <img src="{{ URL::asset('/img/bd-flmarket.png') }}" class="dest-card" alt="foto destinasi">
+                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/bandung-zoo' }}">
+                    <img src="{{ URL::asset('/img/bd-bz.png') }}" class="dest-card" alt="Bandung Zoo">
                     <div class="card-img-overlay grad dest-card">
-                        <h5 class="card-title position-absolute bottom-0 start-20"
-                            style="font-weight: 700; font-size: 24px; color: #ffffff">Floating Market</h5>
+                        <h3 class="card-title position-absolute bottom-0 start-20"
+                            style="font-weight: 700; font-size: 24px; color: #ffffff">Bandung Zoo</h3>
                     </div>
                 </a>
             </div>
             <div class="col">
-                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/gedungsate' }}">
-                    <img src="{{ URL::asset('/img/bd-gdsate.png') }}" class="dest-card" alt="foto destinasi">
+                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/museum-geologi' }}">
+                    <img src="{{ URL::asset('/img/bd-mg.png') }}" class="dest-card" alt="Museum Geologi">
                     <div class="card-img-overlay grad dest-card">
-                        <h5 class="card-title position-absolute bottom-0 start-20"
-                            style="font-weight: 700; font-size: 24px; color: #ffffff">Gedung Sate</h5>
+                        <h3 class="card-title position-absolute bottom-0 start-20"
+                            style="font-weight: 700; font-size: 24px; color: #ffffff">Museum Geologi</h3>
                     </div>
                 </a>
             </div>
             <div class="col">
-                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/tangkubanprahu' }}">
-                    <img src="{{ URL::asset('/img/bd-tkperahu.png') }}" class="dest-card" alt="foto destinasi">
+                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/taman-lalu-lintas' }}">
+                    <img src="{{ URL::asset('/img/bd-tll.png') }}" class="dest-card" alt="Taman Lalu Lintas">
                     <div class="card-img-overlay grad dest-card">
-                        <h5 class="card-title position-absolute bottom-0 start-20"
-                            style="font-weight: 700; font-size: 24px; color: #ffffff">Tangkuban Perahu</h5>
+                        <h3 class="card-title position-absolute bottom-0 start-20"
+                            style="font-weight: 700; font-size: 24px; color: #ffffff">Taman Lalu Lintas</h3>
                     </div>
                 </a>
             </div>
             <div class="col">
-                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/farmhouse' }}">
-                    <img src="{{ URL::asset('/img/bd-fhlembang.png') }}" class="dest-card" alt="foto destinasi">
+                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/trans-studio-mall' }}">
+                    <img src="{{ URL::asset('/img/bd-tsm.png') }}" class="dest-card" alt="Trans Studio Mall">
                     <div class="card-img-overlay grad dest-card">
-                        <h5 class="card-title position-absolute bottom-0 start-20"
-                            style="font-weight: 700; font-size: 24px; color: #ffffff">Farmhouse Lembang</h5>
+                        <h3 class="card-title position-absolute bottom-0 start-20"
+                            style="font-weight: 700; font-size: 24px; color: #ffffff">Trans Studio Mall</h3>
                     </div>
                 </a>
             </div>
             <div class="col">
-                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/cartil' }}">
-                    <img src="{{ URL::asset('/img/cartil.jpg') }}" class="dest-card" alt="foto destinasi"
+                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/museum-sri-baduga' }}">
+                    <img src="{{ URL::asset('/img/bd-msb.png') }}" class="dest-card" alt="Museum Sri Baduga"
                         style="width: 100%; height: 100%; overflow:hidden;">
                     <div class="card-img-overlay grad dest-card">
-                        <h5 class="card-title position-absolute bottom-0 start-20"
-                            style="font-weight: 700; font-size: 24px; color: #ffffff">Caringin Tilu</h5>
+                        <h3 class="card-title position-absolute bottom-0 start-20"
+                            style="font-weight: 700; font-size: 24px; color: #ffffff">Museum Sri Baduga</h3>
                     </div>
                 </a>
             </div>
             <div class="col">
-                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/braga' }}">
-                    <img src="{{ URL::asset('/img/braga.jpg') }}" class="dest-card" alt="foto destinasi"
+                <a class="card border-0 zoom" href="{{ '/destinasi/bandung/braga-city-walk' }}">
+                    <img src="{{ URL::asset('/img/bd-bcw.jpg') }}" class="dest-card" alt="Braga City Walk"
                         style="width: 100%; height: 100%; overflow:hidden;">
                     <div class="card-img-overlay grad dest-card">
-                        <h5 class="card-title position-absolute bottom-0 start-20"
-                            style="font-weight: 700; font-size: 24px; color: #ffffff">Braga</h5>
+                        <h3 class="card-title position-absolute bottom-0 start-20"
+                            style="font-weight: 700; font-size: 24px; color: #ffffff">Braga City Walk</h3>
                     </div>
                 </a>
             </div>
@@ -332,10 +332,10 @@
     {{-- banner --}}
     <div class="comtainer-fluid">
         <div class="card bg-dark text-white border-0 rounded-0" style="max-height: 379px; overflow: hidden;">
-            <img src="{{ URL::asset('/img/foot-dest.png') }}" class="card-img" alt="footer image">
+            <img src="{{ URL::asset('/img/foot-dest.png') }}" class="card-img" alt="banner image asia afrika">
             <div class="card-img-overlay" style="padding-inline: 7rem">
-                <h5 class="card-title position-absolute top-50 start-20 translate-middle-y"
-                    style="font-weight: 700;font-size: 36px;">Rasakan wisata inklusif <br>tanpa diskriminasi</h5>
+                <h2 class="card-title position-absolute top-50 start-20 translate-middle-y"
+                    style="font-weight: 700;font-size: 36px; color: white;">Rasakan wisata inklusif <br>tanpa diskriminasi</h2>
             </div>
         </div>
     </div>
