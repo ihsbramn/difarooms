@@ -45,7 +45,7 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Kudus</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Kota Kudus (ditulis juga sebagai Kota)
+                <p style="font-weight: 400; font-size: 24px;">Kota Kudus (ditulis juga sebagai Kota)
                     adalah sebuah kecamatan yang berada di Kabupaten Kudus, Jawa Tengah, Indonesia. Ibu kota Kabupaten Kudus
                     terletak di kecamatan ini. Kecamatan ini disebut sebagai Kecamatan Kota, karena kawasan perkotaan di
                     Kabupaten Kudus berada di kecamatan ini.</p>
@@ -54,17 +54,17 @@
                 <div class="row row-cols-1 row-cols-md-3 g-3">
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/kds-1.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/kds-1.jpg') }}" class="card-img h-100" alt="foto kota kudus 1" style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/kds-2.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/kds-2.jpg') }}" class="card-img h-100" alt="foto kota kudus 2" style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/kds-3.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/kds-3.jpg') }}" class="card-img h-100" alt="foto kota kudus 3" style="border-radius: 12px">
                         </div>
                     </div>
                 </div>

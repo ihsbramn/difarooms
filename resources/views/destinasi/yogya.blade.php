@@ -46,7 +46,7 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Yogyakarta</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Kota Yogyakarta (bahasa Jawa: ꦪꦺꦴꦒꦾꦏꦂꦠ,
+                <p style="font-weight: 400; font-size: 24px;">Kota Yogyakarta (bahasa Jawa: ꦪꦺꦴꦒꦾꦏꦂꦠ,
                     translit. Ngayogyakarta, atau dikenal oleh masyarakat
                     setempat dengan nama Kota Jogja atau Kota Yogya adalah ibu kota dan pusat pemerintahan Daerah Istimewa
                     Yogyakarta, Indonesia. Kota ini adalah kota besar yang mempertahankan konsep tradisional dan budaya
@@ -65,17 +65,17 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/yk-1.jpg') }}" class="card-img-top" alt="foto kota bandung" style="border-radius: 12px;">
+                            <img src="{{ URL::asset('/img/yk-1.jpg') }}" class="card-img-top" alt="foto kota yogyakarta1" style="border-radius: 12px;">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/yk-2.jpg') }}" class="card-img-top" alt="foto kota bandung" style="border-radius: 12px;">
+                            <img src="{{ URL::asset('/img/yk-2.jpg') }}" class="card-img-top" alt="foto kota yogyakarta2" style="border-radius: 12px;">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/yk-3.jpg') }}" class="card-img-top" alt="foto kota bandung" style="border-radius: 12px;">
+                            <img src="{{ URL::asset('/img/yk-3.jpg') }}" class="card-img-top" alt="foto kota yogyakarta3" style="border-radius: 12px;">
                         </div>
                     </div>
                 </div>

@@ -45,7 +45,7 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Solo</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Surakarta (bahasa Jawa: ꦯꦹꦫꦠꦂꦡ, translit.
+                <p style="font-weight: 400; font-size: 24px;">Surakarta (bahasa Jawa: ꦯꦹꦫꦠꦂꦡ, translit.
                     Surakarta, pengucapan bahasa Jawa: [surɔˈkart̪ɔ]) atau Solo (bahasa Jawa: ꦯꦴꦭ, translit. Sala,
                     pengucapan bahasa Jawa: [sɔlɔ]) adalah kota di Jawa Tengah, Indonesia, dengan penduduk 522.364 jiwa
                     (2020) dan kepadatan 11.861,00/km2. Kota dengan luas 44,04 km2 ini, berbatasan dengan Kabupaten
@@ -60,17 +60,17 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/sl-1.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/sl-1.jpg') }}" class="card-img h-100" alt="foto kota solo 1" style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/sl-2.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/sl-2.jpg') }}" class="card-img h-100" alt="foto kota solo 2" style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/sl-3.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/sl-3.jpg') }}" class="card-img h-100" alt="foto kota solo 3" style="border-radius: 12px">
                         </div>
                     </div>
                 </div>

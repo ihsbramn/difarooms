@@ -45,7 +45,7 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Palembang</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Palembang adalah ibu kota
+                <p style="font-weight: 400; font-size: 24px;">Palembang adalah ibu kota
                     dan kota terbesar di Provinsi Sumatra Selatan, Indonesia. Kota dengan luas wilayah 400,61 km² ini
                     dihuni oleh lebih dari 1,6 juta penduduk pada 2020. Kota Palembang juga kota terpadat dan terbesar
                     kedua di Sumatra setelah Medan, kota terpadat kelima di Indonesia setelah Jakarta Raya, Surabaya, Medan,
@@ -66,19 +66,19 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/plg-1.jpg') }}" class="card-img h-100" alt="foto kota bandung"
+                            <img src="{{ URL::asset('/img/plg-1.jpg') }}" class="card-img h-100" alt="foto kota palembang 1"
                                 style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/plg-2.jpg') }}" class="card-img h-100" alt="foto kota bandung"
+                            <img src="{{ URL::asset('/img/plg-2.jpg') }}" class="card-img h-100" alt="foto kota palembang 2"
                                 style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/plg-3.jpg') }}" class="card-img h-100" alt="foto kota bandung"
+                            <img src="{{ URL::asset('/img/plg-3.jpg') }}" class="card-img h-100" alt="foto kota palembang 3"
                                 style="border-radius: 12px">
                         </div>
                     </div>

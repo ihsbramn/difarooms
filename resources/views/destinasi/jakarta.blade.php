@@ -45,7 +45,7 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Jakarta</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Jakarta, atau secara resmi bernama Daerah Khusus Ibukota Jakarta (disingkat DKI Jakarta)
+                <p style="font-weight: 400; font-size: 24px;">Jakarta, atau secara resmi bernama Daerah Khusus Ibukota Jakarta (disingkat DKI Jakarta)
                     atau Jakarta Raya adalah ibu kota negara dan kota terbesar di Indonesia. Menurut sistem pembagian
                     administratif Indonesia, Jakarta merupakan provinsi dengan status daerah khusus. Sementara menurut
                     pengertian secara umum, Jakarta merupakan kota metropolitan. Jakarta terletak di pesisir bagian barat
@@ -68,17 +68,17 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/jkt-1.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px;">
+                            <img src="{{ URL::asset('/img/jkt-1.jpg') }}" class="card-img h-100" alt="foto kota jakarta 1" style="border-radius: 12px;">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/jkt-2.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px;">
+                            <img src="{{ URL::asset('/img/jkt-2.jpg') }}" class="card-img h-100" alt="foto kota jakarta 2" style="border-radius: 12px;">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/jkt-3.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px;">
+                            <img src="{{ URL::asset('/img/jkt-3.jpg') }}" class="card-img h-100" alt="foto kota jakarta 3" style="border-radius: 12px;">
                         </div>
                     </div>
                 </div>

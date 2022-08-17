@@ -45,7 +45,7 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Surabaya</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Kota Surabaya adalah ibu kota Provinsi Jawa Timur, Indonesia, sekaligus kota
+                <p style="font-weight: 400; font-size: 24px;">Kota Surabaya adalah ibu kota Provinsi Jawa Timur, Indonesia, sekaligus kota
                     metropolitan terbesar di provinsi tersebut. Surabaya merupakan kota terbesar kedua di Indonesia setelah
                     Jakarta. Kota ini terletak 800 km sebelah timur Jakarta, atau 435 km sebelah barat laut Denpasar, Bali.
                     Surabaya terletak di pantai utara Pulau Jawa bagian timur dan berhadapan dengan Selat Madura serta Laut
@@ -69,17 +69,17 @@
                 <div class="row row-cols-1 row-cols-md-3 g-3">
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/sby-1.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/sby-1.jpg') }}" class="card-img h-100" alt="foto kota surabaya 1" style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/sby-2.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/sby-2.jpg') }}" class="card-img h-100" alt="foto kota surabaya 2" style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/sby-3.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/sby-3.jpg') }}" class="card-img h-100" alt="foto kota surabaya 3" style="border-radius: 12px">
                         </div>
                     </div>
                 </div>
