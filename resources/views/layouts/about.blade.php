@@ -49,7 +49,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- {{ config('app.name', 'Difa Rooms') }} --}}
-                    <img src="{{ URL::asset('/img/difarooms-logo.png') }}" alt="">
+                    <img src="{{ URL::asset('/img/difarooms-logo.png') }}" alt="difarooms logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -101,53 +101,54 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link btn btn-outline-light rounded-pill px-4 me-2" type="button"
-                                        href="{{ route('login') }}" style="font-size: 17px">{{ __('Login') }}</a>
+                                    <a class="nav-link btn btn-primary rounded-pill px-3 me-2 bg-transparent" type="button"
+                                        href="{{ route('register') }}"
+                                        style="font-size: 20px; font-weight: 500; border-color: white; color: white;">{{ __('Register') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link btn btn-light rounded-pill px-3 ms-2" type="button" href=""
-                                        data-bs-toggle="modal" data-bs-target="#register"
-                                        style="color: #47A2D6; font-size: 17px">{{ __('Register') }}</a>
+                                    <a class="nav-link btn btn-primary rounded-pill px-4 ms-2" type="button"
+                                        href="{{ route('login') }}"
+                                        style="color: #47A2D6; font-size: 20px; font-weight: 500; background: white; border-color: white; color: #47A2D6;">{{ __('Login') }}</a>
                                 </li>
                             @endif
                         @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#navbarDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                style="font-weight: 500; font-size: 20px; color: white;" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#navbarDropdown"
+                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    style="font-weight: 500; font-size: 20px; color: white;" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
 
 
-                            <div class="dropdown-menu dropdown-menu-end mt-3 border-0 shadow"
-                                aria-labelledby="navbarDropdown" style="border-radius: 12px">
-                                <a class="dropdown-item px-4 py-3"
-                                    href="{{ '/user/myfavourites' }}"style="font-weight: 400; font-size: 16px;"><i
-                                        class="bi bi-heart-fill me-2"></i>
-                                    {{ __('My Favourites Hotel') }}
-                                </a>
-                                <a class="dropdown-item px-4 py-3"
-                                    href="{{ '/user/myforum' }}"style="font-weight: 400; font-size: 16px;"><i
-                                        class="bi bi-chat-left-text-fill me-2"></i></i>
-                                    {{ __('My Forum') }}
-                                </a>
-                                <a class="dropdown-item px-4 py-3" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
+                                <div class="dropdown-menu dropdown-menu-end mt-3 border-0 shadow"
+                                    aria-labelledby="navbarDropdown" style="border-radius: 12px">
+                                    <a class="dropdown-item px-4 py-3"
+                                        href="{{ '/user/myfavourites' }}"style="font-weight: 400; font-size: 16px;"><i
+                                            class="bi bi-heart-fill me-2"></i>
+                                        {{ __('My Favourites Hotel') }}
+                                    </a>
+                                    <a class="dropdown-item px-4 py-3"
+                                        href="{{ '/user/myforum' }}"style="font-weight: 400; font-size: 16px;"><i
+                                            class="bi bi-chat-left-text-fill me-2"></i></i>
+                                        {{ __('My Forum') }}
+                                    </a>
+                                    <a class="dropdown-item px-4 py-3" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();"
-                                    style="color: #BB5353;font-weight: 400; font-size: 16px;"><i
-                                        class="bi bi-box-arrow-right me-2"></i>
-                                    {{ __('Logout') }}
-                                </a>
+                                        style="color: #BB5353;font-weight: 400; font-size: 16px;"><i
+                                            class="bi bi-box-arrow-right me-2"></i>
+                                        {{ __('Logout') }}
+                                    </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
                         @endguest
                     </ul>
                 </div>
