@@ -45,7 +45,7 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Bogor</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Bogor adalah sebuah kota yang terletak di provinsi Jawa Barat, Indonesia. Kota ini
+                <p style="font-weight: 400; font-size: 24px;">Bogor adalah sebuah kota yang terletak di provinsi Jawa Barat, Indonesia. Kota ini
                     terletak 59 km di sebelah selatan Jakarta, dan merupakan enklave Kabupaten Bogor. Pada akhir tahun 2021,
                     jumlah penduduk kota Bogor sebanyak 1.091.396 jiwa, dengan kepadatan 9.210 jiwa/km2.
                     <br><br>
@@ -57,32 +57,18 @@
                 <div class="row row-cols-1 row-cols-md-3 g-3">
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/bgr-1.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/bgr-1.jpg') }}" class="card-img h-100" alt="foto kota bogor 1" style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/bgr-2.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/bgr-2.jpg') }}" class="card-img h-100" alt="foto kota bogor 2" style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/bgr-3.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px">
+                            <img src="{{ URL::asset('/img/bgr-3.jpg') }}" class="card-img h-100" alt="foto kota bogor 3" style="border-radius: 12px">
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="card bg-dark text-white rounded-0 border-0" style="max-height: 379px; overflow:hidden">
-                <img src="{{ URL::asset('/img/ft-bdg.png') }}" class="card-img" alt="background">
-                <div class="card-img-overlay d-flex">
-                    <div class="container my-auto">
-                        <h1 style="font-size: 40px; font-weight:700">Penginapan terbaik ada disini
-                        </h1>
                     </div>
                 </div>
             </div>

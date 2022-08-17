@@ -5,6 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- web icon logo -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ URL::asset('/img/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ URL::asset('/img/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ URL::asset('/img/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ URL::asset('/img/site.webmanifest') }}">
+    <!-- web icon logo -->
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 

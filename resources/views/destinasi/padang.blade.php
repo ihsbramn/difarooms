@@ -45,7 +45,7 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Padang</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Padang adalah kota terbesar di pantai
+                <p style="font-weight: 400; font-size: 24px;">Padang adalah kota terbesar di pantai
                     barat Pulau Sumatra dan ibu kota provinsi Sumatra Barat, Indonesia. Kota ini merupakan pintu gerbang
                     barat Indonesia dari Samudra Hindia. Secara geografi, Padang dikelilingi perbukitan yang mencapai
                     ketinggian 1.853 mdpl dengan luas wilayah 693,66 km², lebih dari separuhnya berupa hutan lindung.
@@ -65,19 +65,19 @@
                 <div class="row row-cols-1 row-cols-md-3 g-3">
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/pdg-1.jpg') }}" class="card-img h-100" alt="foto kota bandung"
+                            <img src="{{ URL::asset('/img/pdg-1.jpg') }}" class="card-img h-100" alt="foto kota padang 1"
                                 style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/pdg-2.jpg') }}" class="card-img h-100" alt="foto kota bandung"
+                            <img src="{{ URL::asset('/img/pdg-2.jpg') }}" class="card-img h-100" alt="foto kota padang 2"
                                 style="border-radius: 12px">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/pdg-3.jpg') }}" class="card-img h-100" alt="foto kota bandung"
+                            <img src="{{ URL::asset('/img/pdg-3.jpg') }}" class="card-img h-100" alt="foto kota padang 3"
                                 style="border-radius: 12px">
                         </div>
                     </div>

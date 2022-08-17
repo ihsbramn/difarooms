@@ -45,7 +45,7 @@
                 <h2 style="font-weight: 700; font-size: 36px;color: #47A2D6;">Tempat Wisata di Batam</h2>
             </div>
             <div class="col-6 mt-3">
-                <p style="font-weight: 400; font-size: 24px; text-align: justify;">Kota Batam adalah kota terbesar di
+                <p style="font-weight: 400; font-size: 24px;">Kota Batam adalah kota terbesar di
                     Provinsi Kepulauan Riau, Indonesia. Wilayah Kota Batam terdiri dari Pulau Batam, Pulau Rempang dan Pulau
                     Galang dan pulau-pulau kecil lainnya di kawasan Selat Singapura dan Selat Malaka. Pulau Batam, Rempang,
                     dan Galang terkoneksi oleh Jembatan Barelang. Menurut Dinas Kependudukan dan Catatan Sipil Kota Batam,
@@ -64,17 +64,17 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/btm-1.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px;">
+                            <img src="{{ URL::asset('/img/btm-1.jpg') }}" class="card-img h-100" alt="foto kota batam 1" style="border-radius: 12px;">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/btm-2.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px;">
+                            <img src="{{ URL::asset('/img/btm-2.jpg') }}" class="card-img h-100" alt="foto kota batam 2" style="border-radius: 12px;">
                         </div>
                     </div>
                     <div class="col">
                         <div class="card h-100 border-0">
-                            <img src="{{ URL::asset('/img/btm-3.jpg') }}" class="card-img h-100" alt="foto kota bandung" style="border-radius: 12px;">
+                            <img src="{{ URL::asset('/img/btm-3.jpg') }}" class="card-img h-100" alt="foto kota batam 3" style="border-radius: 12px;">
                         </div>
                     </div>
                 </div>
